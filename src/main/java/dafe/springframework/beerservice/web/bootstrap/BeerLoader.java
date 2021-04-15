@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Component
 public class BeerLoader implements CommandLineRunner {
 
@@ -25,7 +27,20 @@ public class BeerLoader implements CommandLineRunner {
             beerRepository.save(Beer.builder().beerName("Gulder Beer")
                     .beerStyle("Lager")
                     .quantityToBrew(200)
+                    .upc(3324875993L)
+                    .price(new BigDecimal(25.95))
+                    .minOnHand(34)
+                    .build());
+
+
+            beerRepository.save(Beer.builder().beerName("Guinness Beer")
+                    .beerStyle("Small Stout")
+                    .quantityToBrew(530)
+                    .upc(5428875993L)
+                    .price(new BigDecimal(67.95))
+                    .minOnHand(49)
                     .build());
         }
+        System.out.println("Loaded " +beerRepository.count() + " successfully");
     }
 }
