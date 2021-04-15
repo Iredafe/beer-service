@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -27,10 +29,17 @@ public class Beer {
     private Long version;
     private String beerName;
     private String beerStyle;
+
+    @Column(unique = true)
     private Long upc;
     private BigDecimal price;
     private Integer minOnHand;
     private Integer quantityToBrew;
+
+    @CreationTimestamp
+    @Column(updatable = false)
     private Timestamp createdDate;
+
+    @UpdateTimestamp
     private  Timestamp lastModifiedDate;
 }
