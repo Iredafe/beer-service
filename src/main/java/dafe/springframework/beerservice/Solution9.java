@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice;
 
+import java.util.*;
+
 public class Solution9 {
         public static boolean containsDuplicate(int[] nums) {
             //problem statement
@@ -25,10 +27,32 @@ public class Solution9 {
             return isDuplicate;
         }
 
+    public static boolean containsDuplicate1(int[] nums) {
+            //sorting method O(n log n)
+            //sort array
+            //check if there is any duplicate between any 2 numbers in sorted array
+            Arrays.sort(nums);
+            for (int i=1; i< nums.length; i++){
+                if(nums[i]==nums[i-1])
+                    return true;
+            }
+    return false;
+        }
 
-
-    public static void main(String[] args) {
-            int [] nums= {1,2,3,4,2};
-        System.out.println("Answer is : " + containsDuplicate(nums));
+    public static boolean containsDuplicate2(int[] nums) {
+//use a Hashtable O(n)
+        Set<Integer> mySet = new HashSet<>();
+        for(int n: nums){
+            if(mySet.contains(n)) return true;
+            mySet.add(n);
+            }
+        return false;
     }
+
+        public static void main(String[] args) {
+            int [] nums= {1,2,3,4,3,1};
+            System.out.println("Answer for linear search is : " + containsDuplicate(nums));
+            System.out.println("Answer from sorting is : " + containsDuplicate1(nums));
+            System.out.println("Answer from hashmap is : " + containsDuplicate2(nums));
+        }
 }
