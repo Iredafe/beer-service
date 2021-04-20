@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice;
 
+import java.util.HashSet;
+
 public class Interview {
     //problem statement
     //method that takes 2 input strings
@@ -36,6 +38,33 @@ public class Interview {
         return commonCharacters;
     }
 
+    //using a hashset
+    public static String commonCharacters(String input1, String input2){
+
+        String duplicateCharacters="";
+        char []firstString = input1.toCharArray();
+        char [] secondString = input2.toCharArray();
+        HashSet<Character> set1 = new HashSet<>();
+        for(char n : firstString){
+            set1.add(n);
+        }
+        HashSet<Character> set2 = new HashSet<>();
+        for(char n : secondString){
+            set2.add(n);
+        }
+
+        set1.retainAll(set2);
+        char [] newArray = new char[set1.size()];
+        int index=0;
+        for(char n:set1){
+            newArray[index++]= n;
+        }
+        duplicateCharacters=newArray.toString();
+        return duplicateCharacters;
+    }
+
+
+    
 
     public static void main(String[] args) {
 
@@ -44,6 +73,12 @@ public class Interview {
         String myThirdString = "ppoipo";
         System.out.println("These are the matching characters : " + compareTwoStrings(myFirstString, mySecondString));
         System.out.println("These are the matching characters : " + compareTwoStrings(myFirstString, myThirdString));
+
+
+        System.out.println("HashSet: These are the matching characters : " + compareTwoStrings(myFirstString, mySecondString));
+        System.out.println("HashSet: These are the matching characters : " + commonCharacters(myFirstString, myThirdString));
+
+
     }
 
 
