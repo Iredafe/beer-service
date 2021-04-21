@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Interview {
@@ -59,12 +61,13 @@ public class Interview {
         for(char n:set1){
             newArray[index++]= n;
         }
-        duplicateCharacters=newArray.toString();
+            duplicateCharacters= Arrays.toString(newArray);
+
         return duplicateCharacters;
     }
 
 
-    
+
 
     public static void main(String[] args) {
 
@@ -77,9 +80,7 @@ public class Interview {
 
         System.out.println("HashSet: These are the matching characters : " + compareTwoStrings(myFirstString, mySecondString));
         System.out.println("HashSet: These are the matching characters : " + commonCharacters(myFirstString, myThirdString));
-
-
-    }
+            }
 
 
 }
