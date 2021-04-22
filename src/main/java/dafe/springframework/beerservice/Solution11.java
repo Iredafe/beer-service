@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice;
 
+import java.util.Arrays;
+
 class TreeNode {
     int val;
     TreeNode left;
@@ -33,14 +35,10 @@ public class Solution11 {
             return tNode;
         }
 
-
     public static void main(String[] args) {
-        int [] mySortedArray = {2,4,3,7,4,10,23,15};
-
-        System.out.println("This is the array before converion : " + mySortedArray);
-        System.out.println("This is the converted array : " + sortedArrayToBST(mySortedArray));
-
-
+        int [] mySortedArray = new int[]{2,4,3,7,4,10,23,15};
+        TreeNode [] myConvertedArray = new TreeNode[] {sortedArrayToBST(mySortedArray)};
+        System.out.println("This is the array before converion : " + Arrays.toString(mySortedArray));
+        System.out.println("This is the converted array : " + myConvertedArray);
     }
-
     }
