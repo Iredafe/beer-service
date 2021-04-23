@@ -38,7 +38,16 @@ public class Solution12 {
         return result;
     }
 
-    public static void main(String[] args) {
-        System.out.println("This is the result of Digital Root : " + addDigits(893));
+    public static int addDigits1(int num) {
+
+        if(num==0) return 0;
+        if(num==9) return 9;
+        num= num%9;
+        return num;
+    }
+
+        public static void main(String[] args) {
+            System.out.println("This is the result of Digital Root : " + addDigits(893));
+            System.out.println("This is the result of Digital Root : " + addDigits1(893));
     }
 }
