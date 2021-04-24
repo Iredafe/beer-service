@@ -11,11 +11,11 @@ public class Solution13 {
         //if the target is not found return -1
 
         //solution plan
-        //sort the array
-        //use binary search algorithm
+        //sort the array O(n log n)
+        //use binary search algorithm O(log n) without sort, but O(n log n) with sort
         //find the middle of the array
-        //if the target is less than the mid value, search the left array
-        //if target is greater than the mid value, search the right of the array
+        //if the target is less than the mid value, increase the mid array by 1
+        //if target is greater than the mid value, remove 1 from the mid array
         // return the index if found
         //return -1 if index not found
 
