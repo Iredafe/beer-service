@@ -66,7 +66,7 @@ public class MajorityElement {
         }
     }
     return majorityEntry.getKey();
-    }00
+    }
 
 
     private static Map<Integer, Integer>  countNums(int [] nums){
