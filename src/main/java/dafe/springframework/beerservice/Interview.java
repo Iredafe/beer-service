@@ -66,6 +66,21 @@ public class Interview {
         return duplicateCharacters;
     }
 
+    public static String findDuplicatesWithOneHashSet(String input1, String input2){
+
+        HashSet<Character> myHashSet = new HashSet<>();
+        String duplicates = "";
+        for(int i=0; i<input1.length(); i++){
+            myHashSet.add(input1.charAt(i));
+        }
+
+        for (int i=0; i<input2.length(); i++){
+            if(myHashSet.contains(input2.charAt(i))){
+                duplicates += input2.charAt(i);
+            }
+        }
+        return duplicates;
+    }
 
 
 
@@ -77,10 +92,12 @@ public class Interview {
         System.out.println("These are the matching characters : " + compareTwoStrings(myFirstString, mySecondString));
         System.out.println("These are the matching characters : " + compareTwoStrings(myFirstString, myThirdString));
 
+        System.out.println("Two HashSet: These are the matching characters : " + compareTwoStrings(myFirstString, mySecondString));
+        System.out.println("Two HashSet: These are the matching characters : " + commonCharacters(myFirstString, myThirdString));
 
-        System.out.println("HashSet: These are the matching characters : " + compareTwoStrings(myFirstString, mySecondString));
-        System.out.println("HashSet: These are the matching characters : " + commonCharacters(myFirstString, myThirdString));
-            }
+        System.out.println("One HashSet: These are the matching characters : " + findDuplicatesWithOneHashSet(myFirstString, mySecondString));
+        System.out.println("One HashSet: These are the matching characters : " + findDuplicatesWithOneHashSet(myFirstString, myThirdString));
+    }
 
 
 }
