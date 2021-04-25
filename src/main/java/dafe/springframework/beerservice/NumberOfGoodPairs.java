@@ -15,7 +15,7 @@ public class NumberOfGoodPairs {
         //return the count
         int counter=0;
         for(int i=0; i<nums.length; i++){
-            for(int j=nums.length-1; j<i; j--){
+            for(int j=nums.length-1; j>i; j--){
                 if(nums[i]==nums[j] && i<j){
                     counter++;
                 }
@@ -25,10 +25,11 @@ public class NumberOfGoodPairs {
     }
 
     public static void main(String[] args) {
-        int testArray []= new int[]{9,2,4,2,5,7,5,3,4,1,0,3,2,5};
-        int testArray2 [] =new int[]{1,2,3,1,1,3};
-        System.out.println("This is the number of good pairs : " + numIdenticalPairs(testArray));
-        System.out.println("This is the number of good pairs : " + numIdenticalPairs(testArray2));
+        int testArray []= {9,2,4,2,5,7,5,3,4,1,0,3,2,5};
+        int testArray2 [] = {1,2,3,1,1,3};
+        int result = numIdenticalPairs(testArray);
+        int result2=numIdenticalPairs(testArray2);
+        System.out.println("This is the number of good pairs : " + result);
+        System.out.println("This is the number of good pairs : " + result2);
     }
-
 }
