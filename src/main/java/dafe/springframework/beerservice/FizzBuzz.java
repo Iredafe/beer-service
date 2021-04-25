@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class FizzBuzz {
@@ -34,13 +35,37 @@ public class FizzBuzz {
 return answer;
  }
 
+ public static List<String> fizzBuzzhash(int n){
+
+     List<String> answer = new ArrayList<>();
+
+     HashMap<Integer, String> myHashMap = new HashMap<>(){{
+         put(3,"Fizz");
+         put(5, "Buzz");
+     }
+     };
+     for(int i=1; i<=n; i++){
+         String numAndStr = "";
+         for(Integer myKey : myHashMap.keySet()){
+             if(i%myKey ==0){
+                 numAndStr += myHashMap.get(myKey);
+             }
+             if(numAndStr.equals("")){
+                 numAndStr+= Integer.toString(i);
+             }
+         }
+         answer.add(numAndStr);
+     }
+     return answer;
+ }
+
+
     public static void main(String[] args) {
 
-        System.out.println("This is the result for fizzBuzz : " + fizzBuzz(20));
+        System.out.println("This is the result for fizzBuzzhash : " + fizzBuzzhash(25));
         System.out.println("This is the result for fizzBuzz : " + fizzBuzz(25));
+        System.out.println("This is the result for fizzBuzzHash : " + fizzBuzzhash(10));
         System.out.println("This is the result for fizzBuzz : " + fizzBuzz(10));
-        System.out.println("This is the result for fizzBuzz : " + fizzBuzz(15));
-        System.out.println("This is the result for fizzBuzz : " + fizzBuzz(30));
-    }
+        }
 
 }
