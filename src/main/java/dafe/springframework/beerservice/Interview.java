@@ -70,13 +70,13 @@ public class Interview {
 
         HashSet<Character> myHashSet = new HashSet<>();
         String duplicates = "";
-        for(int i=0; i<input1.length(); i++){
-            myHashSet.add(input1.charAt(i));
+        for(int i=0; i<input2.length(); i++){
+            myHashSet.add(input2.charAt(i));
         }
 
-        for (int i=0; i<input2.length(); i++){
-            if(myHashSet.contains(input2.charAt(i))){
-                duplicates += input2.charAt(i);
+        for (int i=0; i<input1.length(); i++){
+            if(myHashSet.contains(input1.charAt(i))){
+                duplicates += input1.charAt(i);
             }
         }
         return duplicates;
