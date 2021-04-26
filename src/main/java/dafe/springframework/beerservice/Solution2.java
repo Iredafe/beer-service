@@ -13,8 +13,6 @@ public class Solution2 {
          for(int i= alist.size()-1; i>=0; i--){
              myArr.add(alist.get(i));
          }
-
-
         return myArr;
     }
     // Iterate through all the elements and print
