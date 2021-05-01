@@ -2,12 +2,12 @@ package dafe.springframework.beerservice;
 
 import java.util.Date;
 
-public class EmployeePayroll {
+public abstract class EmployeePayroll {
     private String employeeName;
     private String employeeAddress;
-    String title;
-    String department;
-    Date paymentDate;
-    String paymentCycle;
-    
+    private String title;
+    private String department;
+    private Date paymentDate;
+    private String paymentCycle;
+
 }
