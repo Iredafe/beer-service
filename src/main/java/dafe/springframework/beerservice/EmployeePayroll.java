@@ -4,8 +4,9 @@ import java.util.Date;
 
 public abstract class EmployeePayroll {
 
-    private PrintReportStrategy printReportStrategy;
-    private CalculateSalaryStrategy calculateSalaryStrategy;
+    protected PrintReportStrategy printPDFReportStrategy;
+    protected PrintReportStrategy printJSONReportStrategy;
+    protected CalculateSalaryStrategy calculateSalaryStrategy;
     private String employeeName;
     private String employeeAddress;
     private String title;
@@ -13,12 +14,14 @@ public abstract class EmployeePayroll {
     private Date paymentDate;
     private String paymentCycle;
 
-    public void performCalculation(){
+    public void performCalculation() {
         calculateSalaryStrategy.calculateSalary();
     }
 
-    public void performPrinting(){
-        printReportStrategy.print();
+    public void performPrint() {
+        printJSONReportStrategy.print();
+        printPDFReportStrategy.print();
     }
 
+    public abstract void display();
 }
