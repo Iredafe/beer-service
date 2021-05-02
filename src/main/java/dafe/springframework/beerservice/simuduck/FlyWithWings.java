@@ -1,4 +1,6 @@
-package dafe.springframework.beerservice;
+package dafe.springframework.beerservice.simuduck;
+
+import dafe.springframework.beerservice.simuduck.IFlyBehavior;
 
 public class FlyWithWings implements IFlyBehavior {
     public void fly(){

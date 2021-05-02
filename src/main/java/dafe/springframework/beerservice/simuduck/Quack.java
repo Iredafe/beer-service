@@ -1,4 +1,6 @@
-package dafe.springframework.beerservice;
+package dafe.springframework.beerservice.simuduck;
+
+import dafe.springframework.beerservice.simuduck.IQuackBehavior;
 
 public class Quack implements IQuackBehavior {
     public void quack(){

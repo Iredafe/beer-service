@@ -1,6 +1,6 @@
-package dafe.springframework.beerservice;
+package dafe.springframework.beerservice.salarysystem;
 
-public class PartTimeEmployeePayroll extends EmployeePayroll{
+public class PartTimeEmployeePayroll extends EmployeePayroll {
 
     public PartTimeEmployeePayroll(){
         calculateSalaryStrategy = new TaxDeduction();

@@ -1,4 +1,7 @@
-package dafe.springframework.beerservice;
+package dafe.springframework.beerservice.salarysystem;
+
+import dafe.springframework.beerservice.CalculateSalaryStrategy;
+import dafe.springframework.beerservice.salarysystem.PrintReportStrategy;
 
 import java.util.Date;
 

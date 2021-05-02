@@ -1,4 +1,4 @@
-package dafe.springframework.beerservice;
+package dafe.springframework.beerservice.salarysystem;
 
 public class FullTimeEmployeePayroll extends EmployeePayroll{
 
