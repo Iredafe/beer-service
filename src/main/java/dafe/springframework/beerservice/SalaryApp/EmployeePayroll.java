@@ -21,6 +21,7 @@ public abstract class EmployeePayroll {
     }
 
     public void performPrint() {
+        System.out.println("Printing " + employeeType + " report for " + employeeName );
 
     }
 
