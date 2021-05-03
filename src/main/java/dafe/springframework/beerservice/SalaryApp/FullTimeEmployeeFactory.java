@@ -1,4 +1,4 @@
 package dafe.springframework.beerservice.SalaryApp;
 
-public class FullTimeEmployeeFactory {
+public class FullTimeEmployeeFactory extends EmployeePayrollFactory{
 }
