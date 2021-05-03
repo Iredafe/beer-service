@@ -1,9 +1,9 @@
 package dafe.springframework.beerservice.PizzaApp;
 
-public class NYStylePizza extends Pizza {
+public class NYStyleCheesePizza extends Pizza {
 
 
-    public NYStylePizza(){
+    public NYStyleCheesePizza(){
         name="NY styled sauce and cheese pizza";
         dough="Thin crust dough";
         sauce="Marina sauce";

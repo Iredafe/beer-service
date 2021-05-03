@@ -3,10 +3,10 @@ package dafe.springframework.beerservice.PizzaApp;
 public class ChicagoStylePepperoniPizza extends Pizza{
 
     public ChicagoStylePepperoniPizza(){
-        name="Chicago style deep dish pizza";
-        dough="Extra thick crust dough";
-        sauce="plum tomato sauce";
+        name="Chicago style round pizza";
+        dough="Light crust dough";
+        sauce="plum peppered sauce";
 
-        toppings.add("Shredded mozarella cheese");
+        toppings.add("Shredded greek cheese");
     }
 }
