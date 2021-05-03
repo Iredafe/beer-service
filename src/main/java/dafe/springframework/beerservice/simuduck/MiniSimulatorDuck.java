@@ -6,6 +6,7 @@ import dafe.springframework.beerservice.simuduck.MallardDuck;
 public class MiniSimulatorDuck {
     public static void main(String[] args) {
         Duck mullard = new MallardDuck();
+        mullard.display();
         mullard.performQuack();
         mullard.performFly();
     }
