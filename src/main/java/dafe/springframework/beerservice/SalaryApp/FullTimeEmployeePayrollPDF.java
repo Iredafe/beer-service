@@ -4,7 +4,7 @@ package dafe.springframework.beerservice.SalaryApp;
 public class FullTimeEmployeePayrollPDF extends EmployeePayroll {
 
     public FullTimeEmployeePayrollPDF(){
-        employeeName="Chioma";
+        employeeName="Mike";
         employeeType = "Full time";
     }
 

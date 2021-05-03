@@ -11,7 +11,6 @@ public class PartTimePayrollFactory extends EmployeePayrollFactory{
             return new PartTimeEmployeePayrollJSON();
         }
 
-
         return null;
     }
 }
