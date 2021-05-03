@@ -12,5 +12,10 @@ public class ClientApp {
 
         pizza=newYorkFactory.orderPizza("pepperoni");
         System.out.println("Precious ordered a " + pizza.getName() + "\n");
+
+        pizza = chicagoFactory.orderPizza("pepperoni");
+        System.out.println("Sammy ordered a " + pizza.getName() + "\n");
+
+
     }
 }

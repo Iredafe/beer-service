@@ -6,6 +6,8 @@ public class ChicagoPizzaFactory extends PizzaFactory{
 
         if(type.equals("cheese")){
             return new ChicagoStyleCheesePizza();
+        }else if(type.equals("pepperoni")){
+            return new ChicagoStylePepperoniPizza();
         }
         return null;
     }

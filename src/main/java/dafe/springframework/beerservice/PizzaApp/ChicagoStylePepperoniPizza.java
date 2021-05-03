@@ -7,6 +7,6 @@ public class ChicagoStylePepperoniPizza extends Pizza{
         dough="Light crust dough";
         sauce="plum peppered sauce";
 
-        toppings.add("Shredded greek cheese");
+        toppings.add("Chopped greek pepperoni");
     }
 }
