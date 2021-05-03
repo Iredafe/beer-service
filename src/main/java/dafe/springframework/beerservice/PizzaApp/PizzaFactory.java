@@ -6,7 +6,6 @@ public abstract class PizzaFactory {
 
  public Pizza orderPizza(String type){
      Pizza pizza;
-
      pizza = createPizza(type);
      pizza.prepare();
      pizza.bake();
@@ -17,7 +16,5 @@ public abstract class PizzaFactory {
  }
 
  protected abstract Pizza createPizza(String type);
-
-
 
 }
