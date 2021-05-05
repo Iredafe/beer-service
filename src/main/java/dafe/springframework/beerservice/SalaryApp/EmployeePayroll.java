@@ -8,6 +8,7 @@ import java.util.Date;
 public abstract class EmployeePayroll {
 
     protected CalculateSalaryStrategy calculateSalaryStrategy;
+    protected PrintReportStrategy printReportStrategy;
     protected String employeeName;
     protected String employeeAddress;
     protected String employeeType;
@@ -22,7 +23,7 @@ public abstract class EmployeePayroll {
 
     public void performPrint() {
         System.out.println("Printing " + employeeType + " report for " + employeeName );
-
+        printReportStrategy.print();
     }
 
     public abstract void display();

@@ -21,7 +21,8 @@ public abstract class EmployeePayroll {
         calculateSalaryStrategy.calculateSalary();
     }
 
-    public void performPrint() {
+    public void
+    performPrint() {
         printJSONReportStrategy.print();
         printPDFReportStrategy.print();
     }

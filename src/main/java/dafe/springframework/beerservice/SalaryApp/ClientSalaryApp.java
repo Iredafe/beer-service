@@ -12,19 +12,19 @@ public class ClientSalaryApp {
 
         EmployeePayrollFactory contractFactory=new ContractEmployeeFactory();
 
-        EmployeePayroll payroll = fullTimefactory.createEmployeePayroll("PDF");
+        EmployeePayroll payroll = fullTimefactory.selectPayroll("PDF");
         System.out.println("Creating fulltime payroll in PDF for " + payroll.employeeName);
-        payroll = fullTimefactory.createEmployeePayroll("JSON");
+        payroll = fullTimefactory.selectPayroll("JSON");
         System.out.println("Creating full time payroll in JSON for " + payroll.employeeName);
 
-        payroll = partTimeFactory.createEmployeePayroll("PDF");
+        payroll = partTimeFactory.selectPayroll("PDF");
         System.out.println("Creating Part time payroll in PDF for " + payroll.employeeName);
-        payroll = fullTimefactory.createEmployeePayroll("JSON");
+        payroll = fullTimefactory.selectPayroll("JSON");
         System.out.println("Creating part time payroll in JSON for " + payroll.employeeName);
 
-        payroll = contractFactory.createEmployeePayroll("PDF");
+        payroll = contractFactory.selectPayroll("PDF");
         System.out.println("Creating contract payroll in PDF for " + payroll.employeeName);
-        payroll = contractFactory.createEmployeePayroll("JSON");
+        payroll = contractFactory.selectPayroll("JSON");
         System.out.println("Creating contract payroll in JSON for " + payroll.employeeName);
 
 
