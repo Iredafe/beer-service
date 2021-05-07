@@ -1,7 +1,5 @@
 package dafe.springframework.beerservice.salarysystem;
 
-import dafe.springframework.beerservice.CalculateSalaryStrategy;
-
 public class TaxDeduction implements CalculateSalaryStrategy {
     @Override
     public void calculateSalary() {

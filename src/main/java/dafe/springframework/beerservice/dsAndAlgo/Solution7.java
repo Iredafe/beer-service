@@ -1,4 +1,4 @@
-package dafe.springframework.beerservice;
+package dafe.springframework.beerservice.dsAndAlgo;
 
 public class Solution7 {
     public static int sumOfUnique(int [] nums){

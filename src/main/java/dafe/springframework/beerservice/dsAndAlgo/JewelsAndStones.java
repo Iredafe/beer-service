@@ -1,4 +1,4 @@
-package dafe.springframework.beerservice;
+package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.HashSet;
 import java.util.Set;

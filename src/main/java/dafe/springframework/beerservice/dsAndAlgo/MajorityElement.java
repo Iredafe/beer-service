@@ -1,4 +1,4 @@
-package dafe.springframework.beerservice;
+package dafe.springframework.beerservice.dsAndAlgo;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.HashMap;

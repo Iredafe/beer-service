@@ -1,4 +1,4 @@
-package dafe.springframework.beerservice;
+package dafe.springframework.beerservice.dsAndAlgo;
 
 public class Solution4 {
         public static int maxAscendingSum(int[] nums) {

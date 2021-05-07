@@ -1,6 +1,5 @@
 package dafe.springframework.beerservice.SalaryApp;
 
-import dafe.springframework.beerservice.CalculateSalaryStrategy;
 import dafe.springframework.beerservice.salarysystem.PrintReportStrategy;
 
 import java.util.Date;
