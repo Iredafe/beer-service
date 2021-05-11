@@ -38,8 +38,8 @@ public class RunningSum {
         System.out.println("this is the result of running sum of array " + runningSum(input1));
         System.out.println("this is the result of running sum of array " + runningSum(input2));
 
-        System.out.println("this is the result " + input1);
-        System.out.println("this is the result " + input2);
+        System.out.println("this is the result " + runningSum2(input1));
+        System.out.println("this is the result " + runningSum2(input2));
 
     }
 }
