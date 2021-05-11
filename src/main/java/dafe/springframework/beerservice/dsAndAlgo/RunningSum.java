@@ -22,12 +22,24 @@ public class RunningSum {
         return result;
     }
 
+    public static int[] runningSum2(int[] nums){
+
+        for(int i=1; i< nums.length;i++){
+            nums[i] += nums[i-1];
+        }
+    return nums;
+    }
+
     public static void main(String[] args) {
 
         int input1[]= {1,2,3,4};
         int input2[] ={3,1,2,10,1};
 
-        System.out.println("this ist the result of running sum of array" + runningSum(input1));
-        System.out.println("this ist the result of running sum of array" + runningSum(input2));
+        System.out.println("this is the result of running sum of array " + runningSum(input1));
+        System.out.println("this is the result of running sum of array " + runningSum(input2));
+
+        System.out.println("this is the result " + input1);
+        System.out.println("this is the result " + input2);
+
     }
 }
