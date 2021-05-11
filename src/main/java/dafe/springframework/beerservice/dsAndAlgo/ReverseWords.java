@@ -2,7 +2,7 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.Arrays;
 
-class Solution {
+ public class ReverseWords {
         public static String reverseWords(String statement){
         //split string of statement and save into an array
         String [] newStatement = statement.split(" ");
