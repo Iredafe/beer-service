@@ -2,7 +2,7 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
 
-public class Solution2 {
+public class ReverseArrayList {
 
     public static ArrayList<String> reverseArrayList(ArrayList<String> alist){
 
