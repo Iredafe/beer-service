@@ -5,20 +5,19 @@ import java.util.ArrayList;
 public class TwoSum {
 
     public static int[] twoSum(int[] numbers, int target) {
-        ArrayList<Integer> result = new ArrayList<>();
-        for(int i=0; i<numbers.length; i++){
-            for(int j=numbers.length-1; i>=0; i--){
-                if(i+j == target){
-                    result.add(i);
-                    result.add(j);
-                }
+
+        int left = 0, right = numbers.length-1;
+        while(left < right){
+            int sum = numbers[left] + numbers[right];
+            if(sum>target){
+                right--;
+            }else if(sum< target){
+                left++;
+            }else {
+                return new int[]{left+1, right+1};
             }
         }
-        int newArray[] = new int[result.size()];
-        for (int i=0; i<result.size(); i++){
-            newArray[i] = result.get(i);
-        }
-        return newArray;
+ return new int[]{};
     }
 
     public static void main(String[] args) {
