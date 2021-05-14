@@ -1,6 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-public class Solution4 {
+public class MaxAscendingSum {
         public static int maxAscendingSum(int[] nums) {
             //problem analysis:
             //input is an array of numbers
