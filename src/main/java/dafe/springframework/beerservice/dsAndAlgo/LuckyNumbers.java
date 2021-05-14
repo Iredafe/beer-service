@@ -3,7 +3,7 @@ package dafe.springframework.beerservice.dsAndAlgo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution5 {
+public class LuckyNumbers {
 
     public static List<Integer> luckyNumbers(int[][] matrix) {
         //problem statement:
