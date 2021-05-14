@@ -1,6 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-public class Solution7 {
+public class SumOfUnique {
     public static int sumOfUnique(int [] nums){
         //problem statement:
         //input is an array of numbers
