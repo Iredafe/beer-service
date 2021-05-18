@@ -1,6 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-public class Solution8 {
+public class MaxProfit {
 
     public static int maxProfit(int [] prices){
  //problem statement:
