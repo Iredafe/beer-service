@@ -40,9 +40,27 @@ public class GenerateParentheses {
             return (balance ==0);
     }
 
+    public static List<String> generateParenthesis2(int number) {
+
+        List<String> answer = new ArrayList<>();
+        if (number == 0) {
+            answer.add("");
+        } else {
+            for (int i = 0; i < number; i++)
+                for (String left : generateParentheses(i))
+                    for (String right : generateParentheses(number - 1 - i))
+                        answer.add("(" + left + ")" + right);
+        }
+        return answer;
+
+
+    }
+
     public static void main(String[] args) {
         int input = 5;
+        int input2 = 3;
         System.out.println("The output is : " + generateParentheses(input));
+        System.out.println("The output is : " + generateParenthesis2(input2));
     }
 
     }
