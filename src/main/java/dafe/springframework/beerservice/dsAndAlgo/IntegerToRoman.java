@@ -43,6 +43,12 @@ public class IntegerToRoman {
         }
     }
 
+    public static String intToRomanWithHashmap(int input){
+        String result="";
+
+
+        return result;
+    }
     public static void main(String[] args) {
 
         int input = 4;
