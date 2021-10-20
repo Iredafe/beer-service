@@ -20,10 +20,16 @@ public class TwoSum {
  return new int[]{};
     }
 
+    /*
+    {
+  "array": [3, 5, -4, 8, 11, 1, -1, 6],
+  "targetSum": 10
+}
+    */
     public static void main(String[] args) {
-        int test[] = {2,7,11,15};
+        int test[] = {3, 5, -4, 8, 11, 1, -1, 6};
 
-        System.out.println("THese are the two numbers " + twoSum(test, 9) );
+        System.out.println("THese are the two numbers " + twoSum(test, 10) );
     }
 
 
