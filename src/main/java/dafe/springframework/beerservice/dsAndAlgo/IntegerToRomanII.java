@@ -8,7 +8,7 @@ public class IntegerToRomanII {
         String[] code = {"M","CM","D", "CD", "C","XC","L","XL","X","IX","V","IV","I" };
 
         StringBuilder sb = new StringBuilder();
-        for (int i=0; i<intCode.length; i++){
+        for (int i=0; i<intCode.length&& input!=0; i++){
             while (input>=intCode[i]){
                 sb.append(code[i]);
                 input-=intCode[i];
