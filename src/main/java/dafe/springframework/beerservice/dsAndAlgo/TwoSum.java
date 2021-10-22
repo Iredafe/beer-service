@@ -1,6 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSum {
 
@@ -27,6 +29,17 @@ public class TwoSum {
 }
     */
 
+    public static int[] twoSumWithhashmap(int [] nums, int targetSum){
+        Map<Integer,Integer> bucket = new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            int difference = targetSum-nums[i];
+            if(bucket.containsKey(difference)){
+                return new int[]{i, bucket.get(difference)};
+            }
+            bucket.put(nums[i],i);
+        }
+    return new int[0];
+    }
     public static int [] twoSum1(int [] nums, int target){
         for(int i=0; i<nums.length; i++){
             for(int j=i+1; j<nums.length; j++){
@@ -43,6 +56,7 @@ public class TwoSum {
 
         System.out.println("THese are the two numbers " + twoSum(test, 10) );
         System.out.println("THese are the two numbers also:" + twoSum1(test, 10) );
+        System.out.println("THese are the two numbers also:" + twoSumWithhashmap(test, 10) );
     }
 
 
