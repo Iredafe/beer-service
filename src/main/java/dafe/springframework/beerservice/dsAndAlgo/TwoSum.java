@@ -26,10 +26,23 @@ public class TwoSum {
   "targetSum": 10
 }
     */
+
+    public static int [] twoSum1(int [] nums, int target){
+        for(int i=0; i<nums.length; i++){
+            for(int j=i+1; j<nums.length; j++){
+                if(nums[i]+nums[j]==target){
+                    return new int[]{i,j};
+                }
+            }
+        }
+        return new int[0];
+    }
+
     public static void main(String[] args) {
         int test[] = {3, 5, -4, 8, 11, 1, -1, 6};
 
         System.out.println("THese are the two numbers " + twoSum(test, 10) );
+        System.out.println("THese are the two numbers also:" + twoSum1(test, 10) );
     }
 
 
