@@ -6,9 +6,16 @@ import java.util.List;
 public class ValidSubsequence {
 
     public static boolean isValidSubsequence(List<Integer> array, List<Integer> sequence){
-
-
-        return false;
+        int i=0;
+        for (int value: array){
+       if(i== sequence.size()){
+           break;
+       }
+       if(sequence.contains(value)){
+           i++;
+       }
+    }
+        return i==sequence.size();
     }
 
 
