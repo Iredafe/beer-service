@@ -24,15 +24,15 @@ public class SortedSquaredArray {
 
     public static int [] sortedSquaredArray2(int [] array){
         int [] sortedSquareArray = new int[array.length];
-        int i=0, j= array.length-1;
+        int left=0, right= array.length-1;
         for(int index= array.length-1; index>=0; index--){
-        int smallerValue = array[i] , largerValue = array[j];
+        int smallerValue = array[left] , largerValue = array[right];
         if(Math.abs(smallerValue) > Math.abs(largerValue)){
             sortedSquareArray[index]= smallerValue*smallerValue;
-            i++;
+            left++;
         }else{
             sortedSquareArray[index] = largerValue* largerValue;
-            j--;
+            right--;
         }
 
         }
@@ -44,7 +44,7 @@ public class SortedSquaredArray {
 
 
         System.out.println(Arrays.toString(sortedSquaredArray(new int[]{-5, -4, -3, -2, -1})));
-        System.out.println("new sorted array is : " + Arrays.toString(sortedSquaredArray2(new int[]{-5, -4, -3, -2, -1})));
+        System.out.println("new sorted array is : " + Arrays.toString(sortedSquaredArray2(new int[]{-5, -4, -3, -2, -1,1,2,3,4,5})));
   System.out.println(Arrays.toString(sortedSquaredArray(new int[]{1, 2, 3, 5, 6, 8, 9})));
         System.out.println("new sorted array is : " + Arrays.toString(sortedSquaredArray2(new int[]{1, 2, 3, 5, 6, 8, 9})));
     }
