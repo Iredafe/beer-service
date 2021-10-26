@@ -22,12 +22,30 @@ public class SortedSquaredArray {
         return result;
     }
 
+    public static int [] sortedSquaredArray2(int [] array){
+        int [] sortedSquareArray = new int[array.length];
+        int i=0, j= array.length-1;
+        for(int index= array.length-1; index>=0; index--){
+        int smallerValue = array[i] , largerValue = array[j];
+        if(Math.abs(smallerValue) > Math.abs(largerValue)){
+            sortedSquareArray[index]= smallerValue*smallerValue;
+            i++;
+        }else{
+            sortedSquareArray[index] = largerValue* largerValue;
+            j--;
+        }
+
+        }
+
+        return sortedSquareArray;
+    }
+
     public static void main(String[] args) {
-        int input []= {1, 2, 3, 5, 6, 8, 9};
-        int []output =sortedSquaredArray(input);
-        int input1 []= {-5, -4, -3, -2, -1};
-        int []output1 =sortedSquaredArray(input1);
-        System.out.println(Arrays.toString(output));
-        System.out.println(Arrays.toString(output1));
+
+
+        System.out.println(Arrays.toString(sortedSquaredArray(new int[]{-5, -4, -3, -2, -1})));
+        System.out.println("new sorted array is : " + Arrays.toString(sortedSquaredArray2(new int[]{-5, -4, -3, -2, -1})));
+  System.out.println(Arrays.toString(sortedSquaredArray(new int[]{1, 2, 3, 5, 6, 8, 9})));
+        System.out.println("new sorted array is : " + Arrays.toString(sortedSquaredArray2(new int[]{1, 2, 3, 5, 6, 8, 9})));
     }
 }
