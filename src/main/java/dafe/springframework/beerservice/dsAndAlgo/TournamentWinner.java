@@ -5,11 +5,11 @@ import java.util.*;
 public class TournamentWinner {
 
     public static int HOME_TEAM_WON = 1;
-   public static String tournamentWinner(List<List<String>> competitions,ArrayList<Integer> results){
+   public static String tournamentWinner(ArrayList<ArrayList<String>> competitions,ArrayList<Integer> results){
        String currentBestTeam ="";
     Map<String, Integer> scores = new HashMap<>();
-    for(int index=0; index<results.size(); index++){
-        List<String> competition = competitions.get(index);
+    for(int index=0; index< results.size(); index++){
+        ArrayList<String> competition = competitions.get(index);
         scores.put(currentBestTeam, 0);
         int result = results.get(index);
         String homeTeam = competition.get(0);
@@ -35,20 +35,17 @@ public class TournamentWinner {
 
 
     public static void main(String[] args) {
-   List<List<String>> list = Arrays.asList(
-   Arrays.asList("HTML", "C#"),
-    Arrays.asList("C#", "Python"),
-    Arrays.asList("Python", "HTML")
-    );
-
+        ArrayList<ArrayList<String>>  list = new ArrayList<>(Arrays.asList(
+        new ArrayList<>(Arrays.asList("HTML", "C#")),
+        new ArrayList<>(Arrays.asList("C#", "Python")),
+        new ArrayList<>(Arrays.asList("Python", "HTML"))
+        ));
 
         ArrayList<Integer> results = new ArrayList<>();
         results.add(0);
         results.add(0);
         results.add(1);
 
-        System.out.println(tournamentWinner(list, results));
+        System.out.println("The winner of this tournament is : " +tournamentWinner(list, results));
    }
-
-
 }
