@@ -11,7 +11,12 @@ public class TournamentWinner {
        String winner ="";
     Map<String, Integer> scores = new HashMap<>();
     for(int i=0; i<= results.size(); i++){
+        ArrayList<String> competition = competitions.get(i);
         int result = results.get(i);
+        String homeTeam = competition.get(0);
+        String awayTeam = competition.get(1);
+
+        String winningTeam = (result==HOME_TEAM_WON) ? homeTeam:awayTeam;
 
     }
        return winner;
