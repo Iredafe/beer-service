@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class TournamentWinner {
 
-    public int HOME_TEAM_WON = 1;
-   public String tournamentWinner(ArrayList<ArrayList<String>> competitions,ArrayList<Integer> results){
+    public static int HOME_TEAM_WON = 1;
+   public static String tournamentWinner(ArrayList<ArrayList<String>> competitions,ArrayList<Integer> results){
        String winner ="";
     Map<String, Integer> scores = new HashMap<>();
     for(int i=0; i<= results.size(); i++){
@@ -18,8 +18,20 @@ public class TournamentWinner {
 
         String winningTeam = (result==HOME_TEAM_WON) ? homeTeam:awayTeam;
 
+        updateScores(winningTeam, 3, scores);
+        if(scores.get(winner) > scores.get(winningTeam))
+            winner = winningTeam;
     }
        return winner;
+   }
+
+    private static void updateScores(String winningTeam, int points, Map<String, Integer> scores) {
+
+       if(!scores.containsKey(winningTeam)){
+           scores.put(winningTeam, 0);
+       }
+        scores.put(winningTeam, scores.get(winningTeam) +points);
+
    }
 
 }
