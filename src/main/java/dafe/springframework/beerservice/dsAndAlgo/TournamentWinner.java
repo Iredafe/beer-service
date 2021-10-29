@@ -13,6 +13,7 @@ public class TournamentWinner {
     Map<String, Integer> scores = new HashMap<>();
     for(int i=0; i<= results.size(); i++){
         ArrayList<String> competition = competitions.get(i);
+        scores.put(winner, 0);
         int result = results.get(i);
         String homeTeam = competition.get(0);
         String awayTeam = competition.get(1);
@@ -20,18 +21,18 @@ public class TournamentWinner {
         String winningTeam = (result==HOME_TEAM_WON) ? homeTeam:awayTeam;
 
         updateScores(winningTeam, 3, scores);
-        if(scores.get(winner) > scores.get(winningTeam))
+        if(scores.get(winningTeam) > scores.get(winner))
             winner = winningTeam;
     }
        return winner;
    }
 
-    private static void updateScores(String winningTeam, int points, Map<String, Integer> scores) {
+    private static void updateScores(String team, int points, Map<String, Integer> scores) {
 
-       if(!scores.containsKey(winningTeam)){
-           scores.put(winningTeam, 0);
+       if(!scores.containsKey(team)){
+           scores.put(team, 0);
        }
-        scores.put(winningTeam, scores.get(winningTeam) +points);
+        scores.put(team, scores.get(team) +points);
 
    }
     public static void main(String[] args) {
