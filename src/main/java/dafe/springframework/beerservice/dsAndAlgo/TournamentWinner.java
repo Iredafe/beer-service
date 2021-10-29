@@ -9,22 +9,22 @@ public class TournamentWinner {
 
     public static int HOME_TEAM_WON = 1;
    public static String tournamentWinner(ArrayList<ArrayList<String>> competitions,ArrayList<Integer> results){
-       String winner ="";
+       String currentBestTeam ="";
     Map<String, Integer> scores = new HashMap<>();
-    for(int i=0; i<= results.size(); i++){
-        ArrayList<String> competition = competitions.get(i);
-        scores.put(winner, 0);
-        int result = results.get(i);
+    for(int index=0; index<= results.size(); index++){
+        ArrayList<String> competition = competitions.get(index);
+        scores.put(currentBestTeam, 0);
+        int result = results.get(index);
         String homeTeam = competition.get(0);
         String awayTeam = competition.get(1);
 
         String winningTeam = (result==HOME_TEAM_WON) ? homeTeam:awayTeam;
 
         updateScores(winningTeam, 3, scores);
-        if(scores.get(winningTeam) > scores.get(winner))
-            winner = winningTeam;
+        if(scores.get(winningTeam) > scores.get(currentBestTeam))
+            currentBestTeam = winningTeam;
     }
-       return winner;
+       return currentBestTeam;
    }
 
     private static void updateScores(String team, int points, Map<String, Integer> scores) {
