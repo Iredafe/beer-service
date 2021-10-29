@@ -8,7 +8,7 @@ public class TournamentWinner {
    public static String tournamentWinner(List<List<String>> competitions,ArrayList<Integer> results){
        String currentBestTeam ="";
     Map<String, Integer> scores = new HashMap<>();
-    for(int index=0; index<= results.size(); index++){
+    for(int index=0; index<results.size(); index++){
         List<String> competition = competitions.get(index);
         scores.put(currentBestTeam, 0);
         int result = results.get(index);
@@ -35,10 +35,11 @@ public class TournamentWinner {
 
 
     public static void main(String[] args) {
-   List<List<String>> list = new ArrayList<List<String>>();
-   list.add(List.of("HTML", "C#"));
-    list.add(List.of("C#", "Python"));
-    list.add(List.of("Python", "HTML"));
+   List<List<String>> list = Arrays.asList(
+   Arrays.asList("HTML", "C#"),
+    Arrays.asList("C#", "Python"),
+    Arrays.asList("Python", "HTML")
+    );
 
 
         ArrayList<Integer> results = new ArrayList<>();
