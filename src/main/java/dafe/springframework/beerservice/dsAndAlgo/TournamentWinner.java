@@ -35,10 +35,10 @@ public class TournamentWinner {
 
 
     public static void main(String[] args) {
-        ArrayList<ArrayList<String>>  list = new ArrayList<>(Arrays.asList(
-        new ArrayList<>(Arrays.asList("HTML", "C#")),
-        new ArrayList<>(Arrays.asList("C#", "Python")),
-        new ArrayList<>(Arrays.asList("Python", "HTML"))
+        ArrayList<ArrayList<String>>  list = new ArrayList<>(List.of(
+        new ArrayList<>(List.of("HTML", "C#")),
+        new ArrayList<>(List.of("C#", "Python")),
+        new ArrayList<>(List.of("Python", "HTML"))
         ));
 
         ArrayList<Integer> results = new ArrayList<>();
