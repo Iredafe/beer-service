@@ -31,6 +31,7 @@ public class TournamentWinner {
         //this line now makes sense if the score map is not initialized inside the for loop
        if(!scores.containsKey(team)){
            scores.put(team, 0);
+           System.out.println(scores);
        }
         scores.put(team, scores.get(team) +points);
 
