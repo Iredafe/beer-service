@@ -8,9 +8,11 @@ public class TournamentWinner {
    public static String tournamentWinner(ArrayList<ArrayList<String>> competitions,ArrayList<Integer> results){
        String currentBestTeam ="";
     Map<String, Integer> scores = new HashMap<>();
-    for(int index=0; index< results.size(); index++){
+       scores.put(currentBestTeam, 0);
+       System.out.println(scores);
+
+       for(int index=0; index< competitions.size(); index++){
         ArrayList<String> competition = competitions.get(index);
-        scores.put(currentBestTeam, 0);
         int result = results.get(index);
         String homeTeam = competition.get(0);
         String awayTeam = competition.get(1);
@@ -26,6 +28,7 @@ public class TournamentWinner {
 
     private static void updateScores(String team, int points, Map<String, Integer> scores) {
     //this line of code needs more clarity... what if team does not exist in scores but just won 3 points? would we go ahead and put 0 as ?
+        //this line now makes sense if the score map is not initialized inside the for loop
        if(!scores.containsKey(team)){
            scores.put(team, 0);
        }
