@@ -10,13 +10,13 @@ public class NonConstructibleChange {
 //sort input
         Arrays.sort(coins);
         //loop through the sorted input and add the inputs
-     for(int coin:coins){
+     for(int index=0; index<coins.length; index++){
          //if the change + 1 is < a given number in an index, then we cannot make the change, return change+1
-         if(coin> change+1){
+         if((change+1)< coins[index]){
                 change+=1;
-             //if the change is less than or equal to the given number in an index, we can make the change, add the coin to change
-         }else if(coin <= change+1){
-             change+=coin;
+             //if the change is greater than or equal to the given number in an index, we can make the change, add the coin to change
+         }else if((change+1) >= coins[index]){
+             change+=coins[index];
          }
      }
         return change;
