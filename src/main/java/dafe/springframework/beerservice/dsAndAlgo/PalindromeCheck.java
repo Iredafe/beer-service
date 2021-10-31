@@ -9,4 +9,9 @@ public class PalindromeCheck {
 
         return isPalindrome;
     }
+
+    public static void main(String[] args) {
+        String input = "abcdcba";
+        System.out.println("This String is a palindrome : " + isPalindrome(input));
+    }
 }
