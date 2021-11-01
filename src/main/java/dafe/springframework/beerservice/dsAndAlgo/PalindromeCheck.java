@@ -21,6 +21,17 @@ public class PalindromeCheck {
         return str.equals(newString.toString());
     }
 
+    public static boolean isPalindromeUsingPointers(String str){
+        int left = 0, right= str.length()-1;
+        for(int i=0; i<str.length(); i++){
+            while (left<right){
+
+            }
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
         String input = "abcdcba";
         System.out.println("This String is a palindrome : " + isItPalindrome(input));
