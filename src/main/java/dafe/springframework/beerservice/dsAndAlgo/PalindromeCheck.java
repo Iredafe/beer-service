@@ -43,7 +43,7 @@ public class PalindromeCheck {
     }
 
     public static void main(String[] args) {
-        String input = "abcdcb";
-        System.out.println("This String is a palindrome : " + isPalindromeUsingPointers(input));
+        String input = "abcdcba";
+        System.out.println("This String is a palindrome : " + isPalindromeRecursive(input));
     }
 }
