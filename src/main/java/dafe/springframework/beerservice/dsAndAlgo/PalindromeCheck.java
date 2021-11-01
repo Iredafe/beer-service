@@ -33,8 +33,13 @@ public class PalindromeCheck {
         return true;
     }
     public static boolean isPalindromeRecursive(String str){
+      return isPalindromeRecursive(str, 0);
 
-        return true;
+    }
+
+    public static boolean isPalindromeRecursive(String str, int i){
+        int j=str.length()-1 -i;
+        return i >= j? true: str.charAt(i)==str.charAt(j) && isPalindromeRecursive(str,i+1);
     }
 
     public static void main(String[] args) {
