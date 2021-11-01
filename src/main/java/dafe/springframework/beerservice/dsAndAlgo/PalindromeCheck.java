@@ -23,17 +23,18 @@ public class PalindromeCheck {
 
     public static boolean isPalindromeUsingPointers(String str){
         int left = 0, right= str.length()-1;
-        for(int i=0; i<str.length(); i++){
-            while (left<right){
-
+        while(left<right && left!=right){
+            if(str.charAt(left) == str.charAt(right)){
+                return true;
             }
+            left++;
+            right--;
         }
-
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {
-        String input = "abcdcba";
-        System.out.println("This String is a palindrome : " + isItPalindrome(input));
+        String input = "abcdcb";
+        System.out.println("This String is a palindrome : " + isPalindromeUsingPointers(input));
     }
 }
