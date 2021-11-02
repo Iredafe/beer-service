@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class NthFibonacci {
 
     public static int getNthFib(int n){
@@ -13,13 +16,22 @@ public class NthFibonacci {
     }
 
     public static int getNthFibDP(int n){
+        Map<Integer, Integer> memo = new HashMap<>();
+        memo.put(1,0);
+        memo.put(2,1);
+        return getNthFibDP(n, memo);
+    }
 
-        return n;
+    public static int getNthFibDP(int n, Map<Integer, Integer> memo){
+        if (!memo.containsKey(n)) {
+            memo.put(n, getNthFibDP(n - 1, memo) + getNthFibDP(n - 2, memo));
+        }
+        return memo.get(n);
     }
 
     public static void main(String[] args) {
         int n = 6;
-        System.out.println("The Nth fibonacci number is : " + getNthFib(n));
+        System.out.println("The Nth fibonacci number is : " + getNthFibDP(n));
     }
 
 }
