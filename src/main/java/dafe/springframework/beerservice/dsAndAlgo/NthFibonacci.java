@@ -39,12 +39,14 @@ public class NthFibonacci {
         if(n==2) return 1;
         if(n==1) return 0;
 
-        memo[n] = fib(n-1, memo) + fib(n-2, memo);
+        if(memo[n]==0) { //memo[n]==0 simply implies that if fib(n) has not already been computed, compute the value of fib(n), but if it has already been and stored, do not compute again
+            memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
+        }
         return memo[n];
     }
 
     public static void main(String[] args) {
-        int n = 6;
+        int n = 16;
         System.out.println("The Nth fibonacci number is : " + fib(n));
     }
 
