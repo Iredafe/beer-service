@@ -29,19 +29,23 @@ public class NthFibonacci {
         return memo.get(n);
     }
 
-    public static int fib(int n){
+    public static int fib(int n) {
+        int[] memo = new int[n+1];
+        return fib(n, memo);
 
-        return n;
     }
 
-    public static int fib(int n, int[] memo){
+    public static int fib(int n, int [] memo){
+        if(n==2) return 1;
+        if(n==1) return 0;
 
+        memo[n] = fib(n-1, memo) + fib(n-2, memo);
         return memo[n];
     }
 
     public static void main(String[] args) {
         int n = 6;
-        System.out.println("The Nth fibonacci number is : " + getNthFibDP(n));
+        System.out.println("The Nth fibonacci number is : " + fib(n));
     }
 
 }
