@@ -29,6 +29,16 @@ public class NthFibonacci {
         return memo.get(n);
     }
 
+    public static int fib(int n){
+
+        return n;
+    }
+
+    public static int fib(int n, int[] memo){
+
+        return memo[n];
+    }
+
     public static void main(String[] args) {
         int n = 6;
         System.out.println("The Nth fibonacci number is : " + getNthFibDP(n));
