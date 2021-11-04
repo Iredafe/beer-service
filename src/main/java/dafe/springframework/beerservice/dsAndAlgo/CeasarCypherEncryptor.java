@@ -2,11 +2,17 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 public class CeasarCypherEncryptor {
     public static String caesarCypherEncryptor(String str, int key){
-        char[] newString = new char[str.length()];
-        for(int i=0; i< newString.length; i++){
-
+        char[] newLetters = new char[str.length()];
+        int newKey = key%26;
+        for(int i=0; i< str.length(); i++){
+             newLetters[i] = getNewLetter(str.charAt(i), newKey);
         }
-        return "";
+        return new String(newLetters);
+    }
+
+    private static char getNewLetter(char letter, int key) {
+        int newLetterCode = letter + key;
+        return newLetterCode<=122? (char)newLetterCode: (char)(96+ newLetterCode%122);
     }
 
 
