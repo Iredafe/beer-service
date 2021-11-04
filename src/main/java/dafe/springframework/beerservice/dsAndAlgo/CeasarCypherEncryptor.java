@@ -17,6 +17,16 @@ public class CeasarCypherEncryptor {
     }
 
 
+    public static String caesarCypherEncryptor2(String str, int key){
+
+        return new String("");
+    }
+
+    public static char getNewLetter2(char letter, int key, String alphabet){
+        int newLetterCode = alphabet.indexOf(letter) + key;
+        return alphabet.charAt(newLetterCode%26);
+    }
+
     public static void main(String[] args) {
         String str="xyz";
         int key =2;
