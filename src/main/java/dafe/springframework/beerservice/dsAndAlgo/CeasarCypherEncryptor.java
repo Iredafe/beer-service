@@ -1,2 +1,4 @@
-package dafe.springframework.beerservice.dsAndAlgo;public class CeasarCypherEncryptor {
+package dafe.springframework.beerservice.dsAndAlgo;
+
+public class CeasarCypherEncryptor {
 }
