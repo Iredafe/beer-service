@@ -18,8 +18,13 @@ public class CeasarCypherEncryptor {
 
 
     public static String caesarCypherEncryptor2(String str, int key){
-
-        return new String("");
+        int newKey = key%26;
+        char[] newLetters = new char[str.length()];
+        String alphabet ="abcdefghijklmnopqrstuvwxyz";
+        for(int i=0; i<str.length(); i++){
+            newLetters[i] = getNewLetter2(str.charAt(i), newKey, alphabet);
+        }
+        return new String(newLetters);
     }
 
     public static char getNewLetter2(char letter, int key, String alphabet){
@@ -31,5 +36,6 @@ public class CeasarCypherEncryptor {
         String str="xyz";
         int key =2;
         System.out.println("This is the new string : " + caesarCypherEncryptor(str, key));
+        System.out.println("This is the new string 2 : " + caesarCypherEncryptor2(str, key));
     }
 }
