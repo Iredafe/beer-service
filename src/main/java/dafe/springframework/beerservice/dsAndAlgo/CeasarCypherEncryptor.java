@@ -12,6 +12,7 @@ public class CeasarCypherEncryptor {
 
     private static char getNewLetter(char letter, int key) {
         int newLetterCode = letter + key;
+        System.out.println("new letter code : " + newLetterCode);
         return newLetterCode<=122? (char)newLetterCode: (char)(96+ newLetterCode%122);
     }
 
