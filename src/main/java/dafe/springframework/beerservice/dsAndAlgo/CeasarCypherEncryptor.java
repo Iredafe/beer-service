@@ -1,6 +1,12 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 public class CeasarCypherEncryptor {
+    //create a variable for new letter/string
+    //create a new key in case the key is larger than 26, this will help slash the key
+    //loop through each letter and convert it to unicode with char data type
+    //after converting to unicode, add it to the new string variable
+    //create a method to do the conversion/calculation logic
+
     public static String caesarCypherEncryptor(String str, int key){
         char[] newLetters = new char[str.length()];
         int newKey = key%26;
