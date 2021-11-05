@@ -35,6 +35,24 @@ public class NthFibonacci {
         return memo[n];
     }
 
+    public static int fibWithIterativeSoln(int n){
+
+        int [] lastTwo = {0,1};
+        int counter = 3;
+        if(n==1)return 0;
+        if(n==2) return 1;
+
+        while (counter<=n){
+            int nextFib = lastTwo[0] + lastTwo[1];
+            lastTwo[0]= lastTwo[1];
+            lastTwo[1]= nextFib;
+            counter++;
+        }
+        return lastTwo[1];
+    }
+
+
+
     public static int getNthFibWithoutTabulization(int n){
     int [] lastTwo = {0,1};
     int counter = 3;
@@ -71,6 +89,7 @@ public class NthFibonacci {
         int n = 16;
         System.out.println("The Nth fibonacci number is : " + getNthFibWithoutTabulization(n));
         System.out.println("The Nth fibonacci number is : " + getNthFibDP(n));
+        System.out.println("The Nth fibonacci number is : " + fibWithIterativeSoln(n));
          }
 
 }
