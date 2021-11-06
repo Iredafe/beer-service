@@ -4,15 +4,17 @@ public class RunLengthEncoding {
 
     public static String runLengthEncoding(String string){
     char [] storage = new char[string.length()];
+    String store = "";
     int stringLength = 1;
-    for(int i=0; i<string.length(); i++){
+    for(int i=0; i<string.length()-1; i++){
         if(string.charAt(i) == string.charAt(i+1) && stringLength < 9){
             stringLength++;
         }else{
-           // storage[i] = stringLength + "" + string.charAt(i);
+            store += stringLength + "" + string.charAt(i);
+            stringLength=1;
         }
     }
-        return new String(storage);
+        return store;
     }
 
 
