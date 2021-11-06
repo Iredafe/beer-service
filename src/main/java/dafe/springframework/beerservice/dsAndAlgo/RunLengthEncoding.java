@@ -3,8 +3,16 @@ package dafe.springframework.beerservice.dsAndAlgo;
 public class RunLengthEncoding {
 
     public static String runLengthEncoding(String string){
-
-        return "";
+    char [] storage = new char[string.length()];
+    int stringLength = 1;
+    for(int i=0; i<string.length(); i++){
+        if(string.charAt(i) == string.charAt(i+1)){
+            stringLength++;
+        }else{
+           // storage[i] = stringLength + "" + string.charAt(i);
+        }
+    }
+        return new String(storage);
     }
 
 

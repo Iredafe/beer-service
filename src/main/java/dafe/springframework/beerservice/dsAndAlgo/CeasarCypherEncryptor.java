@@ -17,7 +17,9 @@ public class CeasarCypherEncryptor {
     }
 
     private static char getNewLetter(char letter, int key) {
+        System.out.println("letter before variable newLetterCode : " +letter);
         int newLetterCode = letter + key;
+        System.out.println("letter after variable : " + letter);
         System.out.println("new letter code : " + newLetterCode);
         return newLetterCode<=122? (char)newLetterCode: (char)(96+ newLetterCode%122);
     }
@@ -29,6 +31,7 @@ public class CeasarCypherEncryptor {
         String alphabet ="abcdefghijklmnopqrstuvwxyz";
         for(int i=0; i<str.length(); i++){
             newLetters[i] = getNewLetter2(str.charAt(i), newKey, alphabet);
+            System.out.println("char At : " + str.charAt(i));
         }
         return new String(newLetters);
     }
