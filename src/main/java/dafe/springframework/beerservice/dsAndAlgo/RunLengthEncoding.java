@@ -9,6 +9,7 @@ public class RunLengthEncoding {
 
 
     public static void main(String[] args) {
-
+        String input = runLengthEncoding("AAAAAAAAAAAAABBCCCCDD");
+        System.out.println("This is the run length encoding of the string : " + input);
     }
 }
