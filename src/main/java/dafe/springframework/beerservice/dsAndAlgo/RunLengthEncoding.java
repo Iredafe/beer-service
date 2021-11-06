@@ -6,7 +6,7 @@ public class RunLengthEncoding {
     char [] storage = new char[string.length()];
     int stringLength = 1;
     for(int i=0; i<string.length(); i++){
-        if(string.charAt(i) == string.charAt(i+1)){
+        if(string.charAt(i) == string.charAt(i+1) && stringLength < 9){
             stringLength++;
         }else{
            // storage[i] = stringLength + "" + string.charAt(i);
