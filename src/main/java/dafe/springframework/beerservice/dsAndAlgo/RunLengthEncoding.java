@@ -13,6 +13,8 @@ public class RunLengthEncoding {
             stringLength=1;
         }
     }
+    store.append(stringLength);
+    store.append(string.charAt(string.length()-1));
         return store.toString();
     }
 
