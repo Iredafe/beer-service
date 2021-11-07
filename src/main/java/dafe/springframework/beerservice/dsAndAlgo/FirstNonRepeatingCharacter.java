@@ -4,25 +4,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FirstNonRepeatingCharacter {
-//
-//    public static int firstNonRepeatingCharacter(String string){
-//
-//        char [] arr = string.toCharArray();
-//        boolean isDuplicate = true;
-//        for(int index=0; index<arr.length; index++){
-//            for(int index2=arr.length-1; index2>0; index2--){
-//                if(arr[index] != arr[index2] && index != index2){
-//                    index2--;
-//                    isDuplicate= false;
-//                }
-//                index++;
-//            }
-//
-//            if(isDuplicate==true) return index;
-//        }
-//
-//        return -1;
-//    }
+
+    public static int firstNonRepeatingCharacter(String string){
+        for(int index=0; index<string.length(); index++){
+            boolean isDuplicate = false;
+            for(int index2=0; index2<string.length(); index2++){
+                if(string.charAt(index) == string.charAt(index2) && index != index2){
+                    isDuplicate=true;
+                }
+            }
+            if(!isDuplicate) return index;
+        }
+
+        return -1;
+    }
 
     public static int firstNonRepeatingCharacterHashTable(String string){
         Map<Character, Integer> bucket = new HashMap<>();
@@ -43,7 +38,7 @@ public class FirstNonRepeatingCharacter {
     public static void main(String[] args) {
 
         String input="aadabcbbebdf";
-       // System.out.println("This is the index of first non- repeating character : " + firstNonRepeatingCharacter(input));
+        System.out.println("This is the index of first non- repeating character : " + firstNonRepeatingCharacter(input));
         System.out.println("This is the index of first non-repeating character : " + firstNonRepeatingCharacterHashTable(input));
     }
 }
