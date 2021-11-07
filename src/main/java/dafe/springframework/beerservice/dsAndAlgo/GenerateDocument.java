@@ -54,11 +54,27 @@ public class GenerateDocument {
 return frequency;
     }
 
+    //this solution is not working yet!! revisit
+    public static boolean generateDocument1(String characters, String document){
+
+        for(int characterIndex = 0; characterIndex< characters.length(); characterIndex++){
+            for(int documentIndex = 0; documentIndex< characters.length(); documentIndex++){
+
+                if(characters.charAt(characterIndex) != document.charAt(documentIndex) ){
+                    documentIndex++;
+                }
+
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
 
         String input = "Bste!hetsi ogEAxpelrt x ";
         String doc =  "AlgoExpert is the Best!";
         System.out.println(" The document can be generated : " + generateDoc(input, doc));
         System.out.println(" The document can be generated : " + generateDocument(input, doc));
+        System.out.println(" The document can be generated 1 : " + generateDocument1(input, doc));
     }
 }
