@@ -16,7 +16,7 @@ public class GenerateDocument {
         for(int i=0; i<characters.length(); i++){
             char currentCharacter =characters.charAt(i);
             characterMap.put(currentCharacter, characterMap.getOrDefault(currentCharacter, 0)+1);
-
+            System.out.println("This is the character map : " + characterMap);
         }
 
         for (int i=0; i<document.length(); i++){
@@ -25,15 +25,40 @@ public class GenerateDocument {
                 return false;
             }
             characterMap.put(documentCurrentCharacter, characterMap.get(documentCurrentCharacter)-1);
+            System.out.println("This is the character map after second loop: " + characterMap);
         }
         return true;
     }
 
+    public static boolean generateDocument(String characters, String document){
+        for(int index=0; index< document.length(); index++){
+            char character = document.charAt(index);
+            int documentFrequency = countCharacterFrequency(character, document);
+            int characterFrequency = countCharacterFrequency(character, characters);
+            if(documentFrequency>characterFrequency){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private static int countCharacterFrequency(char character, String target) {
+        int frequency = 0;
+        for(int index=0; index< target.length(); index++){
+            char c = target.charAt(index);
+            if(c==character){
+                frequency +=1;
+            }
+        }
+return frequency;
+    }
 
     public static void main(String[] args) {
 
-        String input = "Bste!hetsi ogEAxpelrt ";
+        String input = "Bste!hetsi ogEAxpelrt x ";
         String doc =  "AlgoExpert is the Best!";
         System.out.println(" The document can be generated : " + generateDoc(input, doc));
+        System.out.println(" The document can be generated : " + generateDocument(input, doc));
     }
 }
