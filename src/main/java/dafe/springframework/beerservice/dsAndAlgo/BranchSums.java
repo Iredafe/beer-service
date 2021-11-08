@@ -19,7 +19,20 @@ public class BranchSums {
     }
 
     public static List<Integer> branchSums(BinaryTree root){
+    List<Integer> sums = new ArrayList<>();
+    calculateBranchSums(root, 0, sums);
+        return sums;
+    }
 
-        return new ArrayList<Integer>();
+    private static void calculateBranchSums(BinaryTree node, int runningSum, List<Integer> sums) {
+     if(node==null) return;;
+     int newRunningSum = runningSum + node.value;
+     if(node.left == null && node.right==null){
+         sums.add(newRunningSum);
+         return;
+     }
+
+     calculateBranchSums(node.left, newRunningSum, sums);
+     calculateBranchSums(node.right, newRunningSum, sums);
     }
 }
