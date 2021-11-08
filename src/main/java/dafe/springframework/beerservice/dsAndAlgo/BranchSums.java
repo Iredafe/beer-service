@@ -18,7 +18,7 @@ public class BranchSums {
     }
     }
 
-    public static List<Integer> branchSums(BinaryTree){
+    public static List<Integer> branchSums(BinaryTree root){
 
         return new ArrayList<Integer>();
     }
