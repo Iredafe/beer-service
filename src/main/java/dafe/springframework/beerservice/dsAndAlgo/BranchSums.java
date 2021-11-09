@@ -35,4 +35,8 @@ public class BranchSums {
      calculateBranchSums(node.left, newRunningSum, sums);
      calculateBranchSums(node.right, newRunningSum, sums);
     }
+
+    public static void main(String[] args) {
+
+    }
 }
