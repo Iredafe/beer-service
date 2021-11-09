@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import org.springframework.boot.actuate.endpoint.web.Link;
+
 public class RemoveDuplicatesFromLinkedList {
 
     public static class LinkedList{
@@ -10,5 +12,10 @@ public class RemoveDuplicatesFromLinkedList {
             this.value=value;
             this.next = null;
         }
+    }
+
+    public LinkedList removeDuplicatesFromLinkedList(LinkedList linkedList){
+
+        return null;
     }
 }
