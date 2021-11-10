@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NodeDepths {
 
     public static class BinaryTree{
@@ -9,5 +12,11 @@ public class NodeDepths {
             this.left=null;
             this.right=null;
         }
+    }
+
+    public static List<Integer> NodeDepth(BinaryTree root){
+        List<Integer> sumOfDepths = new ArrayList<>();
+
+        return sumOfDepths;
     }
 }
