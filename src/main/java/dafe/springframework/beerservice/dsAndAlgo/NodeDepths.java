@@ -14,9 +14,13 @@ public class NodeDepths {
         }
     }
 
-    public static List<Integer> NodeDepth(BinaryTree root){
-        List<Integer> sumOfDepths = new ArrayList<>();
+    public static int NodeDepth(BinaryTree root){
+        return nodeDepthHelper(root, 0);
+    }
 
-        return sumOfDepths;
+
+    public static int nodeDepthHelper(BinaryTree node , int depth){
+        if(node==null) return 0;
+        return depth+ nodeDepthHelper(node.left , depth+1) + nodeDepthHelper(node.right,depth+1);
     }
 }
