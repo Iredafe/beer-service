@@ -1,6 +1,5 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +36,15 @@ public class BranchSums {
     }
 
     public static void main(String[] args) {
+        System.out.println("The branch sum is : ");
+
+
+      BranchSums tree = new BranchSums();
+
+        BinaryTree root = new BinaryTree(1);
+
+
+
 
     }
 }
