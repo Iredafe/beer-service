@@ -16,6 +16,16 @@ public class RemoveDuplicatesFromLinkedList {
 
     public static LinkedList removeDuplicatesFromLinkedList(LinkedList linkedList){
 
-        return null;
+        LinkedList currentNode = linkedList;
+        while(currentNode!=null){
+            LinkedList nextDistinctNode = currentNode.next;
+            while(nextDistinctNode.value ==currentNode.value && nextDistinctNode!=null){
+                nextDistinctNode = nextDistinctNode.next;
+            }
+            currentNode.next = nextDistinctNode;
+            currentNode=nextDistinctNode;
+
+        }
+        return linkedList;
     }
 }
