@@ -14,7 +14,7 @@ public class RemoveDuplicatesFromLinkedList {
         }
     }
 
-    public LinkedList removeDuplicatesFromLinkedList(LinkedList linkedList){
+    public static LinkedList removeDuplicatesFromLinkedList(LinkedList linkedList){
 
         return null;
     }
