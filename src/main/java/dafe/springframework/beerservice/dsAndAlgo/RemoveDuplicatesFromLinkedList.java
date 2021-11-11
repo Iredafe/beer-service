@@ -27,6 +27,16 @@ public class RemoveDuplicatesFromLinkedList {
     head = newNode;
     }
 
+    //function to print linkedlist
+    void printList(){
+        LinkedList temp = head;
+        while(temp!=null){
+            System.out.println(temp.value + " ");
+            temp=temp.next;
+        }
+        System.out.println();
+    }
+
     public static LinkedList removeDuplicatesFromLinkedList(LinkedList linkedList){
 
         LinkedList currentNode = linkedList;
