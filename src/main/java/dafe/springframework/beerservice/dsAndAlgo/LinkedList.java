@@ -12,14 +12,20 @@ public class LinkedList{
     }
 
     static Node removeDuplicatesFromLinkedList(Node head){
+        //another reference to head
         Node currentNode = head;
+
+        //traverse list till the last node which will be null
         while(currentNode!=null){
             Node nextDistinctNode = currentNode.next;
-            while(nextDistinctNode!=null && nextDistinctNode.value ==currentNode.value){
+            //compare current node with the next node and keep deleting them until it matches the current node data
+            while(nextDistinctNode!=null && currentNode.value==nextDistinctNode.value){
                 nextDistinctNode = nextDistinctNode.next;
             }
+
+            //set current node next to the next distinct element denoted by nextDistinctNode
             currentNode.next = nextDistinctNode;
-            currentNode=nextDistinctNode;
+            currentNode=currentNode.next;
 
         }
         return head;
