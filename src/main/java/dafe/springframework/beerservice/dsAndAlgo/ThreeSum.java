@@ -11,7 +11,10 @@ public class ThreeSum {
 
         //create two pointers - left and right
         //set your index at a number and move th pointers while adding the numbers in each pointer
-        //if these numbers are equal to the target, add them into an array and add the array to the List.
+        //if these numbers are equal to the target, add them into an array and add the array to the List,
+        // increment left and decrement right.
+        //if the sum is greater than the target, decrement right pointer
+        //if the sum is less than target, increment left pointer
         int left = 1, right = array.length-1;
         List <Integer[]> result = new ArrayList<>();
         Arrays.sort(array);
