@@ -3,6 +3,7 @@ package dafe.springframework.beerservice.dsAndAlgo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ThreeSum {
 
@@ -14,16 +15,17 @@ public class ThreeSum {
         int left = 1, right = array.length-1;
         List <Integer[]> result = new ArrayList<>();
         Arrays.sort(array);
+        for(int index=0; index<array.length-3; index++){
         while (left<right){
-            for(int index=0; index<array.length-3; index++){
+
                 int currentSum = array[left] + array[right] + array[index] ;
-               left++;
-               right--;
                 if(currentSum==target){
                     Integer[] triplets = new Integer[]{array[index], array[left],array[right]};
                     result.add(triplets);
-                } else if(currentSum > target) left++;
-                else if(currentSum<target) right--;
+                    left++;
+                    right--;
+                } else if(currentSum < target) left++;
+                else if(currentSum>target) right--;
             }
         }
 
@@ -31,9 +33,10 @@ public class ThreeSum {
     }
 
     public static void main(String[] args) {
-        int array[] = {12, 3, 1, 2, -6, 5, -8, 6};
+        int array[] = new int[]{12, 3, 1, 2, -6, 5, -8, 6};
         int target = 0;
-
-        System.out.println("The three number sums are : " + threeNumberSum(array,target));
+        List<Integer[]> result =threeNumberSum(array,target);
+        String newResult = result.toString();
+        System.out.println("The three number sums are : " + newResult);
     }
 }
