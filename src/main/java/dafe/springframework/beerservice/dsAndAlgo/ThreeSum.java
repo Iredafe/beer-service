@@ -22,8 +22,8 @@ public class ThreeSum {
                 if(currentSum==target){
                     Integer[] triplets = new Integer[]{array[index], array[left],array[right]};
                     result.add(triplets);
-                } else if(currentSum > array[left]) left++;
-                else if(currentSum<array[right]) right--;
+                } else if(currentSum > target) left++;
+                else if(currentSum<target) right--;
             }
         }
 
@@ -31,7 +31,9 @@ public class ThreeSum {
     }
 
     public static void main(String[] args) {
+        int array[] = {12, 3, 1, 2, -6, 5, -8, 6};
+        int target = 0;
 
-        System.out.println();
+        System.out.println("The three number sums are : " + threeNumberSum(array,target));
     }
 }
