@@ -1,6 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-public class LinkedList{
+public class RemoveDuplicatesFromLinkedList {
     static Node head;
     static class  Node{
         int value;
@@ -42,7 +42,7 @@ public class LinkedList{
     }
     // Driver Code
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        RemoveDuplicatesFromLinkedList list = new RemoveDuplicatesFromLinkedList();
 
         list.head = new Node(20);
         list.head.next = new Node(13);
