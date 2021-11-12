@@ -21,6 +21,9 @@ public class LinkedList{
             //compare current node with the next node and keep deleting them until it matches the current node data
             while(nextDistinctNode!=null && currentNode.value==nextDistinctNode.value){
                 nextDistinctNode = nextDistinctNode.next;
+                //remember that currentNode = head
+                //remember that nextDistinctNode is currentNode.next or head.next
+                //that means nextDistinctNode.next = currentNode.next.next or head.next.next
             }
 
             //set current node next to the next distinct element denoted by nextDistinctNode
