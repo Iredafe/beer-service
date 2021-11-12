@@ -30,19 +30,14 @@ public class LinkedList{
         }
         return head;
     }
-
-    public static void push(int new_value){
-        Node new_node = new Node(new_value);
-        new_node.next = head;
-        head = new_node;
-    }
-
+    // prints content of linked list
     static void printList(Node node){
         while (node != null) {
             System.out.print(node.value + " ");
             node = node.next;
         }
     }
+    // Driver Code
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
 
