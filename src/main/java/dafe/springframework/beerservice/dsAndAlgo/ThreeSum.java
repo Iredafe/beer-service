@@ -18,7 +18,7 @@ public class ThreeSum {
         int left = 1, right = array.length-1;
         List <Integer[]> result = new ArrayList<>();
         Arrays.sort(array);
-        for(int index=0; index<array.length-3; index++){
+        for(int index=0; index<array.length-2; index++){
         while (left<right){
 
                 int currentSum = array[left] + array[right] + array[index] ;
