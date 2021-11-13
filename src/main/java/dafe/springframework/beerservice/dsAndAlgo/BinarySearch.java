@@ -7,6 +7,7 @@ public class BinarySearch {
       return binarySearchHelper(array, target, 0, array.length-1);
     }
 
+    //O(log(n)) time and O(1) space
     private static int binarySearchHelper(int[] array, int target, int left, int right) {
         while(left<=right){
             int mid=(right+left)/2;
@@ -26,11 +27,33 @@ public class BinarySearch {
         return -1;
     }
 
+    //O(log(n)) time and O(log(n)) space
+     public static int binarySearchRecursive(int[] array, int target){
+
+        return binarySearchRecursiveHelper(array, target, 0, array.length-1);
+    }
+
+    public static int binarySearchRecursiveHelper(int [] array, int target, int left, int right){
+        while(left<=right){
+            int middle = (left+right)/2;
+            int searchResult = array[middle];
+            if(target==searchResult) return middle;
+            else if(target < searchResult){
+                middle=right-1;
+                return binarySearchRecursiveHelper(array,target, left, middle);
+            }else if(target>searchResult){
+                middle=left+1;
+                return binarySearchRecursiveHelper(array,target,middle,right);
+            }
+        }
+        return -1;
+    }
 
     public static void main(String[] args) {
         int [] input = {0, 1, 21, 33, 45, 45, 61, 71, 72, 73};
         int target = 33;
 
         System.out.println("The index for the number you searched for is : " + binarySearch(input, target));
+        System.out.println("The index for the number you searched for is : " + binarySearchRecursive(input, target));
     }
 }
