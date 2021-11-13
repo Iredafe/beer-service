@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BranchSums {
-
+    static BinaryTree root;
     public static class BinaryTree{
     int value;
     BinaryTree left;
@@ -42,8 +42,15 @@ public class BranchSums {
 
 
       BranchSums tree = new BranchSums();
+      tree.root = new BinaryTree(1);
+      tree.root.left = new BinaryTree(2);
+      tree.root.right = new BinaryTree(3);
+      tree.root.left.left = new BinaryTree(4);
+      tree.root.left.right = new BinaryTree(5);
+      tree.root.right.left = new BinaryTree(6);
+      tree.root.right.right=new BinaryTree(7);
 
-        BinaryTree root = new BinaryTree(1);
+
 
 
 
