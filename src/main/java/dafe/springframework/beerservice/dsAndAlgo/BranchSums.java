@@ -51,7 +51,7 @@ public class BranchSums {
       tree.root.left.left.right = new BinaryTree(9);
       tree.root.left.right.left = new BinaryTree(10);
 
-        System.out.println("The branch sum is : " + tree.branchSums(tree.root));
+        System.out.println("The branch sum is : " + tree.branchSums(root));
 
 
 
