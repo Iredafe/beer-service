@@ -39,11 +39,9 @@ public class BinarySearch {
             int searchResult = array[middle];
             if(target==searchResult) return middle;
             else if(target < searchResult){
-                middle=right-1;
-                return binarySearchRecursiveHelper(array,target, left, middle);
+                return binarySearchRecursiveHelper(array,target, left, middle-1);
             }else if(target>searchResult){
-                middle=left+1;
-                return binarySearchRecursiveHelper(array,target,middle,right);
+                return binarySearchRecursiveHelper(array,target,middle+1,right);
             }
         }
         return -1;
