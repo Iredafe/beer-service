@@ -38,8 +38,6 @@ public class BranchSums {
     }
 
     public static void main(String[] args) {
-        System.out.println("The branch sum is : ");
-
 
       BranchSums tree = new BranchSums();
       tree.root = new BinaryTree(1);
@@ -49,6 +47,11 @@ public class BranchSums {
       tree.root.left.right = new BinaryTree(5);
       tree.root.right.left = new BinaryTree(6);
       tree.root.right.right=new BinaryTree(7);
+      tree.root.left.left.left = new BinaryTree(8);
+      tree.root.left.left.right = new BinaryTree(9);
+      tree.root.left.right.left = new BinaryTree(10);
+
+        System.out.println("The branch sum is : " + tree.branchSums(tree.root));
 
 
 
