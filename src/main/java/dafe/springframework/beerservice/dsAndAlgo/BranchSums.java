@@ -26,11 +26,13 @@ public class BranchSums {
     private static void calculateBranchSums(BinaryTree node, int runningSum, List<Integer> sums) {
      if(node==null) return;;
      int newRunningSum = runningSum + node.value;
+     //check if the left and right nodes has no children, add the sum at the leaf nodes to the list
      if(node.left == null && node.right==null){
          sums.add(newRunningSum);
          return;
      }
 
+     //but if the nodes have children, calculate the sum recursively
      calculateBranchSums(node.left, newRunningSum, sums);
      calculateBranchSums(node.right, newRunningSum, sums);
     }
