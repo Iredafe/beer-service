@@ -1,7 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 public class FindClosestValueOfBST {
-    static BST tree;
+    static BST root;
     static class BST{
         public int value;
         BST left, right;
@@ -27,4 +27,23 @@ public class FindClosestValueOfBST {
     return closest;
     }
 
+
+    public static void main(String[] args) {
+
+        FindClosestValueOfBST node = new FindClosestValueOfBST();
+        node.root = new BST(10);
+        node.root.left = new BST(5);
+        node.root.right = new BST(15);
+        node.root.left.left=new BST(2);
+        node.root.left.right= new BST(5);
+        node.root.right.left = new BST(13);
+        node.root.right.right = new BST(22);
+        node.root.left.left.left=new BST(1);
+        node.root.right.left.right = new BST(14);
+
+
+       int result = node.findClosestValueInBstRecursive(root, 14);
+        System.out.println("The closest value in BST is : " + result);
+
+    }
 }
