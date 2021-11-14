@@ -17,6 +17,7 @@ public class FindClosestValueOfBST {
 
     public static int findClosestValueInBstRecursiveHelper(BST tree, int target, int closest){
         if(tree == null) return closest;
+        //tree.value represents the current node
         else if(Math.abs(target-closest) > Math.abs(target-tree.value)){
             closest=tree.value;
         }else if(target< tree.value && tree.left!=null){
