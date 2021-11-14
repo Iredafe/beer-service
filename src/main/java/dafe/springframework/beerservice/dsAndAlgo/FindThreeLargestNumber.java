@@ -7,8 +7,8 @@ public class FindThreeLargestNumber {
     public static int[] findThreeSum(int [] array){
 
         int [] result = {Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
-        for(int index=0; index<array.length; index++){
-            updateLargestNumber(result, array[index]);
+        for(int number : array){
+            updateLargestNumber(result, number);
         }
         return result;
     }
@@ -16,9 +16,9 @@ public class FindThreeLargestNumber {
     private static void updateLargestNumber(int[] result, int number) {
         if(number > result[2]){
             shiftAndUpdate(result, number, 2);
-        }else if(number > 1){
+        }else if(number > result[1]){
             shiftAndUpdate(result, number, 1);
-        }else if(number > 0){
+        }else if(number > result[0]){
             shiftAndUpdate(result, number, 0);
         }
     }
