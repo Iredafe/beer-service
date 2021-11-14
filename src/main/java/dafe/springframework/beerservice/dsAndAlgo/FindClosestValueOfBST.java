@@ -27,7 +27,26 @@ public class FindClosestValueOfBST {
         }
     return closest;
     }
+    public static int findClosestValueInBstIterative(BST tree, int target){
 
+        return findClosestValueInBstRecursiveHelper(tree, target, tree.value);
+    }
+    public static int findClosestValueInBstIteratively(BST tree, int target, int closest){
+        BST currentNode = tree;
+        while(currentNode!=null){
+            if(Math.abs(target-closest) > Math.abs(target-currentNode.value)){
+                closest=currentNode.value;
+            }
+            if(target<currentNode.value && currentNode.left !=null){
+                currentNode=currentNode.left;
+            }else if(target>currentNode.value && currentNode.right !=null){
+                currentNode=currentNode.right;
+            }else{
+                break;
+            }
+        }
+    return closest;
+    }
 
     public static void main(String[] args) {
 
@@ -44,7 +63,8 @@ public class FindClosestValueOfBST {
 
 
        int result = node.findClosestValueInBstRecursive(root, 14);
-        System.out.println("The closest value in BST is : " + result);
-
+        int result1 = node.findClosestValueInBstIterative(root, 14);
+       System.out.println("The closest value in BST is : " + result);
+        System.out.println("The closest value in BST is : " + result1);
     }
 }
