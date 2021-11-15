@@ -5,10 +5,22 @@ import java.util.Arrays;
 public class SelectionSort {
 
     public static int[] selectionSort(int[] array){
-
-
-
+        for(int firstIndex=0; firstIndex<array.length; firstIndex++){
+            int minimum  = firstIndex;
+            for(int secondIndex = firstIndex+1; secondIndex< array.length; secondIndex++){
+                if(array[secondIndex] < array[minimum]){
+                    minimum=secondIndex;
+                }
+                swap(array, firstIndex, minimum);
+            }
+        }
         return array;
+    }
+
+    private static void swap(int[] array, int index, int minimum) {
+        int temp = array[index];
+        array[index] = array[minimum];
+        array[minimum] = temp;
     }
 
 
