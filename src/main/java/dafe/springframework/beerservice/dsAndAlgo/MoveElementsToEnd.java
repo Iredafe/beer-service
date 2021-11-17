@@ -30,6 +30,31 @@ public static List<Integer> moveElement(List<Integer> array, int target){
     array.set(i, temp);
     }
 
+
+    public static int[] moveElement(int [] array, int target){
+        int left = 0;
+        int right = array.length-1;
+
+        while(left < right){
+
+            if(array[right] == target) {
+                right--;
+            }else if(array[left] == target){
+                swap(array, left, right);
+            }else{
+                left++;
+            }
+        }
+        return array;
+    }
+
+    private static void swap(int[] array, int i, int j) {
+
+        int temp = array[j];
+        array[j] = array[i];
+        array[i] = temp;
+    }
+
     public static void main(String[] args) {
 //2, 1, 2, 2, 2, 3, 4, 2
         //5, 5, 5, 5, 5, 5, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12
@@ -53,9 +78,11 @@ public static List<Integer> moveElement(List<Integer> array, int target){
         inputArray.add(12);
 
         int toMove = 5;
-
+int [] input = {5, 5, 5, 5, 5, 5, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12};
         List<Integer> result = moveElement(inputArray, toMove);
+        int [] result1 = moveElement(input, toMove);
         System.out.println("This is the array after moving " +toMove+ " to the end : " + result);
+        System.out.println("This is the array after moving " +toMove+ " to the end : " + Arrays.toString(result1));
     }
 
 }
