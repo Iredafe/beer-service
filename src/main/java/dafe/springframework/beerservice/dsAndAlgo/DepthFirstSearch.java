@@ -35,7 +35,7 @@ public class DepthFirstSearch {
         node.addChild("C");
 
 
-        System.out.println(node.depthFirstSearch());
+     //   System.out.println(node.depthFirstSearch());
 
     }
 }
