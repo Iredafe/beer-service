@@ -12,9 +12,10 @@ public static List<Integer> moveElement(List<Integer> array, int target){
 
         while(left < right){
 
-            if(left<right && array.get(right) == target) right--;
-            else if(array.get(left) == target){
-            swap(array, left, right);
+            if(array.get(right) == target) {
+                right--;
+            }else if(array.get(left) == target){
+                swap(array, left, right);
             }else{
                 left++;
                 }
@@ -31,17 +32,27 @@ public static List<Integer> moveElement(List<Integer> array, int target){
 
     public static void main(String[] args) {
 //2, 1, 2, 2, 2, 3, 4, 2
+        //5, 5, 5, 5, 5, 5, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12
     List<Integer> inputArray = new ArrayList<>();
-        inputArray.add(2);
+        inputArray.add(5);
+        inputArray.add(5);
+        inputArray.add(5);
+        inputArray.add(5);
+        inputArray.add(5);
+        inputArray.add(5);
         inputArray.add(1);
-        inputArray.add(2);
-        inputArray.add(2);
         inputArray.add(2);
         inputArray.add(3);
         inputArray.add(4);
-        inputArray.add(2);
+        inputArray.add(6);
+        inputArray.add(7);
+        inputArray.add(8);
+        inputArray.add(9);
+        inputArray.add(10);
+        inputArray.add(11);
+        inputArray.add(12);
 
-        int toMove = 2;
+        int toMove = 5;
 
         List<Integer> result = moveElement(inputArray, toMove);
         System.out.println("This is the array after moving " +toMove+ " to the end : " + result);
