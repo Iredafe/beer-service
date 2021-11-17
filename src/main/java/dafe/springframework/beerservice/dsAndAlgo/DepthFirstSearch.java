@@ -6,8 +6,8 @@ import java.util.List;
 public class DepthFirstSearch {
 
     static class Node{
-        String name;
-        List<Node> children = new ArrayList<>();
+        static String name;
+        static List <Node> children = new ArrayList<>();
 
         public Node(String name){
             this.name = name;
@@ -18,5 +18,24 @@ public class DepthFirstSearch {
             children.add(child);
             return this;
         }
+        public static List<String> depthFirstSearch(List<String> array){
+            array.add(this.name);
+            for(int i = 0; i< children.size(); i++){
+                children.get(i).depthFirstSearch(array);
+            }
+            return array;
+        }
+    }
+
+
+
+    public static void main(String[] args) {
+        Node node = new Node("A");
+        node.addChild("B");
+        node.addChild("C");
+
+
+        System.out.println(node.depthFirstSearch());
+
     }
 }
