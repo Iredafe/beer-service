@@ -18,7 +18,7 @@ public class DepthFirstSearch {
             children.add(child);
             return this;
         }
-        public static List<String> depthFirstSearch(List<String> array){
+        public List<String> depthFirstSearch(List<String> array){
             array.add(this.name);
             for(int i = 0; i< children.size(); i++){
                 children.get(i).depthFirstSearch(array);
