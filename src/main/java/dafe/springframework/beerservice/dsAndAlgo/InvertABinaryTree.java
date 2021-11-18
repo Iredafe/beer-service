@@ -29,9 +29,18 @@ public class InvertABinaryTree {
     }
 
     public static BinaryTree invertbinaryTree(BinaryTree tree){
-
-
+    if(tree != null) {
+        swap(tree);
+        invertbinaryTree(tree.left);
+        invertbinaryTree(tree.right);
+    }
         return tree;
+    }
+
+    private static void swap(BinaryTree tree) {
+        BinaryTree temp = tree.left;
+        tree.left = tree.right;
+        tree.right = temp;
     }
 
 
