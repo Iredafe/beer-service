@@ -10,9 +10,30 @@ public class BinaryTreeDiameter {
         }
     }
 
-    public static int binaryTreeDiameter(BinaryTree tree){
+    static class TreeInfo{
+        int diameter;
+        int height;
 
-        return 1;
+        public TreeInfo(int diameter,int height){
+            this.diameter = diameter;
+            this.height = height;
+        }
+    }
+
+    public static TreeInfo getTreeInfo(BinaryTree tree){
+        if(tree == null) return new TreeInfo(0,0);
+
+        TreeInfo leftTreeInfo = getTreeInfo(tree.left);
+        TreeInfo rightTreeInfo = getTreeInfo(tree.right);
+
+        int longestPathThroughRoot = leftTreeInfo.height + rightTreeInfo.height;
+        int maximumDiameter = (leftTreeInfo.diameter + rightTreeInfo.diameter);
+        int currentDiameter = Math.max(longestPathThroughRoot, maximumDiameter);
+        int currentHeight = 1+Math.max(leftTreeInfo.height , rightTreeInfo.height);
+        return new TreeInfo(currentDiameter, currentHeight);
+    }
+    public static int binaryTreeDiameter(BinaryTree tree){
+        return getTreeInfo(tree).diameter;
     }
 
     public static void main(String[] args) {
