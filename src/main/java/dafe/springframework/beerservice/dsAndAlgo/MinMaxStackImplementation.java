@@ -24,4 +24,28 @@ public class MinMaxStackImplementation {
          }
 
     }
+
+
+    public static void main(String[] args) {
+        MinMaxStack stack = new MinMaxStack();
+        stack.pop();
+        stack.push(3);
+        stack.push(2);
+        System.out.println(" Stack 1 : " + stack);
+        stack.push(9);
+        stack.getMax();
+        stack.getMin();
+        System.out.println(" Stack 2 : " + stack);
+        stack.push(10);
+        stack.push(1);
+        stack.peek();
+        System.out.println(" Stack 3 : " + stack);
+        stack.getMax();
+        stack.pop();
+        stack.getMin();
+        System.out.println(" Stack 4 : " + stack);
+
+    }
+
+
 }
