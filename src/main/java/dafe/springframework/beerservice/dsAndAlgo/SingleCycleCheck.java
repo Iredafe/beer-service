@@ -11,7 +11,7 @@ public class SingleCycleCheck {
             numberOfElementsVisited++;
             currentIndex = getCurrentIndex(currentIndex, array);
         }
-        return true;
+        return currentIndex == 0;
     }
 
     public static int getCurrentIndex(int currentIndex, int [] array){
