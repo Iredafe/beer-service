@@ -10,5 +10,18 @@ public class MinMaxStackImplementation {
          public int pop(){
              return -1;
          }
+
+         public void push(Integer number){
+
+         }
+
+         public int getMin(){
+             return -1;
+         }
+
+         public int getMax(){
+             return -1;
+         }
+
     }
 }
