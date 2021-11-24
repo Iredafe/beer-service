@@ -13,6 +13,14 @@ public class ReverseLinkedListAlgo {
 
     public static Linkedlist reverseLinkedList(Linkedlist head){
 
-        return null;
+        Linkedlist previousNode = null;
+        Linkedlist currentNode = head;
+        while(currentNode != null){
+            Linkedlist nextNode = currentNode.next;
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+            currentNode = nextNode;
+        }
+        return previousNode;
     }
 }
