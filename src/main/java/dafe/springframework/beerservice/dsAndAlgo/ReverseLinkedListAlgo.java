@@ -32,5 +32,7 @@ public class ReverseLinkedListAlgo {
         list.head.next.next = new ReverseLinkedListAlgo.Linkedlist(4);
         list.head.next.next.next = new ReverseLinkedListAlgo.Linkedlist(20);
         list.head.next.next.next.next = new ReverseLinkedListAlgo.Linkedlist(5);
+
+        System.out.println("The reversed linked list is : " + list.reverseLinkedList(head));
     }
 }
