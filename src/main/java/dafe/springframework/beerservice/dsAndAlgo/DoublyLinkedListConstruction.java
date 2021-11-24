@@ -44,5 +44,9 @@ public class DoublyLinkedListConstruction {
 
         }
 
+        public boolean containsNodeWithValue(int value){
+            return false;
+        }
+
     }
 }
