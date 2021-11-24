@@ -11,4 +11,21 @@ public class DoublyLinkedListConstruction {
             this.value=value;
         }
     }
+
+    static class DoublyLinkedList{
+        Node head;
+        Node tail;
+
+        public void setHead(Node node){
+
+        }
+
+        public void setTail(Node node){
+
+        }
+
+        public void insertBefore(Node node, Node nodeToInsert){
+
+        }
+    }
 }
