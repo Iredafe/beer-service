@@ -35,5 +35,14 @@ public class DoublyLinkedListConstruction {
         public void insertAtPosition(int position, Node nodeToInsert){
 
         }
+
+        public void removeNodesWithValue(int value){
+
+        }
+
+        public void remove(Node node){
+
+        }
+
     }
 }
