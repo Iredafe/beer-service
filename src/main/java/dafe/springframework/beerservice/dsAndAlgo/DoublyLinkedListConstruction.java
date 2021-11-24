@@ -27,5 +27,13 @@ public class DoublyLinkedListConstruction {
         public void insertBefore(Node node, Node nodeToInsert){
 
         }
+
+        public void insertAfter(Node node, Node nodeToInsert){
+
+        }
+
+        public void insertAtPosition(int position, Node nodeToInsert){
+
+        }
     }
 }
