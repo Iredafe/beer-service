@@ -2,10 +2,7 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 import org.springframework.boot.actuate.endpoint.web.Link;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BalancedBracket {
 
@@ -34,10 +31,29 @@ public class BalancedBracket {
         return myStack.isEmpty();
     }
 
+    //this solution does not take the order into account
+    public static boolean balancedBrackets(String input){
+
+        Map <Character, Character> mappings = new HashMap<>();
+        Stack<Character> myStack = new Stack<>();
+        mappings.put(')','(');
+        mappings.put('}','{');
+        mappings.put(']','[');
+
+        for(int i = 0; i<input.length(); i++){
+            char currentCharacter = input.charAt(i);
+            if(mappings.containsKey(currentCharacter)){
+                char topElement = myStack.isEmpty() ? '#' : myStack.pop();
+            }
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
 
         String input = "([])(){}(())()()";
         System.out.println("This input is a balanced bracket : " + balancedBracket(input));
+        System.out.println("This input is a balanced bracket 1 : " + balancedBrackets(input));
+
     }
 }
