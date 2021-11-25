@@ -32,7 +32,9 @@ public class PhoneNumberMnemonics {
     public static void phoneNumberMnemonicsHelper
             (int index, String[] currentLetters, ArrayList<String> result, String phoneNumber){
         if(index == phoneNumber.length()){
+            System.out.println("Current letters before join : " + Arrays.toString(currentLetters));
             String mnemonic = String.join("", currentLetters);
+            System.out.println("Mnemonic after join : " + mnemonic);
             result.add(mnemonic);
         }else{
             char digit = phoneNumber.charAt(index);
