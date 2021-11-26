@@ -1,7 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 public class NodeSwap {
-
+    static Node head;
     static class Node{
         int value;
         Node next = null;
@@ -22,6 +22,16 @@ public class NodeSwap {
         return head;
     }
 
+    public static void main(String[] args) {
+
+        NodeSwap list = new NodeSwap();
+        list.head = new Node(85);
+        list.head.next = new Node(15);
+        list.head.next.next = new Node(4);
+        list.head.next.next.next = new Node(20);
+        list.head.next.next.next.next = new Node(5);
+    }
 
 
 }
+
