@@ -10,21 +10,21 @@ public class NodeSwap {
         this.value = value;
     }
     }
-    void printList(ReverseLinkedList.Node node) {
+    void printList(Node node) {
         while (node != null) {
-            System.out.println(node.data + " ");
+            System.out.println(node.value + " ");
             node = node.next;
         }
     }
     public static Node swapNode(Node head){
-
-        Node currentNode = head;
-        if(head !=null || head.next != null){
-            currentNode = head.next;
-            head.next = swapNode(head.next.next);
-            head.next.next = currentNode;
+        if(head !=null || head.next != null) {
+            return head;
         }
-        return head;
+
+            Node nextNode = head.next;
+            head.next = swapNode(head.next.next);
+            nextNode.next = head;
+            return nextNode;
     }
 
     public static void main(String[] args) {
@@ -35,6 +35,13 @@ public class NodeSwap {
         list.head.next.next = new Node(4);
         list.head.next.next.next = new Node(20);
         list.head.next.next.next.next = new Node(5);
+
+        System.out.println("Given Linked list");
+        list.printList(head);
+        head = list.swapNode(head);
+        System.out.println("");
+        System.out.println("Swapped node of linked list ");
+        list.printList(head);
     }
 
 
