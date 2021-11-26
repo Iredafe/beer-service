@@ -10,7 +10,12 @@ public class NodeSwap {
         this.value = value;
     }
     }
-
+    void printList(ReverseLinkedList.Node node) {
+        while (node != null) {
+            System.out.println(node.data + " ");
+            node = node.next;
+        }
+    }
     public static Node swapNode(Node head){
 
         Node currentNode = head;
