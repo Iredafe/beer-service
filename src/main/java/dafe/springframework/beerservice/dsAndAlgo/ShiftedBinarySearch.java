@@ -32,11 +32,14 @@ public class ShiftedBinarySearch {
     }
 
     public static int shiftedBinarySearchRecursivehelper(int [] array, int target, int left, int right){
-        int middle = (left + right)/2;
+
         while (left<=right){
+            int middle = (left + right)/2;
             int potentialMatch = array[middle];
-            if(target == potentialMatch) return middle;
+            int rightPointer = array[right];
             int leftPointer = array[left];
+
+            if(target == potentialMatch) return middle;
             if(leftPointer <= potentialMatch){
                 if(target >= leftPointer && target < potentialMatch){
                     return shiftedBinarySearchRecursivehelper(array, target, left, middle-1);
@@ -44,7 +47,7 @@ public class ShiftedBinarySearch {
                     return shiftedBinarySearchRecursivehelper(array, target, middle+1, right);
                 }
             }else{
-                int rightPointer = array[right];
+
                 if(target<= rightPointer && target > potentialMatch){
                     return shiftedBinarySearchRecursivehelper(array, target, middle+1, right);
 
@@ -59,8 +62,13 @@ public class ShiftedBinarySearch {
     public static void main(String[] args) {
         int[] input ={45, 61, 71, 72, 73, 0, 1, 21, 33, 37};
         int searchTerm = 33;
-
+        int input1 [] = {5,1,3};
+        int search = 1;
         System.out.println("This is the index of the target integer : " + shiftedBinarySearch(input,searchTerm));
         System.out.println("This is the index of the target integer : " + shiftedBinarySearchRecursive(input,searchTerm));
+
+        System.out.println("This is the index of the target integer : " + shiftedBinarySearch(input1,search));
+        System.out.println("This is the index of the target integer : " + shiftedBinarySearchRecursive(input1,search));
+
     }
 }
