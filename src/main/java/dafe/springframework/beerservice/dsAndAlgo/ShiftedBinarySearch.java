@@ -28,13 +28,29 @@ public class ShiftedBinarySearch {
     }
 
     public static int shiftedBinarySearchRecursive(int [] array, int target){
-
-        return -1;
+        return shiftedBinarySearchRecursivehelper(array, target, 0, array.length-1);
     }
 
-    public static void shiftedBinarySearchRecursivehelper(int [] array, int target, int left, int right){
+    public static int shiftedBinarySearchRecursivehelper(int [] array, int target, int left, int right){
+        int middle = (left + right)/2;
+        while (left<=right){
+            if(target == array[middle]) return middle;
+            if(array[left] <= array[middle]){
+                if(target >= array[left] && target < array[middle]){
+                    return shiftedBinarySearchRecursivehelper(array, target, left, middle-1);
+                }else {
+                    return shiftedBinarySearchRecursivehelper(array, target, middle+1, right);
+                }
+            }else{
+                if(target<=array[right] && target > array[middle]){
+                    return shiftedBinarySearchRecursivehelper(array, target, middle+1, right);
 
-
+                }else {
+                    return shiftedBinarySearchRecursivehelper(array, target, left, middle-1);
+                }
+            }
+        }
+        return -1;
     }
 
     public static void main(String[] args) {
@@ -42,5 +58,6 @@ public class ShiftedBinarySearch {
         int searchTerm = 33;
 
         System.out.println("This is the index of the target integer : " + shiftedBinarySearch(input,searchTerm));
+        System.out.println("This is the index of the target integer : " + shiftedBinarySearchRecursive(input,searchTerm));
     }
 }
