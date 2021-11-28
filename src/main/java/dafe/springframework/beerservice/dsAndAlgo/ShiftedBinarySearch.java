@@ -36,14 +36,16 @@ public class ShiftedBinarySearch {
         while (left<=right){
             int potentialMatch = array[middle];
             if(target == potentialMatch) return middle;
-            if(array[left] <= potentialMatch){
-                if(target >= array[left] && target < potentialMatch){
+            int leftPointer = array[left];
+            if(leftPointer <= potentialMatch){
+                if(target >= leftPointer && target < potentialMatch){
                     return shiftedBinarySearchRecursivehelper(array, target, left, middle-1);
                 }else {
                     return shiftedBinarySearchRecursivehelper(array, target, middle+1, right);
                 }
             }else{
-                if(target<=array[right] && target > potentialMatch){
+                int rightPointer = array[right];
+                if(target<= rightPointer && target > potentialMatch){
                     return shiftedBinarySearchRecursivehelper(array, target, middle+1, right);
 
                 }else {
