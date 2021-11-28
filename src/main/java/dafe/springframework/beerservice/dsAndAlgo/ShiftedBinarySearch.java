@@ -3,17 +3,25 @@ package dafe.springframework.beerservice.dsAndAlgo;
 public class ShiftedBinarySearch {
     public static int shiftedBinarySearch(int [] array, int target){
     int left = 0; int right = array.length-1;
-    int middle = (left+right)/2;
 
-    while (left<right){
+    while (left<=right){
+        int middle = (left+right)/2;
         if(array[middle] == target) return middle;
-        if(array[middle] != target && array[left] <= target){
-            right = middle - 1;
-        }else if(array[middle] != target && array[right] >= target){
-            left = middle +1;
+        if(array[left] <= array[middle]) {
+            if (array[middle] > target && array[left] <= target) {
+                right = middle - 1;
+            } else  {
+                left = middle + 1;
+            }
+        }else{
+            if(array[middle] < target && array[right] >= target){
+                left = middle+ 1;
+            }else {
+                right = middle-1;
+            }
         }
     }
-        return 0;
+        return -1;
     }
 
 
