@@ -6,16 +6,18 @@ public class ShiftedBinarySearch {
 
     while (left<=right){
         int middle = (left+right)/2;
+        int rightNumber = array[right];
+        int leftNumber = array[left];
         int potentialMatch = array[middle];
         if(potentialMatch == target) return middle;
-        if(array[left] <= potentialMatch) {
-            if (potentialMatch > target && array[left] <= target) {
+        if(leftNumber <= potentialMatch) {
+            if (potentialMatch > target && leftNumber <= target) {
                 right = middle - 1;
             } else  {
                 left = middle + 1;
             }
         }else{
-            if(potentialMatch < target && array[right] >= target){
+            if(potentialMatch < target && rightNumber >= target){
                 left = middle+ 1;
             }else {
                 right = middle-1;
