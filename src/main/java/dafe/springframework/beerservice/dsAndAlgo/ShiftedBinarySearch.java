@@ -27,6 +27,15 @@ public class ShiftedBinarySearch {
         return -1;
     }
 
+    public static int shiftedBinarySearchRecursive(int [] array, int target){
+
+        return -1;
+    }
+
+    public static void shiftedBinarySearchRecursivehelper(int [] array, int target, int left, int right){
+
+
+    }
 
     public static void main(String[] args) {
         int[] input ={45, 61, 71, 72, 73, 0, 1, 21, 33, 37};
