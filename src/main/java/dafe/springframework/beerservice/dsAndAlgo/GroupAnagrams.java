@@ -27,9 +27,9 @@ public class GroupAnagrams {
     public static List<List<String>> groupAnagrams2(List<String> words){
         Map<String, List<String>> bucket = new HashMap<>();
         for(String word : words) {
-            char[] sorted = word.toCharArray();
-            Arrays.sort(sorted);
-            String sortedWord = new String(sorted);
+            char[] unsorted = word.toCharArray();
+            Arrays.sort(unsorted);
+            String sortedWord = new String(unsorted);
             if (!bucket.containsKey(sortedWord)) {
                 bucket.put(sortedWord, new ArrayList<>(Arrays.asList(word)));
             } else {
@@ -52,7 +52,7 @@ public class GroupAnagrams {
         input2.add("cat");
         input2.add("oy");
         input2.add("olfp");
-
-        System.out.println("These are the group anagrams 2 : " + groupAnagrams2(input2));
+        System.out.println("Anagrams before grouping : " + input2);
+        System.out.println("These are the group anagrams : " + groupAnagrams2(input2));
     }
 }
