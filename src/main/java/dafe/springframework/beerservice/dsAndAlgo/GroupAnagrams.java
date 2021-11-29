@@ -25,6 +25,11 @@ public class GroupAnagrams {
         return answer;
     }
 
+    public static List<List<String>> groupAnagrams2(List<String> words){
+
+        return new ArrayList<>();
+    }
+
     public static void main(String[] args) {
 
         String [] input = {"eat","tea","tan","ate","nat","bat"};
