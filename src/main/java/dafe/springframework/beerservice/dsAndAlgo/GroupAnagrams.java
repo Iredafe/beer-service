@@ -10,7 +10,6 @@ public class GroupAnagrams {
     //add the result to a list and return that list
     public static List <List<String>> groupAnagrams(String[] input){
 
-        List<List<String>> answer = new ArrayList();
         Map<String, List<String>> myHashMap = new HashMap();
         for(String str: input){
             char[] characters = str.toCharArray();
@@ -21,18 +20,39 @@ public class GroupAnagrams {
             }
             myHashMap.get(sorted).add(str);
         }
-        answer.addAll(myHashMap.values());
+        List<List<String>> answer = new ArrayList(myHashMap.values());
         return answer;
     }
 
     public static List<List<String>> groupAnagrams2(List<String> words){
-
-        return new ArrayList<>();
+        Map<String, List<String>> bucket = new HashMap<>();
+        for(String word : words) {
+            char[] sorted = word.toCharArray();
+            Arrays.sort(sorted);
+            String sortedWord = new String(sorted);
+            if (!bucket.containsKey(sortedWord)) {
+                bucket.put(sortedWord, new ArrayList<>(Arrays.asList(word)));
+            } else {
+                bucket.get(sortedWord).add(word);
+            }
+        }
+        return new ArrayList<>(bucket.values());
     }
 
     public static void main(String[] args) {
 
         String [] input = {"eat","tea","tan","ate","nat","bat"};
         System.out.println(groupAnagrams(input));
+        List<String> input2 = new ArrayList<>();
+        input2.add("yo");
+        input2.add("act");
+        input2.add("flop");
+        input2.add("tac");
+        input2.add("foo");
+        input2.add("cat");
+        input2.add("oy");
+        input2.add("olfp");
+
+        System.out.println("These are the group anagrams 2 : " + groupAnagrams2(input2));
     }
 }
