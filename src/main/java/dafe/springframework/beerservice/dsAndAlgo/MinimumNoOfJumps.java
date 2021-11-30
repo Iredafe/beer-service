@@ -1,10 +1,23 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.Arrays;
+
 public class MinimumNoOfJumps {
-
+    // non-optimal solution
     public static int minimumNoOfJumps(int [] array){
+        int [] jump = new int[array.length];
+        Arrays.fill(jump, Integer.MAX_VALUE);
 
-        return 1;
+         jump[0] = 0;
+
+         for(int i=1; i< array.length; i++){
+             for (int j=0;j< i; j++){
+                 if(array[j]+j >= i){
+                     jump[i] = Math.min(jump[j]+1, jump[i]);
+                 }
+             }
+         }
+        return jump[jump.length-1];
     }
 
     public static void main(String[] args) {
