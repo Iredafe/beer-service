@@ -13,10 +13,10 @@ public class SpiralTraverse {
 
         while (startRow <= endRow  && startColumn <= endColumn){
             for (int column=startColumn; column<=endColumn; column++){
-                result.add(array[startColumn][column]);
+                result.add(array[startRow][column]);
             }
             for(int row=startRow+1; row<=endRow; row++){
-                result.add(array[row][endRow]);
+                result.add(array[row][endColumn]);
             }
             for(int column=endColumn-1; column>=startColumn; column--){
                 if(startRow == endRow) break;
