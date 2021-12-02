@@ -7,6 +7,13 @@ public class TandemBicycle {
         if(!fastest){
             reverseArray(redShirtTeam);
         }
+
+        int totalSpeed = 0;
+        for (int index=0; index<redShirtTeam.length; index++){
+            int rider1 = redShirtTeam[index];
+            int rider2 = blueShirtTeam[index];
+            totalSpeed += Math.max(rider1,rider2);
+        }
         return 1;
     }
 
@@ -26,5 +33,6 @@ public class TandemBicycle {
         int redShirtTeam [] = {5, 5, 3, 9, 2};
         int blueShirtTeam [] ={3, 6, 7, 2, 1};
         boolean fastest = true;
+
     }
 }
