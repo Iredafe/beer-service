@@ -16,6 +16,17 @@ public class BSTTraversal {
         }
         return array;
     }
+
+    public static List<Integer> preOrderTraversal(BST tree, List<Integer> array){
+        array.add(tree.value);
+        if(tree.left!=null){
+            preOrderTraversal(tree.left, array);
+        }
+        if(tree.right!=null){
+            preOrderTraversal(tree.right, array);
+        }
+        return array;
+    }
     static class BST{
         public int value;
         public BST left;
