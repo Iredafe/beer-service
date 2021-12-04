@@ -61,42 +61,42 @@ public class FourNumberSum {
 
 
         //figure this out
-        List<List<Integer>> fourSums = new ArrayList<>();
-        Map<Integer, List<List<Integer>>> bucket = new HashMap<>();
-
-        for(int i=1; i<nums.length-1; i++){
-            for(int j=i+1; j<nums.length; j++){
-                int currentSum = nums[i] + nums[j];
-                int difference = target - currentSum;
-
-                if(bucket.containsKey(difference)){
-                    for(List<Integer> pair : bucket.get(difference)){
-                        List<List<Integer>> newValues = new ArrayList<>();
-                        newValues.add(pair.get(0,1));
-                        newValues.add(pair.get(1));
-                        newValues.add(pair.get(nums[i]));
-                        newValues.add(pair.get(nums[j]));
-
-                        fourSums.add(Arrays.asList(newValues));
-                    }
-                }
-            }
-            for(int k=0; k<i; k++){
-                int currentSum = nums[k] + nums[i];
-                Integer [] pair = {nums[k], nums[i]};
-
-                if(bucket.containsKey(currentSum)){
-                    bucket.get(currentSum).add(Arrays.asList(pair));
-                }else{
-                    List<Integer> pairList = new ArrayList<>();
-                    pairList.add(Arrays.asList(pair));
-                    bucket.put(currentSum, pairList);
-                }
-            }
-        }
-
-        return fourSum;
-    }
+//        List<List<Integer>> fourSums = new ArrayList<>();
+//        Map<Integer, List<List<Integer>>> bucket = new HashMap<>();
+//
+//        for(int i=1; i<nums.length-1; i++){
+//            for(int j=i+1; j<nums.length; j++){
+//                int currentSum = nums[i] + nums[j];
+//                int difference = target - currentSum;
+//
+//                if(bucket.containsKey(difference)){
+//                    for(List<Integer> pair : bucket.get(difference)){
+//                        List<List<Integer>> newValues = new ArrayList<>();
+//                        newValues.add(pair.get(0,1));
+//                        newValues.add(pair.get(1));
+//                        newValues.add(pair.get(nums[i]));
+//                        newValues.add(pair.get(nums[j]));
+//
+//                        fourSums.add(Arrays.asList(newValues));
+//                    }
+//                }
+//            }
+//            for(int k=0; k<i; k++){
+//                int currentSum = nums[k] + nums[i];
+//                Integer [] pair = {nums[k], nums[i]};
+//
+//                if(bucket.containsKey(currentSum)){
+//                    bucket.get(currentSum).add(Arrays.asList(pair));
+//                }else{
+//                    List<Integer> pairList = new ArrayList<>();
+//                    pairList.add(Arrays.asList(pair));
+//                    bucket.put(currentSum, pairList);
+//                }
+//            }
+//        }
+//
+//        return fourSum;
+//    }
 
     public static void main(String[] args) {
 
