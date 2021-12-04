@@ -1,10 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import javax.persistence.criteria.CriteriaBuilder;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FourNumberSum {
         //create a variable to store the quadruplets and another one to keep track of the pairs
@@ -45,7 +42,61 @@ public class FourNumberSum {
 
         return quadruplets;
     }
+    public List<List<Integer>> fourSum(int[] nums, int target) {
 
+        //create a variable to store the four sums
+        //create an object to store the different pairs in key-value
+        //loop through the array with a nested for loop with the first pointer starting from the second index
+        //create a variable for the current sum
+        //find the difference between the currentsum and targetsum
+        //check the key-value object to see if the difference is contained there
+        //if it is contained, loop through the object and add the pair where it belongs
+        //if it is not contained, do nothing
+        //do another loop through the array this time with a third pointer that starts at the first index
+        //create a variable to store the currentsum and pairs inside the loop
+        //check the key-value object to see if the current sum exists in there
+        //if it does not exist, put it in
+        // if it exists, add the new pairs to the values already mapped to the key in the  object
+        //return the four sum in a list
+
+
+        //figure this out
+        List<List<Integer>> fourSums = new ArrayList<>();
+        Map<Integer, List<List<Integer>>> bucket = new HashMap<>();
+
+        for(int i=1; i<nums.length-1; i++){
+            for(int j=i+1; j<nums.length; j++){
+                int currentSum = nums[i] + nums[j];
+                int difference = target - currentSum;
+
+                if(bucket.containsKey(difference)){
+                    for(List<Integer> pair : bucket.get(difference)){
+                        List<List<Integer>> newValues = new ArrayList<>();
+                        newValues.add(pair.get(0,1));
+                        newValues.add(pair.get(1));
+                        newValues.add(pair.get(nums[i]));
+                        newValues.add(pair.get(nums[j]));
+
+                        fourSums.add(Arrays.asList(newValues));
+                    }
+                }
+            }
+            for(int k=0; k<i; k++){
+                int currentSum = nums[k] + nums[i];
+                Integer [] pair = {nums[k], nums[i]};
+
+                if(bucket.containsKey(currentSum)){
+                    bucket.get(currentSum).add(Arrays.asList(pair));
+                }else{
+                    List<Integer> pairList = new ArrayList<>();
+                    pairList.add(Arrays.asList(pair));
+                    bucket.put(currentSum, pairList);
+                }
+            }
+        }
+
+        return fourSum;
+    }
 
     public static void main(String[] args) {
 
