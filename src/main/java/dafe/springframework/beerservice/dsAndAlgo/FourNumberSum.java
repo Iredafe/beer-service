@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +19,19 @@ public class FourNumberSum {
         Map<Integer, List<Integer[]>> allPairsSum = new HashMap<>();
         List<Integer[]> quadruplets = new ArrayList<>();
 
-        //
+        for(int i=1; i<array.length; i++){
+            for(int j=i+1; i<array.length; i++){
+                int currentSum = array[i] + array[j];
+                int difference = targetSum - currentSum;
+                if(allPairsSum.containsKey(difference)){
+                    for(Integer[] pairs : allPairsSum.get(difference)){
+                        Integer []newQuadruplet = {pairs[0], pairs[1], array[i], array[j]};
+                        quadruplets.add(newQuadruplet);
+                    }
+                }
+            }
+        }
+
         return quadruplets;
     }
 
