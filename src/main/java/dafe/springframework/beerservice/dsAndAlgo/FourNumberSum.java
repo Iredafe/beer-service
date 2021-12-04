@@ -42,7 +42,7 @@ public class FourNumberSum {
 
         return quadruplets;
     }
-    public List<List<Integer>> fourSum(int[] nums, int target) {
+ //   public List<List<Integer>> fourSum(int[] nums, int target) {
 
         //create a variable to store the four sums
         //create an object to store the different pairs in key-value
