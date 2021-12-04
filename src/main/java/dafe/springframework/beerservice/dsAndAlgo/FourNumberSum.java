@@ -1,14 +1,17 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FourNumberSum {
 
-    public static List<Integer>  fourNumberSum(int [] array, int target){
+    public static List<Integer[]>  fourNumberSum(int [] array, int target){
+        Map<Integer, List<Integer[]>> allPairsSum = new HashMap<>();
+        List<Integer[]> quadruplets = new ArrayList<>();
 
-
-        return new ArrayList<>();
+        return quadruplets;
     }
 
 
