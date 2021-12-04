@@ -1,7 +1,10 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
+
 public class FindSuccessor {
         BinaryTree parent;
+        BinaryTree node;
     static class BinaryTree{
         int value;
         BinaryTree parent=null;
@@ -10,6 +13,29 @@ public class FindSuccessor {
         public BinaryTree(int value){
             this.value = value;
         }
+    }
+
+    public static BinaryTree findSuccessor(BinaryTree tree, BinaryTree node){
+
+        ArrayList<BinaryTree> inOrderTraversalOrder = new ArrayList<>();
+        getInorderTraversalOrder(tree, inOrderTraversalOrder);
+
+        for(int i=0; i< inOrderTraversalOrder.size(); i++){
+            BinaryTree currentNode = inOrderTraversalOrder.get(i);
+            if(currentNode != node) continue;
+            if(i == inOrderTraversalOrder.size()-1) return null;
+            return inOrderTraversalOrder.get(i+1);
+        }
+        return null;
+    }
+
+    static void getInorderTraversalOrder(BinaryTree tree, ArrayList<BinaryTree> order){
+        if(tree == null) return;
+
+        getInorderTraversalOrder(tree.left, order);
+        order.add(tree);
+        getInorderTraversalOrder(tree.right, order);
+
     }
 
     public static void main(String [] args){
@@ -21,6 +47,8 @@ public class FindSuccessor {
         tree.parent.left.left = new BinaryTree(4);
         tree.parent.left.right = new BinaryTree(5);
         tree.parent.left.left.left = new BinaryTree(6);
-        }
+
+//        System.out.println("This is the node's successor : " + findSuccessor(tree, 5));
+    }
 
 }
