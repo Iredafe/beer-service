@@ -20,10 +20,8 @@ public class FirstDuplicateValue {
     public static  int firstDuplicateBrute(int [] array){
         int minIndex = array.length;
         for(int i =0; i<array.length; i++){
-            int value = array[i];
             for(int j=i+1; j<array.length; j++){
-                int valueToCompare = array[j];
-                if(value==valueToCompare){
+                if(array[j]==array[i]){
                     minIndex = Math.min(j, minIndex);
                 }
             }
