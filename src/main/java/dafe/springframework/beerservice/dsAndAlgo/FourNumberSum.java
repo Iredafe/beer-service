@@ -51,6 +51,7 @@ public class FourNumberSum {
 
         int [] array = {7, 6, 4, -1, 1, 2};
         int target = 16;
-        System.out.println("These are the four number sums : " + fourNumberSum(array, target));
+        List<Integer[]> result =fourNumberSum(array, target);
+        System.out.println("These are the four number sums : " + result);
     }
 }
