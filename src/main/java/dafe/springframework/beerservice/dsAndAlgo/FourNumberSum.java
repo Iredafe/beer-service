@@ -19,8 +19,8 @@ public class FourNumberSum {
         Map<Integer, List<Integer[]>> allPairsSum = new HashMap<>();
         List<Integer[]> quadruplets = new ArrayList<>();
 
-        for(int i=1; i<array.length; i++){
-            for(int j=i+1; i<array.length; i++){
+        for(int i=1; i<array.length-1; i++){
+            for(int j=i+1; j<array.length; j++){
                 int currentSum = array[i] + array[j];
                 int difference = targetSum - currentSum;
                 if(allPairsSum.containsKey(difference)){
@@ -28,6 +28,17 @@ public class FourNumberSum {
                         Integer []newQuadruplet = {pairs[0], pairs[1], array[i], array[j]};
                         quadruplets.add(newQuadruplet);
                     }
+                }
+            }
+            for(int k=0; k<i; k++){
+                int currentSum = array[i] + array[k];
+                Integer [] pairs = {array[k], array[i]};
+                if(!allPairsSum.containsKey(currentSum)){
+                    List<Integer[]> pairGroup = new ArrayList<>();
+                    pairGroup.add(pairs);
+                     allPairsSum.put(currentSum, pairGroup);
+                }else{
+                    allPairsSum.get(currentSum).add(pairs);
                 }
             }
         }
