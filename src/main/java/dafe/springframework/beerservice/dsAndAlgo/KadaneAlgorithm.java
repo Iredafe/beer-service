@@ -4,8 +4,16 @@ public class KadaneAlgorithm {
 
     public static  int kadane(int[] array){
 
+    int maxEndingHere = array[0];
+    int maxSoFar = array[0];
 
-        return 1;
+    for(int i=1; i< array.length; i++){
+
+        int num = array[i];
+        maxEndingHere = Math.max(maxEndingHere+num, num);
+        maxSoFar = Math.max(maxEndingHere, maxSoFar);
+    }
+        return maxSoFar;
     }
 
 
