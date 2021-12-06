@@ -8,7 +8,7 @@ public class ValidIPAddress {
 public static ArrayList<String> validIPAddress(String input){
 
     ArrayList<String> ipAddressFound = new ArrayList<>();
-    for(int i=1; i<Math.min((int) input.length(), 4); i++){
+    for(int i = 1; i<Math.min(input.length(), 4); i++){
         String[] currentIpAddressParts = new String[]{"","","",""};
 
         currentIpAddressParts[0] = input.substring(0, i);
@@ -16,13 +16,13 @@ public static ArrayList<String> validIPAddress(String input){
         if(!isValidPart(currentIpAddressParts[0])){
             continue;
         }
-        for(int j = i+1; j<i + Math.min((int) input.length()-i, 4); j++){
+        for(int j = i+1; j<i + Math.min(input.length() -i, 4); j++){
             currentIpAddressParts[1] = input.substring(i,j);
             if(!isValidPart(currentIpAddressParts[1])){
                 continue;
             }
 
-            for(int k=j+1; k<j + Math.min((int) input.length()-j, 4); k++){
+            for(int k = j+1; k<j + Math.min(input.length() -j, 4); k++){
                 currentIpAddressParts[2]=input.substring(j,k);
                 currentIpAddressParts[3] = input.substring(k);
 
