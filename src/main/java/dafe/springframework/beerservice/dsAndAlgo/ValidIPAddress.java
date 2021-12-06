@@ -18,12 +18,26 @@ public static boolean isValidPart(String inputString){
     if(stringAsInt > 255){
         return false;
     }
-    return true;
+    return inputString.length() ==Integer.toString(stringAsInt).length(); //check for leading 0
 }
 
 
 public String join(String [] inputArrayStrings){
 
-    return "";
+    StringBuilder sb = new StringBuilder();
+    for(int l=0; l<inputArrayStrings.length; l++){
+        sb.append(inputArrayStrings[l]);
+        if(l< inputArrayStrings.length){
+            sb.append(".");
+        }
+    }
+    return sb.toString();
 }
+
+
+    public static void main(String[] args) {
+
+    String input = "1921680";
+        System.out.println("These are the valid IP addresses : " + validIPAddress(input));
+    }
 }
