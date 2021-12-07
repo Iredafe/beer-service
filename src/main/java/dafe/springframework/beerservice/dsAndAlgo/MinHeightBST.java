@@ -28,5 +28,22 @@ public class MinHeightBST {
             left=null;
             right=null;
         }
+        public void insert(int value){
+            if(value < this.value){
+                if(left == null){
+                    left = new BST(value);
+                }else{
+                    left.insert(value);
+                }
+            }else{
+                if(right == null){
+                    right = new BST(value);
+                }else{
+                    right.insert(value);
+                }
+            }
+        }
     }
+
+
 }
