@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MinHeightBST {
@@ -15,7 +16,7 @@ public class MinHeightBST {
     BST bst = new BST(array.get(mid));
     bst.left = minHeightBSTHelper(array, startIdx, mid-1);
     bst.right = minHeightBSTHelper(array, mid+1, endIdx);
-        return bst;
+    return bst;
     }
 
     static class BST{
@@ -45,5 +46,21 @@ public class MinHeightBST {
         }
     }
 
+    public static void main(String[] args) {
+
+        List<Integer> array = new ArrayList<>();
+        array.add(1);
+        array.add(2);
+        array.add(5);
+        array.add(7);
+        array.add(10);
+        array.add(13);
+        array.add(14);
+        array.add(15);
+        array.add(22);
+
+        System.out.println("This is the min height BST : " + minHeightBST(array));
+
+    }
 
 }
