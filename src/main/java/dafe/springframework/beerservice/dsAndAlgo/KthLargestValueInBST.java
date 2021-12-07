@@ -3,7 +3,7 @@ package dafe.springframework.beerservice.dsAndAlgo;
 import java.util.ArrayList;
 
 public class KthLargestValueInBST {
-
+    static BST root;
     static class BST{
         int value;
         BST left;
@@ -25,5 +25,19 @@ public class KthLargestValueInBST {
         inOrderTraversal(tree.left, array);
         array.add(tree.value);
         inOrderTraversal(tree.right, array);
+    }
+
+    public static void main(String[] args) {
+
+        KthLargestValueInBST tree = new KthLargestValueInBST();
+        tree.root = new BST(15);
+        tree.root.left = new BST(5);
+        tree.root.right = new BST(20);
+        tree.root.left.left = new BST(2);
+        tree.root.left.right = new BST(5);
+        tree.root.right.left = new BST(17);
+        tree.root.right.right=new BST(22);
+        tree.root.left.left.left = new BST(1);
+        tree.root.left.left.right = new BST(5);
     }
 }
