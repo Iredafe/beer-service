@@ -6,12 +6,15 @@ public class MinHeightBST {
 
     public static BST minHeightBST(List<Integer> array){
 
-        return minHeightBSTHelper(array, null, 0, array.size()-1);
+        return minHeightBSTHelper(array, 0, array.size()-1);
     }
 
-    public static BST minHeightBSTHelper(List<Integer> array, BST bst, int startIdx, int endIdx){
-
-
+    public static BST minHeightBSTHelper(List<Integer> array, int startIdx, int endIdx){
+    if(endIdx< startIdx) return null;
+    int mid = startIdx + endIdx/2;
+    BST bst = new BST(array.get(mid));
+    bst.left = minHeightBSTHelper(array, startIdx, mid-1);
+    bst.right = minHeightBSTHelper(array, mid+1, endIdx);
         return bst;
     }
 
@@ -22,6 +25,8 @@ public class MinHeightBST {
 
         public BST(int value){
             this.value=value;
+            left=null;
+            right=null;
         }
     }
 }
