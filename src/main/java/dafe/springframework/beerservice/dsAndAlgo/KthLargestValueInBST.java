@@ -39,5 +39,8 @@ public class KthLargestValueInBST {
         tree.root.right.right=new BST(22);
         tree.root.left.left.left = new BST(1);
         tree.root.left.left.right = new BST(5);
+
+      int result =  tree.findKthLargestValueInBst(root, 3);
+        System.out.println("The kth largest number in the BST is : " + result);
     }
 }
