@@ -24,4 +24,14 @@ public class Powerset {
         }
         return subsets;
     }
+
+    public static void main(String[] args) {
+
+        List<Integer> input = new ArrayList<>();
+        input.add(1);
+        input.add(2);
+        input.add(3);
+
+        System.out.println("These are the subsets : " + powerset(input));
+    }
 }
