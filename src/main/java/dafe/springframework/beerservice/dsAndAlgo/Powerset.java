@@ -30,7 +30,7 @@ public class Powerset {
         result.add(new ArrayList<>());
 
         for (Integer element : array){
-            int size = array.size();
+            int size = result.size();
             for(int i=0; i<size; i++) {
                 List<Integer> currentSubset = new ArrayList<>(result.get(i));
             currentSubset.add(element);
@@ -42,11 +42,17 @@ public class Powerset {
      public static void main(String[] args) {
 
         List<Integer> input = new ArrayList<>();
+        List<Integer> input2 = new ArrayList<>();
+
         input.add(1);
         input.add(2);
         input.add(3);
 
+
         System.out.println("These are the subsets : " + powerset(input));
-        System.out.println("These are the subsets iterative: " + powersetIterative(input));
+         input2.add(1);
+         input2.add(2);
+         input2.add(3);
+        System.out.println("These are the subsets iterative: " + powersetIterative(input2));
     }
 }
