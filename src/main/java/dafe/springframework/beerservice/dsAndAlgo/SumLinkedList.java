@@ -1,7 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 public class SumLinkedList {
-
+    Node head;
     static class Node {
         int value;
         Node next;
@@ -34,6 +34,5 @@ public class SumLinkedList {
             nodeTwo = (nodeTwo!=null) ? nodeTwo.next:null;
         }
         return dummy.next;
-
     }
 }
