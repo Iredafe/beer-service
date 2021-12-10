@@ -11,6 +11,15 @@ public class WaterArea {
 
         while(leftIdx < rightIdx){
 
+            if(heights[leftIdx] < heights[rightIdx] ){
+                leftIdx++;
+                leftMax = Math.max(leftMax, heights[leftIdx]);
+                surfaceArea += leftMax - heights[leftIdx];
+            }else {
+                rightIdx--;
+                rightMax = Math.max(rightMax , heights[rightIdx]);
+            surfaceArea += rightMax - heights[rightIdx];
+            }
         }
         return surfaceArea;
     }
