@@ -26,7 +26,9 @@ public class WaterArea {
 
     public static void main(String[] args) {
         int heights[]= {0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3};
+        int heights2[] ={0, 1, 0, 0, 0};
 
         System.out.println("This is the water area : " + waterArea(heights));
+        System.out.println("This is the water area : " + waterArea(heights2));
     }
 }
