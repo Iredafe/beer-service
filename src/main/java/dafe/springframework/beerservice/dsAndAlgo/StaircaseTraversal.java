@@ -40,5 +40,6 @@ public class StaircaseTraversal {
         int height = 4;
         int maxSteps = 2;
         System.out.println("This is the maximum number of steps : " + staircaseTraversal(height, maxSteps));
+        System.out.println("This is the maximum number of steps : " + staircaseTraversalMemoization(height, maxSteps));
     }
 }
