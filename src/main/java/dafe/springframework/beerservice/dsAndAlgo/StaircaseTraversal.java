@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class StaircaseTraversal {
 
@@ -19,14 +20,19 @@ public class StaircaseTraversal {
     }
 
     public static int staircaseTraversalMemoization(int height, int maxSteps){
-
+        HashMap<Integer, Integer> memoize = new HashMap<>();
+        memoize.put(0,1);
+        memoize.put(1,1);
+        return memoizeHelper(height, maxSteps, memoize);
     }
 
     public static int memoizeHelper(int height, int maxSteps, HashMap<Integer, Integer> memoize){
-
+        if(memoize.containsKey(height)) return memoize.get(height);
         int numberOfWays = 0;
-
-
+        for(int step=1; step< Math.min(height, maxSteps)+1; step++){
+            numberOfWays += memoizeHelper(height-step, maxSteps, memoize);
+        }
+        memoize.put(height, numberOfWays);
         return numberOfWays;
     }
 
