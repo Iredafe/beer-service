@@ -22,8 +22,8 @@ public class QuickSort {
          if(array[rightIdx] >= array[pivotIdx]){
              rightIdx--;
          }
+         swap(array, pivotIdx, rightIdx);
      }
-        return new int[]{};
     }
 
     public static void swap(int [] array, int i, int j){
