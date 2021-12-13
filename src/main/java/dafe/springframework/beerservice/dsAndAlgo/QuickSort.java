@@ -10,22 +10,23 @@ public class QuickSort {
     }
 
     public static void quickSortHelper(int [] array, int startIdx, int endIdx){
+        if(startIdx >= endIdx) return ;
         int pivotIdx = startIdx;
         int leftIdx = startIdx+1;
         int rightIdx = endIdx;
-        if(startIdx >= endIdx) return ;
+
      while (rightIdx >= leftIdx){
        if(array[leftIdx] > array[pivotIdx] && array[rightIdx] < array[pivotIdx]){
              swap(array, leftIdx, rightIdx);
          }
          if(array[leftIdx] <= array[pivotIdx]){
-             leftIdx++;
+             leftIdx+=1;
          }
          if(array[rightIdx] >= array[pivotIdx]){
-             rightIdx--;
+             rightIdx-=1;
          }
          swap(array, pivotIdx, rightIdx);
-         boolean isLeftSubArraySmaller = rightIdx -1 - startIdx < endIdx - (rightIdx);
+         boolean isLeftSubArraySmaller = rightIdx -1 - startIdx < endIdx - (rightIdx+1);
          if(isLeftSubArraySmaller){
              quickSortHelper(array, startIdx, rightIdx-1);
              quickSortHelper(array, rightIdx+1, endIdx);
@@ -37,9 +38,9 @@ public class QuickSort {
     }
 
     public static void swap(int [] array, int i, int j){
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+        int temp = array[j];
+        array[j] = array[i];
+        array[i] = temp;
     }
 
     public static void main(String[] args) {
