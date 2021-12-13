@@ -12,7 +12,7 @@ public class QuickSort {
         int leftIdx = startIdx+1;
         int rightIdx = endIdx;
         if(startIdx >= endIdx) return ;
-     while (leftIdx < rightIdx){
+     while (rightIdx >= leftIdx){
        if(array[leftIdx] > array[pivotIdx] && array[rightIdx] < array[pivotIdx]){
              swap(array, leftIdx, rightIdx);
          }
@@ -23,6 +23,14 @@ public class QuickSort {
              rightIdx--;
          }
          swap(array, pivotIdx, rightIdx);
+         boolean isLeftSubArraySmaller = rightIdx -1 - startIdx < endIdx - (rightIdx);
+         if(isLeftSubArraySmaller){
+             quickSortHelper(array, startIdx, rightIdx-1);
+             quickSortHelper(array, rightIdx+1, endIdx);
+         }else{
+             quickSortHelper(array, rightIdx+1, endIdx);
+             quickSortHelper(array, startIdx, rightIdx-1);
+         }
      }
     }
 
