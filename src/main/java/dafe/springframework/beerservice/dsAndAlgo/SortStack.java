@@ -25,7 +25,7 @@ public class SortStack {
         }
 
         int topElement = stack.remove(stack.size()-1);
-        insertIntoSortedStack(stack, topElement);
+        insertIntoSortedStack(stack, value);
         stack.add(topElement);
     }
 
