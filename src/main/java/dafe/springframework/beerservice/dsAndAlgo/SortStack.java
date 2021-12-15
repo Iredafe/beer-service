@@ -32,7 +32,9 @@ public class SortStack {
 
     public static void main(String[] args) {
          List<Integer> stack = new ArrayList<>(Arrays.asList(-5, 2, -2, 4, 3, 1));
+         List<Integer> stack1 = new ArrayList<>(Arrays.asList(3, 4, 5, 1, 2));
 
         System.out.println("This is the sorted stack : " + sortStack(stack));
+        System.out.println("This is the sorted stack : " + sortStack(stack1));
     }
 }
