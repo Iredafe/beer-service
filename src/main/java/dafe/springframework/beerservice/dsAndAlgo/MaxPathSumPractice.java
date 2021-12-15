@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MaxPathSumPractice {
@@ -15,8 +18,36 @@ public class MaxPathSumPractice {
         }
     }
 
-    public static List<Integer> maxPathSum(BinaryTree tree) {
+    //handle the base case
+    //compute the left max path sum as a branch and the left running max sum
+    //repeat for the right branch
+    //compute max child sum as a branch
+    //compute max sum of current tree
+    //compute max sum as a root node
+    // compute running max path sum
+    //return maxpathsum and max sum as a branch
+    public static int maxPathSum(BinaryTree tree) {
+        List<Integer> maxSum = findMaxSum(tree);
+        return maxSum.get(1);
+    }
 
+    public static List<Integer> findMaxSum(BinaryTree tree){
+
+        if(tree == null) return new ArrayList<>(Arrays.asList(0, Integer.MIN_VALUE));
+
+        List<Integer> leftMaxSumArray = findMaxSum(tree.left);
+        Integer leftMaxSum = leftMaxSumArray.get(0);
+        Integer leftMaxPathSumAsBranch = leftMaxSumArray.get(1);
+
+        List<Integer> rightMaxSumArray= findMaxSum(tree.right);
+        Integer rightMaxSum = rightMaxSumArray.get(0);
+        Integer rightMaxSumAsBranch = rightMaxSumArray.get(1);
+
+        Integer maxChildSumAsABranch = Math.max(rightMaxSumAsBranch, leftMaxPathSumAsBranch);
+        Integer maxSumOfCurrentTree = Math.max(maxChildSumAsABranch + tree.value, tree.value);
+        Integer maxSumAsRootNode = Math.max(leftMaxPathSumAsBranch + tree.value + rightMaxSumAsBranch, maxSumOfCurrentTree);
+        Integer maxPathSum = Math.max(leftMaxSum, Math.max(rightMaxSum, maxSumAsRootNode));
+    return new ArrayList<>(Arrays.asList(maxSumOfCurrentTree,maxPathSum));
     }
 
     public static void main(String[] args) {
