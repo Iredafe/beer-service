@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,8 +8,25 @@ import java.util.List;
 public class SortStack {
 
     public static List<Integer> sortStack(List<Integer> stack){
+    if(stack.isEmpty()) return stack;
 
-        return new ArrayList<>();
+    int topElement = stack.remove(stack.size()-1);
+
+    sortStack(stack);
+    insertIntoSortedStack(stack, topElement);
+        return stack;
+    }
+
+    public static void insertIntoSortedStack(List<Integer> stack, int value){
+
+        if(stack.isEmpty() || stack.get(stack.size()-1) <= value){
+            stack.add(value);
+            return;
+        }
+
+        int topElement = stack.remove(stack.size()-1);
+        insertIntoSortedStack(stack, topElement);
+        stack.add(topElement);
     }
 
 
