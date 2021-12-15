@@ -41,4 +41,9 @@ public class CycleInGraph {
       return false;
     }
 
+    public static void main(String[] args) {
+
+        int [][] edges = {{1,3}, {2,3,4}, {0}, {}, {2,5}, {}};
+        System.out.println("Is there a cycle in the graph? : " + cycleInGraph(edges));
+    }
 }
