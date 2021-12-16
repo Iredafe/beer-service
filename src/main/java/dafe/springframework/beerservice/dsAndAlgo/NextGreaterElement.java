@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class NextGreaterElement {
 
@@ -9,6 +10,16 @@ public class NextGreaterElement {
         int [] result = new int[array.length];
         Arrays.fill(result, -1);
 
+        Stack <Integer> stack = new Stack<>();
+
+        for(int index=0; index < 2*array.length; index++){
+            int circularIndex = index % array.length;
+            while(stack.size() >0 && array[stack.peek()] <= array[circularIndex]){
+                int top = stack.pop();
+                result[top] = array[circularIndex];
+            }
+            stack.push(circularIndex);
+        }
         return result;
     }
 
