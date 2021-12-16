@@ -14,7 +14,7 @@ public class NextGreaterElement {
 
         for(int index=0; index < 2*array.length; index++){
             int circularIndex = index % array.length;
-            while(stack.size() >0 && array[stack.peek()] <= array[circularIndex]){
+            while(stack.size() > 0 && array[stack.peek()] < array[circularIndex]){
                 int top = stack.pop();
                 result[top] = array[circularIndex];
             }
@@ -29,6 +29,6 @@ public class NextGreaterElement {
 
         System.out.println
                 ("This is the result of nex greater element function : "
-                        + nextGreaterElement(input));
+                        + Arrays.toString(nextGreaterElement(input)));
     }
 }
