@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SunsetViews {
@@ -23,7 +24,9 @@ public class SunsetViews {
             stack.add(idx);
             idx+=step;
         }
-
+        if(direction=="WEST"){
+            Collections.reverse(stack);
+        }
         return stack;
     }
 
