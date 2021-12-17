@@ -11,26 +11,7 @@ public class MergeIntervals {
 
     public static int[][] merge(int[][] arrays) {
 
-        int[][] sortedInput = arrays.clone();
-        Arrays.sort(sortedInput, (a,b)->compare(a[0], b[0]));
 
-        List<int[]> mergedIntervals = new ArrayList<>();
-        int[] currentInterval = sortedInput[0];
-        mergedIntervals.add(currentInterval);
-
-        for (int[] nextInterval : sortedInput) {
-            int currentIntervalEnd = currentInterval[1];
-            int nextIntervalStart = nextInterval[0];
-            int nextIntervalEnd = nextInterval[1];
-
-            if (currentIntervalEnd >= nextIntervalStart) {
-                currentInterval[1] = Math.max(currentIntervalEnd, nextIntervalEnd);
-            }else{
-                currentInterval = nextInterval;
-                mergedIntervals.add(currentInterval);
-            }
-        }
-        return mergedIntervals.toArray(new int[mergedIntervals.size()][]);
     }
     public static void main(String[] args) {
 
@@ -42,3 +23,14 @@ public class MergeIntervals {
         System.out.println("These are the overlapping intervals : " + Arrays.toString(merge(input)));
     }
 }
+//initialize a sortedIntervals array
+//clone the input and store in sortedIntervals
+//sort the 2d array with a comparator
+//create a mergedInterval object to store the output
+//assign the first array in the sortedInterval array to currentInterval variable
+//add the currentInterval into the mergedInterval arraylist
+//loop through the sorted intervals - for each nextInterval in sortedIntervals
+//do a check - if the last index of the currentInterval is >= nextInterval
+//assign the last index - currentInterval[1] to the Max value of currentInterval[1] and nextInterval[1]
+//if not, assign the currentInterval array to nextInterval array
+//append the currentInterval into the output object

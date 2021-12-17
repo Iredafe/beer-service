@@ -31,7 +31,7 @@ public class SunsetViews {
     }
 
     public static void main(String[] args) {
-        int [] buildings = {3, 5, 4, 4, 3, 1, 3, 2};
+        int [] buildings = {3, 5, 4, 4, 3, 10, 3, 20};
         String direction1 ="EAST";
         String direction2 = "WEST";
 
