@@ -3,15 +3,29 @@ package dafe.springframework.beerservice.dsAndAlgo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.List;
-
-import static java.lang.Integer.compare;
 
 public class MergeIntervals {
 
-    public static int[][] merge(int[][] arrays) {
+    public static int[][] merge(int[][] intervals) {
 
+        int [][] sortedIntervals = intervals.clone();
+        Arrays.sort(sortedIntervals, Comparator.comparingInt(a -> a[0]));
+        ArrayList<int[]> mergedIntervals = new ArrayList<>();
+        int [] currentInterval = sortedIntervals[0];
 
+        for(int[] nextInterval:sortedIntervals){
+           int nextIntervalEnd = nextInterval[1];
+            int nextIntervalStart = nextInterval[0];
+            int currentIntervalEnd = currentInterval[1];
+
+            if(currentIntervalEnd >= nextIntervalStart){
+                currentInterval[1] = Math.max(currentIntervalEnd, nextIntervalEnd);
+            }else {
+                currentInterval = nextInterval;
+                mergedIntervals.add(currentInterval);
+            }
+        }
+        return mergedIntervals.toArray(new int[mergedIntervals.size()][]);
     }
     public static void main(String[] args) {
 
