@@ -3,19 +3,22 @@ package dafe.springframework.beerservice.dsAndAlgo;
 public class ValidStartingCity {
 
     public static int validStartingCity(int [] distance, int [] fuel, int mpg){
-        int validStartingCity = 0;
+
+
         int numberOfCities = distance.length;
         for(int city = 0; city < numberOfCities; city++){
+            int milesRemaining=0;
             for(int currentCityIdx = city; currentCityIdx < city + numberOfCities; currentCityIdx++){
                 int currentCityRotatedIndex = currentCityIdx % numberOfCities;
-                if((fuel[currentCityRotatedIndex] * mpg) - distance[currentCityRotatedIndex] < 0 ){
-                    continue;
-                }else if((fuel[currentCityRotatedIndex] * mpg) - distance[currentCityRotatedIndex]  >= 0) {
-                    validStartingCity= city;
-                }
-            }
+                if(milesRemaining < 0 ) continue;
+                int distanceToNextCity = distance[currentCityRotatedIndex];
+                int fuelFromCurrentCity = fuel[currentCityRotatedIndex];
+
+                milesRemaining += (fuelFromCurrentCity * mpg) - distanceToNextCity;
+                 }
+            if(milesRemaining >= 0) return city;
         }
-        return validStartingCity;
+        return -1;
     }
 
     public static int validStartingCity1(int [] distance, int []fuel, int mpg){
@@ -45,8 +48,8 @@ public class ValidStartingCity {
         int fuel1[]={0, 2, 1, 0, 0, 1, 1};
         int mpg1=20;
 
-        System.out.println("This is the valid starting city : " + validStartingCity1(distance, fuel, mpg));
-        System.out.println("This is the valid starting city : " + validStartingCity1(distance1, fuel1, mpg1));
+        System.out.println("This is the valid starting city : " + validStartingCity(distance, fuel, mpg));
+        System.out.println("This is the valid starting city : " + validStartingCity(distance1, fuel1, mpg1));
     }
 }
 
