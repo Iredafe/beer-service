@@ -12,6 +12,7 @@ public class MergeIntervals {
         Arrays.sort(sortedIntervals, Comparator.comparingInt(a -> a[0]));
         ArrayList<int[]> mergedIntervals = new ArrayList<>();
         int [] currentInterval = sortedIntervals[0];
+        mergedIntervals.add(currentInterval);
 
         for(int[] nextInterval:sortedIntervals){
            int nextIntervalEnd = nextInterval[1];
