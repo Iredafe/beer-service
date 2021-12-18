@@ -34,7 +34,7 @@ public class MergeIntervals {
         {4, 7},
         {6, 8},
         {9, 10}};
-        System.out.println("These are the overlapping intervals : " + Arrays.toString(merge(input)));
+        System.out.println("These are the overlapping intervals : " + Arrays.deepToString(merge(input)));
     }
 }
 //initialize a sortedIntervals array
