@@ -44,7 +44,10 @@ public class MinimumCharactersForWords {
         return charactersArray;
     }
 
+    public static char[] minimumCharacterNeededForWords(String [] words){
 
+        return new char[]{};
+    }
 
     public static void main(String [] args){
 
