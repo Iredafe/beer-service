@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -46,9 +47,30 @@ public class MinimumCharactersForWords {
 
     public static char[] minimumCharacterNeededForWords(String [] words){
 
-        return new char[]{};
+        HashMap<Character, Integer> maximumCharacterFrequencies = new HashMap<>();
+
+        for(String word : words){
+            HashMap<Character, Integer> characterFrequencies = countCharacterFrequencies(word);
+            updateMaximumFrequencies(characterFrequencies, maximumCharacterFrequencies);
+        }
+        return makeArrayFromCharacterFrequencies(maximumCharacterFrequencies);
+        }
+
+    public static HashMap<Character, Integer> countCharacterFrequencies(String word) {
+            HashMap<Character, Integer> characterFrequency = new HashMap<>();
+
+            return characterFrequency;
     }
 
+    public static void updateMaximumFrequencies(HashMap<Character, Integer> characterFrequencies,
+                                                                       HashMap<Character, Integer> maximumCharacterFrequencies){
+
+    }
+
+    public static char[] makeArrayFromCharacterFrequencies(HashMap<Character, Integer> characterFrequency){
+
+        return new char[]{};
+    }
     public static void main(String [] args){
 
         String [] input = {"this", "that", "did", "deed", "them!", "a"};
