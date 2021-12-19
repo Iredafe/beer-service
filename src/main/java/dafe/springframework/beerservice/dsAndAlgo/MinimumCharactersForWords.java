@@ -68,8 +68,20 @@ public class MinimumCharactersForWords {
     }
 
     public static char[] makeArrayFromCharacterFrequencies(HashMap<Character, Integer> characterFrequency){
+      ArrayList<Character> list = new ArrayList<>();
+        for(Map.Entry<Character,Integer> frequency : characterFrequency.entrySet()){
+            char character = frequency.getKey();
+            int frequencyValue = frequency.getValue();
 
-        return new char[]{};
+            for(int index=0; index <= frequencyValue; index++){
+                list.add(character);
+            }
+        }
+        char[] output = new char[list.size()];
+        for(int i=0; i< list.size(); i++){
+             output[i] = list.get(i);
+        }
+        return output;
     }
     public static void main(String [] args){
 
