@@ -58,13 +58,24 @@ public class MinimumCharactersForWords {
 
     public static HashMap<Character, Integer> countCharacterFrequencies(String word) {
             HashMap<Character, Integer> characterFrequency = new HashMap<>();
-
+            for(char character : word.toCharArray()){
+                characterFrequency.put(character, characterFrequency.getOrDefault(character, 0)+1);
+            }
             return characterFrequency;
     }
 
     public static void updateMaximumFrequencies(HashMap<Character, Integer> characterFrequencies,
                                                                        HashMap<Character, Integer> maximumCharacterFrequencies){
+        for(Map.Entry<Character, Integer> frequency : characterFrequencies.entrySet()){
+            char character = frequency.getKey();
+            int frequencyValue = frequency.getValue();
 
+            if(maximumCharacterFrequencies.containsKey(character)){
+                maximumCharacterFrequencies.put(character, Math.max(maximumCharacterFrequencies.get(character), frequencyValue));
+            }else{
+                maximumCharacterFrequencies.put(character, frequencyValue);
+            }
+        }
     }
 
     public static char[] makeArrayFromCharacterFrequencies(HashMap<Character, Integer> characterFrequency){
@@ -72,8 +83,7 @@ public class MinimumCharactersForWords {
         for(Map.Entry<Character,Integer> frequency : characterFrequency.entrySet()){
             char character = frequency.getKey();
             int frequencyValue = frequency.getValue();
-
-            for(int index=0; index <= frequencyValue; index++){
+            for(int index=0; index < frequencyValue; index++){
                 list.add(character);
             }
         }
@@ -87,6 +97,7 @@ public class MinimumCharactersForWords {
 
         String [] input = {"this", "that", "did", "deed", "them!", "a"};
         System.out.println("This is the minimum number of characters for words : " + Arrays.toString(minimumCharacterForWords(input)));
+        System.out.println("This is the minimum number of characters for words : " + Arrays.toString(minimumCharacterNeededForWords(input)));
 
     }
 }
