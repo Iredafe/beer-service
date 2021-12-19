@@ -44,6 +44,8 @@ public class MinimumCharactersForWords {
         return charactersArray;
     }
 
+
+
     public static void main(String [] args){
 
         String [] input = {"this", "that", "did", "deed", "them!", "a"};
