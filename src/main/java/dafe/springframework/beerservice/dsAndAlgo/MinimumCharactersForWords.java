@@ -22,6 +22,7 @@ public class MinimumCharactersForWords {
                         bucket.put(character, secondBucket.get(character));
                     }else{
                         secondBucket.put(character, 1);
+                        bucket.put(character, secondBucket.get(character));
                     }
                 }
             }
