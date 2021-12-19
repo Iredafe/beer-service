@@ -20,10 +20,10 @@ public class MinimumCharactersForWords {
                         secondBucket.put(character, secondBucket.getOrDefault(character, 0) +1);
                         frequency++;
                         bucket.put(character, secondBucket.get(character));
-                    }else{
-                        secondBucket.put(character, 1);
-                        bucket.put(character, secondBucket.get(character));
                     }
+                }else{
+                    secondBucket.put(character, 1);
+                    bucket.put(character, secondBucket.get(character));
                 }
             }
         }
