@@ -22,18 +22,31 @@ public class RiverSizes {
 
     public static void traverseNodes(int i, int j, int[][]matrix, boolean[][]visited, List<Integer> sizes){
         Stack<Integer[]> nodesToExplore = new Stack<>();
+        int currentSizes=0;
         nodesToExplore.push(new Integer[]{i,j});
-        if(!nodesToExplore.empty()){
+        while(!nodesToExplore.empty()){
+            Integer [] currentNode = nodesToExplore.pop();
+            i = currentNode[0];
+            j = currentNode[1];
+          if(visited[i][j]) continue;
+          visited[i][j] = true;
+          if(matrix[i][j] == 0) continue;
+          currentSizes++;
 
+          List<Integer[]> unvisitedNeighbors = getUnvisitedNodes(i,j,matrix,visited);
+          for(Integer[] neighbor : unvisitedNeighbors){
+              nodesToExplore.add(neighbor);
+              if(currentSizes>0) sizes.add(currentSizes);
+          }
         }
     }
 
     public static List<Integer[]> getUnvisitedNodes(int i, int j, int[][]matrix, boolean[][]visited){
         List<Integer[]> unvisitedNeighbors = new ArrayList<>();
         if(i>0 && !visited[i-1][j]) unvisitedNeighbors.add(new Integer[]{i-1,j});
-        if(i<matrix.length && !visited[i+1][j]) unvisitedNeighbors.add(new Integer[]{i+1, j});
+        if(i<matrix.length-1 && !visited[i+1][j]) unvisitedNeighbors.add(new Integer[]{i+1, j});
         if(j>0 && !visited[i][j-1]) unvisitedNeighbors.add(new Integer[]{i, j-1});
-        if(j< matrix[0].length && !visited[i][j+1]) unvisitedNeighbors.add(new Integer[]{i, j+1});
+        if(j< matrix[0].length-1 && !visited[i][j+1]) unvisitedNeighbors.add(new Integer[]{i, j+1});
         return unvisitedNeighbors;
     }
     public static void main(String[] args) {
