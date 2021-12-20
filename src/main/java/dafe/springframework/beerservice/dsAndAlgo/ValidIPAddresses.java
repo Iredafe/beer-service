@@ -9,6 +9,15 @@ public class ValidIPAddresses {
         return new ArrayList<>();
     }
 
+    public boolean isValidPart(String input){
+
+        return true;
+    }
+
+    public static void join(String [] strings){
+
+    }
+
     public static void main(String[] args) {
         String input = "1921680";
         System.out.println("These are the valid IP addresses : " + validIPAddresses(input));
