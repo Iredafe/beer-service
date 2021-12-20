@@ -23,12 +23,18 @@ public class RiverSizes {
     public static void traverseNodes(int i, int j, int[][]matrix, boolean[][]visited, List<Integer> sizes){
         Stack<Integer[]> nodesToExplore = new Stack<>();
         nodesToExplore.push(new Integer[]{i,j});
+        if(!nodesToExplore.empty()){
+
+        }
     }
 
-    public static List<Integer> getUnvisitedNodes(int i, int j, boolean[][]visited){
-
-
-        return new ArrayList<>();
+    public static List<Integer[]> getUnvisitedNodes(int i, int j, int[][]matrix, boolean[][]visited){
+        List<Integer[]> unvisitedNeighbors = new ArrayList<>();
+        if(i>0 && !visited[i-1][j]) unvisitedNeighbors.add(new Integer[]{i-1,j});
+        if(i<matrix.length && !visited[i+1][j]) unvisitedNeighbors.add(new Integer[]{i+1, j});
+        if(j>0 && !visited[i][j-1]) unvisitedNeighbors.add(new Integer[]{i, j-1});
+        if(j< matrix[0].length && !visited[i][j+1]) unvisitedNeighbors.add(new Integer[]{i, j+1});
+        return unvisitedNeighbors;
     }
     public static void main(String[] args) {
         int[][] matrix = new int[][]{{1, 0, 0, 1, 0},
