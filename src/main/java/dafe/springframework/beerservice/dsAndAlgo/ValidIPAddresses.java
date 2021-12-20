@@ -29,11 +29,11 @@ public class ValidIPAddresses {
 
         return ipAddressesFound;
     }
-
     public static boolean isValidPart(String input){
         int stringAsInt = Integer.parseInt(input);
-        if(stringAsInt > 255) return false;
-        return input.length()==Integer.toString(stringAsInt).length();
+        boolean hasNoLeadingZeroes = input.length()==Integer.toString(stringAsInt).length();
+        if(stringAsInt > 255 || !hasNoLeadingZeroes) return false;
+        return true;
     }
 
     public static String join(String [] strings){
