@@ -13,14 +13,14 @@ public class RiverSizes {
         for(int i=0; i< matrix.length; i++){
             for(int j=0; j< matrix[0].length; j++){
                 if(visited[i][j]) continue;
-                traverseNodes(i,j,visited, sizes);
+                traverseNodes(i,j, matrix, visited, sizes);
             }
         }
         return sizes;
     }
 
 
-    public static void traverseNodes(int i, int j, boolean[][]visited, List<Integer> sizes){
+    public static void traverseNodes(int i, int j, int[][]matrix, boolean[][]visited, List<Integer> sizes){
         Stack<Integer[]> nodesToExplore = new Stack<>();
         nodesToExplore.push(new Integer[]{i,j});
     }
