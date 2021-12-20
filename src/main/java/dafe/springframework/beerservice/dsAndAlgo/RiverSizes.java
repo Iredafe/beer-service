@@ -36,9 +36,9 @@ public class RiverSizes {
           List<Integer[]> unvisitedNeighbors = getUnvisitedNodes(i,j,matrix,visited);
           for(Integer[] neighbor : unvisitedNeighbors){
               nodesToExplore.add(neighbor);
-              if(currentSizes>0) sizes.add(currentSizes);
           }
         }
+        if(currentSizes>0) sizes.add(currentSizes);
     }
 
     public static List<Integer[]> getUnvisitedNodes(int i, int j, int[][]matrix, boolean[][]visited){
