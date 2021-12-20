@@ -7,10 +7,23 @@ import java.util.Stack;
 public class RiverSizes {
 
     public static List<Integer> riverSizes(int[][] matrix) {
+        List<Integer> sizes = new ArrayList<>();
+        boolean[][] visited = new boolean[matrix.length][matrix[0].length];
+
+        return sizes;
+    }
+
+
+    public static void traverseNodes(int i, int j, boolean[][]visited, List<Integer> sizes){
+        Stack<Integer[]> nodesToExplore = new Stack<>();
+        nodesToExplore.push(new Integer[]{i,j});
+    }
+
+    public static List<Integer> getUnvisitedNodes(int i, int j, boolean[][]visited){
+
 
         return new ArrayList<>();
     }
-
     public static void main(String[] args) {
         int[][] matrix = new int[][]{{1, 0, 0, 1, 0},
                 {1, 0, 1, 0, 0},
