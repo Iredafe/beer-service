@@ -36,13 +36,17 @@ public class CompareLeafTraversal {
     public static BinaryTree getNextLeafNode(Stack<BinaryTree> traversalStack){
         BinaryTree currentNode = traversalStack.pop();
 
-        while(currentNode != null){
+        while(!isLeafNode(currentNode)){
             if(currentNode.right != null) traversalStack.push(currentNode.right);
             if(currentNode.left != null) traversalStack.push(currentNode.left);
             currentNode = traversalStack.pop();
         }
 
         return currentNode;
+    }
+
+    public static boolean isLeafNode(BinaryTree tree){
+    return tree.left==null && tree.right==null;
     }
 
 
@@ -58,7 +62,6 @@ public class CompareLeafTraversal {
         tree1.root.right.right = new BinaryTree(6);
         tree1.root.left.right.left = new BinaryTree(7);
         tree1.root.left.right.right = new BinaryTree(8);
-        tree1.root.right.right = new BinaryTree(6);
 
         tree2.root = new BinaryTree(1);
         tree2.root.left = new BinaryTree(2);
@@ -69,5 +72,7 @@ public class CompareLeafTraversal {
         tree2.root.right.right.right = new BinaryTree(6);
         tree2.root.right.right.left = new BinaryTree(8);
 
+
+        System.out.println("Leaf of tree 1 is same as leaf of tree 2 : " + compareLeafTraversal(tree1.root, tree2.root));
     }
 }
