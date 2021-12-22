@@ -48,5 +48,31 @@ public class BSTConstruction {
             }
             return false;
         }
+
+        public void remove(int value, BST parentNode){
+            BST currentNode = this;
+            while(currentNode!=null){
+                if(value < currentNode.value){
+                    parentNode=currentNode;
+                    currentNode = currentNode.left;
+                }else if(value > currentNode.value){
+                    parentNode=currentNode;
+                    currentNode=currentNode.right;
+                }else {
+                    if(currentNode.left != null && currentNode.right != null){
+                        currentNode.value = currentNode.right.getMinValue();
+                        currentNode.right.remove(currentNode.value, currentNode);
+                    }
+                }
+            }
+        }
+        public int getMinValue(){
+        if(left==null) {
+            return value;
+        }
+        else {
+            return left.getMinValue();
+        }
+        }
     }
 }
