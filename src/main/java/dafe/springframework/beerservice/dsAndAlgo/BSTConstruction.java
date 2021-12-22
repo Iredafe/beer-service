@@ -18,6 +18,7 @@ public class BSTConstruction {
                     if (currentNode.left == null) {
                         BST newNode = new BST(value);
                         currentNode.left = newNode;
+                        break;
                     } else {
                         currentNode = currentNode.left;
                     }
@@ -25,12 +26,13 @@ public class BSTConstruction {
                     if (currentNode.right == null) {
                         BST newNode = new BST(value);
                         currentNode.right = newNode;
+                        break;
                     } else {
                         currentNode = currentNode.right;
                     }
                 }
-                return this;
             }
+            return this;
         }
 
         public boolean contains(int value) {
@@ -46,6 +48,5 @@ public class BSTConstruction {
             }
             return false;
         }
-
     }
 }
