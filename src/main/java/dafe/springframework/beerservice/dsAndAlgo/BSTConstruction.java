@@ -34,6 +34,11 @@ public class BSTConstruction {
                return this;
            }
         }
+        public boolean contains(int value){
+
+
+            return true;
+        }
     }
 
 
