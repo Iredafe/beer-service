@@ -74,7 +74,12 @@ public class BSTConstruction {
                         }else{
                             //this is a single node - do nothing
                         }
-                        }
+                        }else if(parentNode.left == currentNode){
+                        parentNode.left = currentNode!=null ? currentNode : currentNode.right;
+                    }else if(parentNode.right == currentNode){
+                        parentNode.right = currentNode!=null ? currentNode : currentNode.right;
+                    }
+                    break;
                 }
             }
         }
