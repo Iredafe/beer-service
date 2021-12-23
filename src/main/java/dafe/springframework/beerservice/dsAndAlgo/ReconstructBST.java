@@ -39,11 +39,19 @@ public class ReconstructBST {
         return bst;
     }
 
+    public static void printTree(BST root) {
+        if (root == null) return;
+        System.out.println(root.value);
+        printTree(root.left);
+        printTree(root.right);
+
+    }
+
     public static void main(String[] args) {
         ArrayList <Integer> preOrderTraversalValues = new ArrayList<>(Arrays.asList(10, 4, 2, 1, 5, 17, 19, 18));
 
-        System.out.println("This is the reconstructed BST : " + reconstructBST(preOrderTraversalValues));
-
+        BST root = reconstructBST(preOrderTraversalValues);
+        printTree(root);
     }
 
 }
