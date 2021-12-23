@@ -3,6 +3,7 @@ package dafe.springframework.beerservice.dsAndAlgo;
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ReconstructBST {
 
@@ -17,10 +18,25 @@ public class ReconstructBST {
 
     }
 
-    public static BST reconstructBST(ArrayList<Integer> preOrderTraversalValues){
+    public static BST reconstructBST(List<Integer> preOrderTraversalValues){
+        if(preOrderTraversalValues.size()==0) return null;
+        int currentValue = preOrderTraversalValues.get(0);
+        //initialize the right index of subtree with default value
+        int rightIdxOfSubTree = preOrderTraversalValues.size();
+        //identify the rightIndex
+        for(int idx=1; idx< preOrderTraversalValues.size(); idx++){
+            int value = preOrderTraversalValues.get(idx);
+            if(value>=currentValue){
+                rightIdxOfSubTree = idx;
+                break;
+            }
+        }
 
+        BST bst = new BST(currentValue);
+        bst.left = reconstructBST(preOrderTraversalValues.subList(1, rightIdxOfSubTree));
+        bst.right = reconstructBST(preOrderTraversalValues.subList(rightIdxOfSubTree, preOrderTraversalValues.size()));
 
-        return new BST(0);
+        return bst;
     }
 
     public static void main(String[] args) {
