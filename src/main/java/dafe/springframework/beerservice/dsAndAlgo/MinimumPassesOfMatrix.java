@@ -23,6 +23,10 @@ public class MinimumPassesOfMatrix {
 
                 ArrayList<int[]> adjacentPositions = getAdjacentPositions(currentRow, currentCol, matrix);
 
+                for(int [] position : adjacentPositions){
+                        int row = position[0];
+                        int col = position[1];
+                }
 
             }
 
