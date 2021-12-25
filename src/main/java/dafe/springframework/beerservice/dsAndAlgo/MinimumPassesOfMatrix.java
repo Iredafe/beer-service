@@ -34,17 +34,15 @@ public class MinimumPassesOfMatrix {
                         }
                 }
          }
-                passes++;
+                passes+=1;
         }
-
-
-        return 1;
+        return passes;
     }
 
     public static ArrayList<int[]> getAllPositivePositions( int[][] matrix){
         ArrayList<int[]> positivePositions = new ArrayList<>();
         for(int row=0; row < matrix.length; row++){
-            for(int col=0; col < matrix[row].length; col++){
+            for(int col=0; col < matrix[0].length; col++){
                 int value = matrix[row][col];
                 if(value > 0){
                     positivePositions.add(new int[]{row,col});
@@ -64,8 +62,9 @@ public class MinimumPassesOfMatrix {
     }
 
     public static boolean containsNegative(int [][] matrix){
-        for(int [] row : matrix){
-            for(int value : row){
+        for(int row=0; row < matrix.length; row++){
+            for(int col=0; col < matrix[0].length; col++){
+                int value = matrix[row][col];
                 if(value < 0) return true;
             }
         }
