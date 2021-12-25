@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
+
 public class MinimumPassesOfMatrix {
 
     public static int minimumPassesOfMatrix(int [][] matrix){
@@ -7,7 +9,10 @@ public class MinimumPassesOfMatrix {
         return 0;
     }
 
+    public static ArrayList<int[]> getAdjacentPositions(int row, int col, int[][]matrix){
 
+        return new ArrayList<>();
+    }
     public static void main(String[] args) {
         int [][] matrix =   {{0, -1, -3, 2, 0},
                             {1, -2, -5, -1, -3},
