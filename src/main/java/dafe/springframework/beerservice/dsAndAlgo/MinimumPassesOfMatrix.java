@@ -5,8 +5,13 @@ import java.util.ArrayList;
 public class MinimumPassesOfMatrix {
 
     public static int minimumPassesOfMatrix(int [][] matrix){
+        int passes = convertNegatives(matrix);
+        return passes;
+    }
 
-        return 0;
+    public static int convertNegatives(int [][]matrix){
+
+        return 1;
     }
 
     public static ArrayList<int[]> getAdjacentPositions(int row, int col, int[][]matrix){
