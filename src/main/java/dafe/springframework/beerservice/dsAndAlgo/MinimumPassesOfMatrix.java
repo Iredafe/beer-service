@@ -13,6 +13,17 @@ public class MinimumPassesOfMatrix {
 
         return new ArrayList<>();
     }
+
+    public static ArrayList<int[]> getAllPositivePositions(int row, int col, int[][] matrix){
+
+        return new ArrayList<>();
+    }
+
+    public static boolean containsNegative(int [][] matrix){
+
+        return false;
+    }
+
     public static void main(String[] args) {
         int [][] matrix =   {{0, -1, -3, 2, 0},
                             {1, -2, -5, -1, -3},
