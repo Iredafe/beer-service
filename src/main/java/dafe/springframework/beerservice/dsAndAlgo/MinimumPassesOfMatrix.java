@@ -26,6 +26,12 @@ public class MinimumPassesOfMatrix {
                 for(int [] position : adjacentPositions){
                         int row = position[0];
                         int col = position[1];
+
+                        int value = matrix[row][col];
+                        if(value < 0){
+                            matrix[row][col] *= -1;
+                            nextPassQueue.add(new int[]{row, col});
+                        }
                 }
 
             }
