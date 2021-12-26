@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.Stack;
+
 public class RemoveIsland {
 
     static int [][] removeIslands(int [][] matrix){
@@ -35,10 +37,27 @@ public class RemoveIsland {
 
 
     public  static void findOnesConnectedToBorder(int [][] matrix, int row, int col, boolean [][] onesConnectedToBorder){
+            Stack<int[]> stack = new Stack<>();
+            stack.push(new int[]{row, col});
 
+            while (stack.size() > 0) {
+                int [] currentPositions = stack.pop();
+                int currentRow = currentPositions[0];
+                int currentCol = currentPositions[1];
+
+                //find the elements that are visited
+
+                boolean alreadyVisited = onesConnectedToBorder[currentRow][currentCol];
+                if(alreadyVisited) continue;
+                onesConnectedToBorder[currentRow][currentCol] = true;
+
+                //get the neighboring nodes
+
+                int [][] neighbors = getNeighbors(matrix, currentRow, currentCol);
+            }
     }
 
-    public int[][] getNeighbors(int [][] matrix, int row, int col){
+    public static int[][] getNeighbors(int [][] matrix, int row, int col){
 
         return new int[][]{};
     }
