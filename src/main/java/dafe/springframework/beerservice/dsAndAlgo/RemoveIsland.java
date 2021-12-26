@@ -8,6 +8,15 @@ public class RemoveIsland {
     }
 
 
+    public  static void findOnesConnectedToBorder(int [][] matrix, int row, int col, boolean [][] onesConnectedToBorder){
+
+    }
+
+    public int[][] getNeighbors(int [][] matrix, int row, int col){
+
+        return new int[][]{};
+    }
+
     public static void main(String[] args) {
         int [][] matrix =           {{1, 0, 0, 0, 0, 0},
                                     {0, 1, 0, 1, 1, 1},
