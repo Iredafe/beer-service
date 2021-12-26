@@ -14,7 +14,18 @@ public class TaskAssignments {
 
     public static HashMap<Integer, ArrayList<Integer>> getTaskDurationsToIndices(ArrayList<Integer> tasks){
 
-        return new HashMap<>();
+        HashMap<Integer, ArrayList<Integer>> taskDurationsToIndices = new HashMap<>();
+        for (int i=0; i<tasks.size(); i++){
+            int taskDuration = tasks.get(i);
+            if(taskDurationsToIndices.containsKey(taskDuration)){
+                taskDurationsToIndices.get(taskDuration).add(i);
+            }else{
+                ArrayList<Integer> temp = new ArrayList<>();
+                temp.add(i);
+                taskDurationsToIndices.put(taskDuration, temp);
+            }
+        }
+        return taskDurationsToIndices;
     }
 
     public static void main(String[] args) {
