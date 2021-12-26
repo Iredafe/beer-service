@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Stack;
 
 public class RemoveIsland {
@@ -36,9 +38,9 @@ public class RemoveIsland {
     }
 
 
-    public  static void findOnesConnectedToBorder(int [][] matrix, int row, int col, boolean [][] onesConnectedToBorder){
+    public  static void findOnesConnectedToBorder(int [][] matrix, int startRow, int startCol, boolean [][] onesConnectedToBorder){
             Stack<int[]> stack = new Stack<>();
-            stack.push(new int[]{row, col});
+            stack.push(new int[]{startRow, startCol});
 
             while (stack.size() > 0) {
                 int [] currentPositions = stack.pop();
@@ -54,12 +56,30 @@ public class RemoveIsland {
                 //get the neighboring nodes
 
                 int [][] neighbors = getNeighbors(matrix, currentRow, currentCol);
+
+                for(int [] neighbor : neighbors){
+                    int row = neighbor[0];
+                    int col = neighbor[1];
+
+                    if(matrix[row][col] != 1) continue;
+
+                    stack.push(new int[]{row, col});
+                }
             }
     }
 
     public static int[][] getNeighbors(int [][] matrix, int row, int col){
+        ArrayList<int[]> temp = new ArrayList<>();
+        if(row-1 > 0) temp.add(new int[]{row-1, col});
+        if(row+1 < matrix.length-1) temp.add(new int[]{row+1, col});
+        if(col-1 > 0) temp.add(new int[]{row, col-1});
+        if(col+1 < matrix[0].length-1) temp.add(new int[]{row, col+1});
 
-        return new int[][]{};
+        int [][] neighbors = new int[temp.size()][2];
+        for(int i =0; i< temp.size(); i++){
+                neighbors[i] = temp.get(i);
+        }
+        return neighbors;
     }
 
     public static void main(String[] args) {
@@ -70,7 +90,7 @@ public class RemoveIsland {
                                     {1, 0, 1, 1, 0, 0},
                                     {1, 0, 0, 0, 0, 1}};
 
-        System.out.println("This is the matrix after removing islands : " + removeIslands(matrix));
+        System.out.println("This is the matrix after removing islands : " + Arrays.deepToString(removeIslands(matrix)));
                             };
 }
 
