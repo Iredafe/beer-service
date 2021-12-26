@@ -2,6 +2,7 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class TaskAssignments {
 
@@ -11,6 +12,10 @@ public class TaskAssignments {
         return new ArrayList<>();
     }
 
+    public static HashMap<Integer, ArrayList<Integer>> getTaskDurationsToIndices(ArrayList<Integer> tasks){
+
+        return new HashMap<>();
+    }
 
     public static void main(String[] args) {
         int k =3;
