@@ -2,14 +2,22 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class TaskAssignments {
 
 
     public static ArrayList<ArrayList<Integer>> taskAssignment(int k, ArrayList<Integer> tasks){
+        ArrayList<ArrayList<Integer>> pairedTasks = new ArrayList<>();
+        HashMap<Integer, ArrayList<Integer>> taskDurationToIndices = getTaskDurationsToIndices(tasks);
+        ArrayList<Integer> sortedTasks = tasks;
+        Collections.sort(sortedTasks);
 
-        return new ArrayList<>();
+        for(int i = 0; i< tasks.size()-1; i++){
+
+        }
+         return pairedTasks;
     }
 
     public static HashMap<Integer, ArrayList<Integer>> getTaskDurationsToIndices(ArrayList<Integer> tasks){
