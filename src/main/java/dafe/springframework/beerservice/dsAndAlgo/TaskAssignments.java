@@ -15,7 +15,9 @@ public class TaskAssignments {
         Collections.sort(sortedTasks);
 
         for(int i = 0; i< tasks.size()-1; i++){
-
+            int task1Duration = sortedTasks.get(i);
+            ArrayList<Integer> indicesWithTask1Duration = taskDurationToIndices.get(task1Duration);
+            int task1Index = indicesWithTask1Duration.remove(indicesWithTask1Duration.size()-1);
         }
          return pairedTasks;
     }
