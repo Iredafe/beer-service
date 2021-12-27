@@ -75,7 +75,7 @@ public class InvertABinaryTree {
 
         tree.inOrder(root);
         System.out.println( "This is the inverted binary tree : " + tree.invertbinaryTree(root));
-
+        invertBinaryTreeBFS(root);
 
 
     }
