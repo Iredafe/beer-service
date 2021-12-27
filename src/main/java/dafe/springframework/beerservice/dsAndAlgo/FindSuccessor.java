@@ -39,8 +39,8 @@ public class FindSuccessor {
     }
 
     public static BinaryTree findSuccessor1(BinaryTree tree, BinaryTree node){
-
-        return node;
+        if(node.right != null) return getLeftMostChild(node.right);
+        return getRightMostParent(node);
     }
 
 
