@@ -57,16 +57,15 @@ public class FindSuccessor {
 
     public static void main(String [] args){
 
-       FindSuccessor tree = new FindSuccessor();
-        tree.parent = new BinaryTree(1);
-        tree.parent.left = new BinaryTree(2);
-        tree.parent.right = new BinaryTree(3);
-        tree.parent.left.left = new BinaryTree(4);
-        tree.parent.left.right = new BinaryTree(5);
-        tree.parent.left.left.left = new BinaryTree(6);
+       BinaryTree tree = new BinaryTree(1);
+        tree.left = new BinaryTree(2);
+        tree.right = new BinaryTree(3);
+        tree.left.left = new BinaryTree(4);
+        tree.left.right = new BinaryTree(5);
+        tree.left.left.left = new BinaryTree(6);
 
         BinaryTree node = new BinaryTree(5);
-    //System.out.println("This is the node's successor : " + findSuccessor(tree, node));
+  //  System.out.println("This is the node's successor : " + findSuccessor(tree, node));
     }
 
 }
