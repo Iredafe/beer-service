@@ -38,6 +38,13 @@ public class FindSuccessor {
 
     }
 
+    public static BinaryTree findSuccessor1(BinaryTree tree, BinaryTree node){
+
+        return node;
+    }
+
+
+
     public static void main(String [] args){
 
        FindSuccessor tree = new FindSuccessor();
@@ -48,7 +55,8 @@ public class FindSuccessor {
         tree.parent.left.right = new BinaryTree(5);
         tree.parent.left.left.left = new BinaryTree(6);
 
-//        System.out.println("This is the node's successor : " + findSuccessor(tree, 5));
+        BinaryTree node = new BinaryTree(5);
+    //System.out.println("This is the node's successor : " + findSuccessor(tree, node));
     }
 
 }
