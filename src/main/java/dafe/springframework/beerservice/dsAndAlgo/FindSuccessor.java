@@ -43,7 +43,11 @@ public class FindSuccessor {
         return getRightMostParent(node);
     }
 
-
+    public static BinaryTree getLeftMostChild(BinaryTree node){
+        BinaryTree current = node;
+        while(node.left!=null) current = current.left;
+        return current;
+    }
 
     public static void main(String [] args){
 
