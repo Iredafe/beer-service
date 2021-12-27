@@ -37,7 +37,16 @@ public class HeightBalancedBinaryTree {
     }
 
     public static TreeInfo getTreeInfo(BinaryTree tree){
+        if(tree == null) return new TreeInfo(true, 0);
+    TreeInfo leftTreeInfo = getTreeInfo(tree.left);
+    TreeInfo rightTreeInfo = getTreeInfo(tree.right);
 
+    boolean isBalanced = leftTreeInfo.isBalanced && rightTreeInfo.isBalanced
+            && Math.abs(leftTreeInfo.height-rightTreeInfo.height) <=1;
+
+    int height = 1 + Math.max(leftTreeInfo.height , rightTreeInfo.height);
+
+    return new TreeInfo(isBalanced, height);
     }
 
     public static boolean isHeightBalancedTree(BinaryTree tree){
@@ -58,6 +67,7 @@ public class HeightBalancedBinaryTree {
         tree.root.left.right.right = new BinaryTree(8);
 
         System.out.println("Is the tree height balanced?  : " + tree.heightBalancedTree(root));
+        System.out.println("Is the tree height balanced?  : " + tree.isHeightBalancedTree(root));
 
     }
 }
