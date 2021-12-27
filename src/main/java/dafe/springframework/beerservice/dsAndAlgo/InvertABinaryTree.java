@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayDeque;
+
 public class InvertABinaryTree {
     static BinaryTree root;
 
@@ -41,6 +43,19 @@ public class InvertABinaryTree {
         BinaryTree temp = tree.left;
         tree.left = tree.right;
         tree.right = temp;
+    }
+
+    public static void invertBinaryTreeBFS(BinaryTree tree){
+
+        ArrayDeque<BinaryTree> queue = new ArrayDeque<>();
+        queue.addLast(tree);
+        while(queue.size()>0){
+            BinaryTree current = queue.pollFirst();
+            swap(current);
+            if(current.left != null) queue.addLast(current.left);
+            if(current.right !=null) queue.addLast(current.right);
+        }
+
     }
 
 
