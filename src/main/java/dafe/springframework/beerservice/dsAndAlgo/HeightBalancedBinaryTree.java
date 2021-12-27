@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import com.sun.source.tree.Tree;
+
 public class HeightBalancedBinaryTree {
     private static BinaryTree root;
     static class BinaryTree{
@@ -24,6 +26,24 @@ public class HeightBalancedBinaryTree {
         return Math.max(leftHeight, rightHeight) +1;
     }
 
+    static class TreeInfo{
+        boolean isBalanced;
+        int height;
+
+        public TreeInfo(boolean isBalanced, int height){
+            this.isBalanced = isBalanced;
+            this.height = height;
+        }
+    }
+
+    public static TreeInfo getTreeInfo(BinaryTree tree){
+
+    }
+
+    public static boolean isHeightBalancedTree(BinaryTree tree){
+        TreeInfo treeInfo = getTreeInfo(tree);
+        return treeInfo.isBalanced;
+    }
 
     public static void main(String[] args) {
 
