@@ -41,7 +41,10 @@ public class DoublyLinkedListConstruction {
         }
 
         public void remove(Node node){
+        if(node == head) head = head.next;
+        if(node == tail) tail = tail.prev;
 
+        removeNodeBindings(node);
         }
 
         public boolean containsNodeWithValue(int value){
