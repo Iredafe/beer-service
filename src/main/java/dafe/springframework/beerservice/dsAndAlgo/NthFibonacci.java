@@ -23,13 +23,24 @@ public class NthFibonacci {
     }
 //not working correctly
     public static int getNthFibBottomUp(int n) {
-        if(n==2) return 1;
-        if(n==1) return 0;
+//        if(n==2) return 1;
+//        if(n==1) return 0;
+//
+//        int[] memo= new int[n+1];
+//        memo[0]= 0;
+//        memo[1]=1;
+//        for(int i=2; i<=n; i++){
+//            memo[i] = memo[i-1] + memo[i-2];
+//        }
+//        return memo[n];
 
-        int[] memo= new int[n+1];
-        memo[0]= 0;
-        memo[1]=1;
-        for(int i=2; i<=n; i++){
+        // Write your code here.
+
+        int memo[] = new int[n+1];
+        memo[1] = 0;
+        memo[2] = 1;
+
+        for(int i = 3; i<=n; i++){
             memo[i] = memo[i-1] + memo[i-2];
         }
         return memo[n];
@@ -90,6 +101,7 @@ public class NthFibonacci {
         System.out.println("The Nth fibonacci number is : " + getNthFibWithoutTabulization(n));
         System.out.println("The Nth fibonacci number is : " + getNthFibDP(n));
         System.out.println("The Nth fibonacci number is : " + fibWithIterativeSoln(n));
+        System.out.println("The Nth fibonacci number is BOTTOM UP : " + getNthFibBottomUp(n));
          }
 
 }
