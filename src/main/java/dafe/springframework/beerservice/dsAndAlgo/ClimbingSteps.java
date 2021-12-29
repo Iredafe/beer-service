@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class ClimbingSteps {
 
@@ -33,6 +34,24 @@ public class ClimbingSteps {
         return memo[number];
     }
 
+    public static int countWaysHashMap(int n){
+        HashMap<Integer, Integer> memoize = new HashMap<>();
+
+        return countWaysHashMap(n, memoize);
+    }
+
+    public static int countWaysHashMap(int n, HashMap<Integer, Integer> memoize){
+        memoize.put(1, 1);
+        memoize.put(2, 2);
+        memoize.put(3, 3);
+
+        if(!memoize.containsKey(n)){
+            int cache = countWaysHashMap(n - 1, memoize) + countWaysHashMap(n - 2, memoize) + countWaysHashMap(n - 3, memoize);
+            memoize.put(n, cache);
+        }
+        return memoize.get(n);
+    }
+
 public static int memoization(int number){
     if(number>=0 && number <=2) return number;
 int cache[] = new int [number];
@@ -54,6 +73,7 @@ public static int bruteForce(int n){
         System.out.println("This is the number of possible steps : " + climbingSteps(4));
         System.out.println("This is the number of possible steps: brute force : " + bruteForce(4));
         System.out.println("This is the number of possible steps: brute force : " + memoization(4));
-                System.out.println("This is the number of possible steps: brute force : " + countWays(4));
+        System.out.println("This is the number of possible steps: brute force : " + countWays(4));
+        System.out.println("This is the number of possible steps: brute force : " + countWaysHashMap(4));
     }
 }
