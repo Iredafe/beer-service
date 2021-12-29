@@ -47,6 +47,22 @@ public class NthFibonacci {
         return memo[n];
     }
 
+
+    public static int getNthFibHashMap(int n){
+        HashMap<Integer, Integer> memo = new HashMap<>();
+       return getNthFibHashMap(n, memo);
+       }
+      static int getNthFibHashMap(int n, HashMap<Integer, Integer> memo){
+        memo.put(1, 0);
+        memo.put(2, 1);
+
+        if(!memo.containsKey(n)){
+            memo.put(n, getNthFibHashMap(n-1, memo) + getNthFibHashMap(n-2, memo));
+        }
+        return memo.get(n);
+    }
+
+
     public static int fibWithIterativeSoln(int n){
 
         int [] lastTwo = {0,1};
@@ -62,8 +78,6 @@ public class NthFibonacci {
         }
         return lastTwo[1];
     }
-
-
 
     public static int getNthFibWithoutTabulization(int n){
     int [] lastTwo = {0,1};
@@ -97,12 +111,27 @@ public class NthFibonacci {
         }
         return memo[n];
     }
+
+    public static int getNthFibIteration(int n){
+        int secondToLastNumber = 0;
+        int lastNumber = 1;
+
+        for(int i=3; i<n; i++){
+            int next = secondToLastNumber + lastNumber;
+            secondToLastNumber=lastNumber;
+            lastNumber=next;
+        }
+        return secondToLastNumber+lastNumber;
+    }
+
     public static void main(String[] args) {
         int n = 16;
         System.out.println("The Nth fibonacci number is : " + getNthFibWithoutTabulization(n));
         System.out.println("The Nth fibonacci number is : " + getNthFibDP(n));
         System.out.println("The Nth fibonacci number is : " + fibWithIterativeSoln(n));
         System.out.println("The Nth fibonacci number is BOTTOM UP : " + getNthFibBottomUp(n));
+        System.out.println("The Nth fibonacci number is HASH MAP : " + getNthFibHashMap(n));
+        System.out.println("The Nth fibonacci number is HASH MAP : " + getNthFibIteration(n));
          }
 
 }
