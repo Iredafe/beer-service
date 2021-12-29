@@ -34,8 +34,9 @@ public class NthFibonacci {
 //        }
 //        return memo[n];
 
-        // Write your code here.
+//works correctly
 
+        if(n==2 || n==1) return  n-1;
         int memo[] = new int[n+1];
         memo[1] = 0;
         memo[2] = 1;
