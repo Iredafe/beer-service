@@ -47,6 +47,10 @@ public class DoublyLinkedListConstruction {
         removeNodeBindings(node);
         }
 
+        public void removeNodeBindings(Node node){
+
+        }
+
         public boolean containsNodeWithValue(int value){
             return false;
         }
