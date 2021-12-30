@@ -59,7 +59,19 @@ public class Permutation {
      }
 
      public static void permute(int[] nums, List<List<Integer>> result, List<Integer> currentPermutation, boolean[] visited){
-
+        if(currentPermutation.size() == nums.length){
+            result.add(currentPermutation);
+        }else {
+            for(int i=0; i< nums.length; i++){
+                if(!visited[i]){
+                    visited[i] = true;
+                    currentPermutation.add(nums[i]);
+                    permute(nums, result, currentPermutation, visited);
+                    visited[i] = false;
+                    currentPermutation.remove(currentPermutation.size()-1);
+                }
+            }
+        }
      }
     public static void main(String[] args) {
         List<Integer> array = new ArrayList<>();
