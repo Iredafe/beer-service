@@ -61,7 +61,7 @@ public class Permutation {
 
      public static void permute(int[] nums, List<List<Integer>> result, List<Integer> currentPermutation, boolean[] visited){
         if(currentPermutation.size() == nums.length){
-            result.add(currentPermutation);
+            result.add(new ArrayList<>(currentPermutation));
         }else {
             for(int i=0; i< nums.length; i++){
                 if(!visited[i]){
@@ -80,6 +80,6 @@ public class Permutation {
         System.out.println(array);
         System.out.println("These are the permutations : " + getAllPermutations(array));
         System.out.println("These are the permutations Latest: " + getPermutations1(array));
-        System.out.println("These are the permutations Latest: " + permute(nums));
+        System.out.println("These are the permutations with array input : " + permute(nums));
     }
 }
