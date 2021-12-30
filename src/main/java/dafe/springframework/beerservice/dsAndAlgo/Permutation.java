@@ -77,6 +77,7 @@ public class Permutation {
 
     public static List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
         permuteUnique(nums, result, new ArrayList<>(),new boolean[nums.length]);
         return result;
     }
@@ -93,7 +94,9 @@ public class Permutation {
                     permuteUnique(nums, result, currentPermutation, used);
                     used[i] = false;
                     currentPermutation.remove(currentPermutation.size()-1);
-                while(i+1 < nums.length && nums[i] == nums[i+1]) i++;
+                while(i+1 < nums.length && nums[i] == nums[i+1]){
+                    i++;
+                }
                 }
             }
         }
