@@ -75,25 +75,25 @@ public class Permutation {
         }
      }
 
-    public List<List<Integer>> permuteUnique(int[] nums) {
+    public static List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         permuteUnique(nums, result, new ArrayList<>(),new boolean[nums.length]);
         return result;
     }
 
-    public void permuteUnique
+    public static void permuteUnique
             (int [] nums, List<List<Integer>> result, List<Integer> currentPermutation, boolean[] used){
         if(currentPermutation.size() == nums.length){
             result.add(new ArrayList<>(currentPermutation));
         }else{
             for(int i=0; i< nums.length-1; i++){
-                if(!used[i] && nums[i]!= nums[i+1]){
+                if(!used[i]){
                     used[i] = true;
                     currentPermutation.add(nums[i]);
                     permuteUnique(nums, result, currentPermutation, used);
                     used[i] = false;
                     currentPermutation.remove(currentPermutation.size()-1);
-
+                while(i+1 < nums.length && nums[i] == nums[i+1]) i++;
                 }
             }
         }
@@ -101,10 +101,11 @@ public class Permutation {
     public static void main(String[] args) {
         List<Integer> array = new ArrayList<>(Arrays.asList(1,2,3));
         int [] nums = {1,2,3};
+        int [] nums1 = {1,1,3};
         System.out.println(array);
         System.out.println("These are the permutations : " + getAllPermutations(array));
         System.out.println("These are the permutations Latest: " + getPermutations1(array));
         System.out.println("These are the permutations with array input : " + permute(nums));
-        System.out.println("These are the permutations with array input : " + permuteUnique(nums1));
+        System.out.println("These are the permutations with array input wof duplicate values : " + permuteUnique(nums1));
     }
 }
