@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Permutation {
@@ -74,12 +75,11 @@ public class Permutation {
         }
      }
     public static void main(String[] args) {
-        List<Integer> array = new ArrayList<>();
-        array.add(1);
-        array.add(2);
-        array.add(3);
+        List<Integer> array = new ArrayList<>(Arrays.asList(1,2,3));
+        int [] nums = {1,2,3};
         System.out.println(array);
         System.out.println("These are the permutations : " + getAllPermutations(array));
         System.out.println("These are the permutations Latest: " + getPermutations1(array));
+        System.out.println("These are the permutations Latest: " + permute(nums));
     }
 }
