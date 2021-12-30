@@ -29,6 +29,28 @@ public class Permutation {
         array.set(i,array.get(j));
         array.set(j, temp);
     }
+
+    public static List<List<Integer>> getPermutations1(List<Integer> array){
+        List<List<Integer>> result = new ArrayList<>();
+        getPermutations1(array, new ArrayList<Integer>(), result);
+        return result;
+    }
+
+    public static void getPermutations1(List<Integer> array, List<Integer> currentPermutation, List<List<Integer>> result){
+
+        if(array.size()==0 && currentPermutation.size()>0){
+            result.add(currentPermutation);
+        }else{
+            for(int i=0; i< array.size(); i++){
+                List<Integer> newArray = new ArrayList<>(array);
+                List<Integer> newPerm = new ArrayList<>(currentPermutation);
+                newPerm.add(newArray.get(i));
+                newArray.remove(i);
+                getPermutations1(newArray, newPerm, result);
+            }
+        }
+
+    }
     public static void main(String[] args) {
         List<Integer> array = new ArrayList<>();
         array.add(1);
@@ -36,5 +58,6 @@ public class Permutation {
         array.add(3);
         System.out.println(array);
         System.out.println("These are the permutations : " + getAllPermutations(array));
+        System.out.println("These are the permutations Latest: " + getPermutations1(array));
     }
 }
