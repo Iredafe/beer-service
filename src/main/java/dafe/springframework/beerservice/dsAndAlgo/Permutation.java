@@ -74,6 +74,30 @@ public class Permutation {
             }
         }
      }
+
+    public List<List<Integer>> permuteUnique(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        permuteUnique(nums, result, new ArrayList<>(),new boolean[nums.length]);
+        return result;
+    }
+
+    public void permuteUnique
+            (int [] nums, List<List<Integer>> result, List<Integer> currentPermutation, boolean[] used){
+        if(currentPermutation.size() == nums.length){
+            result.add(new ArrayList<>(currentPermutation));
+        }else{
+            for(int i=0; i< nums.length-1; i++){
+                if(!used[i] && nums[i]!= nums[i+1]){
+                    used[i] = true;
+                    currentPermutation.add(nums[i]);
+                    permuteUnique(nums, result, currentPermutation, used);
+                    used[i] = false;
+                    currentPermutation.remove(currentPermutation.size()-1);
+
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
         List<Integer> array = new ArrayList<>(Arrays.asList(1,2,3));
         int [] nums = {1,2,3};
@@ -81,5 +105,6 @@ public class Permutation {
         System.out.println("These are the permutations : " + getAllPermutations(array));
         System.out.println("These are the permutations Latest: " + getPermutations1(array));
         System.out.println("These are the permutations with array input : " + permute(nums));
+        System.out.println("These are the permutations with array input : " + permuteUnique(nums1));
     }
 }
