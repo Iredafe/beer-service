@@ -57,6 +57,10 @@ public class Permutation {
         permute(nums, result, new ArrayList<>(), new boolean[nums.length]);
         return result;
      }
+
+     public static void permute(int[] nums, List<List<Integer>> result, List<Integer> currentPermutation, boolean[] visited){
+
+     }
     public static void main(String[] args) {
         List<Integer> array = new ArrayList<>();
         array.add(1);
