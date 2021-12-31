@@ -59,8 +59,8 @@ public class PhoneNumberMnemonics {
         if(index == phoneNumber.length()){
             result.add(new String(currentCombination));
         }else{
-            for(int i=0; i< mapping[phoneNumber.charAt(index) - '0'].charAt(index); i++){
-                char character = mapping[phoneNumber.charAt(index) - '0'].charAt(index);
+            for(int i=0; i< mapping[phoneNumber.charAt(index) - '0'].length(); i++){
+                char character = mapping[phoneNumber.charAt(index) - '0'].charAt(i);
                 currentCombination[index]=character;
                 helper(index+1, currentCombination, result, phoneNumber);
             }
@@ -71,5 +71,6 @@ public class PhoneNumberMnemonics {
         String phoneNumber = "1905";
 
         System.out.println("These are the mnemonics : " + phoneNumberMnemonics(phoneNumber));
+        System.out.println("These are the mnemonics : " + letterCombination(phoneNumber));
     }
 }
