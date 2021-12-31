@@ -46,8 +46,9 @@ public class PhoneNumberMnemonics {
         }
     }
 
+   private static final String[] mapping= new String[]{"0","1","abc","def","ghi","jkl","mno","pqrs", "tuv", "wxyz"};
+
     public static ArrayList<String> letterCombination(String phoneNumber){
-        final String[] mapping= new String[]{"0","1","abc","def","ghi","jkl","mno","pqrs", "tuv", "wxyz"};
         ArrayList<String> result = new ArrayList<>();
         char [] currentCombination = new char[phoneNumber.length()];
         helper(0, currentCombination, result, phoneNumber);
@@ -55,7 +56,15 @@ public class PhoneNumberMnemonics {
     }
 
     public static void helper(int index, char [] currentCombination, ArrayList<String> result, String phoneNumber){
-
+        if(index == phoneNumber.length()){
+            result.add(new String(currentCombination));
+        }else{
+            for(int i=0; i< mapping[phoneNumber.charAt(index) - '0'].charAt(index); i++){
+                char character = mapping[phoneNumber.charAt(index) - '0'].charAt(index);
+                currentCombination[index]=character;
+                helper(index+1, currentCombination, result, phoneNumber);
+            }
+        }
     }
     public static void main(String[] args) {
 
