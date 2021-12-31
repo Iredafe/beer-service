@@ -46,7 +46,7 @@ public class Powerset {
         result.add(new ArrayList<>());
 
         for(Integer element : array){
-            for(int i=0; i< array.size(); i++){
+            for(int i=0; i< result.size(); i++){
                 List<Integer> currentSubset = new ArrayList<>(result.get(i));
                 currentSubset.add(element);
                 result.add(currentSubset);
