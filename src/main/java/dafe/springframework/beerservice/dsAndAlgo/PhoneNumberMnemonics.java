@@ -60,7 +60,7 @@ public class PhoneNumberMnemonics {
             result.add(new String(currentCombination));
         }else{
             for(int i=0; i< mapping[phoneNumber.charAt(index) - '0'].length(); i++){
-                char character = mapping[phoneNumber.charAt(index) - '0'].charAt(i);
+                char character = mapping[phoneNumber.charAt(index)].charAt(i);
                 currentCombination[index]=character;
                 helper(index+1, currentCombination, result, phoneNumber);
             }
