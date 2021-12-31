@@ -39,6 +39,17 @@ public class Powerset {
         }
         return result;
     }
+
+    public static List<List<Integer>> powerSet(List<Integer> array){
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(new ArrayList<>());
+
+        for(Integer element : array){
+
+        }
+
+        return result;
+    }
      public static void main(String[] args) {
 
         List<Integer> input = new ArrayList<>();
