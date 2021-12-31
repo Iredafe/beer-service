@@ -49,11 +49,14 @@ public class PhoneNumberMnemonics {
     public static ArrayList<String> letterCombination(String phoneNumber){
         final String[] mapping= new String[]{"0","1","abc","def","ghi","jkl","mno","pqrs", "tuv", "wxyz"};
         ArrayList<String> result = new ArrayList<>();
-        ArrayList<String> currentCombination = new ArrayList<>();
-        helper(0, result, currentCombination, phoneNumber);
+        char [] currentCombination = new char[phoneNumber.length()];
+        helper(0, currentCombination, result, phoneNumber);
         return result;
     }
 
+    public static void helper(int index, char [] currentCombination, ArrayList<String> result, String phoneNumber){
+
+    }
     public static void main(String[] args) {
 
         String phoneNumber = "1905";
