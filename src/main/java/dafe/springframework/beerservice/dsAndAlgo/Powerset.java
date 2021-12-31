@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Powerset {
@@ -40,30 +41,28 @@ public class Powerset {
         return result;
     }
 
-    public static List<List<Integer>> powerSet(List<Integer> array){
+    public static List<List<Integer>> powerset1(List<Integer> array){
         List<List<Integer>> result = new ArrayList<>();
         result.add(new ArrayList<>());
 
         for(Integer element : array){
-
+            for(int i=0; i< array.size(); i++){
+                List<Integer> currentSubset = new ArrayList<>(result.get(i));
+                currentSubset.add(element);
+                result.add(currentSubset);
+            }
         }
 
         return result;
     }
      public static void main(String[] args) {
 
-        List<Integer> input = new ArrayList<>();
-        List<Integer> input2 = new ArrayList<>();
-
-        input.add(1);
-        input.add(2);
-        input.add(3);
+        List<Integer> input = new ArrayList<>(Arrays.asList(1,2,3));
+        List<Integer> input2 = new ArrayList<>(Arrays.asList(1,2,3));
 
 
         System.out.println("These are the subsets : " + powerset(input));
-         input2.add(1);
-         input2.add(2);
-         input2.add(3);
+        System.out.println("These are the subsets review : " + powerset1(input));
         System.out.println("These are the subsets iterative: " + powersetIterative(input2));
     }
 }
