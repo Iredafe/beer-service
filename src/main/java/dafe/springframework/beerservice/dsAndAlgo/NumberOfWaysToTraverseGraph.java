@@ -25,8 +25,21 @@ public class NumberOfWaysToTraverseGraph {
     }
 
     public static int numberOfWaysToTraverseGraphDP(int height, int width){
+        int ways[][] = new int[height+1][ width+1];
 
+        for(int heightIdx=1; heightIdx<height+1; height++){
+            for(int widthIdx=1; widthIdx<width+1; width++) {
 
+                if (heightIdx == 1 || widthIdx == 1) {
+                    ways[heightIdx][widthIdx] = 1;
+                } else {
+                    int waysUp = ways[heightIdx - 1][widthIdx];
+                    int waysLeft = ways[heightIdx][widthIdx - 1];
+                    ways[heightIdx][widthIdx] = waysUp + waysLeft;
+                }
+            }
+        }
+            return ways[height][width];
     }
 
     public static void main(String[] args) {
@@ -35,5 +48,6 @@ public class NumberOfWaysToTraverseGraph {
 
         System.out.println("These are the unique paths : " + uniquePaths(height, width) );
         System.out.println("These are the unique paths : " + numberOfWaysToTraverseGraphRecursive(height, width) );
+        System.out.println("These are the unique paths : " + numberOfWaysToTraverseGraphDP(height, width));
     }
 }
