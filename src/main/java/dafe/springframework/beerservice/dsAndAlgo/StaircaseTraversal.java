@@ -55,14 +55,13 @@ public class StaircaseTraversal {
         int ways[] = new int[height+1];
         ways[0]=1;
         ways[1]=1;
-        int numberOfWays=0;
-        for(int i=0; i< height+1; i++){
+        for(int i=2; i< height+1; i++){
             int step=1;
             while(step <= i && step<= maxSteps){
-                numberOfWays += staircaseMemo(height-step, maxSteps);
+                ways[i] += ways[i-step];
             }
         }
-        return numberOfWays;
+        return ways[height];
     }
 
     public static void main(String[] args) {
@@ -70,6 +69,7 @@ public class StaircaseTraversal {
         int maxSteps = 2;
         System.out.println("This is the maximum number of steps : " + staircaseTraversal(height, maxSteps));
         System.out.println("This is the maximum number of steps : " + staircaseTraversalMemoization(height, maxSteps));
-        System.out.println("This is the maximum number of steps : " + staircase(height, maxSteps));
+        System.out.println("This is the maximum number of steps recursive: " + staircase(height, maxSteps));
+        System.out.println("This is the maximum number of steps memo: " + staircaseMemo(height, maxSteps));
     }
 }
