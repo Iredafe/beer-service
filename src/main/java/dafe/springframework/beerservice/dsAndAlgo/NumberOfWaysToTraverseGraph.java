@@ -20,7 +20,8 @@ public class NumberOfWaysToTraverseGraph {
 
 
     public static int numberOfWaysToTraverseGraphRecursive(int height, int width){
-
+        if(width==1 || height==1) return 1;
+        return numberOfWaysToTraverseGraphRecursive(height-1, width) + numberOfWaysToTraverseGraphRecursive(height, width-1);
     }
 
     public static void main(String[] args) {
