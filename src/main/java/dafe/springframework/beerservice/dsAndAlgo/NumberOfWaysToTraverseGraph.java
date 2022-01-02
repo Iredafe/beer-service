@@ -27,8 +27,8 @@ public class NumberOfWaysToTraverseGraph {
     public static int numberOfWaysToTraverseGraphDP(int height, int width){
         int ways[][] = new int[height+1][ width+1];
 
-        for(int heightIdx=1; heightIdx<height+1; height++){
-            for(int widthIdx=1; widthIdx<width+1; width++) {
+        for(int heightIdx=1; heightIdx<height+1; heightIdx++){
+            for(int widthIdx=1; widthIdx<width+1; widthIdx++) {
 
                 if (heightIdx == 1 || widthIdx == 1) {
                     ways[heightIdx][widthIdx] = 1;
