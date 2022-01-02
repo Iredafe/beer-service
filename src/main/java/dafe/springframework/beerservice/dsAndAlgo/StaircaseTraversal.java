@@ -36,10 +36,26 @@ public class StaircaseTraversal {
         return numberOfWays;
     }
 
+    public static int staircase(int height, int maxSteps){
+        return staircasehelper(height, maxSteps);
+    }
+
+    public static int staircasehelper(int height, int maxSteps){
+        if(height<=1) return 1;
+
+        int ways=0;
+        for(int step = 1; step<Math.min(height, maxSteps)+1; step++){
+
+            ways+= staircasehelper(height-step, maxSteps);
+        }
+        return ways;
+    }
+
     public static void main(String[] args) {
         int height = 4;
         int maxSteps = 2;
         System.out.println("This is the maximum number of steps : " + staircaseTraversal(height, maxSteps));
         System.out.println("This is the maximum number of steps : " + staircaseTraversalMemoization(height, maxSteps));
+        System.out.println("This is the maximum number of steps : " + staircase(height, maxSteps));
     }
 }
