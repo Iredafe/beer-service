@@ -51,6 +51,20 @@ public class StaircaseTraversal {
         return ways;
     }
 
+    public static int staircaseMemo(int height, int maxSteps){
+        int ways[] = new int[height+1];
+        ways[0]=1;
+        ways[1]=1;
+        int numberOfWays=0;
+        for(int i=0; i< height+1; i++){
+            int step=1;
+            while(step <= i && step<= maxSteps){
+                numberOfWays += staircaseMemo(height-step, maxSteps);
+            }
+        }
+        return numberOfWays;
+    }
+
     public static void main(String[] args) {
         int height = 4;
         int maxSteps = 2;
