@@ -19,10 +19,15 @@ public class NumberOfWaysToTraverseGraph {
     }
 
 
+    public static int numberOfWaysToTraverseGraphRecursive(int height, int width){
+
+    }
+
     public static void main(String[] args) {
         int width = 4;
         int height= 3;
 
         System.out.println("These are the unique paths : " + uniquePaths(height, width) );
+        System.out.println("These are the unique paths : " + numberOfWaysToTraverseGraphRecursive(height, width) );
     }
 }
