@@ -59,6 +59,7 @@ public class StaircaseTraversal {
             int step=1;
             while(step <= i && step<= maxSteps){
                 ways[i] += ways[i-step];
+                step++;
             }
         }
         return ways[height];
