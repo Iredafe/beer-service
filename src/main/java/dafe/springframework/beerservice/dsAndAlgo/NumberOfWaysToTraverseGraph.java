@@ -24,6 +24,11 @@ public class NumberOfWaysToTraverseGraph {
         return numberOfWaysToTraverseGraphRecursive(height-1, width) + numberOfWaysToTraverseGraphRecursive(height, width-1);
     }
 
+    public static int numberOfWaysToTraverseGraphDP(int height, int width){
+
+
+    }
+
     public static void main(String[] args) {
         int width = 4;
         int height= 3;
