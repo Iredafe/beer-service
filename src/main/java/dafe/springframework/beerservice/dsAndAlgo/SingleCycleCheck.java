@@ -22,18 +22,27 @@ public class SingleCycleCheck {
 
 
     public static boolean singleCycleCheckReview(int [] array){
+    int counter =0;
+    int currentIndex = 0;
 
-        return false;
+    while(counter < array.length){
+        if(counter > 0 && currentIndex==0) return false;
+        counter++;
+        currentIndex = getCurrentIndexReview(array, currentIndex);
+    }
+        return currentIndex == 0;
     }
 
-    public static int getCurrentIndex(int[] array, int currentIndex){
-
-        return 1;
+    public static int getCurrentIndexReview(int[] array, int currentIndex){
+        int jump = array[currentIndex];
+        int nextIndex = (jump + currentIndex)% array.length;
+        return nextIndex >=0 ? nextIndex : nextIndex + array.length;
     }
 
     public static void main(String[] args) {
 
         int[] input ={2, 3, 1, -4, -4, 2};
         System.out.println("Is singly cycle check? : " + singleCycleCheck(input));
+        System.out.println("Is singly cycle check review? : " + singleCycleCheckReview(input));
     }
 }
