@@ -25,6 +25,12 @@ public class SingleCycleCheck {
 
         return false;
     }
+
+    public static int getCurrentIndex(int[] array, int currentIndex){
+
+        return 1;
+    }
+
     public static void main(String[] args) {
 
         int[] input ={2, 3, 1, -4, -4, 2};
