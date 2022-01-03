@@ -37,7 +37,12 @@ public class DoublyLinkedListConstruction {
         }
 
         public void removeNodesWithValue(int value){
-
+            Node node = head;
+            while (node!=null){
+                Node nodeToRemove = node;
+                node = node.next;
+                if(nodeToRemove.value == value) remove(nodeToRemove);
+            }
         }
 
         public void remove(Node node){
