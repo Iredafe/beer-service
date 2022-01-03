@@ -20,6 +20,11 @@ public class SingleCycleCheck {
         return nextIndex >= 0 ? nextIndex : nextIndex + array.length;
     }
 
+
+    public static boolean singleCycleCheckReview(int [] array){
+
+        return false;
+    }
     public static void main(String[] args) {
 
         int[] input ={2, 3, 1, -4, -4, 2};
