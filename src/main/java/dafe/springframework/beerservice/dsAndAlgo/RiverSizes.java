@@ -78,10 +78,10 @@ public class RiverSizes {
 
     public static void main(String[] args) {
         int[][] matrix = new int[][]{{1, 0, 0, 1, 0},
-                {1, 0, 1, 0, 0},
-                {0, 0, 1, 0, 1},
-                {1, 0, 1, 0, 1},
-                {1, 0, 1, 1, 0}
+                                    {1, 0, 1, 0, 0},
+                                    {0, 0, 1, 0, 1},
+                                    {1, 0, 1, 0, 1},
+                                    {1, 0, 1, 1, 0}
         };
 
         System.out.println("These are the river sizes : " + riverSizes(matrix));
