@@ -56,27 +56,45 @@ public class RiverSizes {
 //    {1, 0, 1, 1, 0}
     public static List<Integer> riverSizeSecondApproach(int [][] matrix){
         List<Integer> result = new ArrayList<>();
+        boolean [][] visited = new boolean[matrix.length][matrix[0].length];
         for(int i=0; i< matrix.length; i++){
-            int count = 0;
             for(int j=0; j< matrix[0].length; j++) {
-                if (matrix[i][j] == 1) {
-                    dfs(matrix, i, j, count, result);
-                }
-                if(count>0) result.add(count);
+                if(visited[i][j]) continue;
+                if (matrix[i][j] == 0) continue;
+                    dfs(matrix, i, j, visited, result);
             }
         }
         return result;
     }
-    public static List<Integer> dfs(int [][] matrix, int i, int j, int count, List<Integer> result){
-        if(i<0 || j <0 || i>= matrix.length || j>= matrix[0].length || matrix[i][j]==0) return result;
-        matrix[i][j] = 0;
-        count++;
-        dfs(matrix,i-1, j,count, result);
-        dfs(matrix, i+1, j,count, result);
-        dfs(matrix, i, j-1,count, result);
-        dfs(matrix, i, j+1, count, result);
 
+    public static List<Integer> dfs(int [][]matrix, int i, int j, boolean[][] visited, List<Integer> result){
+        int count = 0;
+        Stack<Integer[]> stack = new Stack<>();
+        stack.push(new Integer[]{i,j});
+
+        while(stack.size()>0){
+            Integer [] currentNode = stack.pop();
+            i=currentNode[0];
+            j=currentNode[1];
+            if(visited[i][j]) continue;
+            if (matrix[i][j] == 0) continue;
+            count++;
+            List<Integer[]> unvisitedNodes = getNodes(matrix, i, j, visited);
+            for(Integer [] neighbor : unvisitedNodes){
+                stack.push(neighbor);
+            }
+       }
+        if(count>0) result.add(count);
         return result;
+    }
+
+    public static List<Integer[]> getNodes(int [][] matrix, int i, int j, boolean[][]visited){
+        List<Integer[]> unvisitedNodes = new ArrayList<>();
+            if(!visited[i-1][j] && i>0) unvisitedNodes.add(new Integer[]{i-1,j});
+            if(!visited[i+1][j] && i<matrix.length) unvisitedNodes.add(new Integer[]{i+1,j});
+            if(!visited[i][j-1] && j>0) unvisitedNodes.add(new Integer[]{i, j-1});
+            if(!visited[i][j+1] && j< matrix[0].length) unvisitedNodes.add(new Integer[]{i, j+1});
+        return unvisitedNodes;
     }
 
     public static void main(String[] args) {
