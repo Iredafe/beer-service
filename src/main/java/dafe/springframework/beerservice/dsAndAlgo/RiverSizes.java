@@ -53,16 +53,15 @@ public class RiverSizes {
     public static List<Integer> riverSizeSecondApproach(int [][] matrix){
 
         List<Integer> result = new ArrayList<>();
-        int count = 0;
-
         for(int i=0; i< matrix.length; i++){
-            for(int j=0; j< matrix[0].length; j++){
-                if(matrix[i][j] == 1){
+            int count = 0;
+            for(int j=0; j< matrix[0].length; j++) {
+                if (matrix[i][j] == 1) {
                     dfs(matrix, i, j);
                     count++;
                 }
-                result.add(count);
             }
+            if(count>0) result.add(count);
         }
 
         return result;
@@ -86,5 +85,6 @@ public class RiverSizes {
         };
 
         System.out.println("These are the river sizes : " + riverSizes(matrix));
+        System.out.println("These are the river sizes : " + riverSizeSecondApproach(matrix));
     }
 }
