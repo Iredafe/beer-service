@@ -50,12 +50,17 @@ public class RiverSizes {
         return unvisitedNeighbors;
     }
 
-    public static List<Integer[]>> riverSizeSecondApproach(int [][] matrix){
+    public static List<Integer[]> riverSizeSecondApproach(int [][] matrix){
 
         List<Integer[]> result = new ArrayList<>();
 
         return result;
     }
+
+    public static void dfs(int [][] matrix, int i, int j, List<Integer[]> result){
+
+    }
+
     public static void main(String[] args) {
         int[][] matrix = new int[][]{{1, 0, 0, 1, 0},
                 {1, 0, 1, 0, 0},
