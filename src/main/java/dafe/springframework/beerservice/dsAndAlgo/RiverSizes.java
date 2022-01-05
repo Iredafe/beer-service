@@ -60,7 +60,6 @@ public class RiverSizes {
         for(int i=0; i< matrix.length; i++){
             for(int j=0; j< matrix[0].length; j++) {
                 if(visited[i][j]) continue;
-                if (matrix[i][j] == 0) continue;
                     dfs(matrix, i, j, visited, result);
             }
         }
@@ -77,6 +76,7 @@ public class RiverSizes {
             i=currentNode[0];
             j=currentNode[1];
             if(visited[i][j]) continue;
+            visited[i][j] = true;
             if (matrix[i][j] == 0) continue;
             count++;
             List<Integer[]> unvisitedNodes = getNodes(matrix, i, j, visited);
@@ -90,10 +90,10 @@ public class RiverSizes {
 
     public static List<Integer[]> getNodes(int [][] matrix, int i, int j, boolean[][]visited){
         List<Integer[]> unvisitedNodes = new ArrayList<>();
-            if(!visited[i-1][j] && i>0) unvisitedNodes.add(new Integer[]{i-1,j});
-            if(!visited[i+1][j] && i<matrix.length) unvisitedNodes.add(new Integer[]{i+1,j});
-            if(!visited[i][j-1] && j>0) unvisitedNodes.add(new Integer[]{i, j-1});
-            if(!visited[i][j+1] && j< matrix[0].length) unvisitedNodes.add(new Integer[]{i, j+1});
+            if(i>0 && !visited[i-1][j]) unvisitedNodes.add(new Integer[]{i-1,j});
+            if(i<matrix.length-1 && !visited[i+1][j]) unvisitedNodes.add(new Integer[]{i+1,j});
+            if(j>0 && !visited[i][j-1]) unvisitedNodes.add(new Integer[]{i, j-1});
+            if(j< matrix[0].length-1 && !visited[i][j+1]) unvisitedNodes.add(new Integer[]{i, j+1});
         return unvisitedNodes;
     }
 
@@ -105,7 +105,7 @@ public class RiverSizes {
                                     {1, 0, 1, 1, 0}
         };
 
-        System.out.println("These are the river sizes : " + riverSizes(matrix));
+//        System.out.println("These are the river sizes : " + riverSizes(matrix));
         System.out.println("These are the river sizes : " + riverSizeSecondApproach(matrix));
     }
 }
