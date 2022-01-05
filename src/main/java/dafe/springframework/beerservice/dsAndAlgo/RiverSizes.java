@@ -49,31 +49,34 @@ public class RiverSizes {
         if(j< matrix[0].length-1 && !visited[i][j+1]) unvisitedNeighbors.add(new Integer[]{i, j+1});
         return unvisitedNeighbors;
     }
-
+//    {1, 0, 0, 1, 0},
+//    {1, 0, 1, 0, 0},
+//    {0, 0, 1, 0, 1},
+//    {1, 0, 1, 0, 1},
+//    {1, 0, 1, 1, 0}
     public static List<Integer> riverSizeSecondApproach(int [][] matrix){
-
         List<Integer> result = new ArrayList<>();
         for(int i=0; i< matrix.length; i++){
             int count = 0;
             for(int j=0; j< matrix[0].length; j++) {
                 if (matrix[i][j] == 1) {
-                    dfs(matrix, i, j);
-                    count++;
+                    dfs(matrix, i, j, count, result);
                 }
+                if(count>0) result.add(count);
             }
-            if(count>0) result.add(count);
         }
-
         return result;
     }
-
-    public static void dfs(int [][] matrix, int i, int j){
-        if(i<0 || j <0 || i>= matrix.length || j>= matrix[0].length || matrix[i][j]==0) return;
+    public static List<Integer> dfs(int [][] matrix, int i, int j, int count, List<Integer> result){
+        if(i<0 || j <0 || i>= matrix.length || j>= matrix[0].length || matrix[i][j]==0) return result;
         matrix[i][j] = 0;
-        dfs(matrix,i-1, j);
-        dfs(matrix, i+1, j);
-        dfs(matrix, i, j-1);
-        dfs(matrix, i, j+1);
+        count++;
+        dfs(matrix,i-1, j,count, result);
+        dfs(matrix, i+1, j,count, result);
+        dfs(matrix, i, j-1,count, result);
+        dfs(matrix, i, j+1, count, result);
+
+        return result;
     }
 
     public static void main(String[] args) {
