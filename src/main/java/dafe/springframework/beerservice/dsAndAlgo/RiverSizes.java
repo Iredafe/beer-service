@@ -50,14 +50,25 @@ public class RiverSizes {
         return unvisitedNeighbors;
     }
 
-    public static List<Integer[]> riverSizeSecondApproach(int [][] matrix){
+    public static List<Integer> riverSizeSecondApproach(int [][] matrix){
 
-        List<Integer[]> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
+        int count = 0;
+
+        for(int i=0; i< matrix.length; i++){
+            for(int j=0; j< matrix[0].length; j++){
+                if(matrix[i][j] == 1){
+                    dfs(matrix, i, j, result);
+                    count++;
+                }
+                result.add(count);
+            }
+        }
 
         return result;
     }
 
-    public static void dfs(int [][] matrix, int i, int j, List<Integer[]> result){
+    public static void dfs(int [][] matrix, int i, int j, List<Integer> result){
 
     }
 
