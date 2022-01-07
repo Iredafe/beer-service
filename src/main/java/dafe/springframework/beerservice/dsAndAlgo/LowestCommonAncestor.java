@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class LowestCommonAncestor {
 
     private TreeNode result=null;
@@ -24,6 +27,11 @@ public class LowestCommonAncestor {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q){
         recurseTree(root, p, q);
         return this.result;
+    }
+
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q){
+
+        Deque<TreeNode> stack = new ArrayDeque<>();
     }
 
     public static void main(String[] args) {
