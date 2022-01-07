@@ -2,6 +2,8 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LowestCommonAncestor {
 
@@ -32,6 +34,11 @@ public class LowestCommonAncestor {
     public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q){
 
         Deque<TreeNode> stack = new ArrayDeque<>();
+
+        Map<TreeNode, TreeNode> parent = new HashMap<>();
+        parent.put(root, null);
+        stack.push(root);
+
     }
 
     public static void main(String[] args) {
