@@ -25,4 +25,8 @@ public class LowestCommonAncestor {
         recurseTree(root, p, q);
         return this.result;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
