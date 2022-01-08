@@ -39,6 +39,12 @@ public class LowestCommonAncestor {
         parent.put(root, null);
         stack.push(root);
 
+        while(!parent.containsKey(p) || !parent.containsKey(q)){
+            TreeNode node = stack.pop();
+
+              ;ll
+        }
+
     }
 
     public static void main(String[] args) {
