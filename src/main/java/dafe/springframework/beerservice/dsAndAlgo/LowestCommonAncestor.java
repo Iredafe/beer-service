@@ -41,8 +41,11 @@ public class LowestCommonAncestor {
 
         while(!parent.containsKey(p) || !parent.containsKey(q)){
             TreeNode node = stack.pop();
+            if(node.left != null){
+                parent.put(node.left, node);
+                stack.push(node.left);
+            }
 
-              ;ll
         }
 
     }
