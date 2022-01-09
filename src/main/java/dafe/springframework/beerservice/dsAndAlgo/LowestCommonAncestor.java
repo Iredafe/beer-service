@@ -1,9 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class LowestCommonAncestor {
 
@@ -51,6 +48,11 @@ public class LowestCommonAncestor {
             }
         }
 
+        Set<TreeNode> ancestor = new HashSet<>();
+        while(p!=null){
+            ancestor.add(p);
+            p = parent.get(p);
+        }
     }
 
     public static void main(String[] args) {
