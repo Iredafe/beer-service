@@ -17,7 +17,11 @@ public class DoublyLinkedListConstruction {
         Node tail;
 
         public void setHead(Node node){
-
+            if(head == null){
+                head = node;
+                tail = node;
+                return;
+            }
         }
 
         public void setTail(Node node){
