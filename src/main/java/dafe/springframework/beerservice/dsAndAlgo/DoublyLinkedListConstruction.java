@@ -22,6 +22,7 @@ public class DoublyLinkedListConstruction {
                 tail = node;
                 return;
             }
+            insertBefore(head, node);
         }
 
         public void setTail(Node node){
