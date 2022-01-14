@@ -40,6 +40,7 @@ public class DoublyLinkedListConstruction {
             nodeToInsert.next = node;
             if(node.prev == null) head = nodeToInsert;
             else node.prev.next = nodeToInsert;
+            node.prev = nodeToInsert;
         }
 
         public void insertAfter(Node node, Node nodeToInsert){
