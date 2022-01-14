@@ -36,6 +36,7 @@ public class DoublyLinkedListConstruction {
         public void insertBefore(Node node, Node nodeToInsert){
             if(nodeToInsert == head || nodeToInsert==tail) return;
             remove(nodeToInsert);
+            nodeToInsert.prev = node.prev;
         }
 
         public void insertAfter(Node node, Node nodeToInsert){
