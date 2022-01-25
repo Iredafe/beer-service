@@ -1,9 +1,26 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.HashSet;
+
 public class ValidSudoku {
 
     public static boolean validSudoku(char[][] sudoku) {
+        int length = 9;
 
+        HashSet<Character>[] row = new HashSet[length];
+        HashSet<Character>[] col = new HashSet[length];
+        HashSet<Character>[] box = new HashSet[length];
+
+            for(int i=0; i<length; i++){
+                for(int j=0; j< length; j++){
+                    int value = sudoku[i][j];
+
+                    if(row[i].contains(value)){
+                        return false;
+                    }
+
+                }
+            }
 
         return true;
     }
