@@ -4,6 +4,7 @@ public class ValidSudoku {
 
     public static boolean validSudoku(char[][] sudoku) {
 
+
         return true;
     }
 
@@ -19,5 +20,6 @@ public class ValidSudoku {
                 , {'.' , '.' , '.' , '4' , '1' , '9' , '.' , '.' , '5'}
                 , {'.' , '.' , '.' , '.' , '8' , '.' , '.' , '7' , '9'}};
 
+        System.out.println("Is this a valid sudoku ? "  + validSudoku(sudoku));
     }
 }
