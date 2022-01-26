@@ -10,7 +10,11 @@ public class ValidSudoku {
         HashSet<Character>[] row = new HashSet[length];
         HashSet<Character>[] col = new HashSet[length];
         HashSet<Character>[] box = new HashSet[length];
-
+            for(int r=0; r <length; r++){
+                row[r] = new HashSet<>();
+                col[r] = new HashSet<>();
+                box[r] = new HashSet<>();
+            }
             for(int i=0; i<length; i++){
                 for(int j=0; j< length; j++){
                     int value = sudoku[i][j];
