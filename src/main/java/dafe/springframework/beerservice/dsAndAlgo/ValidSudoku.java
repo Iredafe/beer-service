@@ -16,23 +16,24 @@ public class ValidSudoku {
                 box[r] = new HashSet<>();
             }
             for(int i=0; i<length; i++){
-                for(int j=0; j< length; j++){
+                for(int j=0; j< length; j++) {
                     char value = sudoku[i][j];
+                    if (value != '.') {
+                        if (row[i].contains(value)) {
+                            return false;
+                        }
+                        row[i].add(value);
+                        if (col[j].contains(value)) {
+                            return false;
+                        }
+                        col[j].add(value);
 
-                    if(row[i].contains(value)){
-                        return false;
+                        int position = (i / 3) * 3 + j / 3;
+                        if (box[position].contains(value)) {
+                            return false;
+                        }
+                        box[position].add(value);
                     }
-                    row[i].add(value);
-                    if(col[j].contains(value)){
-                        return false;
-                    }
-                    col[j].add(value);
-
-                    int position = (i/3) * 3 + j/3;
-                    if(box[position].contains(value)){
-                        return false;
-                    }
-                    box[position].add(value);
                 }
             }
 
