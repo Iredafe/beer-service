@@ -17,12 +17,22 @@ public class ValidSudoku {
             }
             for(int i=0; i<length; i++){
                 for(int j=0; j< length; j++){
-                    int value = sudoku[i][j];
+                    char value = sudoku[i][j];
 
                     if(row[i].contains(value)){
                         return false;
                     }
+                    row[i].add(value);
+                    if(col[j].contains(value)){
+                        return false;
+                    }
+                    col[j].add(value);
 
+                    int position = (i/3) * 3 + j/3;
+                    if(box[position].contains(value)){
+                        return false;
+                    }
+                    box[position].add(value);
                 }
             }
 
