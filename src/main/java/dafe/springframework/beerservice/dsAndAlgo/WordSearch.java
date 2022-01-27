@@ -16,6 +16,6 @@ public class WordSearch {
         char [][] board = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
         String word = "ABCCED";
 
-
+        System.out.println(" This word can be found in the board : " + exist(board, word));
     }
     }
