@@ -7,12 +7,15 @@ public class WordSearch {
 // if it does not exists, return flase
 //else return true after traversing the board
 
-    public boolean exist(char[][] board, String word) {
+    public static boolean exist(char[][] board, String word) {
 
         return true;
     }
 
     public static void main(String[] args) {
         char [][] board = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+        String word = "ABCCED";
+
+
     }
     }
