@@ -32,10 +32,13 @@ public class WordSearch {
         char temp = board[i][j];
         board[i][j] = '#';
         boolean found = dfs(board, i+1, j, word, index+1)
-                || dfs(board, i-1, j, word, index+1)
-                || dfs(board, i, j+1, word, index+1)
-                ||dfs;
+                        || dfs(board, i-1, j, word, index+1)
+                        || dfs(board, i, j+1, word, index+1)
+                        || dfs(board, i, j-1, word, index+1);
 
+        board[i][j] = temp;
+
+        return found;
     }
 
     public static void main(String[] args) {
