@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.HashSet;
+
 public class WordSearch {
 
 //loop through the board
@@ -8,6 +10,9 @@ public class WordSearch {
 //else return true after traversing the board
 
     public static boolean exist(char[][] board, String word) {
+        char[] letters = word.toCharArray();
+        HashSet<Character> store = new HashSet<>();
+
 
         return true;
     }
