@@ -22,7 +22,21 @@ public class WordSearch {
             return false;
     }
 
+    public static boolean dfs(char [][] board, int i, int j, String word, int index){
+        if(index == board.length) return true;
 
+        if(i < 0 || i >= board.length || j<0 || j>= board[i].length || board[i][j] != word.charAt(index)) {
+            return false;
+        }
+
+        char temp = board[i][j];
+        board[i][j] = '#';
+        boolean found = dfs(board, i+1, j, word, index+1)
+                || dfs(board, i-1, j, word, index+1)
+                || dfs(board, i, j+1, word, index+1)
+                ||dfs;
+
+    }
 
     public static void main(String[] args) {
         char [][] board = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
