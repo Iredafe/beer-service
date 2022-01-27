@@ -13,8 +13,16 @@ public class WordSearch {
         char[] letters = word.toCharArray();
         HashSet<Character> store = new HashSet<>();
 
-
-        return true;
+        for(char letter : letters){
+            for(int i = 0; i<board.length; i++){
+                for(int j=0; j<board[i].length;j++){
+                    char value = board[i][j];
+                    if(value != letter) continue;
+                    store.add(letter);
+                }
+            }
+        }
+        return word.equals(store.toString());
     }
 
     public static void main(String[] args) {
