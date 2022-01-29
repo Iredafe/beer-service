@@ -10,8 +10,19 @@ public class ThreeSumSmaller {
         return sum;
     }
 
-    private static int binarySearch(int[] nums, int i, int j) {
-
+    private static int binarySearch(int[] nums, int i, int target) {
+        int sum=0;
+        int left = i;
+        int right = nums.length-1;
+        while(left < right){
+            if(nums[left] + nums[right] < target){
+                sum+= right - left;
+                left++;
+            }else{
+                right--;
+            }
+        }
+        return sum;
     }
 
     public static void main(String[] args) {
