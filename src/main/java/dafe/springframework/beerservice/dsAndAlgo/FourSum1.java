@@ -24,6 +24,8 @@ public class FourSum1 {
                     result.add(Arrays.asList(nums[i], nums[j], nums[start], nums[end]));
                     start++;
                     end--;
+                    while(start < end && nums[start] == nums[start+1]) start++;
+                    while(start<end && nums[end] == nums[end-1]) end--;
                 }
                 if(sum < target){
                     start++;
@@ -33,8 +35,6 @@ public class FourSum1 {
             }
             }
         }
-
-
         return result;
     }
 
