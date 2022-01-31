@@ -26,7 +26,7 @@ public class FourSum1 {
                         while(start<end && nums[start] == nums[start-1]) start++;
                         while(start<end && nums[end] == nums[end+1]) end--;
                     }
-                    if(sum<target){
+                    else if(sum<target){
                         start++;
                     }else{
                         end--;
