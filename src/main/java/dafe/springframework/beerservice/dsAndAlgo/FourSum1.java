@@ -41,7 +41,20 @@ public class FourSum1 {
 
         Set<List<Integer>> result = new HashSet<>();
         for(int i=0; i<nums.length-2; i++){
-
+            for(int j= i+1; j<nums.length; j++){
+                int start = j+1, end = nums.length-1;
+                while(start < end){
+                    int sum = nums[i] + nums[j] + nums[start] + nums[end];
+                    if(sum == target){
+                        result.add(Arrays.asList(nums[i], nums[j], nums[start], nums[end]));
+                    }
+                    else if(sum < target){
+                        start++;
+                    }else{
+                        end--;
+                    }
+                }
+            }
         }
         return new ArrayList<>(result);
     }
@@ -51,5 +64,6 @@ public class FourSum1 {
         int target = 0;
 
         System.out.println("This is the result for 4 Sum : " + fourSum(nums, target));
+        System.out.println("This is the result for 4 Sum with hashset: " + fourSumHashSet(nums, target));
     }
 }
