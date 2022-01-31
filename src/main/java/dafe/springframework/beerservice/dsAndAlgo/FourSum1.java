@@ -1,8 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class FourSum1 {
 
@@ -39,6 +37,14 @@ public class FourSum1 {
 
     }
 
+    public static List<List<Integer>> fourSumHashSet(int [] nums, int target){
+
+        Set<List<Integer>> result = new HashSet<>();
+        for(int i=0; i<nums.length-2; i++){
+
+        }
+        return new ArrayList<>(result);
+    }
 
     public static void main(String[] args) {
         int [] nums = {-3,-2,-1,0,0,1,2,3};
