@@ -17,7 +17,12 @@ public class SudokuSolver {
 
     public void backtrack(int i, int j){
         if(board[i][j] == '.'){
-
+            for(int number = 1; number < 10; number++){
+                if(couldPlace(number, i, j)){
+                    placeNumber(number, i, j);
+                    placeNextNumber(i, j);
+                }
+            }
         }
     }
 
