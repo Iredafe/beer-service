@@ -15,6 +15,12 @@ public class SudokuSolver {
         return rows[i][number] + columns[i][number] + boxes[index][number]==0;
     }
 
+    public void backtrack(int i, int j){
+        if(board[i][j] == '.'){
+
+        }
+    }
+
     public void solveSudoku(char[][] board) {
 
     }
