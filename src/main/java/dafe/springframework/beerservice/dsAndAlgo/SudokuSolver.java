@@ -26,6 +26,12 @@ public class SudokuSolver {
         }
     }
 
+    private void placeNextNumber(int i, int j) {
+    }
+
+    private void placeNumber(int number, int i, int j) {
+    }
+
     public void solveSudoku(char[][] board) {
 
     }
