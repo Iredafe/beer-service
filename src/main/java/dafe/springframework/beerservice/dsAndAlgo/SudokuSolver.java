@@ -37,11 +37,19 @@ public class SudokuSolver {
     public void solveSudoku(char[][] board) {
 
     }
+        /* another approach */
+    public static ArrayList<ArrayList<Integer>> solveSudoku(ArrayList<ArrayList<Integer>> board){
 
-    public static ArrayList<ArrayList<Integer>> solveSudoku(ArrayList<ArrayList> board){
-
-        return new ArrayList<>();
+        solvePartialSudoku(0, 0, board);
+        return board;
     }
+
+    private static boolean solvePartialSudoku(int i, int i1, ArrayList<ArrayList<Integer>> board) {
+
+        return false;
+    }
+
+
     public static void main(String[] args) {
 
         char[][] board ={{'5','3','.','.','7','.','.','.','.'},
