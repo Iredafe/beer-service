@@ -52,6 +52,9 @@ public class SudokuSolver {
             currentCol=0;
             if(currentRow == board.size()) return true;
         }
+        if(board.get(currentRow).size() == 0) {
+            return tryDigitsAtPosition(currentRow, currentCol, board);
+        }
         return false;
     }
 
