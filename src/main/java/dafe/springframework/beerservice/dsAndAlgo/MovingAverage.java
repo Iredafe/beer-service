@@ -15,7 +15,7 @@ public class MovingAverage {
         queue.add(val);
         int windowSum=0;
         for(int i = Math.max(queue.size(), size); i< queue.size(); i++){
-            windowSum = (int)queue.get(i);
+            windowSum = queue.get(i);
         }
         return windowSum * 1.0 / Math.min(queue.size(), size);
     }
