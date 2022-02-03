@@ -55,7 +55,12 @@ public class SudokuSolver {
         if(board.get(currentRow).size() == 0) {
             return tryDigitsAtPosition(currentRow, currentCol, board);
         }
-        return false;
+        return solvePartialSudoku(currentCol, currentCol+1, board);
+    }
+
+    private static boolean tryDigitsAtPosition(int currentRow, int currentCol, ArrayList<ArrayList<Integer>> board) {
+
+
     }
 
 
