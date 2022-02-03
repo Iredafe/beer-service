@@ -39,13 +39,19 @@ public class SudokuSolver {
     }
         /* another approach */
     public static ArrayList<ArrayList<Integer>> solveSudoku(ArrayList<ArrayList<Integer>> board){
-
         solvePartialSudoku(0, 0, board);
         return board;
     }
 
-    private static boolean solvePartialSudoku(int i, int i1, ArrayList<ArrayList<Integer>> board) {
+    private static boolean solvePartialSudoku(int i, int j, ArrayList<ArrayList<Integer>> board) {
+        int currentRow = i;
+        int currentCol = j;
 
+        if(currentCol == board.get(currentRow).size()){
+            currentRow +=1;
+            currentCol=0;
+            if(currentRow == board.size()) return true;
+        }
         return false;
     }
 
