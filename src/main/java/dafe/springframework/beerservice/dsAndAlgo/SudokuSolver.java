@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
+
 public class SudokuSolver {
 
     int rowSize = 9;
@@ -36,6 +38,10 @@ public class SudokuSolver {
 
     }
 
+    public static ArrayList<ArrayList<Integer>> solveSudoku(ArrayList<ArrayList> board){
+
+        return new ArrayList<>();
+    }
     public static void main(String[] args) {
 
         char[][] board ={{'5','3','.','.','7','.','.','.','.'},
