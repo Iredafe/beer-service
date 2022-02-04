@@ -49,6 +49,9 @@ public class WallsAndGates {
                 for(int [] direction : directions){
                     int r = direction[0] + row;
                     int c = direction[1] + col;
+                    if(r < 0 || c < 0 || r >= rooms.length || c >= rooms[i].length){
+
+                    }
                 }
             }
         }
