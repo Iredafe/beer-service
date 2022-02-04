@@ -31,17 +31,17 @@ public class WallsAndGates {
     }
 
     public static int[][] wallsAndGatesBFS(int [][] rooms){
-        Queue<Integer> queue = new LinkedList<>();
+        Queue<int[]> queue = new LinkedList<>();
         for(int i=0; i<rooms.length; i++){
             for(int j=0; j> rooms[i].length; j++){
                 if(rooms[i][j] ==0){
-                    queue.add(rooms[i][j]);
+                    queue.add(new int[]{i,j});
                 }
             }
         }
-
+            int[][] direction = new int[][]{{1,0}, {0, -1}, {0, 1}, {-1, 0}};
         while(queue.size() !=0){
-
+            int [] current = queue.poll();
         }
 
         return rooms;
