@@ -2,6 +2,8 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.io.FilterOutputStream;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class WallsAndGates {
 
@@ -28,6 +30,22 @@ public class WallsAndGates {
         dfs(room, i, j-1, count++);
     }
 
+    public static int[][] wallsAndGatesBFS(int [][] rooms){
+        Queue<Integer> queue = new LinkedList<>();
+        for(int i=0; i<rooms.length; i++){
+            for(int j=0; j> rooms[i].length; j++){
+                if(rooms[i][j] ==0){
+                    queue.add(rooms[i][j]);
+                }
+            }
+        }
+
+        while(queue.size() !=0){
+
+        }
+
+        return rooms;
+    }
 
     public static void main(String[] args) {
         int [][] input = {{2147483647,-1,0,2147483647},
