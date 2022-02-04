@@ -9,7 +9,7 @@ public class WallsAndGates {
 
     public static int[][] wallsAndGates(int [][] room){
         for(int i=0; i< room.length; i++){
-            for(int j=0; i<room[0].length; i++){
+            for(int j=0; j <room[0].length; j++){
                 if(room[i][j] == 0){
                     dfs(room, i, j, 0);
                 }
@@ -31,9 +31,10 @@ public class WallsAndGates {
     }
 
     public static int[][] wallsAndGatesBFS(int [][] rooms){
+        if(rooms.length == 0) return new int[][]{};
         Queue<int[]> queue = new LinkedList<>();
         for(int i=0; i<rooms.length; i++){
-            for(int j=0; j> rooms[i].length; j++){
+            for(int j=0; j< rooms[i].length; j++){
                 if(rooms[i][j] ==0){
                     queue.add(new int[]{i,j});
                 }
@@ -41,7 +42,6 @@ public class WallsAndGates {
         }
             int[][] directions = new int[][]{{1,0}, {0, -1}, {0, 1}, {-1, 0}};
         while(queue.size() !=0){
-            for(int i=0; i< queue.size(); i++){
                 int [] current = queue.poll();
                 int row = current[0];
                 int col = current[1];
@@ -49,13 +49,12 @@ public class WallsAndGates {
                 for(int [] direction : directions){
                     int r = direction[0] + row;
                     int c = direction[1] + col;
-                    if(r < 0 || c < 0 || r >= rooms.length || c >= rooms[i].length || rooms[r][c] == Integer.MAX_VALUE){
+                    if(r < 0 || c < 0 || r >= rooms.length || c >= rooms[0].length || rooms[r][c] != Integer.MAX_VALUE){
                         continue;
                     }
-                    rooms[r][c] = rooms[r][c] + 1;
+                    rooms[r][c] = rooms[row][col] + 1;
                     queue.add(new int[]{r,c});
                 }
-            }
         }
         return rooms;
     }
@@ -67,5 +66,6 @@ public class WallsAndGates {
                         {0,-1,2147483647,2147483647}};
 
         System.out.println("This are the number of steps to reach the gate : " + Arrays.deepToString(wallsAndGates(input)));
+        System.out.println("This are the number of steps to reach the gate : " + Arrays.deepToString(wallsAndGatesBFS(input)));
     }
 }
