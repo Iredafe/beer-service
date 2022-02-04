@@ -47,7 +47,8 @@ public class WallsAndGates {
                 int col = current[1];
 
                 for(int [] direction : directions){
-
+                    int r = direction[0] + row;
+                    int c = direction[1] + col;
                 }
             }
         }
