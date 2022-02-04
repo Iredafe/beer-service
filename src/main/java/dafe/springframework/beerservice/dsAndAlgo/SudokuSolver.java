@@ -61,6 +61,7 @@ public class SudokuSolver {
     private static boolean tryDigitsAtPosition(int currentRow, int currentCol, ArrayList<ArrayList<Integer>> board) {
 
 
+        return false;
     }
 
 
