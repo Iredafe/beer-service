@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.io.FilterOutputStream;
+import java.util.Arrays;
 
 public class WallsAndGates {
 
@@ -8,11 +9,23 @@ public class WallsAndGates {
         for(int i=0; i< room.length; i++){
             for(int j=0; i<room[0].length; i++){
                 if(room[i][j] == 0){
-                    dfs(room, i, j, count);
+                    dfs(room, i, j, 0);
                 }
             }
         }
         return room;
+    }
+
+    public static void dfs(int [][] room, int i, int j, int count){
+        if(i < 0 || j< 0 || i>= room.length || j >= room[0].length || room[i][j] < count){
+           return;
+        }
+        room[i][j] = count;
+
+        dfs(room, i+1, j, count++);
+        dfs(room, i-1, j, count++);
+        dfs(room, i, j+1, count++);
+        dfs(room, i, j-1, count++);
     }
 
 
@@ -22,6 +35,6 @@ public class WallsAndGates {
                         {2147483647,-1,2147483647,-1},
                         {0,-1,2147483647,2147483647}};
 
-        System.out.println("This are the number of steps to reach the gate : " + wallsAndGates(input));
+        System.out.println("This are the number of steps to reach the gate : " + Arrays.deepToString(wallsAndGates(input)));
     }
 }
