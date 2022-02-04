@@ -41,7 +41,11 @@ public class WallsAndGates {
         }
             int[][] direction = new int[][]{{1,0}, {0, -1}, {0, 1}, {-1, 0}};
         while(queue.size() !=0){
-            int [] current = queue.poll();
+            for(int i=0; i< queue.size(); i++){
+                int [] current = queue.poll();
+                int row = current[0];
+                int col = current[1];
+            }
         }
 
         return rooms;
