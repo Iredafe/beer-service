@@ -12,6 +12,7 @@ public class NumberOfIslands {
             for(int j=0; j< matrix[0].length; j++){
                 if(matrix[i][j] == 1){
                     queue.add(new int[]{i,j});
+
                 }
             }
         }
@@ -27,7 +28,9 @@ public class NumberOfIslands {
                     int row = direction[0] + currentRow;
                     int col = direction[1] + currentCol;
 
-                    if(row < 0 || col <0) continue;
+                    if(row < 0 || col <0 || row >= matrix.length || col >= matrix[0].length) continue;
+                    if( matrix[row][col] == 0) count++;
+                    queue.add(new int[]{row,col});
                 }
             }
         }
