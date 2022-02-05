@@ -37,8 +37,14 @@ public class NumberOfIslands {
         return count;
     }
 
-    public static int numberOfIslandsDFS(){
-
+    public static int numberOfIslandsDFS(char[][] matrix){
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                if(matrix[i][j] == 1){
+                    dfs(matrix, i, j, count);
+                }
+            }
+        }
     }
     public static void main(String[] args) {
         char [][] grid = {
