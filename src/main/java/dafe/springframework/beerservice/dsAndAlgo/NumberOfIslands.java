@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class NumberOfIslands {
 
-    public int numberOfIslands(char[][] matrix){
+    public static int numberOfIslands(char[][] matrix){
         Queue<int[]> queue = new LinkedList<>();
             int count = 0;
         for(int i=0; i< matrix.length; i++){
@@ -37,6 +37,9 @@ public class NumberOfIslands {
         return count;
     }
 
+    public static int numberOfIslandsDFS(){
+
+    }
     public static void main(String[] args) {
         char [][] grid = {
                         {'1','1','1','1','0'},
@@ -44,5 +47,13 @@ public class NumberOfIslands {
                         {'1','1','0','0','0'},
                         {'0','0','0','0','0'}
                                             };
+
+        System.out.println("This is the number of islands in the grid : " + numberOfIslands(grid));
+
+
             }
+
+
+
+
 }
