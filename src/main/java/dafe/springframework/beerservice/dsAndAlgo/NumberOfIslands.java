@@ -16,8 +16,20 @@ public class NumberOfIslands {
             }
         }
 
+        int [][] directions = {{1,0}, {0,-1}, {0,1}, {-1,0}};
         while (queue.size() > 0){
+            for(int index=0; index< queue.size(); index++){
+                int current[] = queue.poll();
+                int currentRow = current[0];
+                int currentCol = current[1];
 
+                for(int [] direction:directions){
+                    int row = direction[0] + currentRow;
+                    int col = direction[1] + currentCol;
+
+                    if(row < 0 || col <0) continue;
+                }
+            }
         }
         return count;
     }
