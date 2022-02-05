@@ -38,6 +38,7 @@ public class NumberOfIslands {
     }
 
     public static int numberOfIslandsDFS(char[][] matrix){
+        int count=0;
         for(int i=0; i<matrix.length; i++){
             for(int j=0; j<matrix[0].length; j++){
                 if(matrix[i][j] == 1){
@@ -45,6 +46,17 @@ public class NumberOfIslands {
                 }
             }
         }
+        return count;
+    }
+
+    private static void dfs(char[][] matrix, int i, int j, int count){
+        if(i<0 || i>= matrix.length|| j<0 || j>=matrix[0].length) return;
+        matrix[i][j] = '0';
+        dfs(matrix, i+1, j, count+1);
+        dfs(matrix, i-1, j, count+1);
+        dfs(matrix, i, j+1, count+1);
+        dfs(matrix, i, j-1, count+1);
+
     }
     public static void main(String[] args) {
         char [][] grid = {
