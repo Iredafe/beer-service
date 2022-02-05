@@ -10,7 +10,8 @@ public class NumberOfIslands {
             int count = 0;
         for(int i=0; i< matrix.length; i++){
             for(int j=0; j< matrix[0].length; j++){
-                if(matrix[i][j] == 1){
+                if(matrix[i][j] == '1'){
+                    matrix[i][j]='0';
                     queue.add(new int[]{i,j});
 
                 }
@@ -28,8 +29,7 @@ public class NumberOfIslands {
                     int row = direction[0] + currentRow;
                     int col = direction[1] + currentCol;
 
-                    if(row < 0 || col <0 || row >= matrix.length || col >= matrix[0].length) continue;
-                    if( matrix[row][col] == 0) count++;
+                    if(row < 0 || col <0 || row >= matrix.length || col >= matrix[0].length || matrix[row][col] =='0') continue;
                     queue.add(new int[]{row,col});
                 }
             }
@@ -66,9 +66,15 @@ public class NumberOfIslands {
                         {'1','1','0','0','0'},
                         {'0','0','0','0','0'}
                                             };
+        char [][] grid1 = {
+                        {'1','1','1','1','0'},
+                        {'1','1','0','1','0'},
+                        {'1','1','0','0','0'},
+                        {'0','0','0','0','0'}
+                                            };
 
         System.out.println("This is the number of islands in the grid : " + numberOfIslands(grid));
-        System.out.println("This is the number of islands in the grid : " + numberOfIslandsDFS(grid));
+        System.out.println("This is the number of islands in the grid : " + numberOfIslandsDFS(grid1));
 
 
             }
