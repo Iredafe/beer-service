@@ -9,17 +9,22 @@ public class OpenTheLock {
 
     public static int openTheLock(String [] deadends, String target){
     int numberOfTurns = 0;
+        Set<String> deadendSet = new HashSet<>();
         Set<String> visited = new HashSet<>();
         Queue<String> queue = new LinkedList<>();
-        Set<String> deadendSet = new HashSet<>();
+        queue.offer("0000");
 
         for(int i=0; i<deadends.length; i++){
             deadendSet.add(deadends[i]);
         }
 
-
     while(!queue.isEmpty()){
+        while(queue.size() > 0){
+            String current = queue.poll();
 
+            if(deadendSet.contains(current) || visited.contains(current)) continue;
+            if(current == target) return numberOfTurns;
+        }
     }
         return -1;
     }
