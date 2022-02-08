@@ -17,7 +17,10 @@ public class PerfectNumber {
         while(!queue.isEmpty()){
             int size = queue.size();
             while(size > 0){
-
+                int top = queue.poll();
+                for(int i=0; i<size; i++){
+                    int current = top + i*i;
+                }
             }
         }
         return count;

@@ -20,7 +20,7 @@ public class OpenTheLock {
 
     while(!queue.isEmpty()){
         int size = queue.size();
-        while (size-- >0){
+        for(int i=0; i<size; i++){
             String current = queue.poll();
             if(deadendSet.contains(current) || visited.contains(current)) {
                 continue;
@@ -30,13 +30,13 @@ public class OpenTheLock {
                 visited.add(current);
             }
                 StringBuilder sb = new StringBuilder(current);
-                for (int i = 0; i < 4; i++) {
-                    char lockPosition = sb.charAt(i);
-                    String string1 = current.substring(0, i) + (lockPosition == '9' ? 0 :
-                            (lockPosition - '0' + 1)) + current.substring(i + 1);
+                for (int j = 0; j < 4; j++) {
+                    char lockPosition = sb.charAt(j);
+                    String string1 = current.substring(0, j) + (lockPosition == '9' ? 0 :
+                            (lockPosition - '0' + 1)) + current.substring(j + 1);
 
-                    String string2 = current.substring(0, i) + (lockPosition == '0' ? 9 :
-                            lockPosition - '0' - 1) + current.substring(i + 1);
+                    String string2 = current.substring(0, j) + (lockPosition == '0' ? 9 :
+                            lockPosition - '0' - 1) + current.substring(j + 1);
 
                     if (!deadendSet.contains(string1) && !visited.contains(string1)) queue.offer(string1);
                     if (!deadendSet.contains(string2) && !visited.contains(string2)) queue.offer(string2);
