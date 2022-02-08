@@ -19,10 +19,14 @@ public class MinStack {
 
     public void pop() {
 
+        if(!stack.isEmpty()){
+            stack.pop();
+            return;
+        }
     }
 
     public int top() {
-
+        return
     }
 
     public int getMin() {
