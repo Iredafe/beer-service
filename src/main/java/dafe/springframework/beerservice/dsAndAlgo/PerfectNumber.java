@@ -16,11 +16,21 @@ public class PerfectNumber {
 
         while(!queue.isEmpty()){
             int size = queue.size();
-            while(size > 0){
+            for(int i=0; i<size; i++){
                 int top = queue.poll();
-                for(int i=0; i<size; i++){
-                    int current = top + i*i;
+                for(int j=0; j*j<=n; j++){
+                    int current = top + j*j;
+
+                    if(current== n) return count;
+                    else if(current > n) break;
+                    else{
+                        if(!visited.contains(current)){
+                            queue.offer(current);
+                            visited.add(current);
+                        }
+                    }
                 }
+                count++;
             }
         }
         return count;
@@ -28,6 +38,6 @@ public class PerfectNumber {
 
     public static void main(String[] args) {
 
-        System.out.println("This is the least perfect number required : " + perfectNumber(13));
+        System.out.println("This is the least perfect number required : " + perfectNumber(1));
     }
 }
