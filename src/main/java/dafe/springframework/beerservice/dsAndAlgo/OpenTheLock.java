@@ -20,10 +20,9 @@ public class OpenTheLock {
 
     while(!queue.isEmpty()){
         int size = queue.size();
-        while (size >0){
+        while (size-- >0){
             String current = queue.poll();
             if(deadendSet.contains(current) || visited.contains(current)) {
-                size--;
                 continue;
             }
             if(current.equals(target)) return numberOfTurns;
@@ -43,7 +42,6 @@ public class OpenTheLock {
                     if (!deadendSet.contains(string2) && !visited.contains(string2)) queue.offer(string2);
 
                 }
-                size--;
         }
         numberOfTurns++;
     }
