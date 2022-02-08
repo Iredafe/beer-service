@@ -23,21 +23,19 @@ public class PerfectNumber {
 
                     if(current== n) return count;
                     else if(current > n) break;
-                    else{
-                        if(!visited.contains(current)){
+                    else if(!visited.contains(current)){
                             queue.offer(current);
                             visited.add(current);
-                        }
                     }
                 }
-                count++;
             }
+            count++;
         }
         return count;
     }
 
     public static void main(String[] args) {
 
-        System.out.println("This is the least perfect number required : " + perfectNumber(1));
+        System.out.println("This is the least perfect number required : " + perfectNumber(12));
     }
 }
