@@ -26,10 +26,13 @@ public class MinStack {
     }
 
     public int top() {
-        return
+        if(!stack.isEmpty()){
+            return stack.peek()[0];
+        }
+        return -1;
     }
 
     public int getMin() {
-
+        return stack.peek()[1];
     }
 }
