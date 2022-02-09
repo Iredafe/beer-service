@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class MinStack {
@@ -39,6 +40,19 @@ public class MinStack {
 
 class MinStackConstruction{
 
+    ArrayList<Element> stack = new ArrayList();
+
+    public void push(int val){
+
+    }
+
+    public void pop(){
+
+    }
+
+    public int top(){
+
+    }
 
 }
 
