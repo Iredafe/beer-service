@@ -43,5 +43,19 @@ class MinStackConstruction{
 }
 
 class Element{
+    int value;
+    int minValue;
 
+    public Element(int value, int minValue){
+        this.value = value;
+        this.minValue = minValue;
+    }
+
+    public int getValue(){
+        return value;
+    }
+
+    public int getMinValue(){
+        return minValue;
+    }
 }
