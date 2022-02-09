@@ -43,7 +43,12 @@ class MinStackConstruction{
     ArrayList<Element> stack = new ArrayList();
 
     public void push(int val){
-
+        if(stack.isEmpty()){
+            stack.add(new Element(val, val));
+            return;
+        }
+        int currentMinValue = stack.get(stack.size()-1).getMinValue();
+        stack.add(new Element(val, Math.min(val, currentMinValue)));
     }
 
     public void pop(){
@@ -54,6 +59,9 @@ class MinStackConstruction{
 
     }
 
+    public int getMin(){
+
+    }
 }
 
 class Element{
