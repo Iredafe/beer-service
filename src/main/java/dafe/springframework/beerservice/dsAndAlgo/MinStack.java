@@ -84,5 +84,32 @@ class Element{
     class MinStackConstructionII{
         Stack<Integer> stack = new Stack<>();
         Stack<Integer> minStack = new Stack<>();
+
+        public void push(int val){
+            if(stack.isEmpty()){
+                stack.push(val);
+                minStack.push(val);
+                return;
+            }
+            if(minStack.peek() > val){
+                minStack.push(val);
+            }
+        }
+
+        public void pop(){
+            if(minStack.peek() >= stack.peek()){
+                stack.pop();
+                minStack.pop();
+                return;
+            }
+            stack.pop();
+
+        }
+
+        public int top(){
+            return stack.peek();
+        }
+
+
     }
 }
