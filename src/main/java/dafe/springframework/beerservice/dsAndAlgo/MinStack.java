@@ -86,21 +86,15 @@ class Element{
         Stack<Integer> minStack = new Stack<>();
 
         public void push(int val){
-            if(stack.isEmpty()){
-                stack.push(val);
-                minStack.push(val);
-                return;
-            }
-            if(minStack.peek() > val){
+            stack.push(val);
+            if(stack.isEmpty() || minStack.peek() <= val){
                 minStack.push(val);
             }
         }
 
         public void pop(){
-            if(minStack.peek() >= stack.peek()){
-                stack.pop();
+            if(minStack.peek() == stack.peek()){
                 minStack.pop();
-                return;
             }
             stack.pop();
 
