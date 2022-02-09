@@ -60,7 +60,7 @@ class MinStackConstruction{
     }
 
     public int getMin(){
-
+        return stack.get(stack.size()-1).getMinValue();
     }
 }
 
