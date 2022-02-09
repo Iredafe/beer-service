@@ -110,6 +110,9 @@ class Element{
             return stack.peek();
         }
 
+        public int getMin(){
+            return minStack.peek();
+        }
 
     }
 }
