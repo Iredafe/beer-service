@@ -52,11 +52,11 @@ class MinStackConstruction{
     }
 
     public void pop(){
-
+        stack.remove(stack.size()-1);
     }
 
     public int top(){
-
+        return stack.get(stack.size()-1).getValue();
     }
 
     public int getMin(){
