@@ -36,3 +36,12 @@ public class MinStack {
         return stack.peek()[1];
     }
 }
+
+class MinStackConstruction{
+
+
+}
+
+class Element{
+
+}
