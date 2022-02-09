@@ -80,4 +80,9 @@ class Element{
     public int getMinValue(){
         return minValue;
     }
+
+    class MinStackConstructionII{
+        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> minStack = new Stack<>();
+    }
 }
