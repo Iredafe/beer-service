@@ -5,15 +5,20 @@ import java.util.Stack;
 
 public class ValidParentheses {
 
-    Map<Character, Character> map = Map.of('{','}','[',']','(',')');
+    static Map<Character, Character> map = Map.of('{','}','[',']','(',')');
     public static boolean isValid(String input){
 
     Stack<Character> stack = new Stack<>();
 
     for(int i=0; i<input.length(); i++){
         char bracket = input.charAt(i);
+        if(map.containsKey(bracket)){
+            stack.push(bracket);
+        }else if(stack.isEmpty() || bracket != map.get(stack.pop())){
+            return false;
+        }
     }
-        return false;
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
