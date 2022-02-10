@@ -24,5 +24,8 @@ public class ValidParentheses {
     public static void main(String[] args) {
         String s = "(])";
         System.out.println("This is a valid parenthesis : " + isValid(s));
+
+        String s1 = "(())";
+        System.out.println("This is a valid parenthesis 1 : " + isValid(s1));
     }
 }
