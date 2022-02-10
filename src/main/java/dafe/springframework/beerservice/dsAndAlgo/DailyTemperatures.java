@@ -11,7 +11,10 @@ public class DailyTemperatures {
             int count=0;
             for(int j=i; j< temperatures.length-1; j++){
                 if(temperatures[i] > temperatures[j]){
-
+                    output[i]= ++count;
+                    j++;
+                }else{
+                    output[i] = count;
                 }
             }
         }
