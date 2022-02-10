@@ -23,18 +23,20 @@ public class DailyTemperatures {
         Stack<Integer> stack = new Stack<>();
 
         for(int i=0; i<temperatures.length; i++){
-            if(!stack.isEmpty() && temperatures[stack.peek()] < temperatures[i]){
-                output[i] = i-stack.pop();
+            int currentTemp = temperatures[i];
+            while(!stack.isEmpty() && temperatures[stack.peek()] < currentTemp){
+                Integer previousDay = stack.pop();
+                output[previousDay] = i- previousDay;
             }
             stack.push(i);
         }
-
         return output;
     }
 
     public static void main(String[] args) {
         int [] temperatures = {73,74,75,71,69,72,76,73};
+        int [] temp = {73,74,75,71,69,72,76,73};
         System.out.println("This is the output : " + Arrays.toString(dailyTemperatures(temperatures)));
-        System.out.println("This is the output2 : " + Arrays.toString(dailyTemp(temperatures)));
+        System.out.println("This is the output2 : " + Arrays.toString(dailyTemp(temp)));
     }
 }
