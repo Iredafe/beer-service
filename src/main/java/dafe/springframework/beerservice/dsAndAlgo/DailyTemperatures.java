@@ -8,13 +8,10 @@ public class DailyTemperatures {
     public static int[] dailyTemperatures(int [] temperatures){
         int [] output = new int[temperatures.length];
         for(int i=0; i< temperatures.length; i++){
-            int count=0;
-            for(int j=i; j< temperatures.length-1; j++){
-                if(temperatures[i] > temperatures[j]){
-                    output[i]= ++count;
-                    j++;
-                }else{
-                    output[i] = count;
+            for(int j=i+1; j< temperatures.length; j++){
+                if(temperatures[j] > temperatures[i]){
+                    output[i]= j-i;
+                    break;
                 }
             }
         }
