@@ -13,6 +13,12 @@ public class EvaluateReversePolishNotation {
                 stack.push(Integer.valueOf(token));
                 continue;
             }
+            int number2 = stack.pop();
+            int number1 = stack.pop();
+            switch (token){
+                case "*": return number1 * number2;
+                case "/": return number1 / number2;
+            }
 
         }
         return 1;
