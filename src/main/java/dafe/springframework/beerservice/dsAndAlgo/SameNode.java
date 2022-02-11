@@ -32,5 +32,7 @@ public class SameNode {
         node2.root =  new BinaryTree(1);
         node2.root.left = new BinaryTree(2);
         node2.root.right = new BinaryTree(3);
+
+        System.out.println("These 2 nodes are the same : " );
     }
 }
