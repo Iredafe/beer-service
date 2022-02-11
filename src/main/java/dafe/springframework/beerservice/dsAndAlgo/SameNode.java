@@ -27,13 +27,23 @@ public class SameNode {
 
     public static boolean isSameNodeIteratively(BinaryTree first, BinaryTree second){
         Queue<BinaryTree> queue = new LinkedList<>();
-
-        if(first == null && second == null) return true;
-        if(second== null || first == null) return false;
-        if(first.value != second.value) return false;
-
         queue.offer(first);
         queue.offer(second);
+
+        while(!queue.isEmpty()){
+            first= queue.poll();
+            second= queue.poll();
+            if(first == null && second == null) continue;
+            if(second== null || first == null) return false;
+            if(first.value != second.value) return false;
+
+            queue.offer(first.left);
+            queue.offer(second.left);
+            queue.offer(first.right);
+            queue.offer(second.right);
+
+        }
+        return true;
     }
     public static void main(String[] args) {
 
