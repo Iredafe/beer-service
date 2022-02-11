@@ -9,19 +9,28 @@ public class EvaluateReversePolishNotation {
         Stack<Integer> stack = new Stack<>();
 
         for(String token : tokens){
-            if("*/+-".contains(token)){
+            if(!"*/+-".contains(token)){
                 stack.push(Integer.valueOf(token));
                 continue;
             }
             int number2 = stack.pop();
             int number1 = stack.pop();
+            int result=0;
             switch (token){
-                case "*": return number1 * number2;
-                case "/": return number1 / number2;
+                case "*": result= number1 * number2;
+                break;
+                case "/": result= number1 / number2;
+                break;
+                case "+": result= number1 + number2;
+                break;
+                case "-": result= number1 - number2;
+                break;
             }
 
+            stack.push(result);
+
         }
-        return 1;
+        return stack.pop();
     }
 
     public static void main(String[] args) {
