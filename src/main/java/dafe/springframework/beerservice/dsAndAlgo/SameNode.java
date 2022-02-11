@@ -14,6 +14,15 @@ public class SameNode {
     }
     }
 
+    public static boolean sameNode(BinaryTree firstTree, BinaryTree secondTree){
+        if(firstTree == null && secondTree == null) return true;
+        if(firstTree == null || secondTree==null) return false;
+        sameNode(firstTree.left, secondTree.left);
+        sameNode(firstTree.right, secondTree.right);
+
+        return true;
+    }
+
     public static void main(String[] args) {
 
         SameNode node1 = new SameNode();
