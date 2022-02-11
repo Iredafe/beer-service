@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class SameNode {
 
     private static BinaryTree root;
@@ -23,7 +26,14 @@ public class SameNode {
     }
 
     public static boolean isSameNodeIteratively(BinaryTree first, BinaryTree second){
+        Queue<BinaryTree> queue = new LinkedList<>();
 
+        if(first == null && second == null) return true;
+        if(second== null || first == null) return false;
+        if(first.value != second.value) return false;
+
+        queue.offer(first);
+        queue.offer(second);
     }
     public static void main(String[] args) {
 
