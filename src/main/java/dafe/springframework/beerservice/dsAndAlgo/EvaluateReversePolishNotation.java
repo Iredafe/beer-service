@@ -1,9 +1,20 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.Stack;
+
 public class EvaluateReversePolishNotation {
 
     public static int evaluate(String[] tokens){
 
+        Stack<Integer> stack = new Stack<>();
+
+        for(String token : tokens){
+            if("*/+-".contains(token)){
+                stack.push(Integer.valueOf(token));
+                continue;
+            }
+
+        }
         return 1;
     }
 
