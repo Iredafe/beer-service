@@ -14,13 +14,12 @@ public class SameNode {
     }
     }
 
-    public static boolean sameNode(BinaryTree firstTree, BinaryTree secondTree){
+    public static boolean isSameNode(BinaryTree firstTree, BinaryTree secondTree){
         if(firstTree == null && secondTree == null) return true;
         if(firstTree == null || secondTree==null) return false;
-        sameNode(firstTree.left, secondTree.left);
-        sameNode(firstTree.right, secondTree.right);
+        if(firstTree.value != secondTree.value) return false;
 
-        return true;
+        return isSameNode(firstTree.left, secondTree.left) && isSameNode(firstTree.right, secondTree.right);
     }
 
     public static void main(String[] args) {
