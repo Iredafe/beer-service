@@ -22,6 +22,9 @@ public class SameNode {
         return isSameNode(firstTree.left, secondTree.left) && isSameNode(firstTree.right, secondTree.right);
     }
 
+    public static boolean isSameNodeIteratively(BinaryTree first, BinaryTree second){
+
+    }
     public static void main(String[] args) {
 
         SameNode node1 = new SameNode();
