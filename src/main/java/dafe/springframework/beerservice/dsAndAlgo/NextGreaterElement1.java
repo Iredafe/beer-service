@@ -48,6 +48,10 @@ public class NextGreaterElement1 {
         return result;
     }
 
+    public static int[] greaterElementStack(int nums1[], int nums2[]){
+        Stack<Integer> stack = new Stack<>();
+    }
+
     public static void main(String[] args) {
         int []nums1 = {4,1,2}, nums2 = {1,3,4,2};
 
