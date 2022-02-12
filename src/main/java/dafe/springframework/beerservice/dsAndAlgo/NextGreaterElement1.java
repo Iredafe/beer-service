@@ -53,6 +53,10 @@ public class NextGreaterElement1 {
         int[] result = new int[nums1.length];
         Stack<Integer> stack = new Stack<>();
         Map<Integer, Integer> map = new HashMap<>();
+
+        for(int i=0; i<nums2.length; i++){
+
+        }
         return result;
     }
 
