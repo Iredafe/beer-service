@@ -49,7 +49,11 @@ public class NextGreaterElement1 {
     }
 
     public static int[] greaterElementStack(int nums1[], int nums2[]){
+
+        int[] result = new int[nums1.length];
         Stack<Integer> stack = new Stack<>();
+        Map<Integer, Integer> map = new HashMap<>();
+        return result;
     }
 
     public static void main(String[] args) {
