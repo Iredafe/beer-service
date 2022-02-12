@@ -73,6 +73,7 @@ public class NextGreaterElement1 {
         int []nums1 = {4,1,2}, nums2 = {1,3,4,2};
 
         System.out.println("Return the greater elements : " + Arrays.toString(greaterElement(nums1,nums2)));
-        System.out.println("Return the greater elements : " + Arrays.toString(nextGreaterElement(nums1,nums2)));
+        System.out.println("Return the greater elements1 : " + Arrays.toString(nextGreaterElement(nums1,nums2)));
+        System.out.println("Return the greater elements2 : " + Arrays.toString(greaterElementStack(nums1,nums2)));
     }
 }
