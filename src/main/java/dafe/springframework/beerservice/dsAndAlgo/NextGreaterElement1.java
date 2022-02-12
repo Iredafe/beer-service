@@ -37,13 +37,14 @@ public class NextGreaterElement1 {
         int result[] = new int [nums1.length];
 
         for(int i=0; i< nums1.length; i++){
-            for(j=map.get(i) +1; j< nums2.length; j++){
+            for(j=map.get(nums1[i]) +1; j< nums2.length; j++){
                 if(nums2[j] > nums1[i]){
                     result[i] = nums2[j];
+                    break;
                 }
             }
+            if(j==nums2.length) result[i] = -1;
         }
-
         return result;
     }
 
@@ -51,5 +52,6 @@ public class NextGreaterElement1 {
         int []nums1 = {4,1,2}, nums2 = {1,3,4,2};
 
         System.out.println("Return the greater elements : " + Arrays.toString(greaterElement(nums1,nums2)));
+        System.out.println("Return the greater elements : " + Arrays.toString(nextGreaterElement(nums1,nums2)));
     }
 }
