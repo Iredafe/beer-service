@@ -49,8 +49,6 @@ public class NextGreaterElement1 {
     }
 
     public static int[] greaterElementStack(int nums1[], int nums2[]){
-
-        int[] result = new int[nums1.length];
         Stack<Integer> stack = new Stack<>();
         Map<Integer, Integer> map = new HashMap<>();
 
@@ -63,6 +61,10 @@ public class NextGreaterElement1 {
 
         while(!stack.isEmpty()){
             map.put(stack.pop(), -1);
+        }
+        int [] result = new int[nums1.length];
+        for(int i=0; i<nums1.length; i++){
+            result[i] = map.get(nums1[i]);
         }
         return result;
     }
