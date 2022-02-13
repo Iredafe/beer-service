@@ -37,5 +37,6 @@ public class PerfectNumber {
     public static void main(String[] args) {
 
         System.out.println("This is the least perfect number required : " + perfectNumber(12));
+        System.out.println("This is the least perfect number required : " + perfectNumber(12));
     }
 }
