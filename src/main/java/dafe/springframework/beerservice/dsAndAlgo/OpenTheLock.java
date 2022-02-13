@@ -53,5 +53,6 @@ public class OpenTheLock {
         String target = "0202";
 
         System.out.println("This is the depth : " + openTheLock(deadends, target));
+        System.out.println("This is the depth : " + openTheLock(deadends, target));
     }
 }
