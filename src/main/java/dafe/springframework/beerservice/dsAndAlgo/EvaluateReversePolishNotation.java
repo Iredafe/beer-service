@@ -37,5 +37,6 @@ public class EvaluateReversePolishNotation {
         String [] tokens ={"2","1","+","3","*"};
 
         System.out.println("This is the result of reverse polish notation : " + evaluate(tokens));
+        System.out.println("This is the result of reverse polish notation : " + evaluate(tokens));
     }
 }
