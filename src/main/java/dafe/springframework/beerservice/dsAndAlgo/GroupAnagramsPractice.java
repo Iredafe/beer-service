@@ -9,11 +9,10 @@ public class GroupAnagramsPractice {
         char [] unsorted = word.toCharArray();
         Arrays.sort(unsorted);
         String sorted = new String(unsorted);
-        if(!map.containsKey(sorted)){
-            map.put(sorted, new ArrayList<>(Arrays.asList(word)));
-        }else{
-            map.get(sorted).add(word);
+        if(!map.containsKey(sorted)) {
+            map.put(sorted, new ArrayList<>());
         }
+            map.get(sorted).add(word);
     }
         return new ArrayList<>(map.values());
     }
