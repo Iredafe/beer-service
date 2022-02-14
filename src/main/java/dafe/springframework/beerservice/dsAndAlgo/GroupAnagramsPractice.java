@@ -4,9 +4,19 @@ import java.util.*;
 
 public class GroupAnagramsPractice {
     public static List<List<String>> groupAnagrams(List<String> words){
-    Map<String, List<List<String>>> map = new HashMap<>();
+    Map<String, List<String>> map = new HashMap<>();
     List<List<String>> groupAnagrams= new ArrayList<>();
-        return new ArrayList<>();
+    for(String word : words){
+        char [] unsorted = word.toCharArray();
+        Arrays.sort(unsorted);
+        String sorted = new String(unsorted);
+        if(!map.containsKey(sorted)){
+            map.put(sorted, new ArrayList<>(Arrays.asList(word)));
+        }else{
+            map.get(sorted).add(word);
+        }
+    }
+        return new ArrayList<>(map.values());
     }
 
     public static void main(String[] args) {
