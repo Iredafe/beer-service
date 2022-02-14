@@ -13,9 +13,16 @@ public class MergeSort {
     }
 
     private static int[] mergeBothArrays(int[] leftHand, int [] rightHand) {
-    int i,j,k =0;
+    int i =0;
+    int j=0;
+    int k=0;
+    int [] sortedArray = new int[leftHand.length + rightHand.length];
         while(i<leftHand.length && j< rightHand.length ){
-
+            if(leftHand[i] <= rightHand[j]){
+                sortedArray[k++] = leftHand[i++];
+            }else{
+                sortedArray[k++] = rightHand[j++];
+            }
         }
 
     }
