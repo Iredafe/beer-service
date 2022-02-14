@@ -1,6 +1,5 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,12 +36,12 @@ public class MergeSort {
         return sortedArray;
     }
 
-    public static List<Integer> mergeSort1(ArrayList<Integer> list){
-    if(list.isEmpty()) return new ArrayList<>();
+    public static List<Integer> mergeSort1(List<Integer> list){
+    if(list.size() == 1) return list;
     int mid = list.size() / 2;
     List<Integer> leftList = list.subList(0, mid);
     List<Integer> rightList = list.subList(mid, leftList.size());
-        return mergeBothLists(leftList, rightList);
+        return mergeBothLists(mergeSort1(leftList), mergeSort1(rightList));
     }
 
     public static List<Integer> mergeBothLists(List<Integer> leftList, List<Integer> rightList){
@@ -50,17 +49,17 @@ public class MergeSort {
         List<Integer> sortedList = new ArrayList<>();
         while(i < leftList.size() && j < rightList.size()){
             if(leftList.get(i) <= rightList.get(j)){
-                sortedList.set(k++, leftList.get(i++));
+            sortedList.add(leftList.get(i++));
             }else{
-                sortedList.set(k++, rightList.get(j++));
+                sortedList.add(rightList.get(j++));
             }
         }
 
         while(i< leftList.size()){
-            sortedList.set(k++, leftList.get(i++));
+            sortedList.add(leftList.get(i++));
         }
         while(j< rightList.size()){
-            sortedList.set(k++, rightList.get(i++));
+            sortedList.add(rightList.get(i++));
         }
         return sortedList;
     }
@@ -69,5 +68,6 @@ public class MergeSort {
         int [] input = {9,3,5,2,1,3,5,8,7};
         ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList());
         System.out.println("This is the sorted result : " + Arrays.toString(mergeSort(input)));
+        System.out.println("This is the sorted result2 : " + mergeSort1(arrayList));
     }
 }
