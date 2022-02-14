@@ -1,6 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MergeSort {
 
@@ -32,6 +34,10 @@ public class MergeSort {
         }
 
         return sortedArray;
+    }
+
+    public static List<Integer> mergeSort1(ArrayList<Integer> list){
+
     }
 
     public static void main(String[] args) {
