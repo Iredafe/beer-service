@@ -37,9 +37,16 @@ public class MergeSort {
     }
 
     public static List<Integer> mergeSort1(ArrayList<Integer> list){
-
+    if(list.isEmpty()) return new ArrayList<>();
+    int mid = list.size() / 2;
+    List<Integer> leftList = list.subList(0, mid);
+    List<Integer> rightList = list.subList(mid, leftList.size());
+        return new ArrayList<>();
     }
 
+    public static List<Integer> mergeBothLists(List<Integer> leftList, List<Integer> rightList){
+
+    }
     public static void main(String[] args) {
 
         int [] input = {9,3,5,2,1,3,5,8,7};
