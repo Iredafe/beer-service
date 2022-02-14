@@ -5,7 +5,6 @@ import java.util.*;
 public class GroupAnagramsPractice {
     public static List<List<String>> groupAnagrams(List<String> words){
     Map<String, List<String>> map = new HashMap<>();
-    List<List<String>> groupAnagrams= new ArrayList<>();
     for(String word : words){
         char [] unsorted = word.toCharArray();
         Arrays.sort(unsorted);
