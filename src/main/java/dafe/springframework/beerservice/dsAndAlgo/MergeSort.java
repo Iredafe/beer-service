@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -41,15 +42,32 @@ public class MergeSort {
     int mid = list.size() / 2;
     List<Integer> leftList = list.subList(0, mid);
     List<Integer> rightList = list.subList(mid, leftList.size());
-        return new ArrayList<>();
+        return mergeBothLists(leftList, rightList);
     }
 
     public static List<Integer> mergeBothLists(List<Integer> leftList, List<Integer> rightList){
+        int i=0; int j = 0; int k=0;
+        List<Integer> sortedList = new ArrayList<>();
+        while(i < leftList.size() && j < rightList.size()){
+            if(leftList.get(i) <= rightList.get(j)){
+                sortedList.set(k++, leftList.get(i++));
+            }else{
+                sortedList.set(k++, rightList.get(j++));
+            }
+        }
 
+        while(i< leftList.size()){
+            sortedList.set(k++, leftList.get(i++));
+        }
+        while(j< rightList.size()){
+            sortedList.set(k++, rightList.get(i++));
+        }
+        return sortedList;
     }
     public static void main(String[] args) {
 
         int [] input = {9,3,5,2,1,3,5,8,7};
+        ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList());
         System.out.println("This is the sorted result : " + Arrays.toString(mergeSort(input)));
     }
 }
