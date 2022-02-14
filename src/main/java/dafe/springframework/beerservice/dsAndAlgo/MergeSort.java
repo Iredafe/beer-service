@@ -24,7 +24,14 @@ public class MergeSort {
                 sortedArray[k++] = rightHand[j++];
             }
         }
+        while (i<leftHand.length){
+            sortedArray[k++] = leftHand[i++];
+        }
+        while (j< rightHand.length){
+            sortedArray[k++] = rightHand[j++];
+        }
 
+        return sortedArray;
     }
 
     public static void main(String[] args) {
