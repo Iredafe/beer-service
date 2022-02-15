@@ -45,5 +45,6 @@ public class BubbleSort {
         int [] array = new int[]{8, 5, 2, 9, 5, 6, 3};
         int [] result = bubbleSort(array);
         System.out.println("This is the sorted array : " + Arrays.toString(result));
+        System.out.println("This is the selection sorted array : " + Arrays.toString(selectionSort(array)));
     }
 }
