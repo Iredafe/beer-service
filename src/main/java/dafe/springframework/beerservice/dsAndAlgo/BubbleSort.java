@@ -20,6 +20,20 @@ public class BubbleSort {
         }
         return array;
     }
+
+    public static int[] selectionSort(int[] array){
+        for(int i=0; i< array.length; i++){
+            int minIndex=i;
+            for(int j=i+1; j<array.length; j++){
+                if(array[minIndex] > array[j]){
+                    minIndex = j;
+                }
+                swap(array, i, minIndex);
+            }
+        }
+        return array;
+    }
+
     private static void swap(int[] array, int firstIndex, int secondIndex) {
 
         int temp = array[firstIndex];
