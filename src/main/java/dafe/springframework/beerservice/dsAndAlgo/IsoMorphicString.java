@@ -14,17 +14,18 @@ public class IsoMorphicString {
         for(int i=0; i<s.length();i++){
             char first = s.charAt(i);
             char second = t.charAt(i);
-            if(!map.containsKey(first)){
-                map.put(first, second);
+            if(map.containsKey(first)){
+                if(map.get(first) != second) return false;
             }else{
-                if(!set.contains(second)){
+                if(set.contains(second)){
                     return false;
                 }else{
-                    return true;
+                    map.put(first, second);
+                    set.add(second);
                 }
             }
         }
-        return false;
+        return true;
     }
 
     public static void main(String[] args) {
