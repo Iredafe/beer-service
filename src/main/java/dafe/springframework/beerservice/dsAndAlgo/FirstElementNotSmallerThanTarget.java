@@ -16,7 +16,7 @@ public class FirstElementNotSmallerThanTarget {
                 left = mid+1;
             }
         }
-        return -1;
+        return index;
     }
 
     public static void main(String[] args) {
