@@ -11,6 +11,19 @@ public class IsoMorphicString {
         if(s.length()!=t.length()) return false;
         Map<Character, Character> map = new HashMap<>();
         Set<Character> set = new HashSet<>();
+        for(int i=0; i<s.length();i++){
+            char first = s.charAt(i);
+            char second = t.charAt(i);
+            if(!map.containsKey(first)){
+                map.put(first, second);
+            }else{
+                if(!set.contains(second)){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
