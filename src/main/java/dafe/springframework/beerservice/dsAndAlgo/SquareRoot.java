@@ -6,12 +6,18 @@ public class SquareRoot {
         int left = 1; int right = number; int result = -1;
         while(left <= right){
             int mid = (left+right)/2;
+            if(mid*mid <= number){
+                result = mid;
+                left = mid+1;
+            }else if(mid*mid > number){
+                right = mid-1;
+            }
         }
         return result;
     }
 
     public static void main(String[] args) {
-        int input = 16;
+        int input = 8;
         System.out.println("This is the square root : " + squareRoot(input));
     }
 
