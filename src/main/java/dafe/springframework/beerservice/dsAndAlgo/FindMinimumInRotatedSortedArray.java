@@ -3,8 +3,19 @@ package dafe.springframework.beerservice.dsAndAlgo;
 public class FindMinimumInRotatedSortedArray {
 
     public static int findMinimum(int [] array){
+        int left = 0; int right = array.length-1; int index=-1;
 
-        return 1;
+        while (left<= right){
+            int mid = (left+right)/2;
+            if(array[mid] >= array[right]){
+                index=mid;
+                left = mid+1;
+            }else{
+                right=mid-1;
+            }
+        }
+
+        return index;
     }
 
 
