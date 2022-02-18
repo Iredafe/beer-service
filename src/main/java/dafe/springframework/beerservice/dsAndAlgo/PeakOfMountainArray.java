@@ -18,5 +18,7 @@ public class PeakOfMountainArray {
     }
     public static void main(String[] args) {
 
+        int [] nums = {0, 1, 2, 3, 2, 1, 0};
+        System.out.println("The peak is : " + peak(nums));
     }
 }
