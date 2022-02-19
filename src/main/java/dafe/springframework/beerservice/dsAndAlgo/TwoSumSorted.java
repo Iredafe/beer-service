@@ -1,12 +1,14 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.Arrays;
+
 public class TwoSumSorted {
 
     public static void main(String[] args) {
         int [] nums = {2, 3, 5, 8, 11, 15};
         int target = 5;
 
-        System.out.println("These are the index that sum to the target : " + twoSumSorted(nums, target));
+        System.out.println("These are the index that sum to the target : " + Arrays.toString(twoSumSorted(nums, target)));
     }
 
     private static int[] twoSumSorted(int[] nums, int target) {
