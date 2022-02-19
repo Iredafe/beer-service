@@ -54,22 +54,22 @@ public class RemoveDuplicates {
         return myStringBuilder.reverse().toString();
     }
 
-    public static int[] removeDup(int[]array){
+    public static int removeDup(int[]array){
         int slow = 0;
-        for (int fast= 0; fast < array.length; fast++){
-            if(array[slow] != array[fast]){
+        for (int fast= 0; fast < array.length; fast++) {
+            if (array[slow] != array[fast]) {
+                slow++;
                 array[slow] = array[fast];
-
             }
         }
-        return new int[]{};
+        return slow + 1;
     }
 
     public static void main(String[] args) {
         String test ="abbacaabd";
         int [] arr = {0, 0, 1, 1, 1, 2, 2};
 
-        System.out.println("This is the processed String without duplicate : " + removeDup(arr));
+        System.out.println("This is the processed String without dup : " + removeDup(arr));
         System.out.println("This is the processed String without duplicate : " + removeDuplicates(test));
         System.out.println("This is the processed String without duplicate2 : " + removeDuplicates2(test));
     }
