@@ -10,8 +10,17 @@ public class TwoSumSorted {
     }
 
     private static int[] twoSumSorted(int[] nums, int target) {
-        int[] indices = new int[2];
-
-        return indices;
+        int left = 0; int right = nums.length-1;
+        while (left < right){
+            int sum = nums[left] + nums[right];
+            if(sum == target){
+                return new int[]{left, right};
+            }else if(sum < target){
+                left++;
+            }else{
+                right--;
+            }
+        }
+        return new int[]{};
     }
 }
