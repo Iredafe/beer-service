@@ -24,6 +24,11 @@ public class LinkedListCycle {
         return false;
     }
 
+    public static boolean isACycle(Node head){
+
+        return false;
+    }
+
     public static void main(String[] args) {
         LinkedListCycle linkedListCycle = new LinkedListCycle();
         linkedListCycle.head = new Node(3);
