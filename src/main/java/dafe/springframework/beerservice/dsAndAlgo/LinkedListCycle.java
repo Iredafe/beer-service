@@ -24,7 +24,7 @@ public class LinkedListCycle {
         return false;
     }
 
-    public static boolean isCycle2(Node head){
+    public static Node isCycle2(Node head){
         Set<Node> set = new HashSet<>();
         while(head!= null){
             if(set.contains(head)) return head;
