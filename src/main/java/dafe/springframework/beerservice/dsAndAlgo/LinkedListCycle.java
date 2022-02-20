@@ -52,6 +52,18 @@ public class LinkedListCycle {
         return null;
     }
 
+    public static Node getIntersection(Node head){
+        Node fast = head;
+        Node slow = head;
+
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast) return slow;
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         LinkedListCycle linkedListCycle = new LinkedListCycle();
         linkedListCycle.head = new Node(3);
