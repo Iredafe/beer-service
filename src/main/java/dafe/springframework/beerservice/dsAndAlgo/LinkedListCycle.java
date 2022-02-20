@@ -47,6 +47,11 @@ public class LinkedListCycle {
         return false;
     }
 
+    public static Node findCycle(Node head){
+
+        return null;
+    }
+
     public static void main(String[] args) {
         LinkedListCycle linkedListCycle = new LinkedListCycle();
         linkedListCycle.head = new Node(3);
