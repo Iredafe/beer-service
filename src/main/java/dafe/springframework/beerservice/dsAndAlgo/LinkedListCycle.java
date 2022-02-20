@@ -5,9 +5,9 @@ import java.util.Set;
 
 public class LinkedListCycle {
 
+    Node head;
     static class Node{
         int value;
-        Node head;
         Node next;
         public Node(int value){
             this.value = value;
@@ -24,4 +24,13 @@ public class LinkedListCycle {
         return false;
     }
 
+    public static void main(String[] args) {
+        LinkedListCycle linkedListCycle = new LinkedListCycle();
+        linkedListCycle.head = new Node(3);
+        linkedListCycle.head.next = new Node(2);
+        linkedListCycle.head.next.next = new Node(0);
+        linkedListCycle.head.next.next.next = new Node(-4);
+
+        System.out.println("Is this node a cycle : " + isCycle(linkedListCycle.head));
+    }
 }
