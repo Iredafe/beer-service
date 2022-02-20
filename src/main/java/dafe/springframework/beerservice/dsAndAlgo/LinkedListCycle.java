@@ -24,6 +24,17 @@ public class LinkedListCycle {
         return false;
     }
 
+    public static boolean isCycle2(Node head){
+        Set<Node> set = new HashSet<>();
+        while(head!= null){
+            if(set.contains(head)) return true;
+            set.add(head);
+            head = head.next;
+        }
+
+        return false;
+    }
+
     public static boolean isACycle(Node head){
         Node fast = head;
         Node slow = head;
