@@ -51,7 +51,14 @@ public class LinkedListCycle {
         if(head == null) return null;
         Node firstPointer = head;
         Node secondPointer = getIntersection(head);
-        return null;
+        if(secondPointer==null) return null;
+
+        while(firstPointer!=secondPointer){
+            firstPointer = firstPointer.next;
+            secondPointer = secondPointer.next;
+
+        }
+        return firstPointer;
     }
 
     public static Node getIntersection(Node head){
