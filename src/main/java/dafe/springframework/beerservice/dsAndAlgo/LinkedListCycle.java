@@ -48,7 +48,9 @@ public class LinkedListCycle {
     }
 
     public static Node findCycle(Node head){
-
+        if(head == null) return null;
+        Node firstPointer = head;
+        Node secondPointer = getIntersection(head);
         return null;
     }
 
