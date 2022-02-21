@@ -22,6 +22,17 @@ public class MiddleOfLinkedList {
         return array[mid].value;
     }
 
+    public static int middleOfLL2Pointer(Node head){
+
+        Node fast = head;
+        Node slow = head;
+
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+        }
+
+    }
+
     public static void main(String[] args) {
         MiddleOfLinkedList middleOfLinkedList = new MiddleOfLinkedList();
         middleOfLinkedList.head = new Node(1);
