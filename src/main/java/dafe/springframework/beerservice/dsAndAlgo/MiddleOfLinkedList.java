@@ -19,5 +19,7 @@ public class MiddleOfLinkedList {
         middleOfLinkedList.head.next.next = new Node(3);
         middleOfLinkedList.head.next.next.next = new Node(4);
         middleOfLinkedList.head.next.next.next.next= new Node(5);
+
+        System.out.println("This is the middle of the linkedlist : " + middleOfLinkedList.head);
     }
 }
