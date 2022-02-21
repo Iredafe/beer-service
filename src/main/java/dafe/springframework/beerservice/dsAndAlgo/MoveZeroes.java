@@ -25,7 +25,10 @@ public class MoveZeroes {
     }
 
     private static int[] moveZeroesWithSwap(int[] nums){
-
+        int slow = 0;
+        for(int fast = 0; fast<nums.length; fast++){
+            if(fast!=0) swap(nums, slow, fast);
+        }
         return nums;
     }
 }
