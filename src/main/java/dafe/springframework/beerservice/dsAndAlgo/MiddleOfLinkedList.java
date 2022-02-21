@@ -11,6 +11,16 @@ public class MiddleOfLinkedList {
         }
     }
 
+    public static Node middleOfLinkedList(Node head){
+        int index = 0;
+        Node [] array = new Node[100];
+        while(head.next!=null){
+            array[index++] = head;
+            head = head.next;
+        }
+        int mid = array.length/2;
+        return array[mid];
+    }
 
     public static void main(String[] args) {
         MiddleOfLinkedList middleOfLinkedList = new MiddleOfLinkedList();
@@ -20,6 +30,6 @@ public class MiddleOfLinkedList {
         middleOfLinkedList.head.next.next.next = new Node(4);
         middleOfLinkedList.head.next.next.next.next= new Node(5);
 
-        System.out.println("This is the middle of the linkedlist : " + middleOfLinkedList.head);
+        System.out.println("This is the middle of the linkedlist : " + middleOfLinkedList(middleOfLinkedList.head));
     }
 }
