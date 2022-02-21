@@ -14,7 +14,7 @@ public class MiddleOfLinkedList {
     public static int middleOfLinkedList(Node head){
         int index = 0;
         Node [] array = new Node[100];
-        while(head.next!=null){
+        while(head!=null){
             array[index++] = head;
             head = head.next;
         }
