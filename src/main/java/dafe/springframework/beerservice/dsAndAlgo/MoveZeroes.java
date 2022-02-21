@@ -8,7 +8,7 @@ public class MoveZeroes {
         int [] nums ={0,1,0,3,12};
         int [] nums1 ={0,1,0,3,12};
         System.out.println("This is the result : " + Arrays.toString(moveZeroes(nums)));
-        System.out.println("This is the result : " + Arrays.toString(moveZeroesWithSwap(nums1)));
+        System.out.println("This is the result with 2 pointers: " + Arrays.toString(moveZeroesWithSwap(nums1)));
     }
 
     private static int[] moveZeroes(int[] nums) {
@@ -27,11 +27,17 @@ public class MoveZeroes {
     private static int[] moveZeroesWithSwap(int[] nums){
         int slow = 0;
         for(int fast = 0; fast<nums.length; fast++){
-            if(fast!=0) swap(nums, slow, fast);
+            if(nums[fast]!=0) {
+                swap(nums, slow, fast);
+                slow++;
+            }
         }
         return nums;
     }
 
     private static void swap(int[] nums, int slow, int fast) {
+        int temp = nums[slow];
+        nums[slow] = nums[fast];
+        nums[fast] = temp;
     }
 }
