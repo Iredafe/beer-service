@@ -21,4 +21,9 @@ public class MoveZeroes {
             }
         return nums;
     }
+
+    private static int[] moveZeroesWithSwap(int[] nums){
+
+        return nums;
+    }
 }
