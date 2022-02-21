@@ -17,7 +17,9 @@ public class MoveZeroes {
 
         while(start < end){
             if(nums[start] == 0){
-                nums[start++] = nums[end--];
+                nums[start] = nums[end];
+                start++;
+                end--;
             }
         }
 
