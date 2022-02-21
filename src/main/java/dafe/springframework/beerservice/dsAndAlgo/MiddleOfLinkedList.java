@@ -11,15 +11,15 @@ public class MiddleOfLinkedList {
         }
     }
 
-    public static Node middleOfLinkedList(Node head){
+    public static int middleOfLinkedList(Node head){
         int index = 0;
         Node [] array = new Node[100];
         while(head.next!=null){
             array[index++] = head;
             head = head.next;
         }
-        int mid = array.length/2;
-        return array[mid];
+        int mid = index/2;
+        return array[mid].value;
     }
 
     public static void main(String[] args) {
