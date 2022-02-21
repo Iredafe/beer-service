@@ -6,7 +6,9 @@ public class MoveZeroes {
 
     public static void main(String[] args) {
         int [] nums ={0,1,0,3,12};
+        int [] nums1 ={0,1,0,3,12};
         System.out.println("This is the result : " + Arrays.toString(moveZeroes(nums)));
+        System.out.println("This is the result : " + Arrays.toString(moveZeroesWithSwap(nums1)));
     }
 
     private static int[] moveZeroes(int[] nums) {
