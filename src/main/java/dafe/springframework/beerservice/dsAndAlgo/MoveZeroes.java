@@ -1,10 +1,12 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.Arrays;
+
 public class MoveZeroes {
 
     public static void main(String[] args) {
         int [] nums ={0,1,0,3,12};
-        System.out.println("This is the result : " + moveZeroes(nums));
+        System.out.println("This is the result : " + Arrays.toString(moveZeroes(nums)));
     }
 
     private static int[] moveZeroes(int[] nums) {
@@ -14,15 +16,9 @@ public class MoveZeroes {
                 nums[start++] = nums[i];
             }
         }
-
-        while(start < end){
-            if(nums[start] == 0){
-                nums[start] = nums[end];
-                start++;
-                end--;
+        for(int i=start; i<nums.length; i++){
+                nums[i] = 0;
             }
-        }
-
         return nums;
     }
 }
