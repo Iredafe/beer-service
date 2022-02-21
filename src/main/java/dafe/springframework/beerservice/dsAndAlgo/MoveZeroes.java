@@ -31,4 +31,7 @@ public class MoveZeroes {
         }
         return nums;
     }
+
+    private static void swap(int[] nums, int slow, int fast) {
+    }
 }
