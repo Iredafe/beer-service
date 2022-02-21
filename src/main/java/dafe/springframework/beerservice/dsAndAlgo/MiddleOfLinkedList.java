@@ -29,8 +29,10 @@ public class MiddleOfLinkedList {
 
         while(fast!=null && fast.next!=null){
             slow = slow.next;
+            fast = fast.next.next;
         }
 
+        return slow.value;
     }
 
     public static void main(String[] args) {
