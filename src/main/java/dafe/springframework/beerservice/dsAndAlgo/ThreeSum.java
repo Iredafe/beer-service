@@ -64,6 +64,6 @@ public class ThreeSum {
         String newResult = result.toString();
         System.out.println("The three number sums are : " + newResult);
         List<Integer> nums = Arrays.asList(-1, 0, 1, 2, -1, -4);
-        System.out.println("The three number sums are two : " + threeSum2(nums).toString());
+        System.out.println("The three number sums are two : " + threeSum2(nums));
     }
 }
