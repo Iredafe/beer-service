@@ -2,6 +2,7 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,7 +37,24 @@ public class ThreeSum {
     }
 
     public static List<List<Integer>> threeSum2(List<Integer> array){
-
+        int left = 1; int right = array.size()-1;
+        Collections.sort(array);
+        List<List<Integer>> result = new ArrayList<>();
+        for(int i=0; i< array.size()-2;i++){
+            while(left<right){
+                int sum = array.get(i) + array.get(left) + array.get(right);
+                if(sum == 0){
+                    result.add(Arrays.asList(array.get(i), array.get(left), array.get(right)));
+                    left++;
+                    right--;
+                }else if(sum<0){
+                    left++;
+                }else{
+                    right--;
+                }
+            }
+            return result;
+        }
         return new ArrayList<>();
     }
 
