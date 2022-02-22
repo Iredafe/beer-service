@@ -37,10 +37,10 @@ public class ThreeSum {
     }
 
     public static List<List<Integer>> threeSum2(List<Integer> array){
-        int left = 1; int right = array.size()-1;
         Collections.sort(array);
         List<List<Integer>> result = new ArrayList<>();
         for(int i=0; i< array.size()-2;i++){
+            int left = i+1; int right = array.size()-1;
             while(left<right){
                 int sum = array.get(i) + array.get(left) + array.get(right);
                 if(sum == 0){
@@ -53,9 +53,8 @@ public class ThreeSum {
                     right--;
                 }
             }
-            return result;
         }
-        return new ArrayList<>();
+        return result;
     }
 
     public static void main(String[] args) {
