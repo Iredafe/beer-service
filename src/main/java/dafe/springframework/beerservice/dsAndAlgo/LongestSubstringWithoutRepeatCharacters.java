@@ -19,7 +19,14 @@ public class LongestSubstringWithoutRepeatCharacters {
                 if(!window.contains(right)){
                     window.add(input.charAt(right));
                     right++;
+                    result++;
+                }else{
+                    window.remove(input.charAt(right));
+                    left++;
                 }
+
+                return Math.max(result, right-left);
+
             }
 
         return result;
