@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ValidAnagrams {
 
 
@@ -10,6 +13,17 @@ public class ValidAnagrams {
     }
 
     private static boolean validAnagram(String s, String t) {
+        if(s.length()!=t.length()) return false;
+        Map<Character, Integer> map = new HashMap<>();
+
+        for(int i=0; i<s.length(); i++){
+            map.put(s.charAt(i), map.getOrDefault(i, 0) +1);
+            map.put(t.charAt(i), map.getOrDefault(i, 0) -1);
+
+        }
+        for(char letter : map.keySet()){
+
+        }
 
     }
 }
