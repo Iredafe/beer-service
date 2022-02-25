@@ -27,8 +27,8 @@ public class LowestCommonAncestor {
         lowestCommonAncestor.root.left.right = new TreeNode(2);
         lowestCommonAncestor.root.right.left = new TreeNode(0);
         lowestCommonAncestor.root.right.right = new TreeNode(8);
-        lowestCommonAncestor.root.right.right.left = new TreeNode(7);
-        lowestCommonAncestor.root.right.right.right = new TreeNode(4);
+        lowestCommonAncestor.root.right.left.left = new TreeNode(7);
+        lowestCommonAncestor.root.right.left.right = new TreeNode(4);
 
 
     }
