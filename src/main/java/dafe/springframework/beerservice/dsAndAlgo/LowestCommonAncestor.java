@@ -16,9 +16,17 @@ public class LowestCommonAncestor {
             this.val = val;
         }
     }
+    static class Node {
+        int val;
+        TreeNode left;
+        TreeNode right;
 
+        public Node(int val) {
+            this.val = val;
+        }
+    }
     public static TreeNode getLowestCommonAncestor(TreeNode first, TreeNode second){
-        if(first==null || second==null) return null;
+//        if(first.parent==null && second.parent==null) return null;
 
         int firstDepth = getDepth(first);
         int secondDepth = getDepth(second);
@@ -67,6 +75,8 @@ public class LowestCommonAncestor {
         lowestCommonAncestor.root.right.left.left = new TreeNode(7);
         lowestCommonAncestor.root.right.left.right = new TreeNode(4);
 
-
+        TreeNode first = lowestCommonAncestor.root.left.left;
+        TreeNode second = lowestCommonAncestor.root.right.left.right;
+        System.out.println("This is the lowest common ancestor : " + getLowestCommonAncestor(first, second));
     }
 }
