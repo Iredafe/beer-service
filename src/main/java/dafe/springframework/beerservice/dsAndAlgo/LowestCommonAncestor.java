@@ -10,6 +10,7 @@ public class LowestCommonAncestor {
         int val;
         TreeNode left;
         TreeNode right;
+        TreeNode parent;
 
         public TreeNode(int val){
             this.val = val;
@@ -19,14 +20,24 @@ public class LowestCommonAncestor {
     public static TreeNode getLowestCommonAncestor(TreeNode first, TreeNode second){
         if(first==null || second==null) return null;
 
-        int firstDepth = getDepth();
-        int secondDepth = getDepth();
+        int firstDepth = getDepth(first);
+        int secondDepth = getDepth(second);
 
         if(firstDepth > secondDepth){
             return backtrack(first, second, firstDepth-secondDepth);
         }else{
             return backtrack(second, first, secondDepth-firstDepth);
         }
+    }
+
+
+    public static int getDepth(TreeNode child){
+        int depth = 0;
+        while(child!=null){
+            depth++;
+            child = child.parent;
+        }
+        return depth;
     }
 
 //[3,5,1,6,2,0,8,null,null,7,4]
