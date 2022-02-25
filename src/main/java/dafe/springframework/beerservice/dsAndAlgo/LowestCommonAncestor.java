@@ -5,6 +5,7 @@ import java.util.*;
 public class LowestCommonAncestor {
 
     private TreeNode root;
+    private Node root1;
 
     static class TreeNode{
         int val;
@@ -18,8 +19,8 @@ public class LowestCommonAncestor {
     }
     static class Node {
         int val;
-        TreeNode left;
-        TreeNode right;
+        Node left;
+        Node right;
 
         public Node(int val) {
             this.val = val;
@@ -78,5 +79,15 @@ public class LowestCommonAncestor {
         TreeNode first = lowestCommonAncestor.root.left.left;
         TreeNode second = lowestCommonAncestor.root.right.left.right;
         System.out.println("This is the lowest common ancestor : " + getLowestCommonAncestor(first, second));
+
+        lowestCommonAncestor.root1 = new Node(3);
+        lowestCommonAncestor.root1.left = new Node(5);
+        lowestCommonAncestor.root1.right = new Node(1);
+        lowestCommonAncestor.root1.left.left = new Node(6);
+        lowestCommonAncestor.root1.left.right = new Node(2);
+        lowestCommonAncestor.root1.right.left = new Node(0);
+        lowestCommonAncestor.root1.right.right = new Node(8);
+        lowestCommonAncestor.root1.right.left.left = new Node(7);
+        lowestCommonAncestor.root1.right.left.right = new Node(4);
     }
 }
