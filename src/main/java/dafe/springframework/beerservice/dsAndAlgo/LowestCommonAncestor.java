@@ -16,6 +16,11 @@ public class LowestCommonAncestor {
         }
     }
 
+    public static TreeNode getLowestCommonAncestor(){
+
+        return null;
+    }
+
 //[3,5,1,6,2,0,8,null,null,7,4]
 
     public static void main(String[] args) {
