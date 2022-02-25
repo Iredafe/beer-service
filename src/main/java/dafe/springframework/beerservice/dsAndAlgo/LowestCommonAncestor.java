@@ -40,6 +40,19 @@ public class LowestCommonAncestor {
         return depth;
     }
 
+    public static TreeNode backtrack(TreeNode lower, TreeNode higher, int difference){
+        while(difference > 0){
+            difference--;
+            lower = lower.parent;
+        }
+
+        while (lower != higher){
+            lower = lower.parent;
+            higher = higher.parent;
+        }
+        return lower;
+    }
+
 //[3,5,1,6,2,0,8,null,null,7,4]
 
     public static void main(String[] args) {
