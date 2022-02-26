@@ -58,9 +58,13 @@ public class ThreeSum {
     }
 
     public static List<List<Integer>> threeSums(List<Integer> nums){
-
-
         List<List<Integer>> result = new ArrayList<>();
+        Collections.sort(nums);
+        for(int i=0; i< nums.size() && nums.get(i) <= 0; i++){
+            if(i==0 || nums.get(i) != nums.get(i-1)){
+                getTwoSum(nums, i, result);
+            }
+        }
         return result;
     }
 
