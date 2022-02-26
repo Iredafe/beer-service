@@ -69,6 +69,15 @@ public class ThreeSum {
     }
 
     private static void getTwoSum(List<Integer> nums, int i, List<List<Integer>> result) {
+        int left = i+1;
+        int right = nums.size()-1;
+
+        while (left < right){
+            int sum = nums.get(i) + nums.get(left) + nums.get(right);
+        if(sum < 0){
+
+        }
+        }
     }
 
     public static void main(String[] args) {
