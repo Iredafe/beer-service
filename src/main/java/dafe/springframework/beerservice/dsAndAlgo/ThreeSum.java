@@ -68,6 +68,9 @@ public class ThreeSum {
         return result;
     }
 
+    private static void getTwoSum(List<Integer> nums, int i, List<List<Integer>> result) {
+    }
+
     public static void main(String[] args) {
         int array[] = new int[]{12, 3, 1, 2, -6, 5, -8, 6};
         int target = 0;
