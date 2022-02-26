@@ -75,7 +75,11 @@ public class ThreeSum {
         while (left < right){
             int sum = nums.get(i) + nums.get(left) + nums.get(right);
         if(sum < 0){
-
+            left++;
+        }else if(sum > 0){
+            right--;
+        }else{
+            result.add(Arrays.asList(nums.get(i), nums.get(left), nums.get(right)));
         }
         }
     }
