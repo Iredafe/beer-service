@@ -95,6 +95,6 @@ public class ThreeSum {
         System.out.println("The three number sums are : " + newResult);
         List<Integer> nums = Arrays.asList(-1, 0, 1, 2, -1, -4);
         List<Integer> nums1 = Arrays.asList(-2,0,0,2,2);
-        System.out.println("The three number sums are two : " + threeSum2(nums));
+        System.out.println("The three number sums list are two : " + threeSums(nums1));
     }
 }
