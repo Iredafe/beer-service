@@ -80,6 +80,9 @@ public class ThreeSum {
             right--;
         }else{
             result.add(Arrays.asList(nums.get(i), nums.get(left), nums.get(right)));
+            left++;
+            right--;
+            while(left < right && nums.get(left) == nums.get(left-1)) left++;
         }
         }
     }
