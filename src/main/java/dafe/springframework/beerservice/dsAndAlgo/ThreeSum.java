@@ -57,6 +57,13 @@ public class ThreeSum {
         return result;
     }
 
+    public static List<List<Integer>> threeSums(List<Integer> nums){
+
+
+        List<List<Integer>> result = new ArrayList<>();
+        return result;
+    }
+
     public static void main(String[] args) {
         int array[] = new int[]{12, 3, 1, 2, -6, 5, -8, 6};
         int target = 0;
