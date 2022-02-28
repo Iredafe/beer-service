@@ -8,4 +8,9 @@ public class FindAllAnagrams {
         List<Integer> result =  new ArrayList<>();
         return result;
     }
+
+
+    public static void main(String[] args) {
+
+    }
 }
