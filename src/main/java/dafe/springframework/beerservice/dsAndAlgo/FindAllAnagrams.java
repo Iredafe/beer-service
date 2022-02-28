@@ -9,35 +9,35 @@ public class FindAllAnagrams {
     public static List<Integer> findAnagrams(String s, String p) {
 
         List<Integer> result =  new ArrayList<>();
-        Map<Character, Integer> pCount = new HashMap();
-        Map<Character, Integer> sCount = new HashMap();
+        Map<Character, Integer> reference = new HashMap();
+        Map<Character, Integer> window = new HashMap();
 //build reference map
         for(char ch : p.toCharArray()){
-            if(pCount.containsKey(ch)){
-                pCount.put(ch, pCount.get(ch) + 1);
+            if(reference.containsKey(ch)){
+                reference.put(ch, reference.get(ch) + 1);
             }else{
-                pCount.put(ch, 1);
+                reference.put(ch, 1);
             }
         }
 //build window
         for(int i=0; i<s.length(); i++){
             char c = s.charAt(i);
-            if(sCount.containsKey(c)){
-                sCount.put(c, sCount.get(c)+1);
+            if(window.containsKey(c)){
+                window.put(c, window.get(c)+1);
             }else{
-                sCount.put(c, 1);
+                window.put(c, 1);
             }
 
             if(i >= p.length()) {
                 c = s.charAt(i - p.length());
-                if (sCount.get(c) == 1) {
-                    sCount.remove(c);
+                if (window.get(c) == 1) {
+                    window.remove(c);
                 } else {
-                    sCount.put(c, sCount.get(c) - 1);
+                    window.put(c, window.get(c) - 1);
                 }
             }
 
-                if(sCount.equals(pCount)){
+                if(window.equals(reference)){
                     result.add(i-p.length() +1);
                 }
             }
