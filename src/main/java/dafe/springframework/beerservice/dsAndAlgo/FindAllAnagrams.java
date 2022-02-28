@@ -31,6 +31,8 @@ public class FindAllAnagrams {
                 char ch = s.charAt(i-p.length());
                 if(sCount.get(ch) == 1){
                     sCount.remove(ch);
+                }else{
+                    sCount.put(ch, sCount.get(ch)-1);
                 }
             }
         }
