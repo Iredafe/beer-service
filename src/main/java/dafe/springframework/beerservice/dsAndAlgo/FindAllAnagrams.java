@@ -14,6 +14,8 @@ public class FindAllAnagrams {
         for(char ch : p.toCharArray()){
             if(pCount.containsKey(ch)){
                 pCount.put(ch, pCount.get(ch) + 1);
+            }else{
+                pCount.put(ch, 1);
             }
 
         }
