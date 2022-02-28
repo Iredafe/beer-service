@@ -10,7 +10,7 @@ public class FindAllAnagrams {
 
         Map<Character, Integer> pCount = new HashMap();
         Map<Character, Integer> sCount = new HashMap();
-
+//build reference map
         for(char ch : p.toCharArray()){
             if(pCount.containsKey(ch)){
                 pCount.put(ch, pCount.get(ch) + 1);
@@ -22,7 +22,9 @@ public class FindAllAnagrams {
         for(int i=0; i<s.length(); i++){
             char c = s.charAt(i);
             if(sCount.containsKey(c)){
-
+                sCount.put(c, sCount.get(c)+1);
+            }else{
+                sCount.put(c, 1);
             }
         }
         List<Integer> result =  new ArrayList<>();
