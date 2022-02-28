@@ -28,19 +28,21 @@ public class FindAllAnagrams {
                 sCount.put(c, 1);
             }
 
-            if(i >= p.length()){
-                char ch = s.charAt(i-p.length());
-                if(sCount.get(ch) == 1){
-                    sCount.remove(ch);
-                }else{
-                    sCount.put(ch, sCount.get(ch)-1);
+            if(i >= p.length()) {
+                c = s.charAt(i - p.length());
+                if (sCount.get(c) == 1) {
+                    sCount.remove(c);
+                } else {
+                    sCount.put(c, sCount.get(c) - 1);
                 }
             }
 
-            if(sCount.equals(pCount)){
-                result.add(i=p.length() +1);
+                if(sCount.equals(pCount)){
+                    result.add(i-p.length() +1);
+                }
             }
-        }
+
+
         return result;
     }
 
