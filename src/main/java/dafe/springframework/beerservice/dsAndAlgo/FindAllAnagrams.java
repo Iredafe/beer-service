@@ -18,13 +18,20 @@ public class FindAllAnagrams {
                 pCount.put(ch, 1);
             }
         }
-
+//build window
         for(int i=0; i<s.length(); i++){
             char c = s.charAt(i);
             if(sCount.containsKey(c)){
                 sCount.put(c, sCount.get(c)+1);
             }else{
                 sCount.put(c, 1);
+            }
+
+            if(i >= p.length()){
+                char ch = s.charAt(i-p.length());
+                if(sCount.get(ch) == 1){
+                    sCount.remove(ch);
+                }
             }
         }
         List<Integer> result =  new ArrayList<>();
