@@ -10,6 +10,13 @@ public class FindAllAnagrams {
 
         Map<Character, Integer> pCount = new HashMap();
         Map<Character, Integer> sCount = new HashMap();
+
+        for(char ch : p.toCharArray()){
+            if(pCount.containsKey(ch)){
+                pCount.put(ch, pCount.get(ch) + 1);
+            }
+
+        }
         List<Integer> result =  new ArrayList<>();
         return result;
     }
