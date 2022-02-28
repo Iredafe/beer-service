@@ -12,5 +12,7 @@ public class FindAllAnagrams {
 
     public static void main(String[] args) {
 
+        String s = "cbaebabacd", p = "abc";
+
     }
 }
