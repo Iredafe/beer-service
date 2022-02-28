@@ -13,6 +13,6 @@ public class FindAllAnagrams {
     public static void main(String[] args) {
 
         String s = "cbaebabacd", p = "abc";
-
+        System.out.println("This is position of all the anagrams : " + findAnagrams(s,p));
     }
 }
