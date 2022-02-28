@@ -8,6 +8,7 @@ import java.util.Map;
 public class FindAllAnagrams {
     public static List<Integer> findAnagrams(String s, String p) {
 
+        List<Integer> result =  new ArrayList<>();
         Map<Character, Integer> pCount = new HashMap();
         Map<Character, Integer> sCount = new HashMap();
 //build reference map
@@ -35,8 +36,11 @@ public class FindAllAnagrams {
                     sCount.put(ch, sCount.get(ch)-1);
                 }
             }
+
+            if(sCount.equals(pCount)){
+                result.add(i=p.length() +1);
+            }
         }
-        List<Integer> result =  new ArrayList<>();
         return result;
     }
 
