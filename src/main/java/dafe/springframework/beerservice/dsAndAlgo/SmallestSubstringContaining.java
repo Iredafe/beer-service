@@ -17,11 +17,16 @@ public class SmallestSubstringContaining {
                 reference.put(ch, 1);
             }
         }
-
+        int left = 0; int right = 0;
         for(int i=0; i<bigString.length(); i++){
             char ch = bigString.charAt(i);
-            if(window.containsKey(ch)){
-
+            if(!reference.containsKey(ch)){
+                if(reference.get(ch)==1){
+                    left++;
+                }
+            }else{
+                reference.put(ch, reference.get(ch) -1);
+                right++;
             }
         }
         return result;
