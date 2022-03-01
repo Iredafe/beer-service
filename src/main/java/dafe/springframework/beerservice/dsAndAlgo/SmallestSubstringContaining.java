@@ -9,7 +9,12 @@ public class SmallestSubstringContaining {
         String result = "";
         Map<Character, Integer> reference = new HashMap();
         Map<Character, Integer> window = new HashMap<>();
+        String currentResult = "";
+        for(char ch : smallString.toCharArray()){
+          reference.put(ch, 1);
+        }
 
+        for(int i=0)
         return result;
     }
 
