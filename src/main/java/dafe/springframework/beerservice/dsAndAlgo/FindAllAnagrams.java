@@ -27,7 +27,6 @@ public class FindAllAnagrams {
             }else{
                 window.put(c, 1);
             }
-
             if(i >= p.length()) {
                 c = s.charAt(i - p.length());
                 if (window.get(c) == 1) {
@@ -36,19 +35,14 @@ public class FindAllAnagrams {
                     window.put(c, window.get(c) - 1);
                 }
             }
-
                 if(window.equals(reference)){
                     result.add(i-p.length() +1);
                 }
             }
-
-
         return result;
     }
 
-
     public static void main(String[] args) {
-
         String s = "cbaebabacd", p = "abc";
         System.out.println("This is position of all the anagrams : " + findAnagrams(s,p));
     }
