@@ -18,15 +18,22 @@ public class SmallestSubstringContaining {
             }
         }
         int left = 0; int right = 0;
-        for(int i=0; i<bigString.length(); i++){
-            char ch = bigString.charAt(i);
-            if(!reference.containsKey(ch)){
-                if(reference.get(ch)==1){
-                    left++;
+        while (left < right){
+            char ch = bigString.charAt(right);
+            if(reference.containsKey(ch)){
+                if(reference.get(ch) == 1){
+                    reference.remove(ch);
+                }else{
+                    reference.put(ch, reference.get(ch)-1);
                 }
+                    right++;
+
             }else{
-                reference.put(ch, reference.get(ch) -1);
-                right++;
+                left++;
+            }
+            currentResult = bigString.substring(left,right);
+            if(currentResult.length() < result.length()){
+                result=currentResult;
             }
         }
         return result;
@@ -35,5 +42,7 @@ public class SmallestSubstringContaining {
     public static void main(String[] args) {
         String big = "abcd$ef$axb$c$";
         String small = "$$abf";
+
+        System.out.println("This is the smallest substring : " + smallestSubstring(big, small));
     }
 }
