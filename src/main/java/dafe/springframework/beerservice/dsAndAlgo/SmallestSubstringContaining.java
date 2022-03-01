@@ -14,7 +14,12 @@ public class SmallestSubstringContaining {
           reference.put(ch, 1);
         }
 
-        for(int i=0)
+        for(int i=0; i<bigString.length(); i++){
+            char ch = bigString.charAt(i);
+            if(window.containsKey(ch)){
+
+            }
+        }
         return result;
     }
 
