@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Map;
 
 public class FindAllAnagrams {
-    public static List<Integer> findAnagrams(String s, String p) {
+    public static List<Integer> findAnagrams(String original, String check) {
 
         List<Integer> result =  new ArrayList<>();
         Map<Character, Integer> reference = new HashMap();
         Map<Character, Integer> window = new HashMap();
 //build reference map
-        for(char ch : p.toCharArray()){
+        for(char ch : check.toCharArray()){
             if(reference.containsKey(ch)){
                 reference.put(ch, reference.get(ch) + 1);
             }else{
@@ -20,15 +20,15 @@ public class FindAllAnagrams {
             }
         }
 //build window
-        for(int i=0; i<s.length(); i++){
-            char c = s.charAt(i);
+        for(int i=0; i<original.length(); i++){
+            char c = original.charAt(i);
             if(window.containsKey(c)){
                 window.put(c, window.get(c)+1);
             }else{
                 window.put(c, 1);
             }
-            if(i >= p.length()) {
-                c = s.charAt(i - p.length());
+            if(i >= check.length()) {
+                c = original.charAt(i - check.length());
                 if (window.get(c) == 1) {
                     window.remove(c);
                 } else {
@@ -36,7 +36,7 @@ public class FindAllAnagrams {
                 }
             }
                 if(window.equals(reference)){
-                    result.add(i-p.length() +1);
+                    result.add(i-check.length() +1);
                 }
             }
         return result;
