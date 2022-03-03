@@ -22,6 +22,9 @@ public class MinimumWindowSubString {
         int required = map.size();
         int [] ans = {-1, 0,0};
         int left = 0; int right =0;
+        while (right < bigString.length()){
+            char c = bigString.charAt(right);
+        }
     }
 
     public static void main(String[] args) {
