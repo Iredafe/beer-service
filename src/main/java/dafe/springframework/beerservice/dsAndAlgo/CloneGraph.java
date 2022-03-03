@@ -12,4 +12,8 @@ public class CloneGraph {
             val = 0;
             neighbors = new ArrayList<Node>();
         }
+        public Node(int _val) {
+            val = _val;
+            neighbors = new ArrayList<Node>();
+        }
 }
