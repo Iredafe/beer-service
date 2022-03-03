@@ -22,4 +22,9 @@ public class CloneGraph {
             neighbors = _neighbors;
         }
     }
+
+    public static Node cloneGraph(Node node){
+
+        return null;
+    }
 }
