@@ -1,8 +1,14 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MinimumWindowSubString {
 
     public static String minWindowSubstring(String bigString, String smallString){
+
+        Map<Character, Integer> map = new HashMap();
+        Map<Character, Integer> windowCounts = new HashMap();
 
     }
 
