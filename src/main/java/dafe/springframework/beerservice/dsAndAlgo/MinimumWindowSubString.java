@@ -52,7 +52,7 @@ public class MinimumWindowSubString {
             right--;
         }
 
-        return "";
+        return ans[0] == -1 ? "" : bigString.substring(ans[1], ans[2]+1);
     }
 
     public static void main(String[] args) {
