@@ -24,7 +24,11 @@ public class MinimumWindowSubString {
         int left = 0; int right =0;
         while (right < bigString.length()){
             char c = bigString.charAt(right);
+        if(windowCounts.containsKey(c)){
+            map.put(c, map.get(c)+1);
         }
+        }
+        return "";
     }
 
     public static void main(String[] args) {
