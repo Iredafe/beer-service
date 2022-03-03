@@ -26,7 +26,7 @@ public class MinimumWindowSubString {
         while (right < bigString.length()){
             char c = bigString.charAt(right);
             if(windowCounts.containsKey(c)){
-                map.put(c, map.get(c)+1);
+                windowCounts.put(c, windowCounts.get(c)+1);
             }else{
                 windowCounts.put(c, 0);
             }
@@ -49,7 +49,7 @@ public class MinimumWindowSubString {
                 }
                 left++;
             }
-            right--;
+            right++;
         }
 
         return ans[0] == -1 ? "" : bigString.substring(ans[1], ans[2]+1);
