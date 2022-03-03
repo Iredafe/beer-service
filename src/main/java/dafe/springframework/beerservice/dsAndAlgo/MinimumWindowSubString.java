@@ -20,6 +20,8 @@ public class MinimumWindowSubString {
         }
 
         int required = map.size();
+        int [] ans = {-1, 0,0};
+        int left = 0; int right =0;
     }
 
     public static void main(String[] args) {
