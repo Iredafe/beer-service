@@ -10,6 +10,16 @@ public class MinimumWindowSubString {
         Map<Character, Integer> map = new HashMap();
         Map<Character, Integer> windowCounts = new HashMap();
 
+        for(int i=0; i<smallString.length(); i++){
+            char ch = smallString.charAt(i);
+            if(map.containsKey(ch)){
+                map.put(ch,map.get(ch)+1);
+            }else{
+                map.put(ch, 0);
+            }
+        }
+
+        int required = map.size();
     }
 
     public static void main(String[] args) {
