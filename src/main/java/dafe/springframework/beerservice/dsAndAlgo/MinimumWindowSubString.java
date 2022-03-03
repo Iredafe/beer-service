@@ -19,15 +19,39 @@ public class MinimumWindowSubString {
             }
         }
 
+        int formed = 0;
         int required = map.size();
         int [] ans = {-1, 0,0};
         int left = 0; int right =0;
         while (right < bigString.length()){
             char c = bigString.charAt(right);
-        if(windowCounts.containsKey(c)){
-            map.put(c, map.get(c)+1);
+            if(windowCounts.containsKey(c)){
+                map.put(c, map.get(c)+1);
+            }else{
+                windowCounts.put(c, 0);
+            }
+
+            if(map.containsKey(c) && windowCounts.get(c).intValue() == map.get(c).intValue()){
+                formed++;
+            }
+
+            while (left<=right && formed == required){
+                c=bigString.charAt(left);
+                if(ans[0] == -1 || right-left+1 < ans[0]){
+                    ans[0] = right-left+1;
+                    ans[1] = left;
+                    ans[2] = right;
+                }
+
+                windowCounts.put(c, windowCounts.get(c)-1);
+                if(map.containsKey(c) && windowCounts.get(c).intValue() < map.get(c).intValue()){
+                    formed--;
+                }
+                left++;
+            }
+            right--;
         }
-        }
+
         return "";
     }
 
