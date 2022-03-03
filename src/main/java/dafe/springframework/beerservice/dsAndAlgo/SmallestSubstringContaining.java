@@ -7,7 +7,7 @@ public class SmallestSubstringContaining {
 
     public static String smallestSubstring(String bigString, String smallString){
 
-        return ""
+        return "";
     }
 
     public static void main(String[] args) {
