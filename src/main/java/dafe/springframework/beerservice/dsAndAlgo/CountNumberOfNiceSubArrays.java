@@ -12,5 +12,7 @@ public class CountNumberOfNiceSubArrays {
     }
 
     private static int countNumberOFNiceSubArray(int[] nums, int k) {
+
+        return 0;
     }
 }
