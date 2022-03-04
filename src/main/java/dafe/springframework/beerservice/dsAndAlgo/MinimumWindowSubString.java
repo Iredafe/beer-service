@@ -57,8 +57,11 @@ public class MinimumWindowSubString {
 
     public static void main(String[] args) {
         String big = "abcd$ef$axb$c$";
+        String big1 = "cdbaebaecd";
         String small = "$$abf";
+        String small1 = "abc";
 
         System.out.println("This is the smallest substring : " + minWindowSubstring(big, small));
+        System.out.println("This is the smallest substring1 : " + minWindowSubstring(big1, small1));
     }
 }
