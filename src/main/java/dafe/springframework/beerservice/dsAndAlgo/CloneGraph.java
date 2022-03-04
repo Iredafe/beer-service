@@ -32,6 +32,12 @@ public class CloneGraph {
         if(visited.containsKey(node)) return visited.get(node);
 
         Node cloneNode = new Node(node.val, new ArrayList<>());
-        return null;
+
+        visited.put(node, cloneNode);
+
+        for(Node neighbor : node.neighbors){
+            cloneNode.neighbors.add(cloneGraph(neighbor));
+        }
+        return cloneNode;
     }
 }
