@@ -10,4 +10,7 @@ public class CountNumberOfNiceSubArrays {
         System.out.println("Count of nice sub arrays : " + countNumberOFNiceSubArray(nums, k));
 
     }
+
+    private static int countNumberOFNiceSubArray(int[] nums, int k) {
+    }
 }
