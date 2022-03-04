@@ -1,7 +1,9 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CloneGraph {
 
@@ -23,8 +25,11 @@ public class CloneGraph {
         }
     }
 
+   static Map<Node, Node> visited = new HashMap<>();
     public static Node cloneGraph(Node node){
 
+        if(node == null) return null;
+        if(visited.containsKey(node)) return visited.get(node);
         return null;
     }
 }
