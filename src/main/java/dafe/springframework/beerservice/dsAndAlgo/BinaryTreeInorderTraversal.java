@@ -22,6 +22,10 @@ public class BinaryTreeInorderTraversal {
         Stack<TreeNode> stack = new Stack();
         List<Integer> array = new ArrayList<>();
 
+        TreeNode current = node;
+        while(current!=null || !stack.isEmpty()){
+
+        }
 
         return array;
   }
