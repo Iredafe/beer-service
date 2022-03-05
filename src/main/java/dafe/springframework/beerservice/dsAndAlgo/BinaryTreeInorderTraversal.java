@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
+
 public class BinaryTreeInorderTraversal {
     static class TreeNode {
       int val;
@@ -12,5 +14,10 @@ public class BinaryTreeInorderTraversal {
           this.left = left;
           this.right = right;
       }
+  }
+
+  public static List<Integer> iterativeInorderTraversal(TreeNode node){
+
+        return new ArrayList<>();
   }
 }
