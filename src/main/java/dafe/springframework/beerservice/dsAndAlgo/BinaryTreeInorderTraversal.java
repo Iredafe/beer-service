@@ -23,8 +23,15 @@ public class BinaryTreeInorderTraversal {
         List<Integer> array = new ArrayList<>();
 
         TreeNode current = node;
-        while(current!=null || !stack.isEmpty()){
 
+        while(current!=null || !stack.isEmpty()){
+            while(current!=null){
+                stack.push(current);
+                current=current.left;
+            }
+            current = stack.pop();
+            array.add(current.val);
+            current = current.right;
         }
 
         return array;
