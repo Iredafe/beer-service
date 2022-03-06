@@ -37,9 +37,9 @@ public class BinaryTreeLevelOrderTraversal {
 
             sublist.add(queue.poll().value);
         }
-
+            result.add(sublist);
         }
-         return null;
+         return result;
     }
 
     public static void main(String[] args) {
