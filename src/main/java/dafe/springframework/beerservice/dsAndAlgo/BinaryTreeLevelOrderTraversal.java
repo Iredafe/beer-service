@@ -57,5 +57,6 @@ public class BinaryTreeLevelOrderTraversal {
         tree.root.left.left.right = new BinaryTree(9);
         tree.root.left.right.left = new BinaryTree(10);
 
+        System.out.println("Level order traversal result " + tree.levelOrder(tree.root));
     }
 }
