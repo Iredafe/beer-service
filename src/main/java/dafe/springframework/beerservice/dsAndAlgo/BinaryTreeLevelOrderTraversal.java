@@ -16,5 +16,6 @@ public class BinaryTreeLevelOrderTraversal {
 
     public static void main(String[] args) {
 
+         BinaryTreeLevelOrderTraversal tree = new BinaryTreeLevelOrderTraversal();
     }
 }
