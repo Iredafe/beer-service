@@ -1,11 +1,11 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 public class BinaryTreeLevelOrderTraversal {
-    static BranchSums.BinaryTree root;
+    static BinaryTree root;
      static class BinaryTree{
         int value;
-        BranchSums.BinaryTree left;
-        BranchSums.BinaryTree right;
+        BinaryTree left;
+        BinaryTree right;
 
         public BinaryTree(int value){
             this.value=value;
