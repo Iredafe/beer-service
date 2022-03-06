@@ -22,6 +22,14 @@ public class BinaryTreeLevelOrderTraversal {
     public  static List<List<Integer>> levelOrder(BinaryTree root){
         List<List<Integer>> result = new ArrayList<>();
         Queue<BinaryTree> queue = new LinkedList<>();
+
+        if(root == null) return null;
+
+        queue.offer(root);
+
+        while (queue.size() > 0){
+
+        }
          return null;
     }
 
