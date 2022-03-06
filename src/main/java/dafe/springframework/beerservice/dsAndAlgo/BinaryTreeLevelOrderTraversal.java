@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.List;
+
 public class BinaryTreeLevelOrderTraversal {
     static BinaryTree root;
      static class BinaryTree{
@@ -12,6 +14,11 @@ public class BinaryTreeLevelOrderTraversal {
             this.left=null;
             this.right=null;
         }
+    }
+
+    public  static List<List<Integer>> levelOrder(BinaryTree root){
+
+         return null;
     }
 
     public static void main(String[] args) {
