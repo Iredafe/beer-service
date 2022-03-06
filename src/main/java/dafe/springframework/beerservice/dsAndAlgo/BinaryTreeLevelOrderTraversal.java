@@ -1,6 +1,9 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class BinaryTreeLevelOrderTraversal {
     static BinaryTree root;
@@ -17,7 +20,8 @@ public class BinaryTreeLevelOrderTraversal {
     }
 
     public  static List<List<Integer>> levelOrder(BinaryTree root){
-
+        List<List<Integer>> result = new ArrayList<>();
+        Queue<BinaryTree> queue = new LinkedList<>();
          return null;
     }
 
