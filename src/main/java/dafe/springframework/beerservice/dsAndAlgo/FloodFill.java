@@ -3,13 +3,16 @@ package dafe.springframework.beerservice.dsAndAlgo;
 public class FloodFill {
 
     public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
-       int startingPixel = image[sr][sc];
-        for(int i=0; i<image.length; i++){
-            for(int j=0; j<image[0].length; j++){
-                if(image[])
-            }
+       int pixel = image[sr][sc];
+        if(pixel != newColor){
+            dfs(image, sr, sc, newColor);
         }
+
         return image;
+    }
+
+    private static void dfs(int[][] image, int sr, int sc, int newColor) {
+
     }
 
     public static void main(String[] args) {
