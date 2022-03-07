@@ -14,3 +14,7 @@ public class FloodFill {
         System.out.println("The new image is : " + floodFill(image,sr,sc,newColor));
     }
 }
+//loop through the matrix to the image
+//if the image has any same color pixel in any of the 4 direction, perform a dfs on each and update the color to new color
+//else do nothing
+//if you get to the end of the matrix, return result
