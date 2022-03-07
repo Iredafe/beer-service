@@ -5,16 +5,16 @@ public class FloodFill {
     public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
        int pixel = image[sr][sc];
         if(pixel != newColor){
-            dfs(image, sr, sc, pixel);
+            dfs(image, sr, sc, pixel, newColor);
         }
-
         return image;
     }
 
-    private static void dfs(int[][] image, int r, int c, int pixel) {
+    private static void dfs(int[][] image, int r, int c, int pixel, int newColor) {
         if(image[r][c] == pixel){
-            dfs(image, r+1, c, pixel);
-            dfs(image, r,c+1,pixel);
+            image[r][c] = newColor;
+            dfs(image, r+1, c, pixel, newColor);
+            dfs(image, r,c+1,pixel, newColor);
             dfs(image, )
         }
     }
