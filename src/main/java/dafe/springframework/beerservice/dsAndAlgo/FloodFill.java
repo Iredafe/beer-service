@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.Arrays;
+
 public class FloodFill {
 
     public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
@@ -25,7 +27,7 @@ public class FloodFill {
         int sr = 1; int sc = 1; int newColor= 2;
 
         int[][] ans = floodFill(image, sr, sc, newColor);
-        System.out.println("The new image is : " + ans.toString());
+        System.out.println("The new image is : " + Arrays.deepToString(ans));
     }
 }
 //loop through the matrix to the image
