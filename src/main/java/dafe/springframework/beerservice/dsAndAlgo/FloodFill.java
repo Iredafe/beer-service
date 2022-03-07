@@ -13,10 +13,10 @@ public class FloodFill {
     private static void dfs(int[][] image, int r, int c, int pixel, int newColor) {
         if(image[r][c] == pixel){
             image[r][c] = newColor;
-            dfs(image, r+1, c, pixel, newColor);
-            dfs(image, r,c+1,pixel, newColor);
-            dfs(image, r-1, c, pixel, newColor);
-            dfs(image, r, c-1, pixel, newColor);
+            if(r< image.length)dfs(image, r+1, c, pixel, newColor);
+            if(c < image[0].length)dfs(image, r,c+1,pixel, newColor);
+            if(r> 0) dfs(image, r-1, c, pixel, newColor);
+            if(c>0)dfs(image, r, c-1, pixel, newColor);
         }
     }
 
