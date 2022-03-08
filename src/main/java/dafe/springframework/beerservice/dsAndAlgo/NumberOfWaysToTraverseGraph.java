@@ -26,6 +26,12 @@ public class NumberOfWaysToTraverseGraph {
         for(int [] array : numberOfUniquePaths){
             Arrays.fill(array, 1);
         }
+
+        for(int i=0; i<height; i++){
+            for(int j=0; j<width; j++){
+
+            }
+        }
         return 1;
     }
 
