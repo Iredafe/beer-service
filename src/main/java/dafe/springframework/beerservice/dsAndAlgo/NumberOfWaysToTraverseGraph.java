@@ -18,7 +18,8 @@ public class NumberOfWaysToTraverseGraph {
         return numberOfWays[height][width];
     }
 
-    public static int uniquePaths(int height, int width){
+    public static int noOfUniquePaths(int height, int width){
+
         return 1;
     }
 
