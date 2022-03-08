@@ -17,8 +17,8 @@ public class FloodFill {
             image[r][c] = newColor;
             if(r+1< image.length)dfs(image, r+1, c, pixel, newColor);
             if(c+1 < image[0].length)dfs(image, r,c+1,pixel, newColor);
-            if(r-1 > 0) dfs(image, r-1, c, pixel, newColor);
-            if(c-1 > 0)dfs(image, r, c-1, pixel, newColor);
+            if(r-1 >= 0 ) dfs(image, r-1, c, pixel, newColor);
+            if(c-1 >= 0)dfs(image, r, c-1, pixel, newColor);
         }
     }
 
