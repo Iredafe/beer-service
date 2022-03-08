@@ -32,7 +32,7 @@ public class NumberOfWaysToTraverseGraph {
                 numberOfUniquePaths[i][j] = numberOfUniquePaths[i-1][j] + numberOfUniquePaths[i][j-1];
             }
         }
-        return 1;
+        return numberOfUniquePaths[height-1][width-1];
     }
 
     public static int numberOfWaysToTraverseGraphRecursive(int height, int width){
