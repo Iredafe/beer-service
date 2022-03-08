@@ -29,7 +29,7 @@ public class NumberOfWaysToTraverseGraph {
 
         for(int i=0; i<height; i++){
             for(int j=0; j<width; j++){
-
+                numberOfUniquePaths[i][j] = numberOfUniquePaths[i-1][j] + numberOfUniquePaths[i][j-1];
             }
         }
         return 1;
