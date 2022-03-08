@@ -18,6 +18,9 @@ public class NumberOfWaysToTraverseGraph {
         return numberOfWays[height][width];
     }
 
+    public static int uniquePaths(int height, int width){
+        return 1;
+    }
 
     public static int numberOfWaysToTraverseGraphRecursive(int height, int width){
         if(width==1 || height==1) return 1;
