@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.Arrays;
+
 public class NumberOfWaysToTraverseGraph {
     public static int uniquePaths(int width,int height){
 
@@ -19,7 +21,11 @@ public class NumberOfWaysToTraverseGraph {
     }
 
     public static int noOfUniquePaths(int height, int width){
+        int numberOfUniquePaths[][] = new int[height][width];
 
+        for(int [] array : numberOfUniquePaths){
+            Arrays.fill(array, 1);
+        }
         return 1;
     }
 
