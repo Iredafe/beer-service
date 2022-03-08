@@ -65,6 +65,6 @@ public class NumberOfWaysToTraverseGraph {
         System.out.println("These are the unique paths : " + uniquePaths(height, width) );
         System.out.println("These are the unique paths : " + numberOfWaysToTraverseGraphRecursive(height, width) );
         System.out.println("These are the unique paths : " + numberOfWaysToTraverseGraphDP(height, width));
-        System.out.println("Uniquw paths 2 : " + );
+        System.out.println("Uniquw paths 2 : " + noOfUniquePaths(height,width));
     }
 }
