@@ -1,8 +1,14 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class IntervalListIntersection {
 
     private static int[][] findIntersection(int[][] first, int[][] second) {
+        List<int[]> result = new ArrayList<>();
+
+        return result.toArray(new int[result.size()][]);
     }
 
 
