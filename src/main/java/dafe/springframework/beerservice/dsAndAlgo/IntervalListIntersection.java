@@ -7,7 +7,11 @@ public class IntervalListIntersection {
 
     private static int[][] findIntersection(int[][] first, int[][] second) {
         List<int[]> result = new ArrayList<>();
+        int i=0;int j=0;
+        while(i < first.length && j < second.length){
 
+            int low= Math.max(first[i][0], second[j][0]);
+        }
         return result.toArray(new int[result.size()][]);
     }
 
