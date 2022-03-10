@@ -12,6 +12,10 @@ public class IntervalListIntersection {
 
             int low= Math.max(first[i][0], second[j][0]);
             int high= Math.max(first[i][1], second[j][1]);
+
+            if(low <= high){
+                result.add(new int[]{low, high});
+            }
         }
         return result.toArray(new int[result.size()][]);
     }
