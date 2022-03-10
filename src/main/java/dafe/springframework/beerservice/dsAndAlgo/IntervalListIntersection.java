@@ -15,6 +15,10 @@ public class IntervalListIntersection {
 
             if(low <= high){
                 result.add(new int[]{low, high});
+
+            if(first[i][1] < second[j][i]){
+                i++;
+            }else j++;
             }
         }
         return result.toArray(new int[result.size()][]);
