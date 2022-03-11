@@ -32,8 +32,8 @@ public class IntervalListIntersection {
         int[][] second = {{1,5},{8,12},{15,24},{25,26}};
 
         System.out.println("This is the intersection : " + Arrays.deepToString(findIntersection(first, second)));
-        int[][] second2;
-        int[][] first1;
+        int[][] second2=;
+        int[][] first1={{1,3},{5,9}};
         System.out.println("This is the intersection 2: " + Arrays.deepToString(findIntersection(first1, second2)));
     }
 
