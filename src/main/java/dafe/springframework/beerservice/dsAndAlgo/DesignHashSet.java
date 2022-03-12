@@ -26,8 +26,8 @@ public class DesignHashSet {
     }
 
     public boolean contains(int key) {
-
-        return true;
+        int bucketIndex = hashFunction(key);
+        return this.bucketArray[bucketIndex].exists(key);
     }
 
     public static void main(String[] args) {
@@ -39,6 +39,10 @@ public class DesignHashSet {
         }
 
         public void delete(int key) {
+        }
+
+        public boolean exists(int key) {
+        return true;
         }
     }
 }
