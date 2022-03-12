@@ -12,11 +12,12 @@ public class DesignHashSet {
     }
 
     public int hashFunction(int key){
-        return key % keyRange;
+        return key % this.keyRange;
     }
 
     public void add(int key) {
-
+        int bucketIndex = hashFunction(key);
+        this.bucketArray[bucketIndex].insert(key);
     }
 
     public void remove(int key) {
