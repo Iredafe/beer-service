@@ -14,6 +14,10 @@ public class DesignHashSet {
 
     }
 
+    public boolean contains(int key) {
+
+    }
+
     public static void main(String[] args) {
 
     }
