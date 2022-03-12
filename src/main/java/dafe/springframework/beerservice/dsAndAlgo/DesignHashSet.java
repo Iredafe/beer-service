@@ -10,6 +10,10 @@ public class DesignHashSet {
 
     }
 
+    public void remove(int key) {
+
+    }
+
     public static void main(String[] args) {
 
     }
