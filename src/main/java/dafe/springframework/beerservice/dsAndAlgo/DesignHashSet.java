@@ -1,7 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 public class DesignHashSet {
-
+    private int key;
+    private Bucket[] bucketArray;
     public DesignHashSet() {
 
     }
