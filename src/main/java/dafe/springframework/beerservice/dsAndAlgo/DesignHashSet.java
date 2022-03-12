@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.LinkedList;
+
 public class DesignHashSet {
     private int keyRange;
     private Bucket[] bucketArray;
@@ -35,7 +37,13 @@ public class DesignHashSet {
     }
 
     private class Bucket {
+        private LinkedList<Integer> container;
+        public Bucket(){
+
+        }
+
         public void insert(int key) {
+
         }
 
         public void delete(int key) {
