@@ -1,10 +1,11 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 public class DesignHashSet {
-    private int key;
+    private int keyRange;
     private Bucket[] bucketArray;
     public DesignHashSet() {
-
+        this.keyRange = 769;
+        this.bucketArray = new Bucket[keyRange];
     }
 
     public void add(int key) {
@@ -22,5 +23,8 @@ public class DesignHashSet {
 
     public static void main(String[] args) {
 
+    }
+
+    private class Bucket {
     }
 }
