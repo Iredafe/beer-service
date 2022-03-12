@@ -21,7 +21,8 @@ public class DesignHashSet {
     }
 
     public void remove(int key) {
-
+        int bucketIndex = hashFunction(key);
+        this.bucketArray[bucketIndex].delete(key);
     }
 
     public boolean contains(int key) {
@@ -34,5 +35,10 @@ public class DesignHashSet {
     }
 
     private class Bucket {
+        public void insert(int key) {
+        }
+
+        public void delete(int key) {
+        }
     }
 }
