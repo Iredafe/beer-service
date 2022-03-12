@@ -39,14 +39,18 @@ public class DesignHashSet {
     private class Bucket {
         private LinkedList<Integer> container;
         public Bucket(){
-
+            container = new LinkedList<>();
         }
 
-        public void insert(int key) {
-
+        public void insert(Integer key) {
+            int index = this.container.indexOf(key);
+            if(index== -1){
+                this.container.addFirst(key);
+            }
         }
 
-        public void delete(int key) {
+        public void delete(Integer key) {
+            this.container.remove(key);
         }
 
         public boolean exists(int key) {
