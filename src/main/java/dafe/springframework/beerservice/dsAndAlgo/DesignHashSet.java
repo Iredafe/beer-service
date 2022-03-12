@@ -6,6 +6,13 @@ public class DesignHashSet {
     public DesignHashSet() {
         this.keyRange = 769;
         this.bucketArray = new Bucket[keyRange];
+        for(int i=0; i<this.keyRange;i++){
+            this.bucketArray[i] = new Bucket();
+        }
+    }
+
+    public int hashFunction(int key){
+        return key % keyRange;
     }
 
     public void add(int key) {
