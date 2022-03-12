@@ -54,7 +54,8 @@ public class DesignHashSet {
         }
 
         public boolean exists(int key) {
-        return true;
+            int index = this.container.indexOf(key);
+        return (index != -1);
         }
     }
 }
