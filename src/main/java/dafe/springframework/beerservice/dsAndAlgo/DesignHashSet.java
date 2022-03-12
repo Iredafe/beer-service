@@ -16,6 +16,7 @@ public class DesignHashSet {
 
     public boolean contains(int key) {
 
+        return true;
     }
 
     public static void main(String[] args) {
