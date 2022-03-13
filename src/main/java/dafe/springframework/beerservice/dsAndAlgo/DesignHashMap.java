@@ -36,10 +36,10 @@ public class DesignHashMap {
 
         public void update(int key, int value) {
             for(Pair<Integer, Integer> pair : bucket){
-                if(pair.getFirst().equals(key)){
+                if(pair.first.equals(key)){
 
                 }else{
-                    bucket.add(new Pair<Integer, Integer>(key, value));
+                    bucket.add(new Pair<>(key, value));
                 }
             }
         }
@@ -54,5 +54,10 @@ public class DesignHashMap {
     private class Pair<U, V> {
         private U first;
         private V second;
+
+        public Pair(U first, V second){
+            this.first= first;
+            this.second = second;
+        }
     }
 }
