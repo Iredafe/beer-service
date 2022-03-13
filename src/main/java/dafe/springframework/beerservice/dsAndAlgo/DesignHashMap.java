@@ -12,7 +12,7 @@ public class DesignHashMap {
         this.keyRange = 769;
         this.hashTable = new ArrayList();
         for(int i=0; i<this.keyRange; i++){
-
+            this.hashTable.add(new Bucket());
         }
     }
 
