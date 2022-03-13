@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class DesignHashMap {
@@ -34,8 +35,11 @@ public class DesignHashMap {
     private class Bucket {
         private List<Pair<Integer, Integer>> bucket;
 
+        public Bucket(){
+            bucket = new LinkedList<>();
+        }
         public void update(int key, int value) {
-            for(Pair<Integer, Integer> pair : bucket){
+            for(Pair<Integer, Integer> pair : this.bucket){
                 if(pair.first.equals(key)){
 
                 }else{
