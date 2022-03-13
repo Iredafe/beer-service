@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class SingleNumber {
 
     public static void main(String[] args) {
@@ -8,6 +11,10 @@ public class SingleNumber {
         System.out.println("This is the single number : " + singleNumber(nums));
     }
 
-    private static String singleNumber(int[] nums) {
+    private static int singleNumber(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+
+
+
     }
 }
