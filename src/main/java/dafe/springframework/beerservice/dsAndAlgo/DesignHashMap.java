@@ -7,4 +7,8 @@ public class DesignHashMap {
     public DesignHashMap(){
 
     }
+
+    private class Bucket {
+
+    }
 }
