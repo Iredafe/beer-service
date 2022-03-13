@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -39,7 +40,7 @@ public class DesignHashMap {
             bucket = new LinkedList<>();
         }
         public void update(int key, int value) {
-            for(Pair<Integer, Integer> pair : this.bucket){
+            for(Pair<Integer, Integer> pair : bucket){
                 if(pair.first.equals(key)){
                    pair.second = value;
                 }else{
@@ -48,7 +49,14 @@ public class DesignHashMap {
             }
         }
 
-        public void get(int key) {
+        public Integer get(int key) {
+            for(Pair<Integer, Integer> pair : bucket){
+                if(pair.first.equals(key)){
+                    return pair.second;
+                }else{
+                    return -1;
+                }
+            }
         }
 
         public void delete(int key) {
