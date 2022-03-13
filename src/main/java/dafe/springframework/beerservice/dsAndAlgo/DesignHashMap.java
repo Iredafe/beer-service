@@ -9,9 +9,22 @@ public class DesignHashMap {
     private int keyRange;
     public DesignHashMap(){
         this.keyRange = 769;
-        this.hashTable = new ArrayList<Bucket>();
+        this.hashTable = new ArrayList();
+    }
+    public void put(int key, int value) {
+
     }
 
+    public int get(int key) {
+        return 0;
+    }
+
+    public void remove(int key) {
+
+    }
+
+
     private class Bucket {
+
     }
 }
