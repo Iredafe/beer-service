@@ -50,7 +50,7 @@ public class DesignHashMap {
                    found = true;
                 }
             }
-            if()
+            if(!found) this.bucket.add(new Pair(key, value));
         }
 
         public Integer get(int key) {
