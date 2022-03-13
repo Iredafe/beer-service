@@ -53,13 +53,18 @@ public class DesignHashMap {
             for(Pair<Integer, Integer> pair : bucket){
                 if(pair.first.equals(key)){
                     return pair.second;
-                }else{
-                    return -1;
                 }
             }
+            return -1;
         }
 
         public void delete(int key) {
+            for(Pair<Integer, Integer> pair : bucket){
+                if(pair.first.equals(key)){
+                    bucket.remove(pair);
+                    break;
+                }
+            }
         }
     }
 
