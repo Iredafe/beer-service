@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.LinkedList;
+
 public class DesignHashMap {
     private int key;
     private int value;
@@ -9,6 +11,6 @@ public class DesignHashMap {
     }
 
     private class Bucket {
-
+        private LinkedList<Integer> container;
     }
 }
