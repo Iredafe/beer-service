@@ -18,7 +18,8 @@ public class SingleNumber {
                 set.remove(num);
             }else set.add(num);
         }
-
+        Object[] array = set.toArray();
+        return (int) array[0];
 
     }
 }
