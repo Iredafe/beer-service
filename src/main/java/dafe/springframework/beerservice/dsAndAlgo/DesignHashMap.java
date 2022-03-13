@@ -43,13 +43,14 @@ public class DesignHashMap {
             bucket = new LinkedList<>();
         }
         public void update(int key, int value) {
+            boolean found=false;
             for(Pair<Integer, Integer> pair : bucket){
                 if(pair.first.equals(key)){
                    pair.second = value;
-                }else{
-                    bucket.add(new Pair<>(key, value));
+                   found = true;
                 }
             }
+            if()
         }
 
         public Integer get(int key) {
