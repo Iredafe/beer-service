@@ -19,11 +19,13 @@ public class DesignHashMap {
         return key % keyRange;
     }
     public void put(int key, int value) {
-        int bucketIndex = this.hashTable.indexOf(key);
-        hashTable.get(key).update(key,value);
+        int bucketIndex = hashFunction(key);
+        hashTable.get(bucketIndex).update(key,value);
     }
 
     public int get(int key) {
+        int bucketIndex = hashFunction(key);
+        hashTable.get(bucketIndex).get(key);
         return 0;
     }
 
@@ -36,6 +38,9 @@ public class DesignHashMap {
         private List<Pair<Integer, Integer>> bucket;
 
         public void update(int key, int value) {
+        }
+
+        public void get(int key) {
         }
     }
 }
