@@ -20,7 +20,7 @@ public class SingleNumber {
                 set.remove(num);
             }else set.add(num);
         }
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>(set);
         return list.get(0);
 
     }
