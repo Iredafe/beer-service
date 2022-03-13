@@ -1,10 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-import org.springframework.data.util.Pair;
-
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class DesignHashMap {
@@ -39,6 +35,13 @@ public class DesignHashMap {
         private List<Pair<Integer, Integer>> bucket;
 
         public void update(int key, int value) {
+            for(Pair<Integer, Integer> pair : bucket){
+                if(pair.getFirst().equals(key)){
+
+                }else{
+                    bucket.add(new Pair<Integer, Integer>(key, value));
+                }
+            }
         }
 
         public void get(int key) {
@@ -46,5 +49,10 @@ public class DesignHashMap {
 
         public void delete(int key) {
         }
+    }
+
+    private class Pair<U, V> {
+        private U first;
+        private V second;
     }
 }
