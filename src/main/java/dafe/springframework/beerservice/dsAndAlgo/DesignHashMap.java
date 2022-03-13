@@ -30,7 +30,8 @@ public class DesignHashMap {
     }
 
     public void remove(int key) {
-
+        int bucketIndex = hashFunction(key);
+        hashTable.get(bucketIndex).delete(key);
     }
 
 
@@ -41,6 +42,9 @@ public class DesignHashMap {
         }
 
         public void get(int key) {
+        }
+
+        public void delete(int key) {
         }
     }
 }
