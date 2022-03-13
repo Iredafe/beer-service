@@ -41,7 +41,7 @@ public class DesignHashMap {
         public void update(int key, int value) {
             for(Pair<Integer, Integer> pair : this.bucket){
                 if(pair.first.equals(key)){
-
+                   pair.second = value;
                 }else{
                     bucket.add(new Pair<>(key, value));
                 }
