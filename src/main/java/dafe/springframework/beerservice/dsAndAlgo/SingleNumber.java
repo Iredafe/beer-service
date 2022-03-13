@@ -1,6 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class SingleNumber {
@@ -18,8 +20,8 @@ public class SingleNumber {
                 set.remove(num);
             }else set.add(num);
         }
-        Object[] array = set.toArray();
-        return (int) array[0];
+        List<Integer> list = new ArrayList<>();
+        return list.get(0);
 
     }
 }
