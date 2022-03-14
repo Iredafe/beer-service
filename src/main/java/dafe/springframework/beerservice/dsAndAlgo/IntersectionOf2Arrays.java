@@ -1,6 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class IntersectionOf2Arrays {
@@ -14,8 +16,14 @@ public class IntersectionOf2Arrays {
     }
 
     private static int[] intersection(int[] nums1, int[] nums2) {
-
+        List<int[]> result = new ArrayList<>();
         Set<Integer> first = new HashSet<>();
         Set<Integer> second = new HashSet<>();
+
+        for(int i=0; i< second.size(); i++){
+            if(first.contains(i)){
+
+            }
+        }
     }
 }
