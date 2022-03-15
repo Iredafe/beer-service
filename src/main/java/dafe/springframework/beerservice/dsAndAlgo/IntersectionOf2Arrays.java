@@ -14,18 +14,16 @@ public class IntersectionOf2Arrays {
     }
 
     private static int[] intersection(int[] nums1, int[] nums2) {
-
         HashSet<Integer> set1 = new HashSet<>();
         for(int num : nums1){
             set1.add(num);
         }
-
         HashSet<Integer> set2 = new HashSet<>();
         for(int num:nums2){
             set2.add(num);
         }
-
         if(set2.size() > set1.size()) return setIntersection(set2,set1);
+        else return setIntersection(set1,set2);
     }
 
     private static int[] setIntersection(HashSet<Integer> set1, HashSet<Integer> set2){
