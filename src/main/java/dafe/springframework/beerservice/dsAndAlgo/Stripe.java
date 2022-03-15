@@ -112,8 +112,9 @@ import java.util.Map;
         }
 
         public static void main(String[] args) {
-            dafe.springframework.beerservice.Tests.testHasMutualFirstChoice();
-            dafe.springframework.beerservice.Tests.testHasMutualPairForRank();
+            Tests.testHasMutualFirstChoice();
+            Tests.testHasMutualPairForRank();
+
         }
 
 
