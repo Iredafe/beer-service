@@ -1,9 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-import dafe.springframework.beerservice.Solution;
 
-import java.io.*;
-import java.util.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -78,7 +75,8 @@ import java.util.Map;
         }
     }
 
-class Solution {
+
+    class Solution {
 
     Map<String, String[]> data;
     public Solution(Map<String, String[]> data) {
@@ -89,6 +87,34 @@ class Solution {
     //check the map for the username referenced in the input's first item
     //compare the first in that reference to see if it equals the input
 //public boolean hasMutualFirstChoice(String username) {
+//
+//    String [] choices = data.get(username);
+//    String firstChoice = choices[0];
+//    String [] referenceChoices = data.get(firstChoice);
+//    String firstItemInReferenceChoice = referenceChoices[0];
+//
+//    if(username.equals(firstItemInReferenceChoice)) return true;
+//    return false;
+//}
+
+        public boolean hasMutualFirstChoice(String username) {
+            boolean firstChoiceRank = true;
+            int rank = firstChoiceRank ? 0 : 1;
+            return hasMutualPairForRank(username, rank);
+        }
+
+        public boolean hasMutualPairForRank(String username, int rank) {
+            String [] choices = data.get(username);
+            String myRank = choices[rank];
+            String [] referenceRanks = data.get(myRank);
+            String itemInReferenceChoices = referenceRanks[rank];
+            return username.equals(itemInReferenceChoices);
+        }
+
+        public static void main(String[] args) {
+            dafe.springframework.beerservice.Tests.testHasMutualFirstChoice();
+            dafe.springframework.beerservice.Tests.testHasMutualPairForRank();
+        }
 
 
 
