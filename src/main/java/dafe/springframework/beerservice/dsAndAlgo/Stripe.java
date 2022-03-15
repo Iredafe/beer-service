@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import dafe.springframework.beerservice.Solution;
+
 import java.io.*;
 import java.util.*;
 import java.util.HashMap;
@@ -56,5 +58,26 @@ import java.util.Map;
                                 "\n");
             }
         }
+        public static void assertEqual(String[] actual, String expected[]) {
+            if (!String.join(",", expected).equals(String.join(",", actual))) {
+                throw new AssertionError(
+                        "Expected:\n  " + String.join(",", expected) +
+                                "\nActual:\n  " + String.join(",", actual) +
+                                "\n");
+            }
+            System.out.println("PASSED");
+        }
+        public static void testHasMutualFirstChoice() {
+            assertEqual(new Solution(data()).hasMutualFirstChoice("a"), true);
+            assertEqual(new Solution(data()).hasMutualFirstChoice("b"), false);
+        }
+
+        public static void testHasMutualPairForRank() {
+            assertEqual(new Solution(data()).hasMutualPairForRank("a", 0), true);
+            assertEqual(new Solution(data()).hasMutualPairForRank("a", 1), true);
+        }
+    }
+
+
 
     }
