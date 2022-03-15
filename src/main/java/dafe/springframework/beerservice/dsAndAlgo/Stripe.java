@@ -45,4 +45,16 @@ import java.util.Map;
             data.put("d", new String[] {"c", "a", "b"});
             return data;
         }
-}
+
+        public static void assertEqual(boolean actual, boolean expected) {
+            if (expected == actual) {
+                System.out.println("PASSED");
+            } else {
+                throw new AssertionError(
+                        "Expected:\n  " + expected +
+                                "\nActual:\n  " + actual +
+                                "\n");
+            }
+        }
+
+    }
