@@ -16,19 +16,15 @@ public class IntersectionOf2Arrays {
     }
 
     private static int[] intersection(int[] nums1, int[] nums2) {
-        int [] result = new int[]{};
-        Set<Integer> first = new HashSet<>();
-        Set<Integer> second = new HashSet<>();
 
-        for(int num : nums1){
-            first.add(num);
-        }
+        return null;
+    }
 
-        for(int i=0; i< nums2.length; i++){
-            if(first.contains(i)){
-                result[i++] = nums2[i];
-            }
+    private static int[] setIntersection(HashSet<Integer> set1, HashSet<Integer> set2){
+        int [] output = new int[set1.size()];
+        int idx = 0;
+        for(Integer num : set1){
+            if(set1.contains(num)) output[idx++] = num;
         }
-        return result;
     }
 }
