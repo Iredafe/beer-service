@@ -78,6 +78,18 @@ import java.util.Map;
         }
     }
 
+class Solution {
 
-
+    Map<String, String[]> data;
+    public Solution(Map<String, String[]> data) {
+        this.data = data;
     }
+//get input
+    //check the first element and look through the first item in the wishlist
+    //check the map for the username referenced in the input's first item
+    //compare the first in that reference to see if it equals the input
+//public boolean hasMutualFirstChoice(String username) {
+
+
+
+}
