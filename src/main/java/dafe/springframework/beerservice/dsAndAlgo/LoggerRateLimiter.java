@@ -8,8 +8,8 @@ import java.util.Set;
 
 public class LoggerRateLimiter {
 
-    private LinkedList<Pair<Integer, String >> msgQueue;
-    private Set<String> msgSet;
+    private static LinkedList<Pair<Integer, String >> msgQueue;
+    private static Set<String> msgSet;
      public LoggerRateLimiter(){
          msgQueue = new LinkedList<>();
          msgSet = new HashSet<>();
@@ -18,6 +18,14 @@ public class LoggerRateLimiter {
 
     public static boolean shouldPrintMessage(int timestamp, String message){
 
+         while(msgQueue.size() > 0){
+             Pair<Integer, String> head = msgQueue.getFirst();
+
+             if(timestamp - head.getFirst() >= 10){
+                 msgQueue.removeFirst();
+                 msgSet.remove(message);
+             }
+         }
 
          return false;
     }
