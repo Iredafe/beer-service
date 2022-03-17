@@ -14,4 +14,11 @@ public class LoggerRateLimiter {
          msgQueue = new LinkedList<>();
          msgSet = new HashSet<>();
     }
+
+
+    public static boolean shouldPrintMessage(int timestamp, String message){
+
+
+         return false;
+    }
 }
