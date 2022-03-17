@@ -8,6 +8,17 @@ import java.util.Set;
 
 public class LoggerRateLimiter {
 
+    class Pair<U,V>{
+        U first;
+        V second;
+
+        public Pair(U first, V second){
+            this.first = first;
+            this.second = second;
+        }
+
+    }
+
     private static LinkedList<Pair<Integer, String >> msgQueue;
     private static Set<String> msgSet;
      public LoggerRateLimiter(){
