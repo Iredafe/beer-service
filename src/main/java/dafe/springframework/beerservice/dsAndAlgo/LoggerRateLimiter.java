@@ -24,8 +24,15 @@ public class LoggerRateLimiter {
              if(timestamp - head.getFirst() >= 10){
                  msgQueue.removeFirst();
                  msgSet.remove(message);
+             }else break;
+
+             if(!msgSet.contains(message)){
+                 Pair<Integer, String> newEntry = new Pair(timestamp, message);
+                 msgQueue.addLast();
              }
          }
+
+
 
          return false;
     }
