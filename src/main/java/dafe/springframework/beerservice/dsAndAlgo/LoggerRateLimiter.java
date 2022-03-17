@@ -38,7 +38,9 @@ public class LoggerRateLimiter {
              if(!msgSet.contains(message)){
                  Pair<Integer, String> newEntry = new Pair(timestamp, message);
                  msgQueue.addLast(newEntry);
-             }
+                 msgSet.add(message);
+                 return true;
+             }else return false;
          }
 
 
