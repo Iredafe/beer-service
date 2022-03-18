@@ -31,6 +31,7 @@ public class LoggerRateLimiter {
 
          int oldTimestamp = map.get(message);
          if(timestamp-oldTimestamp >= 10){
+             map.put(message,timestamp);
             return true;
          }else return false;
     }
