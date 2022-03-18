@@ -1,8 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Set;
+import java.util.*;
 
 public class LoggerRateLimiter {
 
@@ -25,6 +23,10 @@ public class LoggerRateLimiter {
     }
 
 
+    public static boolean shouldPrintMessage2(int timestamp, String message){
+         Map<String, Integer> map = new HashMap();
+
+    }
     public static boolean shouldPrintMessage(int timestamp, String message){
 
          while(msgQueue.size() > 0){
