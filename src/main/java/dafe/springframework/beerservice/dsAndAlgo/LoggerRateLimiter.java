@@ -25,11 +25,12 @@ public class LoggerRateLimiter {
 
     public static boolean shouldPrintMessage2(int timestamp, String message){
          Map<String, Integer> map = new HashMap();
+        int oldTimestamp = map.get(message);
          if(!map.containsKey(message)){
             map.put(message, timestamp);
           }
 
-         int oldTimestamp = map.get(message);
+
          if(timestamp-oldTimestamp >= 10){
              map.put(message,timestamp);
             return true;
