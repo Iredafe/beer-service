@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MaxPathSum {
+public class T {
 
     static BinaryTree root;
     public static class BinaryTree {
@@ -44,7 +44,7 @@ public class MaxPathSum {
 
     public static void main(String[] args) {
 
-        MaxPathSum tree = new MaxPathSum();
+        T tree = new T();
         tree.root = new BinaryTree(1);
         tree.root.left = new BinaryTree(2);
         tree.root.right = new BinaryTree(3);
