@@ -19,6 +19,8 @@ public class MaximumDepthOfTree {
 
     public static void main(String[] args) {
 
+        MaximumDepthOfTree tree = new MaximumDepthOfTree();
+
     }
 
 }
