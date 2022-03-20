@@ -2,6 +2,8 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 public class MaximumDepthOfTree {
 
+    private TreeNode root;
+
     static class TreeNode{
         int val;
         private TreeNode left;
