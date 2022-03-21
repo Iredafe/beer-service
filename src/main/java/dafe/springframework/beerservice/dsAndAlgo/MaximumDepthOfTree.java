@@ -21,6 +21,10 @@ public class MaximumDepthOfTree {
       }
     }
 
+    public static int maxDepth2(TreeNode node) {
+        return maxDepth2Helper(node, 0);
+    }
+
     public static int maxDepth(TreeNode node){
         LinkedList<Integer> depths = new LinkedList();
         LinkedList<TreeNode> stack = new LinkedList();
