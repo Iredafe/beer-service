@@ -53,4 +53,8 @@ public class LoggerRateLimiter {
 
          return false;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
