@@ -34,8 +34,16 @@ public class MaximumDepthOfTree {
         while(!stack.isEmpty()){
             depth = Math.max(depth, currentDepth);
             currentDepth = depths.pollLast();
-            TreeNode currentNode = stack.pollLast();
+            node = stack.pollLast();
+
+            if(node != null){
+                stack.add(node.left);
+                stack.add(node.right);
+                depths.add(currentDepth+1);
+                depths.add(currentDepth+1);
+            }
         }
+        return depth;
     }
 
     public static void main(String[] args) {
