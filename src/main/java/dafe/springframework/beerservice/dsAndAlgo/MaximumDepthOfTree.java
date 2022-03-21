@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.LinkedList;
+
 public class MaximumDepthOfTree {
 
     private TreeNode root;
@@ -17,6 +19,11 @@ public class MaximumDepthOfTree {
           this.left = left;
           this.right = right;
       }
+    }
+
+    public static int maxDepth(TreeNode node){
+        LinkedList<Integer> depths = new LinkedList();
+        LinkedList<TreeNode> stack = new LinkedList();
     }
 
     public static void main(String[] args) {
