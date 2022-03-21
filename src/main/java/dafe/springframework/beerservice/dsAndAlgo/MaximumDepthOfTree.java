@@ -24,6 +24,18 @@ public class MaximumDepthOfTree {
     public static int maxDepth(TreeNode node){
         LinkedList<Integer> depths = new LinkedList();
         LinkedList<TreeNode> stack = new LinkedList();
+
+        if(node == null) return 0;
+        stack.add(node);
+        depths.add(1);
+
+        int depth = 0; int currentDepth = 0;
+
+        while(!stack.isEmpty()){
+            depth = Math.max(depth, currentDepth);
+            currentDepth = depths.pollLast();
+            TreeNode currentNode = stack.pollLast();
+        }
     }
 
     public static void main(String[] args) {
