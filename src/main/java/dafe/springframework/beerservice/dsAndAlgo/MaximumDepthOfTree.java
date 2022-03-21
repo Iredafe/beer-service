@@ -25,6 +25,14 @@ public class MaximumDepthOfTree {
         return maxDepth2Helper(node, 0);
     }
 
+    private static int maxDepth2Helper(TreeNode node, int depth) {
+
+        if(node == null) return 0;
+
+        return Math.max(maxDepth2Helper(node.left, depth+1), maxDepth2Helper(node.right, depth+1)) + 1;
+
+    }
+
     public static int maxDepth(TreeNode node){
         LinkedList<Integer> depths = new LinkedList();
         LinkedList<TreeNode> stack = new LinkedList();
@@ -62,6 +70,7 @@ public class MaximumDepthOfTree {
         tree.root.right.right=new TreeNode(7);
 
         System.out.println("This is the max depth : " + maxDepth(tree.root));
+        System.out.println("This is the max depth 2 : " + maxDepth2(tree.root));
     }
 
 }
