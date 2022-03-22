@@ -48,5 +48,6 @@ public class PathSum {
         tree.root.left.left.right = new TreeNode(2);
         tree.root.right.right.right = new TreeNode(1);
 
+        System.out.println("Does this tree have a path sum? " + pathSum(tree.root, 22));
     }
 }
