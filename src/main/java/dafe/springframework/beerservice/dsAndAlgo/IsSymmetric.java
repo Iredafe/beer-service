@@ -39,7 +39,7 @@ public class IsSymmetric {
             TreeNode q1 = queue.poll();
             TreeNode q2 = queue.poll();
 
-            if(q1 == null && q2 == null) return true;
+            if(q1 == null && q2 == null) continue;
             if(q1==null || q2==null) return false;
             if(q1.val != q2.val) return false;
             queue.add(q1.left);
