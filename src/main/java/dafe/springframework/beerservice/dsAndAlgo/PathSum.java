@@ -4,6 +4,8 @@ import java.util.LinkedList;
 
 public class PathSum {
 
+    private TreeNode root;
+
     static class TreeNode{
         int val;
         private TreeNode left;
@@ -31,5 +33,10 @@ public class PathSum {
         }
 
         return false;
+    }
+
+    public static void main(String[] args) {
+        PathSum tree = new PathSum();
+        tree.root = new TreeNode();
     }
 }
