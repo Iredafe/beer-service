@@ -11,4 +11,10 @@ public class PathSum {
             this.val = val;
         }
     }
+
+    public static boolean pathSum(TreeNode root, int targetSum){
+
+
+        return false;
+    }
 }
