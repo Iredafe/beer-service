@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class IsSymmetric {
 
     private TreeNode _root;
@@ -28,7 +31,14 @@ public class IsSymmetric {
     }
 
     public static boolean isSymmetricIterative(TreeNode root){
+        Queue<TreeNode> queue = new LinkedList();
+        queue.add(root);
+        queue.add(root);
 
+        while(!queue.isEmpty()){
+            TreeNode q1 = queue.poll();
+            TreeNode q2 = queue.poll();
+        }
         return true;
     }
 
