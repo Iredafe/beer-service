@@ -27,6 +27,11 @@ public class IsSymmetric {
                 isMirror(root1.right , root2.left);
     }
 
+    public static boolean isSymmetricIterative(TreeNode root){
+
+        return true;
+    }
+
     //1,2,2,3,4,4,3
     public static void main(String[] args) {
         IsSymmetric tree = new IsSymmetric();
