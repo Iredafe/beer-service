@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.LinkedList;
+
 public class PathSum {
 
     static class TreeNode{
@@ -13,7 +15,20 @@ public class PathSum {
     }
 
     public static boolean pathSum(TreeNode root, int targetSum){
+        LinkedList<TreeNode> nodeStack= new LinkedList();
+        LinkedList<Integer> sumStack = new LinkedList();
 
+        nodeStack.add(root);
+        sumStack.add(targetSum-root.val);
+
+        int currentSum;
+        TreeNode node;
+        while(!nodeStack.isEmpty()){
+            node = nodeStack.pollLast();
+            currentSum = sumStack.pollLast();
+
+            if(node.left==null && node.right==null && currentSum==0) return true;
+        }
 
         return false;
     }
