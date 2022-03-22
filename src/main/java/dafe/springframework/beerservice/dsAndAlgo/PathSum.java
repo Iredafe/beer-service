@@ -35,8 +35,18 @@ public class PathSum {
         return false;
     }
 
+    //5,4,8,11,null,13,4,7,2,null,null,null,1
     public static void main(String[] args) {
         PathSum tree = new PathSum();
-        tree.root = new TreeNode();
+        tree.root = new TreeNode(5);
+        tree.root.left = new TreeNode(4);
+        tree.root.right = new TreeNode(8);
+        tree.root.left.left = new TreeNode(11);
+        tree.root.left.right.left = new TreeNode(13);
+        tree.root.left.right.right = new TreeNode(4);
+        tree.root.left.left.left = new TreeNode(7);
+        tree.root.left.left.right = new TreeNode(2);
+        tree.root.right.right.right = new TreeNode(1);
+
     }
 }
