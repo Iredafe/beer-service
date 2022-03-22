@@ -38,6 +38,14 @@ public class IsSymmetric {
         while(!queue.isEmpty()){
             TreeNode q1 = queue.poll();
             TreeNode q2 = queue.poll();
+
+            if(q1 == null && q2 == null) return true;
+            if(q1==null || q2==null) return false;
+            if(q1.val != q2.val) return false;
+            queue.add(q1.left);
+            queue.add(q2.right);
+            queue.add(q1.right);
+            queue.add(q2.left);
         }
         return true;
     }
@@ -54,5 +62,6 @@ public class IsSymmetric {
         tree._root.right.right = new TreeNode(3);
 
         System.out.println("the tree is symmetrical ? " + isSymmetric(tree._root));
+        System.out.println("the tree is symmetrical iterative ? " + isSymmetricIterative(tree._root));
     }
 }
