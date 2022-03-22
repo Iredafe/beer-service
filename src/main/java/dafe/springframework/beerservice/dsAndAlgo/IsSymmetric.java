@@ -11,4 +11,14 @@ public class IsSymmetric {
             this.val = val;
         }
     }
+
+    public static boolean isSymmetric(TreeNode root){
+
+        return true;
+    }
+
+
+    public static void main(String[] args) {
+
+    }
 }
