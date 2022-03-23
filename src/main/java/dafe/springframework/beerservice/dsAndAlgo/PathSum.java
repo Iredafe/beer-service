@@ -16,6 +16,14 @@ public class PathSum {
         }
     }
 
+    public static boolean pathSum2(TreeNode root, int sum){
+        if(root==null) return false;
+
+        sum -= root.val;
+        if(root.left==null && root.right==null) return sum==0;
+        return pathSum2(root.left, sum) || pathSum2(root.right, sum);
+    }
+
     public static boolean pathSum(TreeNode root, int targetSum){
         LinkedList<TreeNode> nodeStack= new LinkedList();
         LinkedList<Integer> sumStack = new LinkedList();
@@ -49,5 +57,6 @@ public class PathSum {
         tree.root.right.right.right = new TreeNode(1);
 
         System.out.println("Does this tree have a path sum? " + pathSum(tree.root, 22));
+        System.out.println("Does this tree have a path sum recursive? " + pathSum2(tree.root, 22));
     }
 }
