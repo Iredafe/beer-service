@@ -50,10 +50,10 @@ public class MaximumDepthOfTree {
 
             if(node != null){
                 depth = Math.max(depth, currentDepth);
-                stack.add(node.left);
-                stack.add(node.right);
-                depths.add(currentDepth+1);
-                depths.add(currentDepth+1);
+                stack.addLast(node.left);
+                stack.addLast(node.right);
+                depths.addLast(currentDepth+1);
+                depths.addLast(currentDepth+1);
             }
         }
         return depth;
