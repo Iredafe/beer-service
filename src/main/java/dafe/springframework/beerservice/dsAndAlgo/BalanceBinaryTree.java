@@ -40,12 +40,12 @@ public class BalanceBinaryTree {
         TreeInfo leftSubTree = getTreeInfo(root.left);
         TreeInfo rightSubTree = getTreeInfo(root.right);
 
-        boolean isBalanced = Math.abs(leftSubTree.height - rightSubTree.height)
+        boolean isBalanced = Math.abs(leftSubTree.height - rightSubTree.height) < 2
                 && leftSubTree.isBalanced &&
                 rightSubTree.isBalanced;
 
         int height = 1 + Math.max(leftSubTree.height, rightSubTree.height);
-        return null;
+        return new TreeInfo(height, isBalanced);
     }
 
 
@@ -58,6 +58,7 @@ public class BalanceBinaryTree {
         tree.root.right.right = new TreeNode(7);
 
         System.out.println("is this tree height balanced 1 ? : " + isBalancedTopDown(tree.root));
+        System.out.println("is this tree height balanced 2 ? : " + isBalancedBottomUp(tree.root));
     }
 
     private static class TreeInfo {
