@@ -36,6 +36,15 @@ public class BalanceBinaryTree {
 
     private static TreeInfo getTreeInfo(TreeNode root) {
         if(root==null) return new TreeInfo(-1, true);
+
+        TreeInfo leftSubTree = getTreeInfo(root.left);
+        TreeInfo rightSubTree = getTreeInfo(root.right);
+
+        boolean isBalanced = Math.abs(leftSubTree.height - rightSubTree.height)
+                && leftSubTree.isBalanced &&
+                rightSubTree.isBalanced;
+
+        int height = 1 + Math.max(leftSubTree.height, rightSubTree.height);
         return null;
     }
 
