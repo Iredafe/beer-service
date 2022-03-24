@@ -2,6 +2,8 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 public class BalanceBinaryTree {
 
+    private TreeNode root;
+
     static class TreeNode{
         int val;
         TreeNode left;
@@ -27,4 +29,8 @@ public class BalanceBinaryTree {
         return 1 + Math.max(getTreeHeight(node.left), getTreeHeight(node.right));
     }
 
+    public static void main(String[] args) {
+        BalanceBinaryTree tree = new BalanceBinaryTree();
+        tree.root = new TreeNode(3);
+    }
 }
