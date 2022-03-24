@@ -14,6 +14,11 @@ public class BalanceBinaryTree {
 
     public static boolean isBalancedTopDown(TreeNode root){
 
+        if(root == null ) return true;
+
+        return Math.abs(getTreeHeight(root.right) - getTreeHeight(root.left)) < 2
+                && isBalancedTopDown(root.left)
+                && isBalancedTopDown(root.right);
     }
 
 }
