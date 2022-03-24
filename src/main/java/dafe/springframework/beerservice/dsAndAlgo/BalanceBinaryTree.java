@@ -31,10 +31,11 @@ public class BalanceBinaryTree {
 
 
     public static boolean isBalancedBottomUp(TreeNode root){
-        return getTreeInfo(root);
+        return getTreeInfo(root).isBalanced;
     }
 
     private static TreeInfo getTreeInfo(TreeNode root) {
+        if(root==null) return new TreeInfo(-1, true);
         return null;
     }
 
@@ -48,5 +49,15 @@ public class BalanceBinaryTree {
         tree.root.right.right = new TreeNode(7);
 
         System.out.println("is this tree height balanced 1 ? : " + isBalancedTopDown(tree.root));
+    }
+
+    private static class TreeInfo {
+        int height;
+        boolean isBalanced;
+
+        public TreeInfo(int height, boolean isBalanced){
+            this.height = height;
+            this.isBalanced = isBalanced;
+        }
     }
 }
