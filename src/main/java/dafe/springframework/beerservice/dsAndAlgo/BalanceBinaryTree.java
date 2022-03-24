@@ -29,6 +29,16 @@ public class BalanceBinaryTree {
         return 1 + Math.max(getTreeHeight(node.left), getTreeHeight(node.right));
     }
 
+
+    public static boolean isBalancedBottomUp(TreeNode root){
+        return getTreeInfo(root);
+    }
+
+    private static TreeInfo getTreeInfo(TreeNode root) {
+        return null;
+    }
+
+
     public static void main(String[] args) {
         BalanceBinaryTree tree = new BalanceBinaryTree();
         tree.root = new TreeNode(3);
