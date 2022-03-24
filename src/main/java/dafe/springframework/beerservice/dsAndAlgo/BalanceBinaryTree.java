@@ -7,6 +7,13 @@ public class BalanceBinaryTree {
         TreeNode left;
         TreeNode right;
 
+        public TreeNode(int val){
+            this.val = val;
+        }
+    }
+
+    public static boolean isBalancedTopDown(TreeNode root){
+
     }
 
 }
