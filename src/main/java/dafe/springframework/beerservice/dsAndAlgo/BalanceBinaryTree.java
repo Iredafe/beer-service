@@ -21,4 +21,10 @@ public class BalanceBinaryTree {
                 && isBalancedTopDown(root.right);
     }
 
+    private static int getTreeHeight(TreeNode node) {
+        if(node == null) return -1;
+
+        return 1 + Math.max(getTreeHeight(node.left), getTreeHeight(node.right));
+    }
+
 }
