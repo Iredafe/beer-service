@@ -32,5 +32,9 @@ public class BalanceBinaryTree {
     public static void main(String[] args) {
         BalanceBinaryTree tree = new BalanceBinaryTree();
         tree.root = new TreeNode(3);
+        tree.root.left = new TreeNode(9);
+        tree.root.right = new TreeNode(20);
+        tree.root.right.left = new TreeNode(15);
+        tree.root.right.right = new TreeNode(7);
     }
 }
