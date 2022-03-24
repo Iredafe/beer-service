@@ -36,5 +36,7 @@ public class BalanceBinaryTree {
         tree.root.right = new TreeNode(20);
         tree.root.right.left = new TreeNode(15);
         tree.root.right.right = new TreeNode(7);
+
+        System.out.println("is this tree height balanced 1 ? : " + isBalancedTopDown(tree.root));
     }
 }
