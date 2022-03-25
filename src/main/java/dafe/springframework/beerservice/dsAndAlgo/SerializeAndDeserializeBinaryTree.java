@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class SerializeAndDeserializeBinaryTree {
@@ -33,12 +36,21 @@ public class SerializeAndDeserializeBinaryTree {
         }
 
         public static TreeNode deserialize(String data){
-
-        return null;
+            String [] dataArray = data.split(",");
+            List<String> dataList = new LinkedList<>(Arrays.asList(dataArray));
+        return deserializer(dataList);
         }
 
         public static TreeNode deserializer(List<String> list){
+            if(list.get(0).equals("null")){
+                list.remove(0);
+                return null;
+            }
 
+            TreeNode treeNode = new TreeNode(Integer.parseInt(list.get(0)));
+            treeNode.left = deserializer(list);
+            treeNode.right = deserializer(list);
+            return treeNode;
         }
 
 
