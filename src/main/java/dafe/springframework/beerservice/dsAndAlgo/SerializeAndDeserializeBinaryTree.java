@@ -23,9 +23,9 @@ public class SerializeAndDeserializeBinaryTree {
             if(root == null){
                 str+="null, ";
             }else{
-                str+=str.valueOf(root.val + "");
-                str+= serializer(root.left , str);
-                str+= serializer(root.right, str);
+                str+=str.valueOf(root.val + ",");
+                str= serializer(root.left , str);
+                str= serializer(root.right, str);
             }
             return str;
         }
@@ -38,5 +38,7 @@ public class SerializeAndDeserializeBinaryTree {
         tree.root.right = new TreeNode(3);
         tree.root.right.left = new TreeNode(4);
         tree.root.right.right = new TreeNode(5);
+
+        System.out.println("This is the serialized tree string : " + serialize(tree.root));
     }
 }
