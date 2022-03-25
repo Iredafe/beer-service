@@ -19,10 +19,13 @@ public class SerializeAndDeserializeBinaryTree {
         public static String serializer(TreeNode root, String str){
 
             if(root == null){
-                str+="";
+                str+="null, ";
             }else{
                 str+=str.valueOf(root.val + "");
+                str+= serializer(root.left , str);
+                str+= serializer(root.right, str);
             }
+            return str;
         }
     }
 }
