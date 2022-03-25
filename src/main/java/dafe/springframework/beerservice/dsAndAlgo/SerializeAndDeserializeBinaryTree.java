@@ -15,5 +15,14 @@ public class SerializeAndDeserializeBinaryTree {
 
             return "";
         }
+
+        public static String serializer(TreeNode root, String str){
+
+            if(root == null){
+                str+="";
+            }else{
+                str+=str.valueOf(root.val + "");
+            }
+        }
     }
 }
