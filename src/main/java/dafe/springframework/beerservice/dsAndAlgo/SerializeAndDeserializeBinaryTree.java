@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.List;
+
 public class SerializeAndDeserializeBinaryTree {
 
     private TreeNode root;
@@ -28,6 +30,15 @@ public class SerializeAndDeserializeBinaryTree {
                 str= serializer(root.right, str);
             }
             return str;
+        }
+
+        public static TreeNode deserialize(String data){
+
+        return null;
+        }
+
+        public static TreeNode deserializer(List<String> list){
+
         }
 
 
