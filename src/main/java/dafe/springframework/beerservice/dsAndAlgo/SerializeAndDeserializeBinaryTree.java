@@ -11,5 +11,9 @@ public class SerializeAndDeserializeBinaryTree {
             this.val = val;
         }
 
+        public static String serialize(TreeNode root){
+
+            return "";
+        }
     }
 }
