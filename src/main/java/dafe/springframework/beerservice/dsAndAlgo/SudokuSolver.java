@@ -65,6 +65,11 @@ public static boolean sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
 
     public static boolean tryDigitsAtPosition(ArrayList<ArrayList<Integer>> sudoku, int row, int col){
 
+    for(int digit=1; digit<10; digit++){
+        if(isValidAtPosition(sudoku, digit, row, col)){
+            sudoku.get(row).set(col, digit);
+        }
+    }
     return true;
     }
     public static void main(String[] args) {
