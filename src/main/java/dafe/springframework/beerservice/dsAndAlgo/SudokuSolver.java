@@ -59,7 +59,7 @@ public static ArrayList<ArrayList<Integer>> sudokuSolver(ArrayList<ArrayList<Int
             }
         }
         if(sudoku.get(currentRow).get(currentCol)== 0){
-            tryDigitsAtPosition(sudoku, currentRow, currentCol);
+           return tryDigitsAtPosition(sudoku, currentRow, currentCol);
         }
     return solvePartialSudoku(sudoku, currentRow, currentCol+1);
     }
@@ -69,7 +69,7 @@ public static ArrayList<ArrayList<Integer>> sudokuSolver(ArrayList<ArrayList<Int
     for(int digit=1; digit<10; digit++){
         if(isValidAtPosition(sudoku, digit, row, col)){
             sudoku.get(row).set(col, digit);
-            if(solvePartialSudoku(sudoku, row, col)){
+            if(solvePartialSudoku(sudoku, row, col+1)){
                 return true;
             }
         }
