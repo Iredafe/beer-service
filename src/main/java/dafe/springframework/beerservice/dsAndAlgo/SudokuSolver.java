@@ -40,8 +40,9 @@ public class SudokuSolver {
 
     }
         /* another approach */
-public static boolean sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
-    return solvePartialSudoku(sudoku, 0, 0);
+public static ArrayList<ArrayList<Integer>> sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
+    solvePartialSudoku(sudoku, 0, 0);
+    return sudoku;
 }
 
     private static boolean solvePartialSudoku(ArrayList<ArrayList<Integer>> sudoku, int row, int col) {
@@ -104,7 +105,6 @@ public static boolean sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
         return true;
     }
     public static void main(String[] args) {
-
         char[][] board ={{'5','3','.','.','7','.','.','.','.'},
                 {'6','.','.','1','9','5','.','.','.'},
                 {'.','9','8','.','.','.','.','6','.'},
@@ -127,5 +127,7 @@ public static boolean sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
                 new ArrayList<>(Arrays.asList(0, 4, 9, 2, 0, 6, 0, 0, 7))
         ));
 
-                }
+        System.out.println(sudokuSolver("This is the solved sudoku " + Arrays.deepToString(sudokuSolver(sudoku)));
+
+    }
 }
