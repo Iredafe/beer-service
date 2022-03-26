@@ -60,9 +60,13 @@ public static boolean sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
                 tryDigitsAtPosition(sudoku, currentRow, currentCol);
             }
         }
-    return false;
+    return solvePartialSudoku(sudoku, currentRow, currentCol+1);
     }
 
+    public static boolean tryDigitsAtPosition(ArrayList<ArrayList<Integer>> sudoku, int row, int col){
+
+    return true;
+    }
     public static void main(String[] args) {
 
         char[][] board ={{'5','3','.','.','7','.','.','.','.'},
