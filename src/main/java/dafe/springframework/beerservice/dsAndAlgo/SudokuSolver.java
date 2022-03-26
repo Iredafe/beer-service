@@ -1,6 +1,8 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class SudokuSolver {
 
@@ -52,6 +54,29 @@ public class SudokuSolver {
                 {'.','6','.','.','.','.','2','8','.'},
                 {'.','.','.','4','1','9','.','.','5'},
                 {'.','.','.','.','8','.','.','7','9'}};
+
+        int [][] array =  {
+                {7, 8, 0, 4, 0, 0, 1, 2, 0},
+                {6, 0, 0, 0, 7, 5, 0, 0, 9},
+                {0, 0, 0, 6, 0, 1, 0, 7, 8},
+                {0, 0, 7, 0, 4, 0, 2, 6, 0},
+                {0, 0, 1, 0, 5, 0, 9, 3, 0},
+                {9, 0, 4, 0, 6, 0, 0, 0, 5},
+                {0, 7, 0, 3, 0, 0, 0, 1, 2},
+                {1, 2, 0, 0, 0, 7, 4, 0, 0},
+                {0, 4, 9, 2, 0, 6, 0, 0, 7}
+    };
+        ArrayList<ArrayList<Integer>> sudoku = new ArrayList<>(Arrays.asList(
+                new ArrayList<>(Arrays.asList(7, 8, 0, 4, 0, 0, 1, 2, 0)),
+                new ArrayList<>(Arrays.asList(6, 0, 0, 0, 7, 5, 0, 0, 9)),
+                new ArrayList<>(Arrays.asList(0, 0, 0, 6, 0, 1, 0, 7, 8)),
+                new ArrayList<>(Arrays.asList(0, 0, 7, 0, 4, 0, 2, 6, 0)),
+                new ArrayList<>(Arrays.asList(0, 0, 1, 0, 5, 0, 9, 3, 0)),
+                new ArrayList<>(Arrays.asList(9, 0, 4, 0, 6, 0, 0, 0, 5)),
+                new ArrayList<>(Arrays.asList(0, 7, 0, 3, 0, 0, 0, 1, 2)),
+                new ArrayList<>(Arrays.asList(1, 2, 0, 0, 0, 7, 4, 0, 0)),
+                new ArrayList<>(Arrays.asList(0, 4, 9, 2, 0, 6, 0, 0, 7))
+        ));
 
                 }
 }
