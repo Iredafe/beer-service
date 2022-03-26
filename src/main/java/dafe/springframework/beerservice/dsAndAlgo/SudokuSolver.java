@@ -56,6 +56,9 @@ public static boolean sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
             if(currentRow == sudoku.get(col).size()){
                 return true; // board completed
             }
+            if(sudoku.get(currentRow).get(currentCol).equals(0)){
+                tryDigitsAtPosition(sudoku, currentRow, currentCol);
+            }
         }
     return false;
     }
