@@ -68,9 +68,13 @@ public static boolean sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
     for(int digit=1; digit<10; digit++){
         if(isValidAtPosition(sudoku, digit, row, col)){
             sudoku.get(row).set(col, digit);
+            if(solvePartialSudoku(sudoku, row, col)){
+                return true;
+            }
         }
     }
-    return true;
+        sudoku.get(row).set(col, 0);
+        return false;
     }
     public static void main(String[] args) {
 
