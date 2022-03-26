@@ -76,6 +76,33 @@ public static boolean sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
         sudoku.get(row).set(col, 0);
         return false;
     }
+
+    public static boolean isValidAtPosition(ArrayList<ArrayList<Integer>> sudoku, int value, int row, int col){
+
+    boolean rowIsValid = !sudoku.get(row).contains(value);
+    boolean colIsValid = true;
+
+    for(int r=0; r<sudoku.size(); r++){
+        if(sudoku.get(r).get(col) == value) colIsValid = false;
+    }
+
+    if(!rowIsValid || !colIsValid){
+        return false;
+    }
+
+        int subGridRowStart = (row/3)*3;
+        int subGridColStart = (col/3)*3;
+
+        for(int rowIdx = 0; rowIdx<3; rowIdx++){
+            for(int colIdx =0; colIdx<3; colIdx++){
+                int rowToCheck = subGridRowStart + rowIdx;
+                int colToCheck = subGridColStart + colIdx;
+                Integer existingValue = sudoku.get(rowToCheck).get(colToCheck);
+                if(existingValue == value) return false;
+            }
+        }
+        return true;
+    }
     public static void main(String[] args) {
 
         char[][] board ={{'5','3','.','.','7','.','.','.','.'},
