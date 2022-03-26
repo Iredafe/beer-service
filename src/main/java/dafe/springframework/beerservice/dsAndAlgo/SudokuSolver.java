@@ -45,7 +45,18 @@ public static boolean sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
 }
 
     private static boolean solvePartialSudoku(ArrayList<ArrayList<Integer>> sudoku, int row, int col) {
+        int currentRow = row;
+        int currentCol = col;
 
+        if(currentCol == sudoku.size())
+        {
+            currentRow += 1;
+            currentCol = 0;
+
+            if(currentRow == sudoku.get(col).size()){
+                return true; // board completed
+            }
+        }
     return false;
     }
 
