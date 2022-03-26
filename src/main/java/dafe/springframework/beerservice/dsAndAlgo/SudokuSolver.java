@@ -49,17 +49,17 @@ public static ArrayList<ArrayList<Integer>> sudokuSolver(ArrayList<ArrayList<Int
         int currentRow = row;
         int currentCol = col;
 
-        if(currentCol == sudoku.size())
+        if(currentCol == sudoku.get(currentRow).size())
         {
             currentRow += 1;
             currentCol = 0;
 
-            if(currentRow == sudoku.get(col).size()){
+            if(currentRow == sudoku.size()){
                 return true; // board completed
             }
-            if(sudoku.get(currentRow).get(currentCol).equals(0)){
-                tryDigitsAtPosition(sudoku, currentRow, currentCol);
-            }
+        }
+        if(sudoku.get(currentRow).get(currentCol)== 0){
+            tryDigitsAtPosition(sudoku, currentRow, currentCol);
         }
     return solvePartialSudoku(sudoku, currentRow, currentCol+1);
     }
@@ -98,7 +98,7 @@ public static ArrayList<ArrayList<Integer>> sudokuSolver(ArrayList<ArrayList<Int
             for(int colIdx =0; colIdx<3; colIdx++){
                 int rowToCheck = subGridRowStart + rowIdx;
                 int colToCheck = subGridColStart + colIdx;
-                Integer existingValue = sudoku.get(rowToCheck).get(colToCheck);
+                int existingValue = sudoku.get(rowToCheck).get(colToCheck);
                 if(existingValue == value) return false;
             }
         }
@@ -127,7 +127,7 @@ public static ArrayList<ArrayList<Integer>> sudokuSolver(ArrayList<ArrayList<Int
                 new ArrayList<>(Arrays.asList(0, 4, 9, 2, 0, 6, 0, 0, 7))
         ));
 
-        System.out.println(sudokuSolver("This is the solved sudoku " + Arrays.deepToString(sudokuSolver(sudoku)));
+        System.out.println("This is the solved sudoku " + sudokuSolver(sudoku));
 
     }
 }
