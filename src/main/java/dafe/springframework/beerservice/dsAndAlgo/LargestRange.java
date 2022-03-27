@@ -10,11 +10,29 @@ public class LargestRange {
         System.out.println("This is the largest range : " + largestRange(input));
     }
 
-    private static int[] largestRange(int[] input) {
+    private static int[] largestRange(int[] array) {
 
         int longestLength= 0;
         int [] bestRange = new int[2];
         Map<Integer, Boolean> map = new HashMap();
+
+        for(int num : array){
+            map.put(num, false);
+        }
+
+        for(int num: array){
+            if(map.get(num)){
+                continue;
+            }
+            map.put(num, true);
+            int left = num - 1;
+            int right = num+1;
+            int currentLength = 1;
+
+            while (map.containsKey(left)){
+                map.put(left, true);
+            }
+        }
 
     }
 }
