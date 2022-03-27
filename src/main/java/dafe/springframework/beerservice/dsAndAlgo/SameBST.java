@@ -4,15 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SameBST {
-    static class BST{
-        int val;
-        int left;
-        int right;
-
-        public BST(int val){
-            this.val = val;
-        }
-    }
     public static boolean isSameBsts(List<Integer> arrayOne, List<Integer> arrayTwo){
 
         return true;
