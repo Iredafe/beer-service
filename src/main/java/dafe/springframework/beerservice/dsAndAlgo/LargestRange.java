@@ -31,8 +31,20 @@ public class LargestRange {
 
             while (map.containsKey(left)){
                 map.put(left, true);
+                currentLength++;
+                left--;
+            }
+
+            while(map.containsKey(right)){
+                map.put(right, true);
+                currentLength++;
+                right++;
+            }
+
+            if(currentLength < longestLength){
+                longestLength = currentLength;
             }
         }
-
+        return bestRange;
     }
 }
