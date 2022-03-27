@@ -36,8 +36,10 @@ public class SudokuSolver {
     private void placeNumber(int number, int i, int j) {
     }
 
-    public void solveSudoku(char[][] board) {
 
+    public static void solveSudoku(char[][]board){
+        solveSudokuPartially(board,0,0);
+        return;
     }
         /* another approach */
 public static ArrayList<ArrayList<Integer>> sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
