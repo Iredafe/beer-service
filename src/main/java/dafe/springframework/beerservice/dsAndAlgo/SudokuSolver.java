@@ -59,10 +59,18 @@ public class SudokuSolver {
             testDigitsAtPosition(board, currentRow, currentCol);
             return;
         }
-
-
     }
-        /* another approach */
+
+    private static void testDigitsAtPosition(char[][] board, int row, int col) {
+
+        for(int digit=0; digit<10; digit++){
+            if(isDigitValidAtPosition(board, digit, row, col)){
+                board[row][col] = (char) digit;
+            }
+        }
+    }
+
+    /* another approach */
 public static ArrayList<ArrayList<Integer>> sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
     solvePartialSudoku(sudoku, 0, 0);
     return sudoku;
