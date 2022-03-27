@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,7 +8,7 @@ public class LargestRange {
 
     public static void main(String[] args) {
         int [] input = {1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6};
-        System.out.println("This is the largest range : " + largestRange(input));
+        System.out.println("This is the largest range : " + Arrays.toString(largestRange(input)));
     }
 
     private static int[] largestRange(int[] array) {
@@ -41,7 +42,7 @@ public class LargestRange {
                 right++;
             }
 
-            if(currentLength < longestLength){
+            if(currentLength > longestLength){
                 longestLength = currentLength;
                 bestRange = new int[]{left+1, right-1};
             }
