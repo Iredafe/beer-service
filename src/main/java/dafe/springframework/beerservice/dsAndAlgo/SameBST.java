@@ -20,5 +20,8 @@ public class SameBST {
 
     public static void main(String[] args) {
         List<Integer> first = Arrays.asList(10,15,8,12,94,81,5,2,11);
+        List<Integer> second = Arrays.asList(10,8,5,15,2,12,11,94,81);
+
+        System.out.println("Are they same BSTs ? : " + isSameBsts(first,second));
     }
 }
