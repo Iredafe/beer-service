@@ -66,8 +66,15 @@ public class SudokuSolver {
         for(int digit=0; digit<10; digit++){
             if(isDigitValidAtPosition(board, digit, row, col)){
                 board[row][col] = (char) digit;
+                solveSudokuPartially(board, row, col+1);
+                return;
             }
+            board[row][col] = '.';
         }
+    }
+
+    private static boolean isDigitValidAtPosition(char[][] board, int value, int row, int col) {
+        return false;
     }
 
     /* another approach */
