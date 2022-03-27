@@ -41,6 +41,27 @@ public class SudokuSolver {
         solveSudokuPartially(board,0,0);
         return;
     }
+
+    public static void solveSudokuPartially(char[][]board, int row, int col){
+        int currentRow = row;
+        int currentCol = col;
+
+        if(currentCol == board[currentRow].length){
+            currentRow+=1;
+            currentCol=0;
+
+            if(currentRow == board.length){
+                return; //board completed
+            }
+        }
+
+        if(board[currentRow][currentCol]=='.'){
+            testDigitsAtPosition(board, currentRow, currentCol);
+            return;
+        }
+
+
+    }
         /* another approach */
 public static ArrayList<ArrayList<Integer>> sudokuSolver(ArrayList<ArrayList<Integer>> sudoku){
     solvePartialSudoku(sudoku, 0, 0);
