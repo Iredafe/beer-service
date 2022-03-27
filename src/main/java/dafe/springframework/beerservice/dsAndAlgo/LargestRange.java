@@ -43,6 +43,7 @@ public class LargestRange {
 
             if(currentLength < longestLength){
                 longestLength = currentLength;
+                bestRange = new int[]{left+1, right-1};
             }
         }
         return bestRange;
