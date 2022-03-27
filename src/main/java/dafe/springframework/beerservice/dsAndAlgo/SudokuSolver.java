@@ -42,7 +42,7 @@ public class SudokuSolver {
         return board;
     }
 
-    public static void solveSudokuPartially(char[][]board, int row, int col){
+    public static boolean solveSudokuPartially(char[][]board, int row, int col){
         int currentRow = row;
         int currentCol = col;
 
@@ -51,26 +51,28 @@ public class SudokuSolver {
             currentCol=0;
 
             if(currentRow == board.length){
-                return; //board completed
+                return true; //board completed
             }
         }
 
         if(board[currentRow][currentCol]=='.'){
-            testDigitsAtPosition(board, currentRow, currentCol);
-            return;
+            return testDigitsAtPosition(board, currentRow, currentCol);
+
         }
+        return solveSudokuPartially(board, currentRow, currentCol+1);
     }
 
-    private static void testDigitsAtPosition(char[][] board, int row, int col) {
+    private static boolean testDigitsAtPosition(char[][] board, int row, int col) {
 
         for(int digit=0; digit<10; digit++){
             if(isDigitValidAtPosition(board, digit, row, col)){
                 board[row][col] = (char) digit;
-                solveSudokuPartially(board, row, col+1);
-                return;
+                if(solveSudokuPartially(board, row, col+1)) return true;
+
             }
-            board[row][col] = '.';
         }
+        board[row][col] = '.';
+        return false;
     }
 
     private static boolean isDigitValidAtPosition(char[][] board, int value, int row, int col) {
