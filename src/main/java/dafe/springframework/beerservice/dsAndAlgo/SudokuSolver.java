@@ -37,9 +37,9 @@ public class SudokuSolver {
     }
 
 
-    public static void solveSudoku(char[][]board){
+    public static char[][] solveSudoku(char[][]board){
         solveSudokuPartially(board,0,0);
-        return;
+        return board;
     }
 
     public static void solveSudokuPartially(char[][]board, int row, int col){
@@ -83,7 +83,23 @@ public class SudokuSolver {
         for(int j=0; j<board.length; j++){
             if(board[j][col] == digit) colIsValid =false;
         }
-        return false;
+
+        if(!rowIsValid || !colIsValid) return false;
+
+        int subGridRowStart = (row/3)* 3;
+        int subGridColStart = (col/3)* 3;
+
+        for(int rowIdx = 0; rowIdx<3; rowIdx++){
+            for(int colIdx=0; colIdx<3; colIdx++){
+                int rowToCheck = subGridRowStart+rowIdx;
+                int colToCheck = subGridColStart+colIdx;
+
+                char existingValue = board[rowToCheck][colToCheck];
+                if(existingValue==digit) return false;
+            }
+        }
+
+        return true;
     }
 
     /* another approach */
@@ -175,6 +191,7 @@ public static ArrayList<ArrayList<Integer>> sudokuSolver(ArrayList<ArrayList<Int
         ));
 
         System.out.println("This is the solved sudoku " + sudokuSolver(sudoku));
+        System.out.println("This is the solved sudoku " + Arrays.deepToString(solveSudoku(board)));
 
     }
 }
