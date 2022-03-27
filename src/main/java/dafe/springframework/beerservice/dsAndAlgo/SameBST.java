@@ -16,16 +16,20 @@ public class SameBST {
                                        int maxValue) {
 
 
-        int leftRootIdxOne = getSmallerRootIdx(arrayOne, rootIdxOne, maxValue);
-        int leftRootIdxTwo = getSmallerRootIdx(arrayTwo, rootIdxTwo, maxValue);
-        int rightRootIdxOne = getBiggerOrEqual(arrayOne, minValue, rootIdxOne);
-        int rightRootIdxTwo = getBiggerOrEqual(arrayTwo, minValue, rootIdxTwo);
+        int leftRootIdxOne = getSmallerRootIdx(arrayOne, rootIdxOne, minValue);
+        int leftRootIdxTwo = getSmallerRootIdx(arrayTwo, rootIdxTwo, minValue);
+        int rightRootIdxOne = getBiggerOrEqual(arrayOne, maxValue, rootIdxOne);
+        int rightRootIdxTwo = getBiggerOrEqual(arrayTwo, maxValue, rootIdxTwo);
 
 
         return true;
     }
 
-    private static int getBiggerOrEqual(List<Integer> arrayTwo, int minValue, int rootIdxTwo) {
+    private static int getSmallerRootIdx(List<Integer> arrayTwo, int rootIdxTwo, int minValue) {
+        return 0;
+    }
+
+    private static int getBiggerOrEqual(List<Integer> arrayTwo, int maxValue, int rootIdxTwo) {
 
         return 1;
     }
