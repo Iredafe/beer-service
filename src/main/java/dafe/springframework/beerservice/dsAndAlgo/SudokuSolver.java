@@ -74,6 +74,15 @@ public class SudokuSolver {
     }
 
     private static boolean isDigitValidAtPosition(char[][] board, int value, int row, int col) {
+        boolean rowIsValid=true;
+        boolean colIsValid=true;
+        char digit = (char) value;
+        for(int i=0; i<board[row].length; i++){
+            if(board[row][i]==digit) rowIsValid=false;
+        }
+        for(int j=0; j<board.length; j++){
+            if(board[j][col] == digit) colIsValid =false;
+        }
         return false;
     }
 
