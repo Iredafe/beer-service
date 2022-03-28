@@ -8,6 +8,16 @@ public class QuickSelect {
     }
 
     private static int quickselect(int[] array, int k) {
-        return 1;
+        int postion = k-1;
+        return quickselectHelper(array, postion, 0, array.length-1);
+    }
+
+    private static int quickselectHelper(int[] array, int positon, int start, int end) {
+
+        while(true){
+         if(start > end){
+             throw new RuntimeException("There is something here...!");
+         }
+        }
     }
 }
