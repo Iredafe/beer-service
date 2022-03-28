@@ -18,15 +18,15 @@ public class SameBST {
         if(arrayOne.get(rootIdxOne) == arrayTwo.get(rootIdxTwo)) return false;
         if(rootIdxOne == -1 || rootIdxTwo==-1) return rootIdxOne == rootIdxTwo;
         int currentValue = arrayOne.get(rootIdxOne).intValue();
-        int leftRootIdxOne = getSmallerRootIdx(arrayOne, rootIdxOne, currentValue);
-        int leftRootIdxTwo = getSmallerRootIdx(arrayTwo, rootIdxTwo, minValue);
-        int rightRootIdxOne = getBiggerOrEqual(arrayOne, currentValue, rootIdxOne);
-        int rightRootIdxTwo = getBiggerOrEqual(arrayTwo, currentValue, rootIdxTwo);
+        int leftRootIdxOne = getSmallerRootIdx(arrayOne, rootIdxOne, maxValue);
+        int leftRootIdxTwo = getSmallerRootIdx(arrayTwo, rootIdxTwo, maxValue);
+        int rightRootIdxOne = getBiggerOrEqual(arrayOne, minValue, rootIdxOne);
+        int rightRootIdxTwo = getBiggerOrEqual(arrayTwo, minValue, rootIdxTwo);
 
         boolean leftAreSame = areSameBSTs(arrayOne, arrayTwo, leftRootIdxOne, leftRootIdxTwo, currentValue, maxValue);
         boolean rightAreSame = areSameBSTs(arrayOne,arrayTwo, rightRootIdxOne, rightRootIdxTwo, minValue, currentValue);
 
-        return true;
+        return leftAreSame && rightAreSame;
     }
 
     private static int getSmallerRootIdx(List<Integer> array, int startIdx, int minValue) {
