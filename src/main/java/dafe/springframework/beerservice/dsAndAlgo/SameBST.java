@@ -39,8 +39,8 @@ public class SameBST {
 
     private static int getBiggerOrEqual(List<Integer> array, int maxValue, int startIdx) {
         for(int j=startIdx+1; j<array.size(); j++){
-            if(array.get(j).intValue() > array.get(startIdx).intValue()
-            && array.get(j).intValue() <= maxValue) return j;
+            if(array.get(j).intValue() >= array.get(startIdx).intValue()
+            && array.get(j).intValue() < maxValue) return j;
         }
         return -1;
     }
