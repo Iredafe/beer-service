@@ -22,9 +22,20 @@ public class QuickSelect {
          int left = start+1;
          int right = end;
 
-         if(array[left]> array[pivot] && array[right]< array[pivot]){
-             swap(left, right, array);
+         while(left <= right){
+             if(array[left]> array[pivot] && array[right]< array[pivot]){
+                 swap(left, right, array);
+             }else if(array[left] <= array[pivot]){
+                 left++;
+             }else{
+                 right--;
+             }
          }
+         swap(pivot, right, array);
+         if(right == positon) return array[right];
+         else if(right<positon) right++;
+         else right--;
         }
+    }
     }
 }
