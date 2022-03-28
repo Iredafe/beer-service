@@ -26,9 +26,9 @@ public class QuickSelect {
              if(array[left]> array[pivot] && array[right]< array[pivot]){
                  swap(left, right, array);
              }else if(array[left] <= array[pivot]){
-                 left++;
+                 start=left+1;
              }else{
-                 right--;
+                 end = right-1;
              }
          }
          swap(pivot, right, array);
@@ -37,5 +37,11 @@ public class QuickSelect {
          else right--;
         }
     }
+
+    private static void swap(int i, int j, int [] array){
+        int temp = array[i];
+        array[i] = array[j];
+        array[j]= temp;
     }
-}
+    }
+
