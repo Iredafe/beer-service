@@ -26,15 +26,15 @@ public class QuickSelect {
              if(array[left]> array[pivot] && array[right]< array[pivot]){
                  swap(left, right, array);
              }else if(array[left] <= array[pivot]){
-                 start=left+1;
-             }else{
-                 end = right-1;
+                 left++;
+             }else if(array[right] >= array[pivot]){
+                 right--;
              }
          }
          swap(pivot, right, array);
          if(right == positon) return array[right];
-         else if(right<positon) right++;
-         else right--;
+         else if(right<positon) start=right+1;
+         else end = right-1;
         }
     }
 
