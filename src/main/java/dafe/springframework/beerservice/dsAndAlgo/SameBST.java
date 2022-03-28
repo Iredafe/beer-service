@@ -23,8 +23,8 @@ public class SameBST {
         int rightRootIdxOne = getBiggerOrEqual(arrayOne, rootIdxOne, maxValue);
         int rightRootIdxTwo = getBiggerOrEqual(arrayTwo, rootIdxTwo, maxValue);
 
-        boolean leftAreSame = areSameBSTs(arrayOne, arrayTwo, leftRootIdxOne, leftRootIdxTwo, currentValue, maxValue);
-        boolean rightAreSame = areSameBSTs(arrayOne,arrayTwo, rightRootIdxOne, rightRootIdxTwo, minValue, currentValue);
+        boolean leftAreSame = areSameBSTs(arrayOne, arrayTwo, leftRootIdxOne, leftRootIdxTwo,minValue, currentValue);
+        boolean rightAreSame = areSameBSTs(arrayOne,arrayTwo, rightRootIdxOne, rightRootIdxTwo,currentValue, maxValue);
 
         return leftAreSame && rightAreSame;
     }
@@ -38,9 +38,11 @@ public class SameBST {
     }
 
     private static int getBiggerOrEqual(List<Integer> array, int maxValue, int startIdx) {
-
-        return 1;
-
+        for(int j=startIdx+1; j<array.size(); j++){
+            if(array.get(j).intValue() > array.get(startIdx).intValue()
+            && array.get(j).intValue() <= maxValue) return j;
+        }
+        return -1;
     }
 
     public static void main(String[] args) {
