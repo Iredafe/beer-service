@@ -18,6 +18,13 @@ public class QuickSelect {
          if(start > end){
              throw new RuntimeException("There is something here...!");
          }
+         int pivot = start;
+         int left = start+1;
+         int right = end;
+
+         if(array[left]> array[pivot] && array[right]< array[pivot]){
+             swap(left, right, array);
+         }
         }
     }
 }
