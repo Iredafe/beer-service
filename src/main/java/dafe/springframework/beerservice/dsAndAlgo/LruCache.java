@@ -44,6 +44,7 @@ public class LruCache {
     }
 
     public void moveToHead(DoubleLinkedNode node){
-
+        removeNode(node);
+        addNode(node);
     }
 }
