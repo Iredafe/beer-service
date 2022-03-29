@@ -34,4 +34,12 @@ public class LruCache {
         node.next = head.next;
         head.next.prev = node;
     }
+    //head.next <-> prev.node to remove.next <-> prev.tail
+    public void removeNode(DoubleLinkedNode node){
+        DoubleLinkedNode prev = node.prev;
+        DoubleLinkedNode next = node.next;
+
+        node.prev = head;
+        node.next = head.next;
+    }
 }
