@@ -26,4 +26,12 @@ public class LruCache {
         size = 0;
 
     }
+
+    //head.next <-> prev.node to add.next <-> prev.tail
+    public void addNode(DoubleLinkedNode node){
+        head.next = node;
+        node.prev = head;
+        node.next = head.next;
+        head.next.prev = node;
+    }
 }
