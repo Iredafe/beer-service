@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LruCache {
-    int capacity;
-    int size;
+    static int capacity;
+    static int size;
     static DoubleLinkedNode head;
     static DoubleLinkedNode tail;
-    Map<Integer, DoubleLinkedNode> cache;
+    static Map<Integer, DoubleLinkedNode> cache;
     static class DoubleLinkedNode{
         int key;
         int value;
@@ -55,7 +55,19 @@ public class LruCache {
     }
 
     public static void put(int key, int value){
+        DoubleLinkedNode node = cache.get(key);
+        if(node == null){
+            DoubleLinkedNode newNode = new DoubleLinkedNode();
+            newNode.key = key;
+            newNode.value = value;
+            addNode(node);
+            cache.put(key, newNode);
+            size++;
 
+            if(size > capacity){
+
+            }
+        }
     }
 
     public static int get(int key){
