@@ -47,4 +47,8 @@ public class LruCache {
         removeNode(node);
         addNode(node);
     }
+
+    public DoubleLinkedNode popTail(){
+
+    }
 }
