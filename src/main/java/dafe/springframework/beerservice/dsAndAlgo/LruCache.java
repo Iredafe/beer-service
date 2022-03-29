@@ -7,7 +7,7 @@ public class LruCache {
     int capacity;
     int size;
     DoubleLinkedNode head;
-    DoubleLinkedNode tail;
+    static DoubleLinkedNode tail;
     Map<Integer, DoubleLinkedNode> cache;
     static class DoubleLinkedNode{
         int key;
@@ -28,14 +28,14 @@ public class LruCache {
     }
 
     //head.next <-> prev.node to add.next <-> prev.tail
-    public void addNode(DoubleLinkedNode node){
+    public static void addNode(DoubleLinkedNode node){
         head.next = node;
         node.prev = head;
         node.next = head.next;
         head.next.prev = node;
     }
     //head.next <-> prev.node to remove.next <-> prev.tail
-    public void removeNode(DoubleLinkedNode node){
+    public static void removeNode(DoubleLinkedNode node){
         DoubleLinkedNode prev = node.prev;
         DoubleLinkedNode next = node.next;
 
@@ -43,12 +43,12 @@ public class LruCache {
         next.prev = next;
     }
 
-    public void moveToHead(DoubleLinkedNode node){
+    public static void moveToHead(DoubleLinkedNode node){
         removeNode(node);
         addNode(node);
     }
 
-    public DoubleLinkedNode popTail(){
+    public static DoubleLinkedNode popTail(){
         DoubleLinkedNode result = tail.prev;
         removeNode(result);
         return result;
