@@ -62,11 +62,16 @@ public class LruCache {
             newNode.value = value;
             addNode(node);
             cache.put(key, newNode);
-            size++;
+            ++size;
 
             if(size > capacity){
-
+                DoubleLinkedNode tail = popTail();
+                --size;
+                cache.remove(tail.key);
             }
+        }else{
+            node.value = value;
+            moveToHead(node);
         }
     }
 
