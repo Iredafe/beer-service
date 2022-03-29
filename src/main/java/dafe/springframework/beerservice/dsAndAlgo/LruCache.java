@@ -6,7 +6,9 @@ import java.util.Map;
 public class LruCache {
     int capacity;
     int size = 0;
-    Map<Integer, DoubleLinkedNode> cache = new HashMap<>();
+    DoubleLinkedNode head;
+    DoubleLinkedNode tail;
+    Map<Integer, DoubleLinkedNode> cache;
     static class DoubleLinkedNode{
         int key;
         int value;
@@ -16,5 +18,7 @@ public class LruCache {
 
     public LruCache(int capacity){
         this.capacity = capacity;
+        cache  = new HashMap<>();
+
     }
 }
