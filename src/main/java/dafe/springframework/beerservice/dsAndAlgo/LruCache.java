@@ -42,4 +42,8 @@ public class LruCache {
         prev.next = prev;
         next.prev = next;
     }
+
+    public void moveToHead(DoubleLinkedNode node){
+
+    }
 }
