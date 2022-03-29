@@ -39,7 +39,7 @@ public class LruCache {
         DoubleLinkedNode prev = node.prev;
         DoubleLinkedNode next = node.next;
 
-        node.prev = head;
-        node.next = head.next;
+        prev.next = prev;
+        next.prev = next;
     }
 }
