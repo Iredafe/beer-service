@@ -49,6 +49,8 @@ public class LruCache {
     }
 
     public DoubleLinkedNode popTail(){
-
+        DoubleLinkedNode result = tail.prev;
+        removeNode(result);
+        return result;
     }
 }
