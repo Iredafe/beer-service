@@ -53,4 +53,13 @@ public class LruCache {
         removeNode(result);
         return result;
     }
+
+    public static void put(int key, int value){
+
+    }
+
+    public static int get(int key){
+
+        return key;
+    }
 }
