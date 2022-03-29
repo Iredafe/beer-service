@@ -76,7 +76,9 @@ public class LruCache {
     }
 
     public static int get(int key){
-
-        return key;
+        DoubleLinkedNode node = cache.get(key);
+        if(node == null) return -1;
+        moveToHead(node);
+        return node.value;
     }
 }
