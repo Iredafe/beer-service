@@ -6,15 +6,16 @@ import java.util.Map;
 
 public class ConstructBstFromPreOrderArray {
    static Map<Integer, Integer> idxMap = new HashMap();
-   static int preorder[];
+   static int[] preorder;
    static int preIdx=0;
    public static void main(String[] args) {
         int [] preorder = {8,5,1,7,10,12};
 
-        System.out.println("This is the constructed bst : " + bstFromPreorder(preorder));
+        System.out.println("This is the constructed bst : " + bstFromPreorder(preorder).toString());
     }
 
     private static TreeNode bstFromPreorder(int[] preorder) {
+       ConstructBstFromPreOrderArray.preorder = preorder;
         int [] inorderArray = Arrays.copyOf(preorder, preorder.length);
         Arrays.sort(inorderArray);
 
@@ -32,9 +33,10 @@ public class ConstructBstFromPreOrderArray {
         TreeNode treeNode = new TreeNode(rootVal);
 
         int index = idxMap.get(rootVal);
-
+        preIdx++;
         treeNode.left = helper(leftIndex, index);
+        treeNode.right = helper(index+1, rightIndex);
 
-       return null;
+       return treeNode;
     }
 }
