@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.Arrays;
+
 public class ConstructBstFromPreOrderArray {
 
     public static void main(String[] args) {
@@ -9,6 +11,13 @@ public class ConstructBstFromPreOrderArray {
     }
 
     private static TreeNode bstFromPreorder(int[] preorder) {
-        return null;
+        int [] inorderArray = Arrays.copyOf(preorder, preorder.length);
+        Arrays.sort(inorderArray);
+
+        int idx = 0;
+        for(Integer val : inorderArray){
+            idxMap.put(val, idx++)
+        }
+        return helper(0, inorderArray.length);
     }
 }
