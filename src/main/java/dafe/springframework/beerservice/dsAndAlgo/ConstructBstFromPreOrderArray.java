@@ -24,4 +24,9 @@ public class ConstructBstFromPreOrderArray {
         }
         return helper(0, inorderArray.length);
     }
+
+    private static TreeNode helper(int leftIndex, int rightIndex) {
+
+       return null;
+    }
 }
