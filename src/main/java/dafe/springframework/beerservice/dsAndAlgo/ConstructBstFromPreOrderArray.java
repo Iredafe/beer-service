@@ -1,10 +1,14 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ConstructBstFromPreOrderArray {
-
-    public static void main(String[] args) {
+   static Map<Integer, Integer> idxMap = new HashMap();
+   static int preorder[];
+   static int preIdx;
+   public static void main(String[] args) {
         int [] preorder = {8,5,1,7,10,12};
 
         System.out.println("This is the constructed bst : " + bstFromPreorder(preorder));
@@ -16,7 +20,7 @@ public class ConstructBstFromPreOrderArray {
 
         int idx = 0;
         for(Integer val : inorderArray){
-            idxMap.put(val, idx++)
+            idxMap.put(val, idx++);
         }
         return helper(0, inorderArray.length);
     }
