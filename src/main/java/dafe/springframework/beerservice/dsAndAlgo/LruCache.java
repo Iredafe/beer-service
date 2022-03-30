@@ -8,7 +8,7 @@ public class LruCache {
     static int size;
     static DoubleLinkedNode head;
     static DoubleLinkedNode tail;
-    static Map<Integer, DoubleLinkedNode> cache;
+    static Map<Integer, DoubleLinkedNode>  cache  = new HashMap<>();
     static class DoubleLinkedNode{
         int key;
         int value;
@@ -18,7 +18,6 @@ public class LruCache {
 
     public LruCache(int capacity){
         this.capacity = capacity;
-        cache  = new HashMap<>();
         head = new DoubleLinkedNode();
         tail = new DoubleLinkedNode();
         head.next = tail;
