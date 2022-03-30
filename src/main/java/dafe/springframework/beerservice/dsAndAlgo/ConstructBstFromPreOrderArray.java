@@ -7,7 +7,7 @@ import java.util.Map;
 public class ConstructBstFromPreOrderArray {
    static Map<Integer, Integer> idxMap = new HashMap();
    static int preorder[];
-   static int preIdx;
+   static int preIdx=0;
    public static void main(String[] args) {
         int [] preorder = {8,5,1,7,10,12};
 
@@ -26,6 +26,14 @@ public class ConstructBstFromPreOrderArray {
     }
 
     private static TreeNode helper(int leftIndex, int rightIndex) {
+        if(leftIndex == rightIndex) return null;
+
+        int rootVal = preorder[preIdx];
+        TreeNode treeNode = new TreeNode(rootVal);
+
+        int index = idxMap.get(rootVal);
+
+        treeNode.left = helper(leftIndex, index);
 
        return null;
     }
