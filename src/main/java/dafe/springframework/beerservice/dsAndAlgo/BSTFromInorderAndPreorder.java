@@ -14,4 +14,8 @@ public class BSTFromInorderAndPreorder {
 
         return null;
     }
+
+    private static TreeNode buildTree(int index, int preorder[], int [] inorder){
+
+    }
 }
