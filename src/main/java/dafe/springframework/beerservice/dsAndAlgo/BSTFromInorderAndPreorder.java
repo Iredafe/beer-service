@@ -10,12 +10,13 @@ public class BSTFromInorderAndPreorder {
                 + buildTree( preorder, inorder));
     }
 
-    private static TreeNode arraysToTree(int index, int[] preorder, int[] inorder) {
+    private static TreeNode arraysToTree(int left, int right, int[] preorder) {
 
         return null;
     }
 
     private static TreeNode buildTree(int preorder[], int [] inorder){
 
+        return arraysToTree(0, preorder.length-1, inorder);
     }
 }
