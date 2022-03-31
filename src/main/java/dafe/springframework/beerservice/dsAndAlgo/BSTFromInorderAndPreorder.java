@@ -7,15 +7,15 @@ public class BSTFromInorderAndPreorder {
         int [] inorder = {9,3,15,20,7};
 
         System.out.println("This is the binary tree constructed from inorder and preorder arrays : "
-                + arraysToTree(preorder, inorder));
+                + buildTree( preorder, inorder));
     }
 
-    private static TreeNode arraysToTree(int[] preorder, int[] inorder) {
+    private static TreeNode arraysToTree(int index, int[] preorder, int[] inorder) {
 
         return null;
     }
 
-    private static TreeNode buildTree(int index, int preorder[], int [] inorder){
+    private static TreeNode buildTree(int preorder[], int [] inorder){
 
     }
 }
