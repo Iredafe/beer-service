@@ -9,4 +9,9 @@ public class BSTFromInorderAndPreorder {
         System.out.println("This is the binary tree constructed from inorder and preorder arrays : "
                 + arraysToTree(preorder, inorder));
     }
+
+    private static TreeNode arraysToTree(int[] preorder, int[] inorder) {
+
+        return null;
+    }
 }
