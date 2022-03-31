@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class BSTFromInorderAndPreorder {
    static Map<Integer, Integer> map;
+   static int preIdx;
 
     private static TreeNode arraysToTree(int left, int right, int[] preorder) {
 
@@ -13,6 +14,11 @@ public class BSTFromInorderAndPreorder {
 
     private static TreeNode buildTree(int preorder[], int [] inorder){
         map = new HashMap();
+        preIdx = 0;
+
+        for(int i=0; i< inorder.length; i++){
+            map.put(inorder[i], i);
+        }
         return arraysToTree(0, preorder.length-1, inorder);
     }
 
