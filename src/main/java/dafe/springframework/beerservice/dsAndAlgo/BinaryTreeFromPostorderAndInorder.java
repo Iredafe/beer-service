@@ -20,5 +20,8 @@ public class BinaryTreeFromPostorderAndInorder {
         TreeNode tree = new TreeNode(rootVal);
         int index = map.get(rootVal);
         tree.right = arrayToTree(index+1, right, postorder);
+        tree.left = arrayToTree(left, index-1, postorder);
+
+        return tree;
     }
 }
