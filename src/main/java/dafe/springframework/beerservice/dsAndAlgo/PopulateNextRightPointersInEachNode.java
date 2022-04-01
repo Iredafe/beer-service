@@ -9,6 +9,17 @@ public class PopulateNextRightPointersInEachNode {
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
+
+        if(!queue.isEmpty()){
+            int size = queue.size();
+            TreeNode node = queue.poll();
+            for(int i=0; i<size; i++){
+                if(i<size-1){
+                    node.next = queue.peek();
+                    if(node.left!=null) queue.add(node.left);
+                }
+            }
+        }
         return root;
     }
 }

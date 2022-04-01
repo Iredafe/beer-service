@@ -3,6 +3,7 @@ package dafe.springframework.beerservice.dsAndAlgo;
 import java.util.Arrays;
 
 class TreeNode {
+    public TreeNode next;
     int val;
     TreeNode left;
     TreeNode right;
