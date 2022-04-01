@@ -24,4 +24,9 @@ public class BinaryTreeFromPostorderAndInorder {
 
         return tree;
     }
+
+    public static void main(String[] args) {
+        int [] postorder = {};
+        int [] inorder ={9,3,15,20,7};
+    }
 }
