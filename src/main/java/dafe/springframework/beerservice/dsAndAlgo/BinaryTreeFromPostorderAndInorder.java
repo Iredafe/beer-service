@@ -15,7 +15,7 @@ public class BinaryTreeFromPostorderAndInorder {
     }
 
     private static TreeNode arrayToTree(int left, int right, int[] postorder) {
-
+    if(left > right) return null;
         int rootVal = postorder[postIdx--];
         TreeNode tree = new TreeNode(rootVal);
         int index = map.get(rootVal);
@@ -26,7 +26,10 @@ public class BinaryTreeFromPostorderAndInorder {
     }
 
     public static void main(String[] args) {
-        int [] postorder = {};
+        int [] postorder = {9,15,7,20,3};
         int [] inorder ={9,3,15,20,7};
+
+        System.out.println("This is the binary tree from postorder and inorder arrays : " +
+                buildTree(inorder, postorder));
     }
 }
