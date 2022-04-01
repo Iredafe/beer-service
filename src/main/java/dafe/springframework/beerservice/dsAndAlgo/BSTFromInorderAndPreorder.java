@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import com.sun.source.tree.Tree;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,8 +10,15 @@ public class BSTFromInorderAndPreorder {
    static int preIdx;
 
     private static TreeNode arraysToTree(int left, int right, int[] preorder) {
+        if(left > right) return null;
 
-        return null;
+        int rootVal = preorder[preIdx++];
+        TreeNode root = new TreeNode(rootVal);
+        int index = map.get(rootVal);
+
+        root.left = arraysToTree(left, index-1, preorder);
+        root.right = arraysToTree(index+1, right, preorder);
+        return root;
     }
 
     private static TreeNode buildTree(int preorder[], int [] inorder){
