@@ -23,6 +23,9 @@ public class CountUnivalueSubtrees {
         tree.root.left.left = new Tree(5);
         tree.root.left.right = new Tree(5);
         tree.root.right.right = new Tree(5);
+
+
+        System.out.println("This is the number of univalue trees : " + countUniValueSubtrees(tree.root));
     }
 
 }
