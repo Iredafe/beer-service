@@ -22,8 +22,21 @@ public class CountUnivalueSubtrees {
 
     private static boolean isUnivalueSubtree(Tree root){
        if(root.left == null && root.right == null) return true;
-
+       count++;
        boolean isUnivalue = true;
+
+       if(root.left != null){
+           isUnivalue = isUnivalueSubtree(root.left) && isUnivalue && root.left.val == root.val;
+
+       }
+       if(root.right != null){
+           isUnivalue = isUnivalueSubtree(root.right) && isUnivalue && root.right.val == root.val;
+       }
+
+       if(!isUnivalue) return false;
+       count++;
+       return true;
+
     }
 
 
