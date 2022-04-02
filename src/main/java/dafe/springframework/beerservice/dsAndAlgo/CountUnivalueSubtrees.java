@@ -16,7 +16,14 @@ public class CountUnivalueSubtrees {
     }
 
     private static int countUniValueSubtrees(Tree root) {
+
         return 0;
+    }
+
+    private static boolean isUnivalueSubtree(Tree root){
+       if(root.left == null && root.right == null) return true;
+
+       boolean isUnivalue = true;
     }
 
 
