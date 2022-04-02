@@ -20,7 +20,9 @@ public class CountUnivalueSubtrees {
         tree.root = new Tree(5);
         tree.root.left = new Tree(1);
         tree.root.right = new Tree(5);
-
+        tree.root.left.left = new Tree(5);
+        tree.root.left.right = new Tree(5);
+        tree.root.right.right = new Tree(5);
     }
 
 }
