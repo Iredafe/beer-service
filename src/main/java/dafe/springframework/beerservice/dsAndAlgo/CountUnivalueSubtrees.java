@@ -2,6 +2,7 @@ package dafe.springframework.beerservice.dsAndAlgo;
 
 public class CountUnivalueSubtrees {
 
+    static int count=0;
     private Tree root;
 
     static class Tree{
@@ -13,6 +14,11 @@ public class CountUnivalueSubtrees {
             this.val = val;
         }
     }
+
+    private static int countUniValueSubtrees(Tree root) {
+        return 0;
+    }
+
 
     public static void main(String[] args){
 
