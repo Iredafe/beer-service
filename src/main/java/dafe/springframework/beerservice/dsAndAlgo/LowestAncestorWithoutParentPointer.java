@@ -1,5 +1,9 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 public class LowestAncestorWithoutParentPointer {
 
     static TreeNode root;
@@ -16,6 +20,8 @@ public class LowestAncestorWithoutParentPointer {
 
     public TreeNode lowestCommonAncestorWIthoutParentPointer(TreeNode root, TreeNode first, TreeNode second){
 
+        Stack<TreeNode> stack = new Stack();
+        Map<TreeNode, TreeNode> parent = new HashMap();
         return root;
     }
 
