@@ -22,6 +22,10 @@ public class LowestAncestorWithoutParentPointer {
 
         Stack<TreeNode> stack = new Stack();
         Map<TreeNode, TreeNode> parent = new HashMap();
+
+        parent.put(root, null);
+        stack.push(root);
+
         return root;
     }
 
