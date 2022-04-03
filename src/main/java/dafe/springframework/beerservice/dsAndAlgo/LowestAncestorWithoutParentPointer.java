@@ -20,11 +20,21 @@ public class LowestAncestorWithoutParentPointer {
 
     public TreeNode lowestCommonAncestorWIthoutParentPointer(TreeNode root, TreeNode first, TreeNode second){
 
+        if(root == null) return root;
+
         Stack<TreeNode> stack = new Stack();
         Map<TreeNode, TreeNode> parent = new HashMap();
 
         parent.put(root, null);
         stack.push(root);
+
+        while(!parent.containsKey(first) && !parent.containsKey(second)){
+
+            TreeNode node = stack.pop();
+
+        }
+
+
 
         return root;
     }
