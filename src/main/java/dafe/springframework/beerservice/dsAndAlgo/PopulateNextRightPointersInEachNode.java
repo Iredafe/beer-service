@@ -24,4 +24,8 @@ public class PopulateNextRightPointersInEachNode {
         }
         return root;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
