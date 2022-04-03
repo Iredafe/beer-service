@@ -14,6 +14,10 @@ public class LowestAncestorWithoutParentPointer {
     }
 
 
+    public TreeNode lowestCommonAncestorWIthoutParentPointer(TreeNode root, TreeNode first, TreeNode second){
+
+        return root;
+    }
 
 
     //[3,5,1,6,2,0,8,null,null,7,4]
