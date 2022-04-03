@@ -53,6 +53,7 @@ public class CountUnivalueSubtrees {
 
 
         System.out.println("This is the number of univalue trees : " + countUniValueSubtrees(tree.root));
+        System.out.println("This is the number of univalue trees : " + countUniValueSubtrees(tree.root));
     }
 
 }
