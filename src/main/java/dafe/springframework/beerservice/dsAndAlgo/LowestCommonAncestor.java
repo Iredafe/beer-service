@@ -1,8 +1,6 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-import java.util.*;
-
-public class LowestCommonAncestor {
+public class LCAWithoutParentPointer {
 
     private TreeNode root;
     private Node root1;
