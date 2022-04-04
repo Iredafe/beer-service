@@ -74,6 +74,9 @@ public class LowestAncestorWithoutParentPointer {
         lowestAncestorWithoutParentPointer.root.right.left.left = new TreeNode(7);
         lowestAncestorWithoutParentPointer.root.right.left.right = new TreeNode(4);
 
+
+        TreeNode first = lowestAncestorWithoutParentPointer.root.left.left;
+        TreeNode second = lowestAncestorWithoutParentPointer.root.right.left.right;
         System.out.println("This is the LCA : " + lowestAncestorWithoutParentPointer(root,root));
     }
     }
