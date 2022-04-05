@@ -20,7 +20,8 @@ public class LowestCommonManager {
         List<OrgChart> lowestCommonManager;
 
         OrgInfo(int numImportantReports, List<OrgChart> lowestCommonManager){
-
+            this.numImportantReports = numImportantReports;
+            this.lowestCommonManager = lowestCommonManager;
         }
     }
 
