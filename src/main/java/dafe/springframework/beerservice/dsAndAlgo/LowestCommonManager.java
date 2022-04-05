@@ -52,9 +52,9 @@ public class LowestCommonManager {
         return newOrgInfo;
     }
 
-    public static OrgChart getLowestCommonManager(OrgChart topManager, OrgChart reportOne, OrgChart reportTwo){
+    public static char getLowestCommonManager(OrgChart topManager, OrgChart reportOne, OrgChart reportTwo){
 
-        return getOrgInfo(topManager, reportOne, reportTwo).lowestCommonManager;
+        return getOrgInfo(topManager, reportOne, reportTwo).lowestCommonManager.name;
     }
 
     public static void main(String[] args) {
@@ -69,6 +69,8 @@ public class LowestCommonManager {
             OrgChart orgB = new OrgChart('B', Arrays.asList(orgD,orgE));
             OrgChart orgA = new OrgChart('A', Arrays.asList(orgB,orgC));
 
+
+        System.out.println("This is the lowest common manager : " + getLowestCommonManager(orgA, orgE, orgI));
 
     }
 }
