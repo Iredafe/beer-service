@@ -1,9 +1,5 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-import org.aspectj.weaver.ast.Or;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class LowestCommonManager {
@@ -19,9 +15,9 @@ public class LowestCommonManager {
 
     static class OrgInfo{
         int numImportantReports;
-        List<OrgChart> lowestCommonManager;
+        OrgChart lowestCommonManager;
 
-        OrgInfo(int numImportantReports, List<OrgChart> lowestCommonManager){
+        OrgInfo(int numImportantReports, OrgChart lowestCommonManager){
             this.numImportantReports = numImportantReports;
             this.lowestCommonManager = lowestCommonManager;
         }
@@ -48,6 +44,7 @@ public class LowestCommonManager {
 
         OrgChart lowestCommonManager = numImportantReports == 2 ? manager : null;
 
+        OrgInfo newOrgInfo = new OrgInfo(numImportantReports, lowestCommonManager);
         return null;
     }
 
