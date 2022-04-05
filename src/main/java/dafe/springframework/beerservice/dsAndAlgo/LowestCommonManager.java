@@ -27,8 +27,13 @@ public class LowestCommonManager {
         }
     }
 
-    public static OrgInfo getOrgInfo(OrgChart topManager, OrgChart reportOne, OrgChart reportTwo){
+    public static OrgInfo getOrgInfo(OrgChart manager, OrgChart reportOne, OrgChart reportTwo){
+        if(manager == null) return null;
+        int numImportantReports = 0;
 
+        for(OrgChart directReport : manager.directReports){
+
+        }
         return null;
     }
 
