@@ -15,6 +15,15 @@ public class LowestCommonManager {
         }
     }
 
+    static class OrgInfo{
+        int numImportantReports;
+        List<OrgChart> lowestCommonManager;
+
+        OrgInfo(int numImportantReports, List<OrgChart> lowestCommonManager){
+
+        }
+    }
+
     public static void main(String[] args) {
 
     }
