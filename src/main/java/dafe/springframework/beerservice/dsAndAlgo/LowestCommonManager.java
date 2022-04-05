@@ -27,6 +27,11 @@ public class LowestCommonManager {
         }
     }
 
+    public static OrgInfo getOrgInfo(OrgChart topManager, OrgChart reportOne, OrgChart reportTwo){
+
+        return null;
+    }
+
     public static void main(String[] args) {
 
     }
