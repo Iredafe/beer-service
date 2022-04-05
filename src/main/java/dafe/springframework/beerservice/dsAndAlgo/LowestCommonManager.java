@@ -24,7 +24,7 @@ public class LowestCommonManager {
     }
 
     public static OrgInfo getOrgInfo(OrgChart manager, OrgChart reportOne, OrgChart reportTwo){
-        if(manager == null) return null;
+
         int numImportantReports = 0;
 
         for(OrgChart directReport : manager.directReports) {
@@ -45,7 +45,12 @@ public class LowestCommonManager {
         OrgChart lowestCommonManager = numImportantReports == 2 ? manager : null;
 
         OrgInfo newOrgInfo = new OrgInfo(numImportantReports, lowestCommonManager);
-        return null;
+        return newOrgInfo;
+    }
+
+    public static OrgChart getLowestCommonManager(OrgChart topManager, OrgChart reportOne, OrgChart reportTwo){
+
+        return getOrgInfo(topManager, reportOne, reportTwo).lowestCommonManager;
     }
 
     public static void main(String[] args) {
