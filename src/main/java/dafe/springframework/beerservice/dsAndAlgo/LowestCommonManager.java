@@ -1,7 +1,10 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
-public class LowestCommonManager {
+import java.util.List;
 
+public class LowestCommonManager {
+    static char name;
+    static List<OrgChart> directReports;
     static class OrgChart {
 
     }
