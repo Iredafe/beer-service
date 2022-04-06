@@ -29,6 +29,11 @@ public class InterweavingStrings {
         return true;
     }
 
+    public static boolean areInterwovenCached(String first, String second, String third, int i, int j, Boolean cache[][]){
+
+        return true;
+    }
+
     public static void main(String[] args) {
         String one = "algoexpert";
         String two ="your-dream-job";
