@@ -32,8 +32,10 @@ public class InterweavingStrings {
     }
 
     public static boolean areInterwovenCached(String first, String second, String third, int i, int j, Boolean cache[][]){
-        int k = i+j;
 
+        if(cache[i][j] != null) return false;
+
+        int k = i+j;
         if(k == third.length()) return true;
 
         if(i<first.length() && first.charAt(i)==third.charAt(k)){
@@ -42,7 +44,7 @@ public class InterweavingStrings {
         }
 
         if(j<second.length() && second.charAt(j)==third.charAt(k)){
-            cache[i][j] = areInterwovenCached(first, second, third, i, j, cache);
+            cache[i][j] = areInterwovenCached(first, second, third, i, j+1, cache);
             return cache[i][j];
         }
 
@@ -57,6 +59,8 @@ public class InterweavingStrings {
 
         System.out.println("These two strings can be interwoven into the third : " +
                 isInterveavingStringRecursion(one,two,three));
+System.out.println("These two strings can be interwoven into the third using cache: " +
+        isInterweavingStringCache(one,two,three));
     }
 
 }
