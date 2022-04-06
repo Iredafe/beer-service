@@ -25,8 +25,10 @@ public class InterweavingStrings {
 
 
     public static boolean isInterweavingStringCache(String first, String second, String third){
+        if(third.length() != first.length()+second.length()) return false;
 
-        return true;
+        Boolean [][] cache = new Boolean[first.length()+1][second.length()+1];
+        return areInterwovenCached(first,second,third,0,0,cache);
     }
 
     public static boolean areInterwovenCached(String first, String second, String third, int i, int j, Boolean cache[][]){
