@@ -40,7 +40,14 @@ public class InterweavingStrings {
             cache[i][j]=(areInterwovenCached(first,second,third, i+1, j, cache));
             if(cache[i][j]) return true;
         }
-        return true;
+
+        if(j<second.length() && second.charAt(j)==third.charAt(k)){
+            cache[i][j] = areInterwovenCached(first, second, third, i, j, cache);
+            return cache[i][j];
+        }
+
+        cache[i][j] = false;
+        return false;
     }
 
     public static void main(String[] args) {
