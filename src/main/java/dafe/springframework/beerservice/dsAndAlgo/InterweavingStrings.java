@@ -23,6 +23,12 @@ public class InterweavingStrings {
         return false;
     }
 
+
+    public static boolean isInterweavingStringCache(String first, String second, String third){
+
+        return true;
+    }
+
     public static void main(String[] args) {
         String one = "algoexpert";
         String two ="your-dream-job";
