@@ -23,7 +23,21 @@ public class AmbigousMeasurements {
         }
         boolean canMeasure = false;
 
-        return true;
+        for(int [] cup : measuringCups){
+            int cupLow = cup[0];
+            int cupHigh = cup[1];
+
+            if(low <= cupLow && cupHigh <= high){
+                canMeasure = true;
+            }
+
+            int newLow = Math.max(0, low - cupLow);
+            int newHigh = Math.max(0, high-cupHigh);
+
+            return canMeasureInRange(measuringCups, newLow, newHigh, memo);
+        }
+            memo.put(memoizeKey, canMeasure);
+        return canMeasure;
     }
 
     public static String createMemoizeKey(int low, int high){
