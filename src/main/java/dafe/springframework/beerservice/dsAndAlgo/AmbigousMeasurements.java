@@ -14,5 +14,7 @@ public class AmbigousMeasurements {
         {800, 850}};
         int low = 2100;
         int high = 2300;
+
+        System.out.println("These measuring cups can be measured ? " + ambiguousMeasurements(measuringCups, low, high));
     }
 }
