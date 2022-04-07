@@ -29,14 +29,16 @@ public class AmbigousMeasurements {
 
             if(low <= cupLow && cupHigh <= high){
                 canMeasure = true;
+                break;
             }
 
             int newLow = Math.max(0, low - cupLow);
             int newHigh = Math.max(0, high-cupHigh);
 
-            return canMeasureInRange(measuringCups, newLow, newHigh, memo);
+            canMeasure = canMeasureInRange(measuringCups, newLow, newHigh, memo);
+            if (canMeasure) break;
         }
-            memo.put(memoizeKey, canMeasure);
+        memo.put(memoizeKey, canMeasure);
         return canMeasure;
     }
 
