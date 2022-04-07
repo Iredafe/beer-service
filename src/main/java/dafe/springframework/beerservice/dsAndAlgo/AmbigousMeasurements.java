@@ -11,8 +11,23 @@ public class AmbigousMeasurements {
     }
 
     public static boolean canMeasureInRange(int[][] measuringCups, int low, int high, HashMap<String, Boolean> memo){
+        String memoizeKey = createMemoizeKey(low, high);
+        if(memo.containsKey(memoizeKey)){
+            return memo.get(memoizeKey);
+        }
+
+        //base case
+
+        if(low <=0 && high <=0){
+            return false;
+        }
+        boolean canMeasure = false;
 
         return true;
+    }
+
+    public static String createMemoizeKey(int low, int high){
+     return low + ":" + high;
     }
 
     public static void main(String[] args) {
