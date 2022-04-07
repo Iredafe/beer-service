@@ -1,12 +1,19 @@
 package dafe.springframework.beerservice.dsAndAlgo;
 
+import java.util.HashMap;
+
 public class AmbigousMeasurements {
 
     public static boolean ambiguousMeasurements(int [][] measuringCups, int low, int high){
 
-        return true;
+        HashMap<String, Boolean> memoization = new HashMap();
+        return canMeasureInRange(measuringCups, low, high, memoization);
     }
 
+    public static boolean canMeasureInRange(int[][] measuringCups, int low, int high, HashMap<String, Boolean> memo){
+
+        return true;
+    }
 
     public static void main(String[] args) {
         int[][] measuringCups = {{200, 210},
