@@ -10,6 +10,11 @@ public class GenerateDivTags {
         return matchedDivTags;
     }
 
+    private static void generateTagsFromPrefix(int openingTagsLeft, int closingTagsLeft, String prefix, ArrayList<String> result) {
+
+
+    }
+
     public static void main(String[] args) {
         int numberOfTags = 3;
 
