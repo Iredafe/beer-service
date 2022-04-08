@@ -16,6 +16,10 @@ public class GenerateDivTags {
             generateTagsFromPrefix(openingTagsLeft-1, closingTagsLeft, newPrefix, result);
         }
 
+        if(openingTagsLeft<closingTagsLeft){
+            String newPrefix = prefix + "</div>";
+            generateTagsFromPrefix(openingTagsLeft, closingTagsLeft, newPrefix, result);
+        }
 
 
     }
