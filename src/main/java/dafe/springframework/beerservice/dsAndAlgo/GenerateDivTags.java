@@ -10,7 +10,10 @@ public class GenerateDivTags {
         return matchedDivTags;
     }
 
-    private static void generateTagsFromPrefix(int openingTagsLeft, int closingTagsLeft, String prefix, ArrayList<String> result) {
+    private static void generateTagsFromPrefix(int openingTagsLeft,
+                                               int closingTagsLeft,
+                                               String prefix,
+                                               ArrayList<String> result) {
         if(openingTagsLeft > 0){
             String newPrefix = prefix+"<div>";
             generateTagsFromPrefix(openingTagsLeft-1, closingTagsLeft, newPrefix, result);
@@ -21,7 +24,9 @@ public class GenerateDivTags {
             generateTagsFromPrefix(openingTagsLeft, closingTagsLeft, newPrefix, result);
         }
 
-
+        if(closingTagsLeft==0){
+            result.add(prefix);
+        }
     }
 
     public static void main(String[] args) {
