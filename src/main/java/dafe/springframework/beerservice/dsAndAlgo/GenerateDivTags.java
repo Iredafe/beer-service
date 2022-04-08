@@ -5,8 +5,9 @@ import java.util.ArrayList;
 public class GenerateDivTags {
 
     private static ArrayList<String> generateDivTags(int numberOfTags) {
-
-        return null;
+        ArrayList<String> matchedDivTags = new ArrayList<>();
+        generateTagsFromPrefix(numberOfTags, numberOfTags, "", matchedDivTags);
+        return matchedDivTags;
     }
 
     public static void main(String[] args) {
