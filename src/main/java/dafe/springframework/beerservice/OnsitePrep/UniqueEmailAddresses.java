@@ -7,7 +7,7 @@ public class UniqueEmailAddresses {
 
 
     private static int uniqueEmailAddress(String[] emails) {
-        Set<String> uniqueEmails = new HashSet<>();
+        Set<StringBuilder> uniqueEmails = new HashSet<>();
         StringBuilder cleanEmail = new StringBuilder();
         StringBuilder domainName = new StringBuilder();
         for(String email : emails){
@@ -23,10 +23,12 @@ public class UniqueEmailAddresses {
                  break;
             }
             domainName.reverse();
+            cleanEmail.append(domainName);
+            uniqueEmails.add(cleanEmail);
         }
 
 
-        return 0;
+        return uniqueEmails.size();
     }
     public static void main(String[] args) {
         String [] emails = {"test.email+alex@leetcode.com",
