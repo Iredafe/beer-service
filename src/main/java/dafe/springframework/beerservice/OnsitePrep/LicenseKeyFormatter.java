@@ -15,9 +15,13 @@ public class LicenseKeyFormatter {
             }
             if(k==0 && i!=0){
                 mutableString.append('-');
+                k=temp;
             }
-        }
 
+            while(mutableString.charAt(0) == '-') mutableString.substring(1);
+        }
+            String result = mutableString.reverse().toString();
+        return result;
     }
 
 
