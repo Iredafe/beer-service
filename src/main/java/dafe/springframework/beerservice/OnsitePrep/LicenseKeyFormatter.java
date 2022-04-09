@@ -1,6 +1,25 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.Locale;
+
 public class LicenseKeyFormatter {
+    private static String licenseKeyFormatter(String string, int k) {
+        StringBuilder mutableString = new StringBuilder();
+        int temp = k;
+        string = string.toUpperCase();
+        for(int i=0; i<string.length(); i++){
+            char character = string.charAt(i);
+            if(k>0 && string.charAt(i) != '-'){
+                k=temp;
+                mutableString.append(character);
+            }
+            if(k==0 && i!=0){
+                mutableString.append('-');
+            }
+        }
+
+    }
+
 
 
     public static void main(String[] args) {
@@ -9,4 +28,5 @@ public class LicenseKeyFormatter {
 
         System.out.println("Format license key : " + licenseKeyFormatter(input1, k1));
     }
+
 }
