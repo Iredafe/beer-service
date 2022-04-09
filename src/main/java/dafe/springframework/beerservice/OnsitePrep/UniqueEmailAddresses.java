@@ -9,12 +9,16 @@ public class UniqueEmailAddresses {
     private static int uniqueEmailAddress(String[] emails) {
         Set<String> uniqueEmails = new HashSet<>();
         StringBuilder cleanEmail = new StringBuilder();
-
+        StringBuilder domainName = new StringBuilder();
         for(String email : emails){
             for (int i=0; i< email.length(); i++){
                 char currentCharacter = email.charAt(i);
                 if(currentCharacter == '@' || currentCharacter == '+') break;
+                if(currentCharacter!='.') cleanEmail.append(currentCharacter);
             }
+
+
+            if()
         }
 
 
