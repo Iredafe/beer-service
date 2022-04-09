@@ -7,20 +7,20 @@ public class LicenseKeyFormatter {
         StringBuilder mutableString = new StringBuilder();
         int temp = k;
         string = string.toUpperCase();
-        for(int i=0; i<string.length(); i++){
+        for(int i=string.length()-1; i>=0; i--){
             char character = string.charAt(i);
-            if(k>0 && string.charAt(i) != '-'){
-                k=temp;
+            if(k>0 && character != '-'){
                 mutableString.append(character);
+                k--;
             }
             if(k==0 && i!=0){
                 mutableString.append('-');
                 k=temp;
             }
 
-            while(mutableString.charAt(0) == '-') mutableString.substring(1);
         }
-            String result = mutableString.reverse().toString();
+        String result = mutableString.reverse().toString();
+        while(mutableString.charAt(0) == '-') mutableString.substring(1);
         return result;
     }
 
