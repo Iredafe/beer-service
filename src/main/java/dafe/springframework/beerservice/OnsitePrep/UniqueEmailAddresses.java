@@ -1,9 +1,22 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class UniqueEmailAddresses {
 
 
     private static int uniqueEmailAddress(String[] emails) {
+        Set<String> uniqueEmails = new HashSet<>();
+        StringBuilder cleanEmail = new StringBuilder();
+
+        for(String email : emails){
+            for (int i=0; i< email.length(); i++){
+                char currentCharacter = email.charAt(i);
+                if(currentCharacter == '@' || currentCharacter == '+') break;
+            }
+        }
+
 
         return 0;
     }
