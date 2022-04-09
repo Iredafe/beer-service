@@ -17,8 +17,12 @@ public class UniqueEmailAddresses {
                 if(currentCharacter!='.') cleanEmail.append(currentCharacter);
             }
 
-
-            if()
+            for(int i=email.length()-1; i>=0; i--){
+                char currentChar = email.charAt(i);
+                if(currentChar != '@') domainName.append(currentChar);
+                 break;
+            }
+            domainName.reverse();
         }
 
 
