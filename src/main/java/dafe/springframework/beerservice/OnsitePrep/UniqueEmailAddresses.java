@@ -7,11 +7,12 @@ public class UniqueEmailAddresses {
 
 
     private static int uniqueEmailAddress(String[] emails) {
-        Set<StringBuilder> uniqueEmails = new HashSet<>();
-        StringBuilder cleanEmail = new StringBuilder();
-        StringBuilder domainName = new StringBuilder();
-        for(String email : emails){
-            for (int i=0; i< email.length(); i++){
+        Set<String> uniqueEmails = new HashSet<>();
+         for(String email : emails){
+             StringBuilder cleanEmail = new StringBuilder();
+             StringBuilder domainName = new StringBuilder();
+
+             for (int i=0; i< email.length(); i++){
                 char currentCharacter = email.charAt(i);
                 if(currentCharacter == '@' || currentCharacter == '+') break;
                 if(currentCharacter!='.') cleanEmail.append(currentCharacter);
@@ -19,12 +20,12 @@ public class UniqueEmailAddresses {
 
             for(int i=email.length()-1; i>=0; i--){
                 char currentChar = email.charAt(i);
-                if(currentChar != '@') domainName.append(currentChar);
-                 break;
+                domainName.append(currentChar);
+                if(currentChar == '@')  break;
             }
-            domainName.reverse();
+            domainName=domainName.reverse();
             cleanEmail.append(domainName);
-            uniqueEmails.add(cleanEmail);
+            uniqueEmails.add(cleanEmail.toString());
         }
 
 
