@@ -21,7 +21,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
 
     public static void main(String[] args) {
-        String string = "abcabcbb";
+        String string = "pwwkew";
         System.out.println("This is the length of longest non-repeating substring : " + longestSubstring(string));
     }
 }
