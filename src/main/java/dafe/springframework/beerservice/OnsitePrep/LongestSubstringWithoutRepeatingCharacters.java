@@ -11,11 +11,13 @@ public class LongestSubstringWithoutRepeatingCharacters {
         while(right < input.length()){
             char character = input.charAt(right);
             if(slidingWindow.contains(character)){
+                slidingWindow.remove(input.charAt(left));
                 left++;
+            }else{
+                slidingWindow.add(character);
+                maxLength = Math.max(maxLength, right-left+1);
+                right++;
             }
-            slidingWindow.add(character);
-            maxLength = Math.max(maxLength, right-left+1);
-            right++;
         }
         return maxLength;
     }
