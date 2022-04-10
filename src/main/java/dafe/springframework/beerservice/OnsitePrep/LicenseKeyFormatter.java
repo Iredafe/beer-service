@@ -38,9 +38,10 @@ public class LicenseKeyFormatter {
                 count=0;
             }
 
-
+            sb.append(character);
+            count++;
         }
-
+        return sb.reverse().toString();
     }
 
 
