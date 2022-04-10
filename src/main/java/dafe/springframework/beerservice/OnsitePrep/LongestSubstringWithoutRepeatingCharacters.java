@@ -5,6 +5,13 @@ import java.util.Map;
 
 public class LongestSubstringWithoutRepeatingCharacters {
 
-    int left=0; int right=0; int maxLength=0;
-    Map<Character, Integer> slidingWindow = new HashMap();
+    public static int longestSubstring(String input){
+        int left=0; int right=0; int maxLength=0;
+        Map<Character, Integer> slidingWindow = new HashMap();
+        while(right < input.length()){
+
+        }
+
+        return maxLength;
+    }
 }
