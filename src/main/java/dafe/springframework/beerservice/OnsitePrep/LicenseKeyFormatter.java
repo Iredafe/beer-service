@@ -28,6 +28,11 @@ public class LicenseKeyFormatter {
     private static String formatLicenseKey(String string, int k) {
 
         StringBuilder sb = new StringBuilder();
+        int count = 0;
+        string = string.toUpperCase();
+        for(int i=string.length()-1; i>=0; i--){
+
+        }
 
     }
 
