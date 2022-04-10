@@ -14,10 +14,14 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 left++;
             }
             slidingWindow.add(character);
-            right++;
             maxLength = Math.max(maxLength, right-left+1);
+            right++;
         }
-
         return maxLength;
+    }
+
+    public static void main(String[] args) {
+        String string = "abcabcbb";
+        System.out.println("This is the length of longest non-repeating substring : " + longestSubstring(string));
     }
 }
