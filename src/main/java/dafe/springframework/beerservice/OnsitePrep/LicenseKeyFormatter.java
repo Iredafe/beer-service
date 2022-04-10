@@ -50,6 +50,8 @@ public class LicenseKeyFormatter {
         String input2 = "2-5g-3-J"; int k2 = 2;
 
         System.out.println("Format license key : " + licenseKeyFormatter(input1, k1));
+        System.out.println("Format license key : " + formatLicenseKey(input1, k1));
+        System.out.println("Format license key : " + formatLicenseKey(input2, k2));
     }
 
 }
