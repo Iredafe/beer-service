@@ -31,6 +31,13 @@ public class LicenseKeyFormatter {
         int count = 0;
         string = string.toUpperCase();
         for(int i=string.length()-1; i>=0; i--){
+            char character = string.charAt(i);
+            if(character == '-') continue;
+            if(count == k) {
+                sb.append('-');
+                count=0;
+            }
+
 
         }
 
