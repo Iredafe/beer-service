@@ -7,7 +7,7 @@ public class SimplifyPath {
 
     public static void main(String[] args) {
         String directory = "/foo/../test/../test/../foo//bar/./baz";
-        String path = "/../../foo/bar/baz";
+        String path = "foo/bar/baz";
         System.out.println("This is the simplified version of the directory you entered : " + simplifyPath(directory));
         System.out.println("This is the simplified version of the directory you entered : " + simplifyPath(path));
     }
@@ -18,8 +18,9 @@ public class SimplifyPath {
 
         for(String directory : directories){
 
-            if(directory.equals(".") || directory.equals("")) continue;
-            if(directory.equals("..")){
+            if(directory.equals(".") || directory.equals("")) {
+            }
+            else if(directory.equals("..")){
                 if(!stack.isEmpty()) stack.pop();
             }else{
                 stack.push(directory);
