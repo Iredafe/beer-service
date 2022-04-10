@@ -1,9 +1,16 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FruitsIntoBasket {
 
     public static int fruitIntoBasket(int [] array){
+        int left = 0;
+        int right = 0;
+        int max = 0;
 
+        Map<Integer, Integer> map = new HashMap();
         return 0;
     }
 
