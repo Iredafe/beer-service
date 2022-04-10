@@ -7,7 +7,7 @@ import java.util.Map;
 public class LongestSubstringWithAtMost2RepeatingCharacters {
 
 
-    private static String longestSubstringWith2RepeatingCharacters(String string) {
+    private static int longestSubstringWith2RepeatingCharacters(String string) {
 
         int left = 0;
         int right = 0;
@@ -26,7 +26,7 @@ public class LongestSubstringWithAtMost2RepeatingCharacters {
             maxLength = Math.max(maxLength, right-left-1);
             right++;
         }
-        return "";
+        return maxLength;
     }
 
     public static void main(String[] args) {
