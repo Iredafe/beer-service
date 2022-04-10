@@ -22,8 +22,9 @@ public class FruitsIntoBasket {
                 left = smallestIndex+1;
             }
             max = Math.max(max, right-left+1);
+            right++;
         }
-        return 0;
+        return max;
     }
 
     public static void main(String[] args) {
