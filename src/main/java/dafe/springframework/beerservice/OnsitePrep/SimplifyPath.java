@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.Stack;
+
 public class SimplifyPath {
 
 
@@ -10,8 +12,23 @@ public class SimplifyPath {
     }
 
     private static String simplifyPath(String path) {
+        Stack<String> stack = new Stack();
+        String [] directories = path.split("/");
 
+        for(String directory : directories){
 
-    return "";
+            if(directory.equals(".") || directory.equals("")) continue;
+            if(directory.equals("..")){
+                if(!stack.isEmpty()) stack.pop();
+            }else{
+                stack.push(directory);
+            }
+        }
+        StringBuilder result = new StringBuilder();
+        for(String pathFragment : stack){
+            result.append("/");
+            result.append(pathFragment);
+        }
+        return result.length() > 0 ? result.toString() : "/";
     }
 }
