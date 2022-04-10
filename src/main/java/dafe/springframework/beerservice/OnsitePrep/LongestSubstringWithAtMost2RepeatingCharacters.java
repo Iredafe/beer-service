@@ -23,7 +23,7 @@ public class LongestSubstringWithAtMost2RepeatingCharacters {
                 map.remove(string.charAt(smallestIndex));
                 left = smallestIndex+1;
             }
-            maxLength = Math.max(maxLength, right-left-1);
+            maxLength = Math.max(maxLength, right-left+1);
             right++;
         }
         return maxLength;
