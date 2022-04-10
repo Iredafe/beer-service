@@ -1,10 +1,17 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LongestSubstringWithAtMost2RepeatingCharacters {
 
 
     private static String longestSubstringWith2RepeatingCharacters(String string) {
 
+        int left = 0;
+        int right = 0;
+        int maxLength=0;
+        Map<Character, Integer> map = new HashMap();
         return "";
     }
 
