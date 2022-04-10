@@ -20,8 +20,11 @@ public class LongestSubstringWithAtMost2RepeatingCharacters {
 
             if(map.size() == 3){
                 int smallestIndex = Collections.min(map.values());
-                map.remove()
+                map.remove(string.charAt(smallestIndex));
+                left = smallestIndex+1;
             }
+            maxLength = Math.max(maxLength, right-left-1);
+            right++;
         }
         return "";
     }
