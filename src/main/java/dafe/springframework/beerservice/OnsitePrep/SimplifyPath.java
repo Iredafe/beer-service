@@ -8,4 +8,10 @@ public class SimplifyPath {
 
         System.out.println("This is the simplified version of the directory you entered : " + simplifyPath(directory));
     }
+
+    private static String simplifyPath(String path) {
+
+
+    return "";
+    }
 }
