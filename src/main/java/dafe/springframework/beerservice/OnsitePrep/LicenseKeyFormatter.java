@@ -27,21 +27,21 @@ public class LicenseKeyFormatter {
     }
     private static String formatLicenseKey(String string, int k) {
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder mutableString = new StringBuilder();
         int count = 0;
         string = string.toUpperCase();
         for(int i=string.length()-1; i>=0; i--){
             char character = string.charAt(i);
             if(character == '-') continue;
             if(count == k) {
-                sb.append('-');
+                mutableString.append('-');
                 count=0;
             }
 
-            sb.append(character);
+            mutableString.append(character);
             count++;
         }
-        return sb.reverse().toString();
+        return mutableString.reverse().toString();
     }
 
 
