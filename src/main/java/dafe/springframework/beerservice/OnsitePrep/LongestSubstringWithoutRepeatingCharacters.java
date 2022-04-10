@@ -10,9 +10,12 @@ public class LongestSubstringWithoutRepeatingCharacters {
         Set<Character> slidingWindow = new HashSet<>();
         while(right < input.length()){
             char character = input.charAt(right);
-            if(slidingWindow.containsKey(character)){
-
+            if(slidingWindow.contains(character)){
+                left++;
             }
+            slidingWindow.add(character);
+            right++;
+            maxLength = Math.max(maxLength, right-left+1);
         }
 
         return maxLength;
