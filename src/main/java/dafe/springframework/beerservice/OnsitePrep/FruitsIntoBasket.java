@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +12,17 @@ public class FruitsIntoBasket {
         int max = 0;
 
         Map<Integer, Integer> map = new HashMap();
+
+        while(right < array.length){
+            map.put(array[right], right);
+
+            if(map.size()==3){
+                int smallestIndex = Collections.min(map.values());
+                map.remove(array[smallestIndex]);
+                left = smallestIndex+1;
+            }
+            max = Math.max(max, right-left+1);
+        }
         return 0;
     }
 
