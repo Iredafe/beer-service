@@ -23,12 +23,26 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
 
     public static String longestSubstringWithoutRepeatingCharacters(String input){
+        Set<Character> slidingWindow = new HashSet();
+        int left=0; int right=0; int max =0;
 
-        return "";
+        while(right<input.length()){
+            if(slidingWindow.contains(input.charAt(right))){
+                slidingWindow.remove(input.charAt(left));
+                left++;
+            }else{
+                slidingWindow.add(input.charAt(right));
+                max = Math.max(max, right-left+1);
+                right++;
+            }
+        }
+        return input.substring(left, max);
     }
 
     public static void main(String[] args) {
         String string = "pwwkew";
         System.out.println("This is the length of longest non-repeating substring : " + longestSubstring(string));
+        System.out.println("This is the length of longest non-repeating substring : "
+                + longestSubstringWithoutRepeatingCharacters(string));
     }
 }
