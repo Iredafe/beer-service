@@ -19,6 +19,14 @@ public class ThreeSum {
         return result;
     }
 
+    public static void twoSum(int index, int[] array, List<List> resultList){
+        int low = index+1; int high = array.length-1;
+
+        while(low<high){
+
+        }
+    }
+
     public static void main(String[] args) {
         int array[] = {-1,0,1,2,-1,-4};
         System.out.println("These are the 3 numbers that sum up to zero: " + threeSum(array));
