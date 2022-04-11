@@ -41,12 +41,15 @@ public class ThreeSum {
         }
     }
 
-    public static List<List<Integer>> threeSumHashSet(int [] array){
+    public static List<List<Integer>> threeSumWithHashSet(int [] array){
         List<List<Integer>> result = new ArrayList<>();
          Arrays.sort(array);
          for(int i=0; i<array.length && array[i] <=0; i++){
-
+                if(i==0||array[i]!=array[i-1]) {
+                    twoSumWithHashSet(i, array, result);
+                }
          }
+         return result;
     }
     public static void main(String[] args) {
         int array[] = {-1,0,1,2,-1,-4};
