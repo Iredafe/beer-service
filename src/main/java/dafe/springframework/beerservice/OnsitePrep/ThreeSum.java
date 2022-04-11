@@ -23,7 +23,16 @@ public class ThreeSum {
         int low = index+1; int high = array.length-1;
 
         while(low<high){
-
+            int sum = array[index] + array[low] + array[high];
+            if(sum < 0) {
+                low++;
+            }
+            else if(sum>0) {
+                high--;
+            }
+            else{
+             resultList.add(Arrays.asList(array[index], array[low], array[high]));
+            }
         }
     }
 
