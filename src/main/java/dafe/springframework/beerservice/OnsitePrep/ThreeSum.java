@@ -19,7 +19,7 @@ public class ThreeSum {
         return result;
     }
 
-    public static void twoSum(int index, int[] array, List<List> resultList){
+    public static void twoSum(int index, int[] array, List<List<Integer>> resultList){
         int low = index+1; int high = array.length-1;
 
         while(low<high){
@@ -32,6 +32,11 @@ public class ThreeSum {
             }
             else{
              resultList.add(Arrays.asList(array[index], array[low], array[high]));
+             low++;
+             high--;
+             while(low<high && array[low] == array[low-1]){
+                 low++;
+             }
             }
         }
     }
