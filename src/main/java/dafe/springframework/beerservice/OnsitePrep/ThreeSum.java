@@ -1,8 +1,6 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ThreeSum {
 
@@ -51,6 +49,23 @@ public class ThreeSum {
          }
          return result;
     }
+
+    public static void twoSumWithHashSet(int index, int nums[], List<List<Integer>> listOfIntegers){
+        Set<Integer> seen = new HashSet<>();
+
+        for(int j = index+1; j<nums.length; j++){
+            int complement = -nums[index] - nums[j];
+            if(seen.contains(complement)){
+                listOfIntegers.add(Arrays.asList(nums[index], nums[j], complement));
+                while(j+1 < nums.length && nums[j] == nums[j-1]) {
+                    j++;
+                }
+            }else{
+                seen.add(nums[j]);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int array[] = {-1,0,1,2,-1,-4};
         System.out.println("These are the 3 numbers that sum up to zero: " + threeSum(array));
