@@ -9,4 +9,12 @@ public class RotateImage {
 
         return matrix;
     }
+
+    public static void transpose(int [][] matrix){
+        for(int i=0; i< matrix.length; i++){
+            for(int j=i; j<matrix.length; j++){
+
+            }
+        }
+    }
 }
