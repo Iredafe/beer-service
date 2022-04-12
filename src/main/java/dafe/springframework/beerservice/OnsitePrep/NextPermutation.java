@@ -4,6 +4,13 @@ public class NextPermutation {
 
     public static int[] findNextPermutation(int [] inputArray){
         int i = inputArray.length - 2;
+
+        while(i>=0 && inputArray[i+1] < inputArray[i]){
+            i--;
+        }
+        if(i>=0){
+            int j = inputArray.length-1;
+        }
         return new int[]{};
     }
 
