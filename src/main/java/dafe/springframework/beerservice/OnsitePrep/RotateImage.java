@@ -4,6 +4,9 @@ public class RotateImage {
 
     public static int[][] rotataImage(int [][] matrix){
 
-        return null;
+        transpose(matrix);
+        reverse(matrix);
+
+        return matrix;
     }
 }
