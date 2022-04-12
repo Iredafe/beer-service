@@ -18,6 +18,12 @@ public class NextPermutation {
         return new int[]{};
     }
 
+    private static void swap(int [] nums, int i, int j){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
     public static void main(String[] args) {
         int [] array = {1,2,3};
 
