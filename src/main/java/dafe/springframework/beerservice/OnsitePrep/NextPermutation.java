@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.Arrays;
+
 public class NextPermutation {
 
     public static int[] findNextPermutation(int [] inputArray){
@@ -15,12 +17,12 @@ public class NextPermutation {
             }
             swap(inputArray, i, j);
         }
-        reverse(inputArray, i+1);
+        reverse(inputArray, i);
         return inputArray;
     }
 
     private static void reverse(int [] array, int start){
-        int i=start; int j=array.length-1;
+        int i=start+1; int j=array.length-1;
         swap(array, i, j);
     }
 
@@ -33,6 +35,6 @@ public class NextPermutation {
     public static void main(String[] args) {
         int [] array = {1,2,3};
 
-        System.out.println("This is the next permutation : " + findNextPermutation(array));
+        System.out.println("This is the next permutation : " + Arrays.toString(findNextPermutation(array)));
     }
 }
