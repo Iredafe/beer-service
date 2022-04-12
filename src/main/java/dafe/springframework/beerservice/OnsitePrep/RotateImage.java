@@ -19,4 +19,16 @@ public class RotateImage {
             }
         }
     }
+
+    public static void reverse(int [][]matrix){
+        for(int i=0; i<matrix.length; i++){
+            int start = i; int end = matrix.length-1;
+
+            while(start<=end){
+                int temp = matrix[i][start];
+                matrix[i][start] = matrix[i][end];
+                matrix[i][end] = temp;
+            }
+        }
+    }
 }
