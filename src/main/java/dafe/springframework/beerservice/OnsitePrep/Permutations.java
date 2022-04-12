@@ -15,6 +15,14 @@ public class Permutations {
         return result;
     }
 
+    public static void getAllPermutations(List<Integer> inputList, List<List<Integer>> permutations, int position){
+
+        if(position == inputList.size()-1){
+            permutations.add(new ArrayList<>(inputList));
+        }
+    }
+
+
     public static void main(String[] args) {
         int [] nums = {1,2,3};
         System.out.println("These are the permutations : " + permute(nums));
