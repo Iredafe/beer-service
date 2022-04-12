@@ -10,6 +10,10 @@ public class NextPermutation {
         }
         if(i>=0){
             int j = inputArray.length-1;
+            while(inputArray[j] < inputArray[i]){
+                j--;
+            }
+            swap(inputArray, i, j);
         }
         return new int[]{};
     }
