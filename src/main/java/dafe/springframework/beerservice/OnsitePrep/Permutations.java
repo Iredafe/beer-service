@@ -19,6 +19,12 @@ public class Permutations {
 
         if(position == inputList.size()-1){
             permutations.add(new ArrayList<>(inputList));
+        }else{
+            for(int currentIndex = position; currentIndex<inputList.size(); currentIndex++){
+                swap(inputList, currentIndex, position);
+                getAllPermutations(inputList, permutations, position+1);
+                swap(inputList, currentIndex, position);
+            }
         }
     }
 
