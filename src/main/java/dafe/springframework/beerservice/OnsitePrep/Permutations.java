@@ -28,6 +28,12 @@ public class Permutations {
         }
     }
 
+    private static void swap(List<Integer> array, int i, int j){
+        int temp = array.get(i);
+        array.set(i, array.get(j));
+        array.set(j, temp);
+    }
+
 
     public static void main(String[] args) {
         int [] nums = {1,2,3};
