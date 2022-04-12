@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.Arrays;
+
 public class RotateImage {
 
     public static int[][] rotataImage(int [][] matrix){
@@ -22,13 +24,21 @@ public class RotateImage {
 
     public static void reverse(int [][]matrix){
         for(int i=0; i<matrix.length; i++){
-            int start = i; int end = matrix.length-1;
+            int start = 0; int end = matrix.length-1;
 
             while(start<=end){
                 int temp = matrix[i][start];
                 matrix[i][start] = matrix[i][end];
                 matrix[i][end] = temp;
+                start++;
+                end--;
             }
         }
+    }
+
+    public static void main(String[] args) {
+        int [][] image = {{1,2,3},{4,5,6},{7,8,9}};
+
+        System.out.println("This is the rotated image : " + Arrays.deepToString(rotataImage(image)));
     }
 }
