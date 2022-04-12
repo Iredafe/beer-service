@@ -15,7 +15,13 @@ public class NextPermutation {
             }
             swap(inputArray, i, j);
         }
-        return new int[]{};
+        reverse(inputArray, i+1);
+        return inputArray;
+    }
+
+    private static void reverse(int [] array, int start){
+        int i=start; int j=array.length-1;
+        swap(array, i, j);
     }
 
     private static void swap(int [] nums, int i, int j){
