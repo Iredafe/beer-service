@@ -7,7 +7,12 @@ public class JumpGame {
     }
 
     public static boolean canJumpFromPosition(int nums[], int position){
+        if(position == nums.length-1){
+            return true;
+        }
 
+        int furthestPosition = Math.min((position+nums[position]), nums.length);
+        for(int nextPosition=position+1)
         return false;
     }
 
