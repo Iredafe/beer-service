@@ -19,7 +19,13 @@ public class JumpGame {
         }
         return false;
     }
+ enum Index{
+        GOOD, BAD, UNKNOWN
+ }
 
+ public static boolean jumpGameHelper(int position, int [] nums){
+
+ }
     public static void main(String[] args) {
         int [] array = {2,3,1,1,4};
         int [] array1 = {3,2,1,0,4};
