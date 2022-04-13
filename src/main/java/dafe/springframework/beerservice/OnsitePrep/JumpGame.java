@@ -22,8 +22,14 @@ public class JumpGame {
  enum Index{
         GOOD, BAD, UNKNOWN
  }
-
+    static Index [] memo;
  public static boolean jumpGameHelper(int position, int [] nums){
+
+        if(memo[position] != Index.UNKNOWN){
+            return memo[position] == Index.GOOD;
+        }
+        int furthestPosition = Math.min(position+nums[position] , nums.length-1);
+
 
  }
     public static void main(String[] args) {
