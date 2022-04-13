@@ -38,6 +38,14 @@ public class JumpGame {
         memo[position] = Index.BAD;
         return false;
  }
+
+ public static boolean jumpGame(int [] nums){
+     Index[] memo = new Index[nums.length];
+
+     for(int i=0;i< memo.length; i++){
+         memo[i] = Index.UNKNOWN;
+     }
+ }
     public static void main(String[] args) {
         int [] array = {2,3,1,1,4};
         int [] array1 = {3,2,1,0,4};
