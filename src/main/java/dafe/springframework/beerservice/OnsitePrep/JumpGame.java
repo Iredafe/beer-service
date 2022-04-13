@@ -12,7 +12,11 @@ public class JumpGame {
         }
 
         int furthestPosition = Math.min((position+nums[position]), nums.length);
-        for(int nextPosition=position+1)
+        for(int nextPosition=position+1; nextPosition<=furthestPosition; nextPosition++){
+            if(canJumpFromPosition(nums, nextPosition)){
+                return true;
+            }
+        }
         return false;
     }
 
