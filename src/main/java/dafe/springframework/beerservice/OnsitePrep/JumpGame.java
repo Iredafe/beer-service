@@ -29,8 +29,14 @@ public class JumpGame {
             return memo[position] == Index.GOOD;
         }
         int furthestPosition = Math.min(position+nums[position] , nums.length-1);
-
-
+        for(int nextPosition = 0; nextPosition<=furthestPosition; nextPosition++){
+            if(jumpGameHelper(nextPosition, nums)){
+                memo[position] = Index.GOOD;
+                return true;
+            }
+        }
+        memo[position] = Index.BAD;
+        return false;
  }
     public static void main(String[] args) {
         int [] array = {2,3,1,1,4};
