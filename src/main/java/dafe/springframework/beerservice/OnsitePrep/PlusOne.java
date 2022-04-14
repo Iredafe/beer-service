@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.Arrays;
+
 public class PlusOne {
 
     private static int[] plusOne(int array[]){
@@ -19,7 +21,9 @@ public class PlusOne {
 
     public static void main(String[] args) {
         int [] digits = {1, 2, 3};
+        int[] digits1 = {9,9,9};
 
-        System.out.println("This is the result : " + plusOne(digits));
+        System.out.println("This is the result : " + Arrays.toString(plusOne(digits)));
+        System.out.println("This is the result : " + Arrays.toString(plusOne(digits1)));
     }
 }
