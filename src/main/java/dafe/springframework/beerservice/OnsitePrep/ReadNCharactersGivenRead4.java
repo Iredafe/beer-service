@@ -11,7 +11,10 @@ public class ReadNCharactersGivenRead4 {
 
             for(int i=0; i<readChars; i++){
                 if(copiedChar == readChars) return copiedChar;
+                buf[copiedChar] = buf4[i];
+                copiedChar++;
             }
         }
+        return copiedChar;
     }
 }
