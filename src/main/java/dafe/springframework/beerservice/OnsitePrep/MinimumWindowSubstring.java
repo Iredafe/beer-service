@@ -49,7 +49,10 @@ public class MinimumWindowSubstring {
 
     public static void main(String[] args) {
         String s = "ADOBECODEBANC";
+        String s1= "a";
         String t = "ABC";
+        String t1 = "a";
         System.out.println("This is the minimum window : " + findMinimumWindowSubstring(s, t));
+        System.out.println("This is the minimum window 1 : " + findMinimumWindowSubstring(s1, t1));
     }
 }
