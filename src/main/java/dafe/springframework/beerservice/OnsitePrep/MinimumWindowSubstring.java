@@ -23,7 +23,17 @@ public class MinimumWindowSubstring {
                 int count = slidingWindowMap.getOrDefault(character, 0);
                 slidingWindowMap.put(character, count);
 
-                if()
+                if(map.get(character).equals(slidingWindowMap.get(character))){
+                    formed++;
+                }
+
+                while(left<right && formed == requiredSize){
+                   if(answer[0] == -1 || (right-left+1) < answer[0]){
+                       answer[0] = right-left+1;
+                       answer[1] = left;
+                       answer[2] = right;
+                   }
+                }
             }
         }
         return "";
