@@ -17,4 +17,8 @@ public class ReadNCharactersGivenRead4 {
         }
         return copiedChar;
     }
+
+    private static int read4(char[] buf4) {
+        return 0;
+    }
 }
