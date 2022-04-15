@@ -33,7 +33,13 @@ public class MinimumWindowSubstring {
                        answer[1] = left;
                        answer[2] = right;
                    }
+                   char leftCharacter = longString.charAt(left);
+                   while(slidingWindowMap.get(leftCharacter).intValue() < map.get(leftCharacter)){
+                       formed--;
+                   }
+                   left++;
                 }
+                right++;
             }
         }
         return "";
