@@ -19,30 +19,30 @@ public class MinimumWindowSubstring {
         int answer[] = {-1, 0, 0};
         while(right< longString.length()){
             char character = longString.charAt(right);
-            for(int i=0; i<longString.length(); i++){
-                int count = slidingWindowMap.getOrDefault(character, 0);
-                slidingWindowMap.put(character, count);
+            int count = slidingWindowMap.getOrDefault(character, 0);
+            slidingWindowMap.put(character, count);
 
-                if(map.get(character).equals(slidingWindowMap.get(character))){
-                    formed++;
-                }
+            if(slidingWindowMap.containsKey(character) && map.get(character).equals(slidingWindowMap.get(character))){
+                formed++;
+            }
 
-                while(left<right && formed == requiredSize){
-                   if(answer[0] == -1 || (right-left+1) < answer[0]){
-                       answer[0] = right-left+1;
-                       answer[1] = left;
-                       answer[2] = right;
-                   }
-                   char leftCharacter = longString.charAt(left);
-                   while(slidingWindowMap.get(leftCharacter).intValue() < map.get(leftCharacter)){
-                       formed--;
-                   }
-                   left++;
-                }
-                right++;
+            while(left<right && formed == requiredSize){
+                char leftCharacter = longString.charAt(left);
+               if(answer[0] == -1 || (right-left+1) < answer[0]){
+                   answer[0] = right-left+1;
+                   answer[1] = left;
+                   answer[2] = right;
+               }
+              slidingWindowMap.put(character, slidingWindowMap.get(character)-1);
+               if(slidingWindowMap.containsKey(leftCharacter) && slidingWindowMap.get(leftCharacter).intValue() < map.get(leftCharacter)){
+                   formed--;
+               }
+               left++;
             }
         }
-        return "";
+            right++;
+
+        return answer[0]==0?"":longString.substring(answer[1], answer[right]+1);
     }
 
     public static void main(String[] args) {
