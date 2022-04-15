@@ -13,7 +13,9 @@ public class MinimumWindowSubstring {
             map.put(character, count+1);
         }
 
+        int requiredSize = map.size();
         HashMap<Character, Integer> slidingWindowMap = new HashMap<>();
+        int left=0; int right=0; int formed = 0;
         return "";
     }
 
