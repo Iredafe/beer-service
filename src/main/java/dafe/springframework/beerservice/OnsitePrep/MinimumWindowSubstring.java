@@ -16,6 +16,16 @@ public class MinimumWindowSubstring {
         int requiredSize = map.size();
         HashMap<Character, Integer> slidingWindowMap = new HashMap<>();
         int left=0; int right=0; int formed = 0;
+        int answer[] = {-1, 0, 0};
+        while(right< longString.length()){
+            char character = longString.charAt(right);
+            for(int i=0; i<longString.length(); i++){
+                int count = slidingWindowMap.getOrDefault(character, 0);
+                slidingWindowMap.put(character, count);
+
+                if()
+            }
+        }
         return "";
     }
 
