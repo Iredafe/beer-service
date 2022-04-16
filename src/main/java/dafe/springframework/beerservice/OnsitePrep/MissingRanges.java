@@ -7,11 +7,18 @@ public class MissingRanges {
 
     private static List<String> findMissingRanges(int [] input, int lower, int upper){
         List<String> result = new ArrayList<>();
-        int previous =
+        int previous = lower - 1;
+
+        for(int i=0; i<=input.length; i++){
+            int current = (i < input.length)? input[i] : upper+1;
+            if(previous+1 <= current-1){
+                result.add(formatRange(previous+1, current-1));
+            }
+        }
         return result;
     }
 
-    private String formatRange(int lower, int upper){
+    private static String formatRange(int lower, int upper){
         if(lower == upper){
             return String.valueOf(lower);
         }
