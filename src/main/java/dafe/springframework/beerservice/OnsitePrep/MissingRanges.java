@@ -14,6 +14,7 @@ public class MissingRanges {
             if(previous+1 <= current-1){
                 result.add(formatRange(previous+1, current-1));
             }
+            previous = current;
         }
         return result;
     }
