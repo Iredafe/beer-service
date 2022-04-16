@@ -5,10 +5,17 @@ import java.util.List;
 
 public class MissingRanges {
 
-    private List<String> findMissingRanges(int [] input){
+    private static List<String> findMissingRanges(int [] input){
         List<String> result = new ArrayList<>();
 
         return result;
+    }
+
+    private String formatRange(int lower, int upper){
+        if(lower == upper){
+            return String.valueOf(lower);
+        }
+        return lower + "->" + upper;
     }
 
     public static void main(String[] args) {
