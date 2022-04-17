@@ -8,6 +8,13 @@ public class FindAndReplacePatterns {
     public static List<String> findAndReplace(String words, String pattern){
         List<String> result = new ArrayList<>();
 
+        for(String word : words){
+            if(matchPatternWithWord(word, pattern)){
+                result.add(word);
+            }
+            return result;
+        }
+
         return result;
     }
 
