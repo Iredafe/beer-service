@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FindAndReplacePatterns {
 
-    public static List<String> findAndReplace(String words, String pattern){
+    public static List<String> findAndReplace(String [] words, String pattern){
         List<String> result = new ArrayList<>();
 
         for(String word : words){
@@ -14,8 +14,14 @@ public class FindAndReplacePatterns {
             }
             return result;
         }
-
         return result;
+    }
+
+    public static boolean matchPatternWithWord(String word, String pattern){
+
+
+
+        return true;
     }
 
     public static void main(String[] args) {
