@@ -15,10 +15,19 @@ public class NextClosestTime {
 
         while(true){
             minutes++;
+            if(minutes == 24*60) {
+                minutes = 0;
+            }
+           int H = minutes/60/10;
+            int h = minutes/60%10;
+            int M = minutes%60/10;
+            int m = minutes%60%10;
 
+            if(!set.contains(H) && !set.contains(h) && set.contains(M) && set.contains(m)){
+                continue;
+            }
         }
 
-        return null;
     }
 
     public static void main(String[] args) {
