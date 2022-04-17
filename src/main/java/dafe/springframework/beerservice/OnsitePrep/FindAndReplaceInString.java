@@ -1,9 +1,19 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.HashMap;
+
 public class FindAndReplaceInString {
 
     private static String findAndReplaceInString(String word, int [] indices, String [] sources, String [] targets){
 
+        StringBuilder result = new StringBuilder(word);
+        HashMap<Integer, String> sourcesMap = new HashMap<>();
+        HashMap<Integer, String> targetsMap = new HashMap<>();
+
+        for(int i=0; i<word.length(); i++){
+            sourcesMap.put(indices[i], sources[i]);
+            targetsMap.put(indices[i], targets[i]);
+        }
         return "";
     }
 
