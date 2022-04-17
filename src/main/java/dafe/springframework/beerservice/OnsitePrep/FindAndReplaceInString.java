@@ -11,7 +11,7 @@ public class FindAndReplaceInString {
         HashMap<Integer, String> sourcesMap = new HashMap<>();
         HashMap<Integer, String> targetsMap = new HashMap<>();
 
-        for(int i=0; i<word.length(); i++){
+        for(int i=0; i<indices.length; i++){
             sourcesMap.put(indices[i], sources[i]);
             targetsMap.put(indices[i], targets[i]);
         }
@@ -26,7 +26,7 @@ public class FindAndReplaceInString {
             int sourceLength = source.length();
 
             String stringToBeReplaced = word.substring(indices[i], indices[i]+sourceLength);
-            if(stringToBeReplaced == source){
+            if(stringToBeReplaced.equals(source)){
                 result.replace(indices[i], indices[i]+ sourceLength, target);
             }
         }
