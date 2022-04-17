@@ -9,11 +9,10 @@ public class FindAndReplacePatterns {
     public static List<String> findAndReplace(String [] words, String pattern){
         List<String> result = new ArrayList<>();
 
-        for(String word : words){
-            if(matchPatternWithWord(word, pattern)){
+        for(String word : words) {
+            if (matchPatternWithWord(word, pattern)) {
                 result.add(word);
             }
-            return result;
         }
         return result;
     }
@@ -23,10 +22,17 @@ public class FindAndReplacePatterns {
         HashMap<Character, Character> map2 = new HashMap<>();
 
         for(int i=0; i< word.length(); i++){
-
+            char characterInWord = word.charAt(i);
+            char characterInPattern = pattern.charAt(i);
+            if(!map1.containsKey(characterInWord)){
+                map1.put(characterInWord, characterInPattern);
+            }
+            if(!map2.containsKey(characterInPattern)){
+                map2.put(characterInPattern, characterInWord);
+            }
+            if(map1.get(characterInWord) != characterInPattern || map2.get(characterInPattern) != characterInWord)
+                return false;
         }
-
-
         return true;
     }
 
