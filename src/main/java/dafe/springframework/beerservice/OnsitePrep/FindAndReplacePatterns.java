@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class FindAndReplacePatterns {
@@ -18,7 +19,12 @@ public class FindAndReplacePatterns {
     }
 
     public static boolean matchPatternWithWord(String word, String pattern){
+        HashMap<Character, Character> map1 = new HashMap<>();
+        HashMap<Character, Character> map2 = new HashMap<>();
 
+        for(int i=0; i< word.length(); i++){
+
+        }
 
 
         return true;
