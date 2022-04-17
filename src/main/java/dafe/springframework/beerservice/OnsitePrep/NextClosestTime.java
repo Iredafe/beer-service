@@ -14,14 +14,20 @@ public class NextClosestTime {
         }
 
         while(true){
-            minutes = (minutes+1) %24*60;
+            minutes = (minutes+1) %(24*60);
             int [] nextTime = {(minutes/60)/10, (minutes/60)%10, (minutes%60)/10, (minutes%60)%10};
-            boolean isValied = false;
+            boolean isValid = true;
             for (int digit : nextTime){
+               if(!set.contains(digit)){
+                   isValid = false;
+                   continue;
+               }
+            }
 
+            if(isValid){
+                return String.format("%02d:%02d", minutes/60, minutes%60);
             }
         }
-return String.format("%02d:%02d", minutes/60, minutes%60);
     }
 
     public static void main(String[] args) {
