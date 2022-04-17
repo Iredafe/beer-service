@@ -2,6 +2,10 @@ package dafe.springframework.beerservice.OnsitePrep;
 
 public class FindAndReplaceInString {
 
+    private static String findAndReplaceInString(String word, int [] indices, String [] sources, String [] targets){
+
+        return "";
+    }
 
     public static void main(String[] args) {
         String wordString = "abcd";
