@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class FindAndReplaceInString {
@@ -14,7 +15,22 @@ public class FindAndReplaceInString {
             sourcesMap.put(indices[i], sources[i]);
             targetsMap.put(indices[i], targets[i]);
         }
-        return "";
+
+        Arrays.sort(indices);
+
+
+        for(int i=indices.length-1; i>=0; i--){
+            String source = sourcesMap.get(indices[i]);
+            String target = targetsMap.get(indices[i]);
+
+            int sourceLength = source.length();
+
+            String stringToBeReplaced = word.substring(indices[i], indices[i]+sourceLength);
+            if(stringToBeReplaced == source){
+                result.replace(indices[i], indices[i]+ sourceLength, target);
+            }
+        }
+        return result.toString();
     }
 
     public static void main(String[] args) {
