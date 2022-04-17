@@ -26,6 +26,7 @@ public class NextClosestTime {
             if(!set.contains(H) && !set.contains(h) && set.contains(M) && set.contains(m)){
                 continue;
             }
+            return H + "" + h + ":" + M +""+ m;
         }
 
     }
