@@ -16,7 +16,7 @@ public class MaximumDistanceToClosestPerson {
                 seatsToTheRight=i;
             }else{
                 emptySeats++;
-                maximumDistance = Math.max(maximumDistance, emptySeats+1/2);
+                maximumDistance = Math.max(maximumDistance, (emptySeats+1)/2);
             }
         }
         maximumDistance = Math.max(maximumDistance, Math.max(seatsToTheLeft, seatLength-seatsToTheRight-1));
