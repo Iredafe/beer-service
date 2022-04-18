@@ -12,8 +12,15 @@ public class MaximumDistanceToClosestPerson {
         for(int i=0; i<seatLength; i++){
             if(seats[i] == 1){
                 emptySeats=0;
+                if(seatsToTheLeft==-1) seatsToTheLeft=i;
+                seatsToTheRight=i;
+            }else{
+                emptySeats++;
+                maximumDistance = Math.max(maximumDistance, emptySeats+1/2);
             }
         }
+        maximumDistance = Math.max(maximumDistance, Math.max(seatsToTheLeft, seatLength-seatsToTheRight-1));
+        return maximumDistance;
     }
 
     public static void main(String[] args) {
