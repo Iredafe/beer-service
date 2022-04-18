@@ -16,7 +16,7 @@ public class FindAndReplaceInString {
             targetsMap.put(indices[i], targets[i]);
         }
 
-        Arrays.sort(indices);
+      //  Arrays.sort(indices);
 
 
         for(int i=indices.length-1; i>=0; i--){
@@ -34,10 +34,10 @@ public class FindAndReplaceInString {
     }
 
     public static void main(String[] args) {
-        String wordString = "abcd";
-        int [] indices = {0, 2};
-        String [] target = {"eee", "ffff"};
-        String [] sources = {"a", "cd"};
+        String wordString = "vmokgggqzp";
+        int [] indices = {3,5,1};
+        String [] target = {"s","so","bfr"};
+        String [] sources = {"kg","ggq","mo"};
 
         System.out.println("This is the new string after replacement operation was done : "
         + findAndReplaceInString(wordString, indices, sources, target));
