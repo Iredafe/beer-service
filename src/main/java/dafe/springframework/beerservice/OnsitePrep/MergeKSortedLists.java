@@ -28,5 +28,7 @@ public class MergeKSortedLists {
             }
             previous = previous.next;
         }
+        previous.next = first == null ? second : first;
+        return answer.next;
     }
 }
