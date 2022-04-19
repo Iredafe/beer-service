@@ -20,8 +20,13 @@ public class MergeKSortedLists {
 
         while(first!=null && second!=null){
             if(first.val <= second.val){
-
+                previous.next = first;
+                first = first.next;
+            }else{
+                previous.next = second;
+                second = second.next;
             }
+            previous = previous.next;
         }
     }
 }
