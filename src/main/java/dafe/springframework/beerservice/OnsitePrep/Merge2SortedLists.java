@@ -12,7 +12,15 @@ public class Merge2SortedLists {
         }
 
         public static ListNode mergeTwoSortedLists(ListNode first, ListNode second){
-
+            if(first == null) return second;
+            else if(second == null) return first;
+            else if(first.value <= second.value){
+                first.next = mergeTwoSortedLists(first.next, second);
+                return first;
+            }else{
+                second.next = mergeTwoSortedLists(first, second.next);
+                return second;
+            }
         }
     }
 
