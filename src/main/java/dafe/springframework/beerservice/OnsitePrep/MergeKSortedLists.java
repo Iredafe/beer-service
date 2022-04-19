@@ -31,4 +31,8 @@ public class MergeKSortedLists {
         previous.next = first == null ? second : first;
         return answer.next;
     }
+
+    public static ListNode mergeKSortedLists(ListNode [] lists){
+
+    }
 }
