@@ -39,7 +39,8 @@ public class MergeKSortedLists {
         ListNode head = mergeTwoLists(lists[0], lists[1]);
 
         for (int i= 2; i<lists.length; i++){
-
+            head = mergeTwoLists(head, lists[i]);
         }
+        return head;
     }
 }
