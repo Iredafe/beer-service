@@ -24,8 +24,10 @@ public class TrappingRainWater {
                 }else{
                     trappedWaterVolume+=rightMax - height[right];
                 }
+                right--;
             }
         }
+        return trappedWaterVolume;
     }
 
     public static void main(String[] args) {
