@@ -14,6 +14,15 @@ public class TrappingRainWater {
             if(height[left] < height[right]){
                 if(height[left] >= leftMax){
                     leftMax = height[left];
+                }else{
+                    trappedWaterVolume+= leftMax - height[left];
+                }
+                left++;
+            }else{
+                if(height[right] >= rightMax){
+                    rightMax = height[right];
+                }else{
+                    trappedWaterVolume+=rightMax - height[right];
                 }
             }
         }
