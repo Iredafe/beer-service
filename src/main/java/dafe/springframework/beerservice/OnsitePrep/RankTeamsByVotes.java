@@ -1,9 +1,6 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class RankTeamsByVotes {
 
@@ -19,7 +16,20 @@ public class RankTeamsByVotes {
         }
 
         List<Character> list = new ArrayList<>(map.keySet());
-        return "";
+        Collections.sort(list, (a,b)->{
+            for(int i=0; i<length; i++){
+                if(map.get(a)[i] != map.get(b)[i]){
+                    return map.get(b)[i] - map.get(a)[i];
+                }
+            }
+            return a-b;
+        });
+
+        StringBuilder sb = new StringBuilder();
+        for(char character: list){
+            sb.append(character);
+        }
+        return sb.toString();
     }
 
     public static void main(String[] args) {
