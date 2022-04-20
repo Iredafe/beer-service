@@ -10,6 +10,13 @@ public class TrappingRainWater {
         int rightMax = height[n-2];
         int trappedWaterVolume = 0;
 
+        while (left <= right){
+            if(height[left] < height[right]){
+                if(height[left] >= leftMax){
+                    leftMax = height[left];
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
