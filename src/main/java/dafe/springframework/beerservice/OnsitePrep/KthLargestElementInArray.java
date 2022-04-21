@@ -5,8 +5,16 @@ import java.util.PriorityQueue;
 public class KthLargestElementInArray {
 
 
-    private static int findKthLargestNumber(int [] array){
+    private static int findKthLargestNumber(int [] array, int k){
         PriorityQueue<Integer> heap = new PriorityQueue<>();
+
+        for(int number : array){
+            heap.add(number);
+            if(heap.size() > k){
+                heap.poll();
+            }
+        }
+        return heap.peek();
     }
 
     public static void main(String[] args) {
