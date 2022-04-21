@@ -26,6 +26,12 @@ public class KthLargestElementInArray {
                     right--;
                 }
             }
+            swap(array, right, pivot);
+
+            if(right == position) return array[right];
+            else if(right < position){
+                start = right+1;
+            }else end = right-1;
 
         }
         return 0;
