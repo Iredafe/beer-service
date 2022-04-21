@@ -6,13 +6,24 @@ import java.util.PriorityQueue;
 public class KthLargestElementInArray {
 
     private static int kthLargestNumber(int [] array, int k){
-        int length = array.length;
-       return quickSelect(array, 0, length-1, k);
+       return quickSelect(array, 0,array.length-1, k);
     }
 
     private static int quickSelect(int [] array, int start, int end, int position){
+        while(true){
 
+            int left = start+1;
+            int right = end;
+            int length=array.length;
+            int pivot = start;
 
+            while(left <= right){
+                if(array[left] > array[pivot] && array[right] < array[left]){
+                    swap(array, left, right);
+                }
+            }
+
+        }
         return 0;
     }
 
