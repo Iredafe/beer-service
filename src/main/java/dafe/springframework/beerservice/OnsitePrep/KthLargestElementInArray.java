@@ -6,6 +6,12 @@ import java.util.PriorityQueue;
 public class KthLargestElementInArray {
 
     private static int kthLargestNumber(int [] array, int k){
+        int length = array.length;
+       return quickSelect(array, 0, length-1, k);
+    }
+
+    private static int quickSelect(int [] array, int start, int end, int position){
+
 
         return 0;
     }
