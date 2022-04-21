@@ -20,6 +20,10 @@ public class KthLargestElementInArray {
             while(left <= right){
                 if(array[left] > array[pivot] && array[right] < array[left]){
                     swap(array, left, right);
+                }else if(array[left] < array[pivot]){
+                    left++;
+                }else {
+                    right--;
                 }
             }
 
