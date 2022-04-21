@@ -6,10 +6,9 @@ import java.util.PriorityQueue;
 public class KthLargestElementInArray {
 
     private static int kthLargestNumber(int [] array, int k){
-       int kthSmallestNumber =  quickSelect(array, 0,array.length-1, k);
-       int kthLargestNumber = array.length - kthSmallestNumber;
-       return kthLargestNumber;
-    }
+     int size = array.length;
+     return quickSelect(array, 0,array.length-1, size-k);
+     }
 
     private static int quickSelect(int [] array, int start, int end, int position){
         while(true){
@@ -59,6 +58,6 @@ public class KthLargestElementInArray {
         int [] nums = {3,2,1,5,6,4}; int k = 2;
 
         System.out.println("This is the kth largest number : " + findKthLargestNumber(nums, k));
-        System.out.println("This is the kth largest number : " + kthLargestNumber(nums, k));
+        System.out.println("This is the kth largest number quickselect: " + kthLargestNumber(nums, k));
     }
 }
