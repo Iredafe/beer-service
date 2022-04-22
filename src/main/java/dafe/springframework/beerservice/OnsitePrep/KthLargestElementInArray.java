@@ -21,7 +21,7 @@ public class KthLargestElementInArray {
             while(left <= right){
                 if(array[left] > array[pivot] && array[right] < array[left]){
                     swap(array, left, right);
-                }else if(array[left] < array[pivot]){
+                }else if(array[left] <= array[pivot]){
                     left++;
                 }else {
                     right--;
@@ -60,8 +60,8 @@ public class KthLargestElementInArray {
         int [] nums = {3,2,1,5,6,4}; int k = 2;
         int [] nums1 = {3,2,3,1,2,4,5,5,6}; int k2 = 9;
 
-//        System.out.println("This is the kth largest number : " + findKthLargestNumber(nums, k));
-//        System.out.println("This is the kth largest number quickselect: " + kthLargestNumber(nums, k));
+        System.out.println("This is the kth largest number : " + findKthLargestNumber(nums, k));
+        System.out.println("This is the kth largest number quickselect: " + kthLargestNumber(nums, k));
         System.out.println("This is the kth largest number 2: " + findKthLargestNumber(nums1, k2));
         System.out.println("This is the kth largest number quickselect2: " + kthLargestNumber(nums1, k2));
     }
