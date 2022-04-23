@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.Arrays;
+
 public class MeetingRoomII {
 
     public int minMeetingRooms(Interval[] intervals) {
@@ -8,6 +10,16 @@ public class MeetingRoomII {
         for(int i=0; i<intervals.length; i++) {
             starts[i] = intervals[i].start;
             ends[i] = intervals[i].end;
+        }
+
+        Arrays.sort(starts);
+        Arrays.sort(ends);
+
+        int rooms = 0;
+        int endsItr = 0;
+
+        for(int i=0; i<intervals.length; i++){
+
         }
 }
 

@@ -1,8 +1,6 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
 import java.util.Arrays;
-import java.util.Comparator;
-
 public class MeetingRoomsI {
 
     public static boolean intervals(int[][] meetingRooms){
