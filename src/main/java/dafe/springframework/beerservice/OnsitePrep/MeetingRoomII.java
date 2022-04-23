@@ -1,10 +1,18 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class MeetingRoomII {
 
     private static int meetingRoomsII(int [][] intervals){
+
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[0]-o2[0];
+            }
+        });
 
         return 0;
     }
@@ -41,8 +49,7 @@ public class MeetingRoomII {
 
     public static void main(String[] args) {
         Interval[] intervals = new Interval[]{new Interval(0,30), new Interval(5,10), new Interval(15,20)};
-
-                //{{0,30},{5,10},{15,20}};
+        int [][] interval = {{0,30},{5,10},{15,20}};
 
         System.out.println("number of conference rooms are : " + minMeetingRooms(intervals));
     }
