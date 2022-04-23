@@ -2,6 +2,7 @@ package dafe.springframework.beerservice.OnsitePrep;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.PriorityQueue;
 
 public class MeetingRoomII {
 
@@ -14,7 +15,23 @@ public class MeetingRoomII {
             }
         });
 
-        return 0;
+        PriorityQueue<Integer> rooms = new PriorityQueue<>(intervals.length, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1-o2;
+            }
+        });
+
+        rooms.add(intervals[0][1]);
+        for(int i=1; i< intervals.length; i++){
+            int start = intervals[i][0];
+            int end = intervals[i][1];
+            if(start >= rooms.peek()){
+                rooms.poll();
+            }
+            rooms.add(end);
+        }
+        return rooms.size();
     }
     public static int minMeetingRooms(Interval[] intervals) {
         int[] starts = new int[intervals.length];
