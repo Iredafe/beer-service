@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MeetingRoomII {
 
-    public int minMeetingRooms(Interval[] intervals) {
+    public static int minMeetingRooms(Interval[] intervals) {
         int[] starts = new int[intervals.length];
         int[] ends = new int[intervals.length];
         for(int i=0; i<intervals.length; i++) {
@@ -33,5 +33,13 @@ public class MeetingRoomII {
             this.start = start;
             this.end = end;
         }
+    }
+
+    public static void main(String[] args) {
+        Interval[] intervals = new Interval[]{{0,30},{5,10},{15,20}};
+
+                //{{0,30},{5,10},{15,20}};
+
+        System.out.println("number of conference rooms are : " + minMeetingRooms(intervals));
     }
     }
