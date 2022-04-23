@@ -18,8 +18,9 @@ public class MeetingRoomII {
         int rooms = 0;
         int endsItr = 0;
 
-        for(int i=0; i<intervals.length; i++){
-
+        for(int i=0; i<starts.length; i++){
+            if(starts[i] < ends[endsItr]) rooms++;
+            else endsItr++;
         }
 }
 
