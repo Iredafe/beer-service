@@ -7,7 +7,7 @@ public class MeetingRoomsI {
 
     public static boolean intervals(int[][] meetingRooms){
         Arrays.sort(meetingRooms, (a,b)->Integer.compare(a[0],b[0]));
-        for(int i=0; i<meetingRooms.length; i++){
+        for(int i=0; i<meetingRooms.length-1; i++){
             if(meetingRooms[i][1] > meetingRooms[i+1][0]) return false;
         }
         return true;
