@@ -22,6 +22,7 @@ public class MeetingRoomII {
             if(starts[i] < ends[endsItr]) rooms++;
             else endsItr++;
         }
+        return rooms;
 }
 
     private class Interval {
