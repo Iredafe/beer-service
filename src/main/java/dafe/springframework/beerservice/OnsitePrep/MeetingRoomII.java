@@ -4,6 +4,10 @@ import java.util.Arrays;
 
 public class MeetingRoomII {
 
+    private static int meetingRoomsII(int [][] intervals){
+
+        return 0;
+    }
     public static int minMeetingRooms(Interval[] intervals) {
         int[] starts = new int[intervals.length];
         int[] ends = new int[intervals.length];
