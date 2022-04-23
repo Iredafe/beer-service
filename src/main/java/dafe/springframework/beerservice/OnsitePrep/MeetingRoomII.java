@@ -25,7 +25,7 @@ public class MeetingRoomII {
         return rooms;
 }
 
-    private class Interval {
+    private static class Interval {
         int start;
         int end;
 
@@ -36,7 +36,7 @@ public class MeetingRoomII {
     }
 
     public static void main(String[] args) {
-        Interval[] intervals = new Interval[]{{0,30},{5,10},{15,20}};
+        Interval[] intervals = new Interval[]{new Interval(0,30), new Interval(5,10), new Interval(15,20)};
 
                 //{{0,30},{5,10},{15,20}};
 
