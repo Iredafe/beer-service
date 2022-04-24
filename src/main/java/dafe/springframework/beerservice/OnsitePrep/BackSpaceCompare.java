@@ -23,17 +23,18 @@ public class BackSpaceCompare {
     private static String getString(String string){
         int n = string.length();
         int count = 0;
+        String result="";
 
         for(int i=n-1; i>=0; i--){
             char character = string.charAt(i);
             if(character == '#') count++;
             else{
-                if(count > 0){
-                    count--;
-                }else{
+                if(count > 0) count--;
+                else{
                     result += character;
                 }
             }
+            return result;
         }
 
         return "";
@@ -48,5 +49,6 @@ public class BackSpaceCompare {
         String second = "ad#c";
 
         System.out.println("Both strings are same ? " + backSpaceCompare(first, second));
+        System.out.println("Both strings are same 2 ? " + backspaceCompare(first, second));
     }
 }
