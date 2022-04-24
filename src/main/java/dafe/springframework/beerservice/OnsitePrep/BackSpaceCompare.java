@@ -20,6 +20,12 @@ public class BackSpaceCompare {
         return stack.toString();
     }
 
+    private static String getString(String string){
+
+
+        return "";
+    }
+
     public static void main(String[] args) {
         String first = "ab#c";
         String second = "ad#c";
