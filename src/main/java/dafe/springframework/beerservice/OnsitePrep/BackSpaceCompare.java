@@ -7,7 +7,17 @@ public class BackSpaceCompare {
         StringBuilder sb2 = new StringBuilder();
 
         for(int i=0; i<s.length(); i++){
-            if()
+            char character = s.charAt(i);
+            if(character != '#'){
+                sb1.append(character);
+            }
+        }
+
+        for(int i=0; i<t.length(); i++){
+            char character = t.charAt(i);
+            if(character != '#') {
+                sb2.append(character);
+            }
         }
 
     }
