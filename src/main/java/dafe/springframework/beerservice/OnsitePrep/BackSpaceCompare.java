@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.Stack;
+
 public class BackSpaceCompare {
 
     private static boolean backSpaceCompare(String s, String t){
@@ -19,7 +21,16 @@ public class BackSpaceCompare {
                 sb2.append(character);
             }
         }
+        return sb1.equals(sb2);
+    }
 
+
+    private static boolean buildString(String string){
+        Stack<Character> stack = new Stack<>();
+
+        for(char character : string.toCharArray()){
+
+        }
     }
 
     public static void main(String[] args) {
