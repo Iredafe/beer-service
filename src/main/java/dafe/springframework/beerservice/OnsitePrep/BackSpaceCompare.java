@@ -21,7 +21,20 @@ public class BackSpaceCompare {
     }
 
     private static String getString(String string){
+        int n = string.length();
+        int count = 0;
 
+        for(int i=n-1; i>=0; i--){
+            char character = string.charAt(i);
+            if(character == '#') count++;
+            else{
+                if(count > 0){
+                    count--;
+                }else{
+                    result += character;
+                }
+            }
+        }
 
         return "";
     }
