@@ -26,6 +26,10 @@ public class BackSpaceCompare {
         return "";
     }
 
+    private static boolean backspaceCompare(String s, String t){
+        return getString(s).equals(getString(t));
+    }
+
     public static void main(String[] args) {
         String first = "ab#c";
         String second = "ad#c";
