@@ -4,6 +4,7 @@ public class MinimumCostToHireKWorkers {
 
     private static int minCostToHireKWorkers(int [] quality, int [] wage, int k){
 
+        return 0;
     }
 
     public static void main(String[] args) {
