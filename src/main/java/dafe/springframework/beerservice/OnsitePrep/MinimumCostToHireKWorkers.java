@@ -15,7 +15,7 @@ class Worker{
 }
 public class MinimumCostToHireKWorkers {
 
-    private static int minCostToHireKWorkers(int [] quality, int [] wage, int k){
+    private static double minCostToHireKWorkers(int [] quality, int [] wage, int k){
 
         List<Worker> workers = new ArrayList<>();
         for(int i=0; i<quality.length; i++){
@@ -27,6 +27,20 @@ public class MinimumCostToHireKWorkers {
 
          int totalQuality = 0 ;
          double minCost = Double.MAX_VALUE;
+
+         for(Worker worker : workers){
+             maxHeap.offer(worker);
+             totalQuality+=worker.quality;
+
+             if(maxHeap.size() > k){
+                 Worker removedWorker = maxHeap.poll();
+                 totalQuality -= removedWorker.quality;
+             }
+             if(maxHeap.size() == k){
+                 minCost = Math.min(totalQuality * worker.ratio, minCost);
+             }
+         }
+         return minCost;
     }
 
 
