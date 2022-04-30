@@ -3,9 +3,9 @@ package dafe.springframework.beerservice.OnsitePrep;
 import java.util.*;
 
 class Worker{
-    int quality;
-    int wage;
-    int ratio;
+    static int quality;
+    static int wage;
+    static int ratio;
 
     public Worker(int quality, int wage){
         this.quality = quality;
@@ -21,10 +21,9 @@ public class MinimumCostToHireKWorkers {
         for(int i=0; i<quality.length; i++){
             workers.add(new Worker(quality[i], wage[i]));
         }
-        Collections.sort(workers, (a, b)->(Double.compare(a.ratio, b.ratio)));
+        Collections.sort(workers, (a, b)->Double.compare(a.ratio, b.ratio));
 
-        PriorityQueue<Worker> maxHeap = new PriorityQueue(quality, (a,b)->(b.quality - a.quality));
-
+        PriorityQueue<Worker> maxHeap = new PriorityQueue((a,b)->(b.quality - a.quality));
          int totalQuality = 0 ;
          double minCost = Double.MAX_VALUE;
 
