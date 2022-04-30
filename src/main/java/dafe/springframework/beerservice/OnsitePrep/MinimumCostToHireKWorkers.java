@@ -5,15 +5,16 @@ import java.util.*;
 class Worker{
     static int quality;
     static int wage;
-    static int ratio;
+    static double ratio;
 
     public Worker(int quality, int wage){
         this.quality = quality;
         this.wage = wage;
-        ratio = (int) (wage*1.0/quality);
+        ratio = (wage*1.0/quality);
     }
 }
-public class MinimumCostToHireKWorkers {
+
+class MinimumCostToHireKWorkers {
 
     private static double minCostToHireKWorkers(int [] quality, int [] wage, int k){
 
@@ -23,7 +24,7 @@ public class MinimumCostToHireKWorkers {
         }
         Collections.sort(workers, (a, b)->Double.compare(a.ratio, b.ratio));
 
-        PriorityQueue<Worker> maxHeap = new PriorityQueue((a,b)->(b.quality - a.quality));
+        PriorityQueue<Worker> maxHeap = new PriorityQueue((a,b)-> b.quality - a.quality);
          int totalQuality = 0 ;
          double minCost = Double.MAX_VALUE;
 
