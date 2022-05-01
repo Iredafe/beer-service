@@ -24,7 +24,7 @@ class MinimumCostToHireKWorkers {
         }
         Collections.sort(workers, (a, b)->Double.compare(a.ratio, b.ratio));
 
-        PriorityQueue<Worker> maxHeap = new PriorityQueue((a,b)-> b.quality - a.quality);
+        PriorityQueue<Worker> maxHeap = new PriorityQueue((a,b)-> (b.quality - a.quality));
          int totalQuality = 0 ;
          double minCost = Double.MAX_VALUE;
 
