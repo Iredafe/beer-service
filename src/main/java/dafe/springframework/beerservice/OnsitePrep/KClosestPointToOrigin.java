@@ -2,6 +2,10 @@ package dafe.springframework.beerservice.OnsitePrep;
 
 public class KClosestPointToOrigin {
 
+    private static int squaredDistance(int [] point){
+
+    }
+
     private static int[][] kthClosestPoint(int [][] points, int k){
 
         return new int[][]{};
