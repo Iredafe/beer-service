@@ -1,13 +1,33 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import dafe.springframework.beerservice.simuduck.Quack;
+
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 public class KClosestPointToOrigin {
 
     private static int squaredDistance(int [] point){
-
+        return point[0]*point[0] + point[1]*point[1];
     }
 
     private static int[][] kthClosestPoint(int [][] points, int k){
 
+        Queue<int[]> maxHeap = new PriorityQueue<>((a,b)->b[0]-a[0]);
+
+        for(int i=0; i< points.length; i++){
+            int [] entry={squaredDistance(points[i]), i};
+
+            if(maxHeap.size()<k){
+                maxHeap.offer(entry);
+
+            }else if(entry[0]<maxHeap.peek()[i]){
+                maxHeap.poll();
+                maxHeap.add(entry);
+            }
+        }
+
+        int[][]answer = new int[k][2];
         return new int[][]{};
     }
 
