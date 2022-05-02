@@ -69,6 +69,7 @@ public class MeetingRoomII {
         int [][] interval = {{0,30},{5,10},{15,20}};
 
         System.out.println("number of conference rooms are : " + minMeetingRooms(intervals));
+        System.out.println("number of conference rooms are : " + minMeetingRooms(intervals));
         System.out.println("number of conference rooms are : " + meetingRoomsII(interval));
     }
     }
