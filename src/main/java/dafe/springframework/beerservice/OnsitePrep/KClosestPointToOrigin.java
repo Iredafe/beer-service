@@ -77,9 +77,11 @@ public class KClosestPointToOrigin {
     }
 
     public static void main(String[] args) {
-        int [] [] points = {{3,3},{5,-1},{-2,4}}; int k = 1;
+        int [] [] points = {{3,3},{5,-1},{-2,4}}; int k = 2;
 
         System.out.println("This is the kth closest point to origin (0, 0) : " +
                 Arrays.deepToString(kthClosestPoint(points, k)));
+        System.out.println("This is the kth closest point to origin (0, 0) Quickselect : " +
+                Arrays.deepToString(kClosest(points, k)));
     }
 }
