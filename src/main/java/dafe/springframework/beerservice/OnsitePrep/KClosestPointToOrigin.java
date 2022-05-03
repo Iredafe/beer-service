@@ -37,8 +37,8 @@ public class KClosestPointToOrigin {
     }
 /// using quickselect
 
-    private static void swap(int i, int j, int [] array){
-        int temp = array[i];
+    private static void swap(int i, int j, int [][] array){
+        int [] temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
@@ -58,8 +58,11 @@ public class KClosestPointToOrigin {
                 left++;
             }else if(getDistance(points[right], pivotValue) >= 0){
                 right--;
+            }else{
+                swap(left, right, points);
             }
         }
+        return right;
     }
 
     public static void main(String[] args) {
