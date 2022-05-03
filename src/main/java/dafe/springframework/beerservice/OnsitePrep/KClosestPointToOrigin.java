@@ -1,7 +1,5 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
-import dafe.springframework.beerservice.simuduck.Quack;
-
 import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -66,12 +64,16 @@ public class KClosestPointToOrigin {
         return right;
     }
 
-    private static int kClosest(int [][] points, int k){
+    private static int[][] kClosest(int [][] points, int k){
         int left = 0; int right=points.length-1;
 
         while (left<=right){
             int pivot = findPivot(points, left, right);
+            if(pivot==k) break;
+            if(pivot<k) left=pivot+1;
+            else right = pivot-1;
         }
+        return Arrays.copyOfRange(points,0,k);
     }
 
     public static void main(String[] args) {
