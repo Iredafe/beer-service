@@ -62,7 +62,12 @@ public class KClosestPointToOrigin {
                 swap(left, right, points);
             }
         }
+        swap(right, pivotIndex, points);
         return right;
+    }
+
+    private static int kClosest(int [][] points, int k){
+
     }
 
     public static void main(String[] args) {
