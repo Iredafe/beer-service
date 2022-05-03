@@ -52,6 +52,14 @@ public class KClosestPointToOrigin {
         int [] pivotValue = points[left];
         int pivotIndex = left;
         left++;
+
+        while (left<=right){
+            if (getDistance(points[left], pivotValue) <= 0) {
+                left++;
+            }else if(getDistance(points[right], pivotValue) >= 0){
+                right--;
+            }
+        }
     }
 
     public static void main(String[] args) {
