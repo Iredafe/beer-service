@@ -67,7 +67,11 @@ public class KClosestPointToOrigin {
     }
 
     private static int kClosest(int [][] points, int k){
+        int left = 0; int right=points.length-1;
 
+        while (left<=right){
+            int pivot = findPivot(points, left, right);
+        }
     }
 
     public static void main(String[] args) {
