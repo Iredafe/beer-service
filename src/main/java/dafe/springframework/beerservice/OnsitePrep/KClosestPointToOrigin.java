@@ -48,6 +48,10 @@ public class KClosestPointToOrigin {
                 + point1[1] * point1[1] - point2[1] * point2[1];
     }
 
+    private static int findPivot(int [][] points, int left, int right){
+
+    }
+
     public static void main(String[] args) {
         int [] [] points = {{3,3},{5,-1},{-2,4}}; int k = 1;
 
