@@ -42,6 +42,12 @@ public class KClosestPointToOrigin {
         array[i] = array[j];
         array[j] = temp;
     }
+
+    private static int getDistance(int [] point1, int [] point2){
+        return point1[0]* point1[0] - point2[0] * point2[0]
+                + point1[1] * point1[1] - point2[1] * point2[1];
+    }
+
     public static void main(String[] args) {
         int [] [] points = {{3,3},{5,-1},{-2,4}}; int k = 1;
 
