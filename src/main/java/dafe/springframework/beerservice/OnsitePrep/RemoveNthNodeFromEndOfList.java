@@ -15,5 +15,17 @@ public class RemoveNthNodeFromEndOfList {
     public static ListNode removeNthNodeFromEnd(ListNode head, int n){
         ListNode dummy = new ListNode(0);
         dummy.next = head;
+        ListNode first = head;
+        int lenghtCount = 0;
+
+        while(head != null){
+            lenghtCount++;
+            first = first.next;
+        }
+
+        while (lenghtCount>0){
+            lenghtCount--;
+            first = first.next;
+        }
     }
 }
