@@ -38,6 +38,7 @@ public class RemoveNthNodeFromEndOfList {
 
     public static ListNode removeNthNodeFromEndOnePass(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
+        dummy.next = head;
         ListNode firstPointer = dummy;
         ListNode secondPointer = dummy;
 
