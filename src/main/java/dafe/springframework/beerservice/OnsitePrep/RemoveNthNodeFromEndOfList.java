@@ -44,5 +44,10 @@ public class RemoveNthNodeFromEndOfList {
         for(int i=0; i< n+1; i++){
             firstPointer = firstPointer.next;
         }
+
+        while (firstPointer!=null){
+            firstPointer = firstPointer.next;
+            secondPointer = secondPointer.next;
+        }
     }
     }
