@@ -19,7 +19,7 @@ public class AddTwoNumbers {
             ListNode p = first;
             ListNode q = second;
 
-            while (p!=null && q!=null){
+            while (p!=null || q!=null){
                 int x = (p!=null ? p.val : 0);
                 int y = (q!=null ? q.val : 0);
 
@@ -27,7 +27,12 @@ public class AddTwoNumbers {
                 carry = sum/10;
                 current.next = new ListNode(sum%10);
                 current = current.next;
+
+                if(p==null) p = p.next;
+                if(q==null) q = q.next;
             }
+            if(carry>0) current.next = new ListNode(carry);
+            return dummy.next;
         }
     }
 }
