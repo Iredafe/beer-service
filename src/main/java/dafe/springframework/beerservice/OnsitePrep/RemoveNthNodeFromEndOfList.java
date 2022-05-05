@@ -23,9 +23,15 @@ public class RemoveNthNodeFromEndOfList {
             first = first.next;
         }
 
+        lenghtCount -= n;
+        first = dummy;
+
         while (lenghtCount>0){
             lenghtCount--;
             first = first.next;
         }
+
+        first.next = first.next.next;
+        return dummy.next;
     }
 }
