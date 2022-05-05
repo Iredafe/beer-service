@@ -11,7 +11,7 @@ public class AddTwoNumbers {
         }
 
         public static ListNode addTwoNumbers(){
-
+            ListNode dummy = new ListNode(0);
         }
     }
 }
