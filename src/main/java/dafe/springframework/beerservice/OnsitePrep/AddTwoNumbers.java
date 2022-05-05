@@ -18,6 +18,11 @@ public class AddTwoNumbers {
 
             ListNode p = first;
             ListNode q = second;
+
+            while (p!=null && q!=null){
+                int x = (p!=null ? p.val : 0);
+                int y = (q!=null ? q.val : 0);
+            }
         }
     }
 }
