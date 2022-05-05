@@ -6,7 +6,11 @@ public class AddTwoNumbers {
         int val;
         ListNode next;
 
-        public ListNode(){
+        public ListNode(int val){
+            this.val = val;
+        }
+
+        public static ListNode addTwoNumbers(){
 
         }
     }
