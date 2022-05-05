@@ -12,7 +12,8 @@ public class RemoveNthNodeFromEndOfList {
         }
     }
 
-    public static ListNode removeNthNodeFromEnd(ListNode list, int n){
+    public static ListNode removeNthNodeFromEnd(ListNode head, int n){
         ListNode dummy = new ListNode(0);
+        dummy.next = head;
     }
 }
