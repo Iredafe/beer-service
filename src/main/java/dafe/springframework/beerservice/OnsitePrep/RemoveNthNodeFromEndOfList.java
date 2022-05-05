@@ -34,4 +34,9 @@ public class RemoveNthNodeFromEndOfList {
         first.next = first.next.next;
         return dummy.next;
     }
-}
+
+
+    public static ListNode removeNthNodeFromEndOnePass(ListNode head, int n) {
+
+    }
+    }
