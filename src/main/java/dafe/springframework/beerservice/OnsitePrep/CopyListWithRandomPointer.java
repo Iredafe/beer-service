@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.HashMap;
+
 public class CopyListWithRandomPointer {
 
     static class Node{
@@ -11,4 +13,6 @@ public class CopyListWithRandomPointer {
             this.val=val;
         }
     }
+
+    HashMap<Node, Node> visitedHash = new HashMap<>();
 }
