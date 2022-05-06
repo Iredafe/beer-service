@@ -26,6 +26,11 @@ public class CopyListWithRandomPointer {
         }
 
         Node node = new Node(head.val);
-        return null;
+
+        visitedHash.put(head, node);
+
+        node.next = copyListWithRandomPointer(head.next);
+        node.random = copyListWithRandomPointer(head.random);
+        return node;
     }
 }
