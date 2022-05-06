@@ -15,4 +15,9 @@ public class CopyListWithRandomPointer {
     }
 
     HashMap<Node, Node> visitedHash = new HashMap<>();
+
+    public static Node copyListWithRandomPointer(Node head){
+
+        return null;
+    }
 }
