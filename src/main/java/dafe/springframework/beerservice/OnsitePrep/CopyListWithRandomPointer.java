@@ -6,5 +6,9 @@ public class CopyListWithRandomPointer {
         int val;
         Node next;
         Node random;
+
+        public Node(int val){
+            this.val=val;
+        }
     }
 }
