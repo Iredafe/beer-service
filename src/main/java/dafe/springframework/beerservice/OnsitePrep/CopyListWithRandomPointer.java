@@ -14,10 +14,18 @@ public class CopyListWithRandomPointer {
         }
     }
 
-    HashMap<Node, Node> visitedHash = new HashMap<>();
+    static HashMap<Node, Node> visitedHash = new HashMap<>();
 
     public static Node copyListWithRandomPointer(Node head){
+        if(head == null){
+            return null;
+        }
 
+        if(visitedHash.containsKey(head)){
+            return visitedHash.get(head);
+        }
+
+        Node node = new Node(head.val);
         return null;
     }
 }
