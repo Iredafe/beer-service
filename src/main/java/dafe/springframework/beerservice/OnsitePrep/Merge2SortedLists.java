@@ -32,15 +32,18 @@ public class Merge2SortedLists {
           while (first!=null && second!=null){
 
               if(first.value <= second.value){
-                  first = first.next;
-                  prev = second;
-              }else{
-                  second = second.next;
                   prev = first;
+                  first = first.next;
+              }else{
+                  prev = first;
+                  second = second.next;
               }
               prev = prev.next;
           }
-    }
+          prev.next = first==null? second : first;
+        return dummy.next;
+      }
+
     public static void main(String[] args) {
         Merge2SortedLists node = new Merge2SortedLists();
 
