@@ -26,6 +26,13 @@ public class Merge2SortedLists {
 
     public static ListNode merge2ListsIteratively(ListNode first, ListNode second){
 
+          ListNode dummy = new ListNode(0);
+
+          ListNode prev = dummy;
+
+          while (first!=null && second!=null){
+
+          }
     }
     public static void main(String[] args) {
         Merge2SortedLists node = new Merge2SortedLists();
