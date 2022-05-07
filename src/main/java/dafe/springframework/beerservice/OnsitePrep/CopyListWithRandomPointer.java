@@ -33,4 +33,8 @@ public class CopyListWithRandomPointer {
         node.random = copyListWithRandomPointer(head.random);
         return node;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
