@@ -24,6 +24,9 @@ public class Merge2SortedLists {
         }
     }
 
+    public static ListNode merge2Lists(ListNode first, ListNode second){
+
+    }
     public static void main(String[] args) {
         Merge2SortedLists node = new Merge2SortedLists();
 
