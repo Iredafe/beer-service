@@ -27,11 +27,18 @@ public class Merge2SortedLists {
     public static ListNode merge2ListsIteratively(ListNode first, ListNode second){
 
           ListNode dummy = new ListNode(0);
-
           ListNode prev = dummy;
 
           while (first!=null && second!=null){
 
+              if(first.value <= second.value){
+                  first = first.next;
+                  prev = second;
+              }else{
+                  second = second.next;
+                  prev = first;
+              }
+              prev = prev.next;
           }
     }
     public static void main(String[] args) {
