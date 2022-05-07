@@ -54,4 +54,8 @@ public class RemoveNthNodeFromEndOfList {
         secondPointer.next = secondPointer.next.next;
         return dummy.next;
     }
+
+    public static void main(String[] args) {
+
+    }
     }
