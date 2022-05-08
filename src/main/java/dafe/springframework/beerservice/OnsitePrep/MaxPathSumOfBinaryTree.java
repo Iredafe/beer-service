@@ -11,8 +11,9 @@ public class MaxPathSumOfBinaryTree {
             this.value = value;
         }
     }
-
+   static int maxPathSum = Integer.MIN_VALUE;
     public static int maxPathSum(TreeNode node){
 
+        return maxPathSum;
     }
 }
