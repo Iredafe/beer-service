@@ -4,7 +4,7 @@ import dafe.springframework.beerservice.dsAndAlgo.MaxPathSumPractice;
 
 public class MaxPathSumOfBinaryTree {
 
-    private TreeNode root;
+    private static TreeNode root;
 
     static class TreeNode{
         int value;
@@ -17,7 +17,7 @@ public class MaxPathSumOfBinaryTree {
     }
    static int maxPathSum = Integer.MIN_VALUE;
     public static int maxPathSum(TreeNode node){
-
+        dfs(node);
         return maxPathSum;
     }
 
@@ -41,7 +41,7 @@ public class MaxPathSumOfBinaryTree {
         tree.root.right.left = new TreeNode(15);
         tree.root.right.right = new TreeNode(7);
 
-
-
+        System.out.println(
+                "This is the max path sum of the tree : " + tree.maxPathSum(root));
     }
 }
