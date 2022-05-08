@@ -22,6 +22,10 @@ public class MaxPathSumOfBinaryTree {
 
         int leftMax = Math.max(dfs(root.left), 0);
         int rightMax = Math.max(dfs(root.right), 0);
-        return 0;
+        int sumThroughRoot = root.value + leftMax + rightMax;
+
+        maxPathSum = Math.max(maxPathSum, sumThroughRoot);
+
+        return root.value + Math.max(rightMax, leftMax);
     }
 }
