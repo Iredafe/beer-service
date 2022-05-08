@@ -18,7 +18,10 @@ public class MaxPathSumOfBinaryTree {
     }
 
     static int dfs(TreeNode root){
+        if(root == null) return 0;
 
-        return null;
+        int leftMax = Math.max(dfs(root.left), 0);
+        int rightMax = Math.max(dfs(root.right), 0);
+        return 0;
     }
 }
