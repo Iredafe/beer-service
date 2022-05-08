@@ -1,6 +1,10 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import dafe.springframework.beerservice.dsAndAlgo.MaxPathSumPractice;
+
 public class MaxPathSumOfBinaryTree {
+
+    private TreeNode root;
 
     static class TreeNode{
         int value;
@@ -27,5 +31,10 @@ public class MaxPathSumOfBinaryTree {
         maxPathSum = Math.max(maxPathSum, sumThroughRoot);
 
         return root.value + Math.max(rightMax, leftMax);
+    }
+
+    public static void main(String[] args) {
+        MaxPathSumOfBinaryTree tree = new MaxPathSumOfBinaryTree();
+        tree.root = new TreeNode(-10);
     }
 }
