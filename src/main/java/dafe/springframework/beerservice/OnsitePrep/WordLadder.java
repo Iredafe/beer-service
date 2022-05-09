@@ -15,6 +15,29 @@ public class WordLadder {
         Set<String> visited = new HashSet<>();
         visited.add(startWord);
         int ladderLevel = 1;
+
+        while(!queue.isEmpty()){
+            int size = queue.size();
+
+            for(int i=0; i<size; i++){
+                String word = queue.poll();
+                if(word.equals(endWord)) return ladderLevel;
+
+                for(int j=0; j<word.length(); j++){
+                    for(char k = 'a'; k<= 'z'; k++){
+                        char [] array = word.toCharArray();
+                        array[j] = k;
+
+                        String string = new String(array);
+                        if(set.contains(string) && !visited.contains(string)){
+                            visited.add(string);
+                            queue.add(string);
+                        }
+                    }
+                }
+            }
+            ++ladderLevel;
+        }
         return 0;
     }
     public static void main(String[] args) {
