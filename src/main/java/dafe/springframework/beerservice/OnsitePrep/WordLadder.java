@@ -1,9 +1,6 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class WordLadder {
 
@@ -11,6 +8,13 @@ public class WordLadder {
 
         Set<String> set = new HashSet<>(listOfWordsToClimb);
         if(!set.contains(endWord)) return 0;
+
+        Queue<String> queue = new LinkedList<>();
+        queue.add(startWord);
+
+        Set<String> visited = new HashSet<>();
+        visited.add(startWord);
+        int ladderLevel = 1;
         return 0;
     }
     public static void main(String[] args) {
