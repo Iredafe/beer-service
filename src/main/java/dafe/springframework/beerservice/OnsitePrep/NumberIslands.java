@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class NumberIslands {
 
 
@@ -20,6 +23,16 @@ public class NumberIslands {
     }
 
     private static void bfs(char[][] grid, int i, int j, boolean[][] visited, int[][] directions) {
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[]{i,j});
+
+        while (!queue.isEmpty()){
+            int [] current = queue.poll();
+
+            for(int [] direction : directions){
+
+            }
+        }
 
     }
 
