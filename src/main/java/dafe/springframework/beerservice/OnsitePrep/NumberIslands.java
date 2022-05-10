@@ -33,12 +33,15 @@ public class NumberIslands {
                 int row = current[0]+direction[0];
                 int col = current[1]+direction[1];
 
-                if(visited[row][col] || grid[row][col]=='0'||
-                        row<0 || row>= grid.length ||
-                        col<0|| col>= grid[0].length)
-                    return;
+                if(row<0 || row>= grid.length ||
+                        col<0|| col>= grid[0].length ||
+                        visited[row][col] || grid[row][col]=='0') return;
+                visited[row][col] = true;
+                queue.offer(new int[]{row, col});
             }
+
         }
+
 
     }
 
