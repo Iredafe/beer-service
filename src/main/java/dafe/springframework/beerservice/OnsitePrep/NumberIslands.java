@@ -30,7 +30,13 @@ public class NumberIslands {
             int [] current = queue.poll();
 
             for(int [] direction : directions){
+                int row = current[0]+direction[0];
+                int col = current[1]+direction[1];
 
+                if(visited[row][col] || grid[row][col]=='0'||
+                        row<0 || row>= grid.length ||
+                        col<0|| col>= grid[0].length)
+                    return;
             }
         }
 
