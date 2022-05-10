@@ -6,6 +6,7 @@ public class NumberIslands {
     private static int numberOfIslandsBFS(char[][] grid) {
 
         int countIslands = 0;
+        int [][] directions = {{0,1},{1,0},{0,-1},{-1,0}};
         boolean[][] visited = new boolean[grid.length][grid[0].length];
         for(int i=0; i< grid.length; i++){
             for(int j=0; j<grid[0].length; j++){
