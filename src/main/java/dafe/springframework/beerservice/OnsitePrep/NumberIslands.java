@@ -19,6 +19,10 @@ public class NumberIslands {
     return countIslands;
     }
 
+    private static void bfs(char[][] grid, int i, int j, boolean[][] visited, int[][] directions) {
+
+    }
+
     public static void main(String[] args) {
         char [][] grid = {
                 {'1','1','1','1','0'},
