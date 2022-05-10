@@ -25,6 +25,7 @@ public class NumberIslands {
     private static void bfs(char[][] grid, int i, int j, boolean[][] visited, int[][] directions) {
         Queue<int[]> queue = new LinkedList<>();
         queue.add(new int[]{i,j});
+        visited[i][j]=true;
 
         while (!queue.isEmpty()){
             int [] current = queue.poll();
@@ -33,11 +34,12 @@ public class NumberIslands {
                 int row = current[0]+direction[0];
                 int col = current[1]+direction[1];
 
-                if(row<0 || row>= grid.length ||
-                        col<0|| col>= grid[0].length ||
-                        visited[row][col] || grid[row][col]=='0') return;
-                visited[row][col] = true;
-                queue.offer(new int[]{row, col});
+                if(row>=0 && row < grid.length &&
+                        col>=0 && col < grid[0].length &&
+                        !visited[row][col] && grid[row][col]=='1' ) {
+                    visited[row][col] = true;
+                    queue.offer(new int[]{row, col});
+                }
             }
 
         }
