@@ -3,10 +3,18 @@ package dafe.springframework.beerservice.OnsitePrep;
 public class NumberIslands {
 
 
-    private static String numberOfIslandsBFS(char[][] grid) {
+    private static int numberOfIslandsBFS(char[][] grid) {
 
         int countIslands = 0;
-
+        boolean[][] visited = new boolean[grid.length][grid[0].length];
+        for(int i=0; i< grid.length; i++){
+            for(int j=0; j<grid[0].length; j++){
+                if(!visited[i][j] && grid[i][j]=='1'){
+                    bfs(grid, i, j, visited, directions);
+                    countIslands++;
+                }
+            }
+        }
     return countIslands;
     }
 
