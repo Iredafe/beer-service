@@ -14,4 +14,9 @@ public class UnionFind {
     public int find(int x){
         return root[x];
     }
+
+    public boolean connected(int x, int y){
+        int rootX = find(x);
+        int rootY = find(y);
+    }
 }
