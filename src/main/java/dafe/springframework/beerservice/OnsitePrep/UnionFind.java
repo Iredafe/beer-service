@@ -20,7 +20,11 @@ public class UnionFind {
         int rootY = find(y);
 
         if(rootX!=rootY){
-
+            for(int i=0; i<root.length; i++){
+                if(root[i]==rootY){
+                    root[i]=rootX;
+                }
+            }
         }
     }
 }
