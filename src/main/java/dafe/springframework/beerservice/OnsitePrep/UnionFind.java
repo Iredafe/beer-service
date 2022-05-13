@@ -18,5 +18,9 @@ public class UnionFind {
     public boolean connected(int x, int y){
         int rootX = find(x);
         int rootY = find(y);
+
+        if(rootX!=rootY){
+
+        }
     }
 }
