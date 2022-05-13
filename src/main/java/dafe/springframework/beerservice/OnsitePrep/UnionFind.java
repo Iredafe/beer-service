@@ -31,4 +31,8 @@ public class UnionFind {
     public boolean connected(int x, int y){
         return find(x)==find(y);
     }
+
+    public static void main(String[] args) {
+
+    }
 }
