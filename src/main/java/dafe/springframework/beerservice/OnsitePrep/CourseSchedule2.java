@@ -27,8 +27,9 @@ public class CourseSchedule2 {
 
         for(int currentCourse = 0; currentCourse < numCourses; currentCourse++){
             if(isCyclic(dictionary, stack, currentCourse, visited, checked)){
-
+                return new int[] {};
             }
+            result[currentCourse] = stack.pop();
         }
 
         return result;
