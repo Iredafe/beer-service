@@ -32,6 +32,13 @@ public class CourseSchedule1 {
         return true;
      }
 
+     private static boolean isCyclic(HashMap<Integer, List<Integer>> dictionary,
+                                     int currentCourse, boolean[] path, boolean[] checked){
+
+        if(checked[currentCourse]) return false;
+        if(path[currentCourse]) return true;
+     }
+
     public static void main(String[] args) {
         int numCourses = 4; int [][] prerequisites = {{1,0},{2,0},{3,1},{3,2}};
 
