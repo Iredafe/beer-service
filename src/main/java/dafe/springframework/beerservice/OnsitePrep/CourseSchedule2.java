@@ -1,9 +1,13 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.HashMap;
+import java.util.List;
+
 public class CourseSchedule2 {
 
     private static int[] findOrder(int numCourses, int[][] prerequisites){
         int [] result = new int[numCourses];
+        HashMap<Integer, List<Integer>> dictionary = new HashMap<Integer, List<Integer>>();
 
         return result;
     }
