@@ -37,11 +37,13 @@ public class CourseSchedule1 {
 
         if(checked[currentCourse]) return false;
         if(path[currentCourse]) return true;
+        if(!dictionary.containsKey(currentCourse)) return false;
 
         boolean cyclicCheck = false;
 
         for(Integer child : dictionary.get(currentCourse)){
             cyclicCheck = isCyclic(dictionary, child, path, checked);
+            if(cyclicCheck) break;
         }
 
         path[currentCourse] = false;
