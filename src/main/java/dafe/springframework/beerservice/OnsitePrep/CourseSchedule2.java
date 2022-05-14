@@ -8,6 +8,10 @@ public class CourseSchedule2 {
         int [] result = new int[numCourses];
         List<List<Integer>> graph = new ArrayList<>();
         Stack<Integer> stack = new Stack<>();
+
+        for(int i=0; i<numCourses; i++){
+            graph.add(new ArrayList<>());
+        }
         for(int [] coursesRelationship : prerequisites){
             if(dictionary.containsKey(coursesRelationship[1])){
                 dictionary.get(coursesRelationship[1]).add(coursesRelationship[0]);
