@@ -40,6 +40,18 @@ public class CourseSchedule2 {
         if(visited[currentCourse]) return true;
         if(!dictionary.containsKey(currentCourse)) return false;
 
+        visited[currentCourse] = true;
+        boolean isCycle = false;
+        //dfs
+        for (Integer child : dictionary.get(currentCourse)){
+            isCycle = isCyclic(dictionary, stack, child, visited, checked);
+            if(isCycle) break;
+        }
+        stack.push(currentCourse);
+        visited[currentCourse]=false;
+        checked[currentCourse] =true;
+
+        return isCycle;
     }
     public static void main(String[] args) {
 
