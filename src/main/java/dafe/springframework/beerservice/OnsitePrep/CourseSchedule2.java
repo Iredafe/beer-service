@@ -1,9 +1,6 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class CourseSchedule2 {
 
@@ -27,9 +24,10 @@ public class CourseSchedule2 {
             if(isCyclic(dictionary, stack, currentCourse, visited, checked)){
                 return new int[] {};
             }
-            result[currentCourse] = stack.pop();
+            if(!stack.isEmpty()){
+                result[currentCourse] = stack.pop();
+            }
         }
-
         return result;
     }
 
@@ -58,7 +56,7 @@ public class CourseSchedule2 {
         int numCourses = 4; int [][] prerequisites = {{1,0},{2,0},{3,1},{3,2}};
         int numCourses1 = 2; int [][] prerequisites1 = {{1,0},{0,1}};
 
-        System.out.println("Can these courses be finished ? " + findOrder(numCourses, prerequisites));
-        System.out.println("Can these courses be finished ? " + findOrder(numCourses1, prerequisites1));
+        System.out.println("Can these courses be finished ? " + Arrays.toString(findOrder(numCourses, prerequisites)));
+        System.out.println("Can these courses be finished ? " + Arrays.toString(findOrder(numCourses1, prerequisites1)));
     }
 }
