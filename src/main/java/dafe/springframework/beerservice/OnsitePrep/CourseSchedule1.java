@@ -12,10 +12,10 @@ public class CourseSchedule1 {
 
         HashMap<Integer, List<Integer>> dictionary = new HashMap<>();
         for(int [] relations : prerequisites){
-            if(dictionary.containsKey(relations[0])){
+            if(dictionary.containsKey(relations[1])){
                 dictionary.get(relations[1]).add(relations[0]);
             }else{
-                List<Integer> nextCourses = new ArrayList<>();
+                List<Integer> nextCourses = new LinkedList<>();
                 nextCourses.add(relations[0]);
                 dictionary.put(relations[1], nextCourses);
             }
@@ -33,13 +33,14 @@ public class CourseSchedule1 {
      }
 
      private static boolean isCyclic(HashMap<Integer, List<Integer>> dictionary,
-                                     int currentCourse, boolean[] path, boolean[] checked){
+                                     Integer currentCourse, boolean[] path, boolean[] checked){
 
         if(checked[currentCourse]) return false;
         if(path[currentCourse]) return true;
         if(!dictionary.containsKey(currentCourse)) return false;
 
         boolean cyclicCheck = false;
+        path[currentCourse] =true;
 
         for(Integer child : dictionary.get(currentCourse)){
             cyclicCheck = isCyclic(dictionary, child, path, checked);
@@ -54,7 +55,9 @@ public class CourseSchedule1 {
 
     public static void main(String[] args) {
         int numCourses = 4; int [][] prerequisites = {{1,0},{2,0},{3,1},{3,2}};
+        int numCourses1 = 2; int [][] prerequisites1 = {{1,0},{0,1}};
 
-        System.out.println("Can these courses be finished ? " + canFinish(numCourses, prerequisites) );
+        System.out.println("Can these courses be finished ? " + canFinish(numCourses, prerequisites));
+        System.out.println("Can these courses be finished ? " + canFinish(numCourses1, prerequisites1));
     }
 }
