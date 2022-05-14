@@ -1,13 +1,25 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Stack;
 
 public class CourseSchedule2 {
 
     private static int[] findOrder(int numCourses, int[][] prerequisites){
         int [] result = new int[numCourses];
-        HashMap<Integer, List<Integer>> dictionary = new HashMap<Integer, List<Integer>>();
+        HashMap<Integer, List<Integer>> dictionary = new HashMap<>();
+        Stack<Integer> stack = new Stack<>();
+
+        for(int [] coursesRelationship : prerequisites){
+            if(dictionary.containsKey(coursesRelationship[1])){
+                dictionary.get(coursesRelationship[1]).add(coursesRelationship[0]);
+            }else{
+                List<Integer> nextCourse = new ArrayList<>();
+
+            }
+        }
 
         return result;
     }
