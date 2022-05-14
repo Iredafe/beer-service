@@ -1,6 +1,8 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 public class CourseSchedule1 {
@@ -9,6 +11,19 @@ public class CourseSchedule1 {
     private static boolean canFinish(int numCourses, int [][] prerequisites){
 
         HashMap<Integer, List<Integer>> dictionary = new HashMap<>();
+        for(int [] relations : prerequisites){
+            if(dictionary.containsKey(relations[0])){
+                dictionary.get(relations[1]).add(relations[0]);
+            }else{
+                List<Integer> nextCourses = new ArrayList<>();
+                nextCourses.add(relations[0]);
+                dictionary.put(relations[1], nextCourses);
+            }
+        }
+
+        boolean [] path = new boolean[numCourses];
+        boolean [] checked = new boolean[numCourses];
+
      }
 
     public static void main(String[] args) {
