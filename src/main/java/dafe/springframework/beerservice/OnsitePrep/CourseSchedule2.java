@@ -2,7 +2,11 @@ package dafe.springframework.beerservice.OnsitePrep;
 
 public class CourseSchedule2 {
 
+    private static int[] findOrder(int numCourses, int[][] prerequisites){
+        int [] result = new int[numCourses];
 
+        return result;
+    }
 
     public static void main(String[] args) {
 
