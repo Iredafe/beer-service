@@ -24,6 +24,12 @@ public class CourseSchedule1 {
         boolean [] path = new boolean[numCourses];
         boolean [] checked = new boolean[numCourses];
 
+        for(int currentCourse = 0; currentCourse<numCourses; currentCourse++){
+            if(isCyclic(dictionary, currentCourse, checked, path)){
+                return false;
+            }
+        }
+        return true;
      }
 
     public static void main(String[] args) {
