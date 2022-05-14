@@ -37,6 +37,17 @@ public class CourseSchedule1 {
 
         if(checked[currentCourse]) return false;
         if(path[currentCourse]) return true;
+
+        boolean cyclicCheck = false;
+
+        for(Integer child : dictionary.get(currentCourse)){
+            cyclicCheck = isCyclic(dictionary, child, path, checked);
+        }
+
+        path[currentCourse] = false;
+        checked[currentCourse] = true;
+
+        return cyclicCheck;
      }
 
     public static void main(String[] args) {
