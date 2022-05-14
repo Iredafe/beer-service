@@ -6,7 +6,7 @@ public class CourseSchedule2 {
 
     private static int[] findOrder(int numCourses, int[][] prerequisites){
         int [] result = new int[numCourses];
-        HashMap<Integer, List<Integer>> dictionary = new HashMap<>();
+        List<List<Integer>> graph = new ArrayList<>();
         Stack<Integer> stack = new Stack<>();
         for(int [] coursesRelationship : prerequisites){
             if(dictionary.containsKey(coursesRelationship[1])){
@@ -24,10 +24,11 @@ public class CourseSchedule2 {
             if(isCyclic(dictionary, stack, currentCourse, visited, checked)){
                 return new int[] {};
             }
-            if(!stack.isEmpty()){
+            while (!stack.isEmpty()){
                 result[currentCourse] = stack.pop();
             }
         }
+
         return result;
     }
 
@@ -39,17 +40,16 @@ public class CourseSchedule2 {
         if(!dictionary.containsKey(currentCourse)) return false;
 
         visited[currentCourse] = true;
-        boolean isCycle = false;
+
         //dfs
         for (Integer child : dictionary.get(currentCourse)){
-            isCycle = isCyclic(dictionary, stack, child, visited, checked);
-            if(isCycle) break;
+            if(isCyclic(dictionary, stack, child, visited, checked)) return true;
         }
         stack.push(currentCourse);
         visited[currentCourse]=false;
         checked[currentCourse] =true;
 
-        return isCycle;
+        return false;
     }
     public static void main(String[] args) {
 
@@ -57,6 +57,5 @@ public class CourseSchedule2 {
         int numCourses1 = 2; int [][] prerequisites1 = {{1,0},{0,1}};
 
         System.out.println("Can these courses be finished ? " + Arrays.toString(findOrder(numCourses, prerequisites)));
-        System.out.println("Can these courses be finished ? " + Arrays.toString(findOrder(numCourses1, prerequisites1)));
     }
 }
