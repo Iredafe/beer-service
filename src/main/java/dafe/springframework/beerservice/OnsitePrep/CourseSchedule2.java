@@ -13,41 +13,34 @@ public class CourseSchedule2 {
             graph.add(new ArrayList<>());
         }
         for(int [] coursesRelationship : prerequisites){
-            if(dictionary.containsKey(coursesRelationship[1])){
-                dictionary.get(coursesRelationship[1]).add(coursesRelationship[0]);
-            }else{
-                List<Integer> nextCourse = new ArrayList<>();
-                nextCourse.add(coursesRelationship[0]);
-                dictionary.put(coursesRelationship[1], nextCourse);
-            }
+            graph.get(coursesRelationship[1]).add(coursesRelationship[0]);
         }
         boolean [] visited = new boolean[numCourses];
         boolean [] checked = new boolean[numCourses];
 
         for(int currentCourse = 0; currentCourse < numCourses; currentCourse++){
-            if(isCyclic(dictionary, stack, currentCourse, visited, checked)){
+            if(isCyclic(graph, stack, currentCourse, visited, checked)){
                 return new int[] {};
             }
             while (!stack.isEmpty()){
-                result[currentCourse] = stack.pop();
+                result[currentCourse++] = stack.pop();
             }
         }
 
         return result;
     }
 
-    private static boolean isCyclic(HashMap<Integer, List<Integer>> dictionary, Stack<Integer> stack, Integer currentCourse,
+    private static boolean isCyclic(List<List<Integer>> graph, Stack<Integer> stack, Integer currentCourse,
                                     boolean [] visited, boolean [] checked){
 
         if(checked[currentCourse]) return false;
         if(visited[currentCourse]) return true;
-        if(!dictionary.containsKey(currentCourse)) return false;
 
         visited[currentCourse] = true;
 
         //dfs
-        for (Integer child : dictionary.get(currentCourse)){
-            if(isCyclic(dictionary, stack, child, visited, checked)) return true;
+        for (Integer child : graph.get(currentCourse)){
+            if(isCyclic(graph, stack, child, visited, checked)) return true;
         }
         stack.push(currentCourse);
         visited[currentCourse]=false;
