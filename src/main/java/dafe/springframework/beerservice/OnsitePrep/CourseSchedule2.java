@@ -17,6 +17,16 @@ public class CourseSchedule2 {
                 dictionary.get(coursesRelationship[1]).add(coursesRelationship[0]);
             }else{
                 List<Integer> nextCourse = new ArrayList<>();
+                nextCourse.add(coursesRelationship[0]);
+                dictionary.put(coursesRelationship[1], nextCourse);
+            }
+        }
+
+        boolean [] visited = new boolean[numCourses];
+        boolean [] checked = new boolean[numCourses];
+
+        for(int currentCourse = 0; currentCourse < numCourses; currentCourse++){
+            if(isCyclic(dictionary, stack, currentCourse, visited, checked)){
 
             }
         }
