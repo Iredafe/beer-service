@@ -11,7 +11,6 @@ public class CourseSchedule2 {
         int [] result = new int[numCourses];
         HashMap<Integer, List<Integer>> dictionary = new HashMap<>();
         Stack<Integer> stack = new Stack<>();
-
         for(int [] coursesRelationship : prerequisites){
             if(dictionary.containsKey(coursesRelationship[1])){
                 dictionary.get(coursesRelationship[1]).add(coursesRelationship[0]);
@@ -21,7 +20,6 @@ public class CourseSchedule2 {
                 dictionary.put(coursesRelationship[1], nextCourse);
             }
         }
-
         boolean [] visited = new boolean[numCourses];
         boolean [] checked = new boolean[numCourses];
 
@@ -35,6 +33,14 @@ public class CourseSchedule2 {
         return result;
     }
 
+    private static boolean isCyclic(HashMap<Integer, List<Integer>> dictionary, Stack<Integer> stack, Integer currentCourse,
+                                    boolean [] visited, boolean [] checked){
+
+        if(checked[currentCourse]) return false;
+        if(visited[currentCourse]) return true;
+        if(!dictionary.containsKey(currentCourse)) return false;
+
+    }
     public static void main(String[] args) {
 
         int numCourses = 4; int [][] prerequisites = {{1,0},{2,0},{3,1},{3,2}};
