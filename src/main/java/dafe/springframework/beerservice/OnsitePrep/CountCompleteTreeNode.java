@@ -38,11 +38,13 @@ public class CountCompleteTreeNode {
         int left = 1;
         int right = (int)Math.pow(2, depth)-1;
         int pivot;
-        while (left<=right){
-            pivot = left+(right-left)/2;
-
+        while (left<=right) {
+            pivot = left + (right - left) / 2;
+            if (exists(depth, node, pivot)) left=pivot+1;
+            else right=pivot-1;
         }
-    }
+        return (int)Math.pow(2,depth)-1+left;
+        }
 
     public static void main(String[] args) {
         CountCompleteTreeNode tree = new CountCompleteTreeNode();
