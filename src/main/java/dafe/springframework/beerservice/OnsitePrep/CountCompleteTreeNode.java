@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
+import dafe.springframework.beerservice.dsAndAlgo.BinaryTreeDiameter;
+
 public class CountCompleteTreeNode {
     static BinaryTree root;
     static class BinaryTree{
@@ -12,6 +14,13 @@ public class CountCompleteTreeNode {
 
     public static void main(String[] args) {
         CountCompleteTreeNode tree = new CountCompleteTreeNode();
+
+        tree.root = new BinaryTree(1);
+        tree.root.right = new BinaryTree(2);
+        tree.root.left = new BinaryTree(3);
+        tree.root.left.left= new BinaryTree(4);
+        tree.root.left.right = new BinaryTree(5);
+        tree.root.right.left = new BinaryTree(6);
     }
 
 }
