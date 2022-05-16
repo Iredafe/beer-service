@@ -10,4 +10,8 @@ public class CountCompleteTreeNode {
         }
     }
 
+    public static void main(String[] args) {
+        CountCompleteTreeNode tree = new CountCompleteTreeNode();
+    }
+
 }
