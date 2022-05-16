@@ -10,7 +10,7 @@ public class CountCompleteTreeNode {
         }
     }
 
-    public int computeDepth(BinaryTree node){
+    public static int computeDepth(BinaryTree node){
         int d = 0;
         while(node.left!=null){
             node = node.left;
@@ -23,14 +23,19 @@ public class CountCompleteTreeNode {
         int left = 0;
         int right = (int)Math.pow(2, depth) - 1;
         int pivot;
-
         for(int i=0; i<depth; i++){
             pivot = left + (right-left)/2;
             if(index <= pivot) node = node.left;
             else node = node.right;
         }
-
         return node !=null;
+    }
+
+    public static int countNodes(BinaryTree node){
+        int depth = computeDepth(node);
+        int left = 1;
+        int right = (int)Math.pow(2, depth)-1;
+        int pivot = left+(right-left)/2;
     }
 
     public static void main(String[] args) {
