@@ -51,6 +51,5 @@ public class BinaryTreeDiameter {
         tree.root.left.right.right.right = new BinaryTree(6);
 
         System.out.println( "The diameter of this binary tree is : " + tree.binaryTreeDiameter(root));
-
     }
 }

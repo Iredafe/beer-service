@@ -16,8 +16,17 @@ public class CountCompleteTreeNode {
             node = node.left;
             d++;
         }
-
         return d;
+    }
+
+    public static boolean exists(int depth, BinaryTree node, int index){
+        int left = 0;
+        int right = (int)Math.pow(2, depth) - 1;
+        int pivot;
+
+        for(int i=0; i<depth; i++){
+
+        }
     }
 
     public static void main(String[] args) {
