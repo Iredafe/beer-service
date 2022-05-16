@@ -25,8 +25,12 @@ public class CountCompleteTreeNode {
         int pivot;
         for(int i=0; i<depth; i++){
             pivot = left + (right-left)/2;
-            if(index <= pivot) node = node.left;
+            if(index <= pivot) {
+                node = node.left;
+                right=pivot;
+            }
             else node = node.right;
+            left=pivot+1;
         }
         return node !=null;
     }
@@ -55,5 +59,8 @@ public class CountCompleteTreeNode {
         tree.root.left.left= new BinaryTree(4);
         tree.root.left.right = new BinaryTree(5);
         tree.root.right.left = new BinaryTree(6);
+
+        System.out.println("This is the number of nodes in the complete binary tree : " +
+                   countNodes(tree.root));
     }
 }
