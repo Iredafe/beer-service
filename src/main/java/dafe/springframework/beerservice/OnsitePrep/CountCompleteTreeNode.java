@@ -25,8 +25,12 @@ public class CountCompleteTreeNode {
         int pivot;
 
         for(int i=0; i<depth; i++){
-
+            pivot = left + (right-left)/2;
+            if(index <= pivot) node = node.left;
+            else node = node.right;
         }
+
+        return node !=null;
     }
 
     public static void main(String[] args) {
