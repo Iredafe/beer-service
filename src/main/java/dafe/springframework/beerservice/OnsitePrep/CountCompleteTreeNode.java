@@ -10,6 +10,16 @@ public class CountCompleteTreeNode {
         }
     }
 
+    public int computeDepth(BinaryTree node){
+        int d = 0;
+        while(node.left!=null){
+            node = node.left;
+            d++;
+        }
+
+        return d;
+    }
+
     public static void main(String[] args) {
         CountCompleteTreeNode tree = new CountCompleteTreeNode();
 
