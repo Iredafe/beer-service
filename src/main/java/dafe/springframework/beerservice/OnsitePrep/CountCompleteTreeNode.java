@@ -32,10 +32,16 @@ public class CountCompleteTreeNode {
     }
 
     public static int countNodes(BinaryTree node){
+        if(node==null) return 0;
         int depth = computeDepth(node);
+        if(depth==0) return 1;
         int left = 1;
         int right = (int)Math.pow(2, depth)-1;
-        int pivot = left+(right-left)/2;
+        int pivot;
+        while (left<=right){
+            pivot = left+(right-left)/2;
+
+        }
     }
 
     public static void main(String[] args) {
