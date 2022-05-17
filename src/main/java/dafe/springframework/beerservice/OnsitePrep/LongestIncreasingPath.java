@@ -14,8 +14,11 @@ public class LongestIncreasingPath {
                 answer = Math.max(answer, dfs(matrix, i, j, cache));
             }
         }
+        return answer;
+    }
 
-        return 0;
+    private static int dfs(int [][]matrix, int i, int j, int[][] cache){
+
     }
 
     public static void main(String[] args) {
