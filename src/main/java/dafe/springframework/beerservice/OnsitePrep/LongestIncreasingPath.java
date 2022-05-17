@@ -2,10 +2,12 @@ package dafe.springframework.beerservice.OnsitePrep;
 
 public class LongestIncreasingPath {
    private static int [][] directions = {{0,1}, {0,-1}, {1,0}, {-1,0}};
+    private static int rowLength;
+    private static int colLength;
 
     private static int longestIncreasingPath(int[][] matrix){
-        int rowLength = matrix.length;
-        int colLength = matrix[0].length;
+        rowLength  = matrix.length;
+        colLength = matrix[0].length;
         if(rowLength==0) return 0;
         int [][] cache = new int [rowLength][colLength];
         int answer = 0;
@@ -19,18 +21,16 @@ public class LongestIncreasingPath {
     }
 
     private static int dfs(int [][]matrix, int i, int j, int[][] cache){
-        int rowLength = matrix.length;
-        int colLength= matrix[0].length;
-
+        if(cache[i][j] != 0 ) return cache[i][j];
 
         for(int [] direction : directions){
             int row = i + direction[0];
             int col = j + direction[1];
             if(row>=0 && col >=0 && row < rowLength && col < colLength && matrix[row][col] > matrix[i][j]){
-                cache[row][col] = Math.max(cache[i][j], dfs(matrix,row,col,cache));
+                cache[i][j] = Math.max(cache[i][j], dfs(matrix,row,col,cache));
             }
         }
-        return cache[i][j];
+        return ++cache[i][j];
         }
 
     public static void main(String[] args) {
