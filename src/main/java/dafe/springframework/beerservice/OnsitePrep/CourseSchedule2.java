@@ -51,9 +51,9 @@ public class CourseSchedule2 {
     }
     public static void main(String[] args) {
 
-       // int numCourses = 4; int [][] prerequisites = {{1,0},{2,0},{3,1},{3,2}};
-        int numCourses1 = 2; int [][] prerequisites1 = {};
+        int numCourses = 4; int [][] prerequisites = {{1,0},{2,0},{3,1},{3,2}};
+       // int numCourses1 = 2; int [][] prerequisites1 = {};
 
-        System.out.println("Can these courses be finished ? " + Arrays.toString(findOrder(numCourses1, prerequisites1)));
+        System.out.println("Can these courses be finished ? " + Arrays.toString(findOrder(numCourses, prerequisites)));
     }
 }
