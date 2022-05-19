@@ -17,7 +17,9 @@ public class DecodeString {
                 stringStack.push(decodedString);
             }else if(character == ']'){
                 StringBuilder currentString = new StringBuilder();
-                stringStack.pop();
+                for(int currentK = countStack.pop(); currentK >=0; currentK--){
+
+                }
             }
         }
     }
