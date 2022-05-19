@@ -9,6 +9,12 @@ public class DecodeString {
         Stack<Integer> stringStack = new Stack<>();
         int k=0;
         StringBuilder decodedString = new StringBuilder();
+
+        for(char character : input.toCharArray()){
+            if(character == '['){
+
+            }
+        }
     }
     public static void main(String[] args) {
         String s = "2[abc]3[cd]ef";
