@@ -6,13 +6,15 @@ public class DecodeString {
 
     private static String decodeString(String input){
         Stack<Integer> countStack = new Stack<>();
-        Stack<Integer> stringStack = new Stack<>();
+        Stack<StringBuilder> stringStack = new Stack<>();
         int k=0;
         StringBuilder decodedString = new StringBuilder();
 
         for(char character : input.toCharArray()){
             if(character == '['){
-
+                k=k*10 + character-'0';
+                countStack.push(k);
+                stringStack.push(decodedString);
             }
         }
     }
