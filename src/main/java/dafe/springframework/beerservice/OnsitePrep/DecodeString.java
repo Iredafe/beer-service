@@ -15,6 +15,9 @@ public class DecodeString {
                 k=k*10 + character-'0';
                 countStack.push(k);
                 stringStack.push(decodedString);
+            }else if(character == ']'){
+                StringBuilder currentString = new StringBuilder();
+                stringStack.pop();
             }
         }
     }
