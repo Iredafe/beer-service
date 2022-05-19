@@ -15,11 +15,14 @@ public class DecodeString {
                 k=k*10 + character-'0';
                 countStack.push(k);
                 stringStack.push(decodedString);
+                decodedString = new StringBuilder();
+                k=0;
             }else if(character == ']'){
                 StringBuilder currentString = new StringBuilder();
                 for(int currentK = countStack.pop(); currentK >=0; currentK--){
-
+                    currentString.append(decodedString);
                 }
+                decodedString = currentString;
             }
         }
     }
