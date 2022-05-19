@@ -11,8 +11,9 @@ public class DecodeString {
         StringBuilder decodedString = new StringBuilder();
 
         for(char character : input.toCharArray()){
-            if(character == '['){
+            if(Character.isDigit(character)){
                 k=k*10 + character-'0';
+            }else if(character == '['){
                 countStack.push(k);
                 stringStack.push(decodedString);
                 decodedString = new StringBuilder();
