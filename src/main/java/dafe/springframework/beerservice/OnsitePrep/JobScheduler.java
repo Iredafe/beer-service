@@ -3,19 +3,21 @@ package dafe.springframework.beerservice.OnsitePrep;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 public class JobScheduler {
 
     private static List<Integer> findOrder(List<Integer> jobs, List<Integer[]> dependencies){
 
-        List<Integer[]>graph = new ArrayList<>();
+        List<List<Integer>>graph = new ArrayList<>();
+        Stack<Integer> stack = new Stack<>();
 
         for(int i=0; i< jobs.size(); i++){
-            graph.add(new Integer[]{});
+            graph.add(new ArrayList<>());
         }
 
         for(Integer [] dependency : dependencies){
-
+            graph.get(dependency[0]).add(dependency[1]);
         }
         return new ArrayList<>();
     }
