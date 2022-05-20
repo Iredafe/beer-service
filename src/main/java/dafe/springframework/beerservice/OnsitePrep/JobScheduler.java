@@ -5,6 +5,9 @@ import java.util.List;
 
 public class JobScheduler {
 
+    private static List<Integer> findOrder(List<Integer> jobs, List<Integer[]> dependencies){
+
+    }
 
     public static void main(String[] args) {
         List<Integer> jobs = Arrays.asList(1,2,3,4);
