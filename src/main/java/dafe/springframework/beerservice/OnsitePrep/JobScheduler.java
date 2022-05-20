@@ -13,6 +13,10 @@ public class JobScheduler {
         for(int i=0; i< jobs.size(); i++){
             graph.add(new Integer[]{});
         }
+
+        for(Integer [] dependency : dependencies){
+
+        }
         return new ArrayList<>();
     }
 
