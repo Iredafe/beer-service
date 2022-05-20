@@ -11,8 +11,10 @@ public class JobScheduler {
 
         List<List<Integer>>graph = new ArrayList<>();
         Stack<Integer> stack = new Stack<>();
+        List<Integer> result = new ArrayList<>();
 
-        for(int i=0; i< jobs.size(); i++){
+        int size = jobs.size();
+        for(int i = 0; i< size; i++){
             graph.add(new ArrayList<>());
         }
 
@@ -20,8 +22,19 @@ public class JobScheduler {
             graph.get(dependency[0]).add(dependency[1]);
         }
 
-        boolean [] visited = new boolean[jobs.size()];
-        boolean [] checked = new boolean[jobs.size()];
+        boolean [] visited = new boolean[size];
+        boolean [] checked = new boolean[size];
+
+        for(int currentJob = 0; currentJob< size; currentJob++){
+            if(isCycle(graph, currentJob, checked, visited, stack)){
+                return new ArrayList<>();
+            }
+        }
+
+        for(int i=0; i<size; i++){
+            result.add(i) = stack.pop();
+        }
+
         return new ArrayList<>();
     }
 
