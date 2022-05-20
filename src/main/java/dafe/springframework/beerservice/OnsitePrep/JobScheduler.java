@@ -19,6 +19,9 @@ public class JobScheduler {
         for(Integer [] dependency : dependencies){
             graph.get(dependency[0]).add(dependency[1]);
         }
+
+        boolean [] visited = new boolean[jobs.size()];
+        boolean [] checked = new boolean[jobs.size()];
         return new ArrayList<>();
     }
 
