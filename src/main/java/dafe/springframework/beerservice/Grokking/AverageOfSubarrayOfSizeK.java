@@ -5,11 +5,17 @@ import java.util.Arrays;
 public class AverageOfSubarrayOfSizeK {
 
     private static double[] findAverages(int k, int [] array){
-        int windowSum = 0; int left=0;
+        double windowSum = 0; int left=0;
         double[] result =new double[array.length - k+1];
 
         for(int right = 0; right < array.length; right++){
+            windowSum += array[right];
 
+            if(right >= k-1){
+                result[left] = windowSum/k;
+                windowSum -= array[left];
+                left++;
+            }
         }
 
         return result;
