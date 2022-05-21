@@ -65,5 +65,7 @@ public class JobScheduler {
                 new Integer[]{3, 2},
                 new Integer[]{4, 2},
                 new Integer[]{4, 3});
+
+        System.out.println("This is the order : " + findOrder(jobs, dependencies));
     }
 }
