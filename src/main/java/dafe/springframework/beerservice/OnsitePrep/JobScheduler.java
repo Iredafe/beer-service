@@ -7,7 +7,6 @@ public class JobScheduler {
     private static List<Integer> findOrder(List<Integer> jobs, List<Integer[]> dependencies){
         int size = jobs.size();
         HashMap<Integer, List<Integer>> graph = new HashMap<>();
-        Stack<Integer> stack = new Stack<>();
         List<Integer> result = new ArrayList<>();
 
         for(Integer [] dependency : dependencies){
@@ -24,35 +23,33 @@ public class JobScheduler {
         boolean [] checked = new boolean[size];
 
         for(int currentJob = 0; currentJob< size; currentJob++){
-            if(isCycle(graph, currentJob, checked, visited, stack)){
+            if(isCycle(graph, currentJob, checked, visited)){
                 return new ArrayList<>();
             }
         }
 
-        for(int i=0; i<size; i++){
-            result.add(stack.pop());
+        for(Integer order : graph.keySet()){
+            result.add(order);
         }
-
         return result;
     }
 
-    private static boolean isCycle(List<List<Integer>> graph, int currentJob, boolean [] checked, boolean [] visited,
-                                   Stack<Integer> stack){
+    private static boolean isCycle(HashMap<Integer, List<Integer>> graph, int currentJob,
+                                   boolean [] checked, boolean [] visited){
 
         if(checked[currentJob]) return false;
         if(visited[currentJob]) return true;
+        if(!graph.containsKey(currentJob)) return false;
 
         visited[currentJob] = true;
 
         for(Integer neighbor : graph.get(currentJob)){
-            if(isCycle(graph, neighbor, checked, visited, stack)){
+            if(isCycle(graph, neighbor, checked, visited)){
                 return true;
             }
         }
         checked[currentJob] = true;
         visited[currentJob] = false;
-
-        stack.push(currentJob);
 
         return false;
     }
