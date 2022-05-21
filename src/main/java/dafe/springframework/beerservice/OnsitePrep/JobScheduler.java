@@ -32,10 +32,14 @@ public class JobScheduler {
         }
 
         for(int i=0; i<size; i++){
-            result.add(i) = stack.pop();
+            result.add(stack.pop());
         }
 
-        return new ArrayList<>();
+        return result;
+    }
+
+    private static boolean isCycle(List<List<Integer>> graph, int currentJob, boolean [] checked, boolean [] visited){
+
     }
 
     public static void main(String[] args) {
