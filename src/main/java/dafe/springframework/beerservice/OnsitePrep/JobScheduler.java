@@ -46,7 +46,15 @@ public class JobScheduler {
 
         visited[currentJob] = true;
 
+        for(Integer neighbor : graph.get(currentJob)){
+            if(isCycle(graph, neighbor, checked, visited, stack)){
+                return true;
+            }
+        }
+        checked[currentJob] = false;
+        visited[currentJob] = true;
 
+        stack.push(currentJob);
 
         return false;
     }
