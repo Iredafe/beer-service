@@ -38,8 +38,17 @@ public class JobScheduler {
         return result;
     }
 
-    private static boolean isCycle(List<List<Integer>> graph, int currentJob, boolean [] checked, boolean [] visited){
+    private static boolean isCycle(List<List<Integer>> graph, int currentJob, boolean [] checked, boolean [] visited,
+                                   Stack<Integer> stack){
 
+        if(checked[currentJob]) return false;
+        if(visited[currentJob]) return true;
+
+        visited[currentJob] = true;
+
+
+
+        return false;
     }
 
     public static void main(String[] args) {
