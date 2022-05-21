@@ -5,7 +5,7 @@ import java.util.*;
 public class JobScheduler {
 
     private static List<Integer> findOrder(List<Integer> jobs, List<Integer[]> dependencies){
-
+        int size = jobs.size();
         HashMap<Integer, List<Integer>> graph = new HashMap<>();
         Stack<Integer> stack = new Stack<>();
         List<Integer> result = new ArrayList<>();
@@ -15,7 +15,8 @@ public class JobScheduler {
                 graph.get(dependency[0]).add(dependency[1]);
             }else{
                 List<Integer> nextJobs = new ArrayList<>();
-                graph.put()
+                nextJobs.add(dependency[1]);
+                graph.put(dependency[0], nextJobs);
             }
         }
 
