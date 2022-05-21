@@ -1,25 +1,25 @@
+
+
 package dafe.springframework.beerservice.OnsitePrep;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class JobScheduler {
 
     private static List<Integer> findOrder(List<Integer> jobs, List<Integer[]> dependencies){
-
-        List<List<Integer>>graph = new ArrayList<>();
+        int size = jobs.size();
+        HashMap<Integer, List<Integer>> graph = new HashMap<>();
         Stack<Integer> stack = new Stack<>();
         List<Integer> result = new ArrayList<>();
 
-        int size = jobs.size();
-        for(int i = 0; i< size; i++){
-            graph.add(new ArrayList<>());
-        }
-
         for(Integer [] dependency : dependencies){
-            graph.get(dependency[0]).add(dependency[1]);
+            if(graph.containsKey(dependency[0])){
+                graph.get(dependency[0]).add(dependency[1]);
+            }else{
+                List<Integer> nextJobs = new ArrayList<>();
+                nextJobs.add(dependency[1]);
+                graph.put(dependency[0], nextJobs);
+            }
         }
 
         boolean [] visited = new boolean[size];
@@ -38,8 +38,9 @@ public class JobScheduler {
         return result;
     }
 
-    private static boolean isCycle(List<List<Integer>> graph, int currentJob, boolean [] checked,
-                                   boolean [] visited, Stack<Integer> stack){
+    private static boolean isCycle(HashMap<Integer, List<Integer>> graph, int currentJob,
+                                   boolean [] checked, boolean [] visited,
+                                   Stack<Integer> stack){
 
         if(checked[currentJob]) return false;
         if(visited[currentJob]) return true;
@@ -51,9 +52,10 @@ public class JobScheduler {
                 return true;
             }
         }
-        stack.push(currentJob);
-        visited[currentJob] = false;
         checked[currentJob] = true;
+        visited[currentJob] = false;
+
+        stack.push(currentJob);
 
         return false;
     }
@@ -66,6 +68,6 @@ public class JobScheduler {
                 new Integer[]{4, 2},
                 new Integer[]{4, 3});
 
-        System.out.println("This is the order : " + findOrder(jobs, dependencies));
+        System.out.println("This is the order in which the jobs must be done : " + findOrder(jobs, dependencies));
     }
 }
