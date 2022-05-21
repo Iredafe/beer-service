@@ -51,8 +51,8 @@ public class JobScheduler {
                 return true;
             }
         }
-        checked[currentJob] = false;
-        visited[currentJob] = true;
+        checked[currentJob] = true;
+        visited[currentJob] = false;
 
         stack.push(currentJob);
 
