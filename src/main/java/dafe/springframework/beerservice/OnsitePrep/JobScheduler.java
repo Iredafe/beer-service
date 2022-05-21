@@ -1,25 +1,22 @@
 package dafe.springframework.beerservice.OnsitePrep;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class JobScheduler {
 
     private static List<Integer> findOrder(List<Integer> jobs, List<Integer[]> dependencies){
 
-        List<List<Integer>>graph = new ArrayList<>();
+        HashMap<Integer, List<Integer>> graph = new HashMap<>();
         Stack<Integer> stack = new Stack<>();
         List<Integer> result = new ArrayList<>();
 
-        int size = jobs.size();
-        for(int i = 0; i< size; i++){
-            graph.add(new ArrayList<>());
-        }
-
         for(Integer [] dependency : dependencies){
-            graph.get(dependency[0]).add(dependency[1]);
+            if(graph.containsKey(dependency[0])){
+                graph.get(dependency[0]).add(dependency[1]);
+            }else{
+                List<Integer> nextJobs = new ArrayList<>();
+                graph.put()
+            }
         }
 
         boolean [] visited = new boolean[size];
@@ -66,5 +63,7 @@ public class JobScheduler {
                 new Integer[]{3, 2},
                 new Integer[]{4, 2},
                 new Integer[]{4, 3});
+
+        System.out.println("This is the order in which the jobs must be done : " + findOrder(jobs, dependencies));
     }
 }
