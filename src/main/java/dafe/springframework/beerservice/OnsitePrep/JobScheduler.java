@@ -5,7 +5,7 @@ package dafe.springframework.beerservice.OnsitePrep;
 import java.util.*;
 
 public class JobScheduler {
-
+//NOT SOLVED YET
     private static List<Integer> findOrder(List<Integer> jobs, List<Integer[]> dependencies){
         int size = jobs.size();
         HashMap<Integer, List<Integer>> graph = new HashMap<>();
@@ -32,7 +32,9 @@ public class JobScheduler {
         }
 
         for(int i=0; i<size; i++){
-            result.add(stack.pop());
+            while (!stack.isEmpty()){
+                result.add(stack.pop());
+            }
         }
 
         return result;
@@ -44,6 +46,7 @@ public class JobScheduler {
 
         if(checked[currentJob]) return false;
         if(visited[currentJob]) return true;
+        if(!graph.containsKey(currentJob)) return false;
 
         visited[currentJob] = true;
 
@@ -52,11 +55,10 @@ public class JobScheduler {
                 return true;
             }
         }
-        checked[currentJob] = true;
-        visited[currentJob] = false;
 
         stack.push(currentJob);
-
+        checked[currentJob] = true;
+        visited[currentJob] = false;
         return false;
     }
 
