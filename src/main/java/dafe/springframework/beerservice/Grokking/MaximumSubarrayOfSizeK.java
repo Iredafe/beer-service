@@ -4,7 +4,18 @@ public class MaximumSubarrayOfSizeK {
 
     private static int findMaxSumSubArray(int k, int [] array){
 
+        int maxSum = 0; int currentSum = 0;
+        int start=0;
 
+        for(int end=0; end < array.length; end++){
+            currentSum += array[end];
+            if(end >= k-1){
+                maxSum= Math.max(maxSum, currentSum);
+                currentSum -= array[start];
+                start++;
+            }
+        }
+        return maxSum;
     }
 
     public static void main(String[] args) {
