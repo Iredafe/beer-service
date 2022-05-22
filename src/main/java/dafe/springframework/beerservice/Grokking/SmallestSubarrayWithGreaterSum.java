@@ -3,7 +3,13 @@ package dafe.springframework.beerservice.Grokking;
 public class SmallestSubarrayWithGreaterSum {
 
     private static int findMinSubArray(int S, int [] array){
+        int minLength = Integer.MAX_VALUE;
+        int left = 0;
+        int window =0;
 
+        for(int right=0; right < array.length; right++){
+
+        }
     }
 
     public static void main(String[] args) {
