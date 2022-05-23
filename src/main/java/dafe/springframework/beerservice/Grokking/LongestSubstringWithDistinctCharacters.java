@@ -11,7 +11,9 @@ public class LongestSubstringWithDistinctCharacters {
         int left=0;
         int length=0;
 
-        for(int right=0; right<)
+        for(int right=0; right<input.length(); right++){
+            char character = input.charAt(right);
+        }
 
     }
 
