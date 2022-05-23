@@ -14,15 +14,16 @@ public class LongestSubstringWithKDistinctCharacters {
 
             while(window.size() > k){
                 character = input.charAt(left);
-                if(window.get(character) ==0){
-                    window.put(character, window.get(character)-1);
+                window.put(character, window.get(character)-1);
+                if(window.get(character)==0){
+                    window.remove(character);
                 }
+                left++;
             }
 
+            lengthOfSubstring = Math.max(lengthOfSubstring, right-left+1);
         }
-
-
-        return lengthOfSubstring;
+        return lengthOfSubstring == Integer.MIN_VALUE ? 0 : lengthOfSubstring;
     }
 
     public static void main(String[] args) {
