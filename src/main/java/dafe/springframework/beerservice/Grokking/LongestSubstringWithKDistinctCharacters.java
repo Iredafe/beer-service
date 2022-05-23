@@ -8,6 +8,17 @@ public class LongestSubstringWithKDistinctCharacters {
         HashMap<Character, Integer> window = new HashMap<>();
         int left = 0; int lengthOfSubstring = Integer.MIN_VALUE;
 
+        for(int right=0; right<input.length(); right++){
+            char character = input.charAt(right);
+            window.put(character, window.getOrDefault(character, 0)+1);
+
+            while(window.size() > k){
+
+            }
+
+        }
+
+
         return lengthOfSubstring;
     }
 
