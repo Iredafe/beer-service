@@ -14,8 +14,18 @@ public class LongestSubstringWithSameLettersAfterReplacement {
 
             letterFrequencyMap.put(character, letterFrequencyMap.getOrDefault(character,0)+1);
             maxRepeatingLetterCount=Math.max(maxRepeatingLetterCount, letterFrequencyMap.get(character));
-            if()
+
+            if(right-left+1-maxRepeatingLetterCount > k){
+                character = string.charAt(left);
+                letterFrequencyMap.put(character, letterFrequencyMap.get(character)-1);
+                left++;
+
+                }
+            maxLength = Math.max(maxLength, right-left+1);
+
         }
+
+        return maxLength;
     }
 
     public static void main(String[] args) {
