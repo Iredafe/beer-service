@@ -1,9 +1,13 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LongestSubstringWithSameLettersAfterReplacement {
 
     private static int findLength(String string){
-
+        int maxLength=0; int maxRepeatingLetterCount=0; int left=0;
+        Map<Character, Integer> letterFrequencyMap = new HashMap<>();
     }
 
     public static void main(String[] args) {
