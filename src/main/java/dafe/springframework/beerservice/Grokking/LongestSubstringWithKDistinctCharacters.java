@@ -13,7 +13,10 @@ public class LongestSubstringWithKDistinctCharacters {
             window.put(character, window.getOrDefault(character, 0)+1);
 
             while(window.size() > k){
-
+                character = input.charAt(left);
+                if(window.get(character) ==0){
+                    window.put(character, window.get(character)-1);
+                }
             }
 
         }
