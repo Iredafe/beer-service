@@ -7,7 +7,11 @@ public class PermutationInAString {
     private static boolean findPermutation(String word, String pattern){
 
         HashMap<Character, Integer> characterFrequencymap = new HashMap<>();
+        int left=0;
 
+        for(char character : pattern.toCharArray()){
+            characterFrequencymap.put(character, characterFrequencymap.getOrDefault(character, 0) +1);
+        }
         return false;
     }
     public static void main(String[] args) {
