@@ -18,8 +18,16 @@ public class PermutationInAString {
             if(characterFrequencymap.containsKey(character)){
                 characterFrequencymap.put(character, characterFrequencymap.get(character)-1);
                 if(characterFrequencymap.get(character)==0){
-
                     matched--;
+                }
+            }
+
+            if(right >= pattern.length()-1){
+                character = word.charAt(left);
+                left++;
+                if(characterFrequencymap.get(character) == 0){
+                    matched--;
+                    characterFrequencymap.put(character, characterFrequencymap.get(character)+1);
                 }
             }
         }
