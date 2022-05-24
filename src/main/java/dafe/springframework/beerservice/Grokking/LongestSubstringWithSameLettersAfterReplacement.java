@@ -19,6 +19,7 @@ public class LongestSubstringWithSameLettersAfterReplacement {
                 character = string.charAt(left);
                 letterFrequencyMap.put(character, letterFrequencyMap.get(character)-1);
                 left++;
+
                 }
             maxLength = Math.max(maxLength, right-left+1);
 
