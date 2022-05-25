@@ -40,5 +40,7 @@ public class FindAllAnagramsInString {
     public static void main(String[] args) {
         System.out.println(findStringAnagrams("ppqp", "pq"));
         System.out.println(findStringAnagrams("abbcabc", "abc"));
+        System.out.println(findStringAnagrams("cbaebabacd", "abc"));
     }
+
 }
