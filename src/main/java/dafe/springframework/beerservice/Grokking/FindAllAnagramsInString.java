@@ -26,7 +26,7 @@ public class FindAllAnagramsInString {
             if(matched == characterFreqMap.size()) result.add(windowStart);
 
             if(windowEnd >= pattern.length()-1){
-                character = string.charAt(windowStart);
+                character = string.charAt(windowStart++);
                 if(characterFreqMap.containsKey(character)){
                     if(characterFreqMap.get(character)==0){
                         matched--;
