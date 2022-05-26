@@ -5,8 +5,8 @@ import java.util.HashMap;
 public class MinimumWindowSubstring {
 
     private static String findSubstring(String string, String pattern){
-        int matched=0; int windowStart=0;
-        String result = "";
+        int matched=0; int windowStart=0; int minLength =string.length()+1;
+        int  substringStart=0;
 
         HashMap<Character, Integer> characterFrequencyMap = new HashMap<>();
 
@@ -23,24 +23,30 @@ public class MinimumWindowSubstring {
                 }
             }
 
-            if(matched==pattern.length()){
-                result = string.substring(windowStart, windowEnd+1);
+            while (matched==pattern.length()){
+                if(minLength> windowEnd-windowStart+1){
+                    minLength=windowEnd-windowStart+1;
+                    substringStart = windowStart;
+
             }
 
-            if(windowEnd >= pattern.length()-1){
-                character = string.charAt(windowStart++);
-                if(characterFrequencyMap.containsKey(character)){
 
+                character = string.charAt(windowStart++);
+                if(characterFrequencyMap.containsKey(character)) {
+                    if (characterFrequencyMap.get(character) == 0) {
+                        matched--;
+                    }
+                    characterFrequencyMap.put(character, characterFrequencyMap.get(character) + 1);
                 }
             }
         }
-        return result;
+        return minLength > string.length() ? "" : string.substring(substringStart, substringStart+minLength);
     }
 
     public static void main(String[] args) {
-        System.out.println(findSubstring("aabdec", "abc"));
-        System.out.println(findSubstring("aabdec", "abac"));
-        System.out.println(findSubstring("abdbca", "abc"));
-        System.out.println(findSubstring("adcad", "abc"));
+        System.out.println("This is the result 1 " + findSubstring("aabdec", "abc"));
+        System.out.println("This is the result 2 " +findSubstring("aabdec", "abac"));
+        System.out.println("This is the result 3 " +findSubstring("abdbca", "abc"));
+        System.out.println("This is the result 4 " +findSubstring("adcad", "abc"));
     }
 }
