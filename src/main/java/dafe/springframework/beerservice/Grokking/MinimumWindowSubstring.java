@@ -14,6 +14,15 @@ public class MinimumWindowSubstring {
             characterFrequencyMap.put(letter, characterFrequencyMap.getOrDefault(letter, 0) +1);
         }
 
+        for(int windowEnd=0; windowEnd<string.length(); windowEnd++){
+            char character = string.charAt(windowEnd);
+            if(characterFrequencyMap.containsKey(character)){
+                characterFrequencyMap.put(character, characterFrequencyMap.get(character)-1);
+                if(characterFrequencyMap.get(character) == 0){
+                    matched++;
+                }
+            }
+        }
         return result;
     }
 
