@@ -10,6 +10,7 @@ public class MinimumWindowSubstring {
 
         HashMap<Character, Integer> characterFrequencyMap = new HashMap<>();
 
+        if(string.equals(pattern)) return string;
         for(char letter : pattern.toCharArray()){
             characterFrequencyMap.put(letter, characterFrequencyMap.getOrDefault(letter, 0) +1);
         }
@@ -33,7 +34,7 @@ public class MinimumWindowSubstring {
 
                 character = string.charAt(windowStart++);
                 if(characterFrequencyMap.containsKey(character)) {
-                    if (characterFrequencyMap.get(character) == 0) {
+                    if (characterFrequencyMap.get(character) >= 0) {
                         matched--;
                     }
                     characterFrequencyMap.put(character, characterFrequencyMap.get(character) + 1);
@@ -44,9 +45,9 @@ public class MinimumWindowSubstring {
     }
 
     public static void main(String[] args) {
-        System.out.println("This is the result 1 " + findSubstring("aabdec", "abc"));
-        System.out.println("This is the result 2 " +findSubstring("aabdec", "abac"));
-        System.out.println("This is the result 3 " +findSubstring("abdbca", "abc"));
-        System.out.println("This is the result 4 " +findSubstring("adcad", "abc"));
+        System.out.println("This is the result 1 " + findSubstring("bbaa", "aba"));
+//        System.out.println("This is the result 2 " +findSubstring("aabdec", "abac"));
+//        System.out.println("This is the result 3 " +findSubstring("abdbca", "abc"));
+//        System.out.println("This is the result 4 " +findSubstring("adcad", "abc"));
     }
 }
