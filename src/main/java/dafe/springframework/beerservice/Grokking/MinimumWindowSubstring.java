@@ -22,6 +22,17 @@ public class MinimumWindowSubstring {
                     matched++;
                 }
             }
+
+            if(matched==pattern.length()){
+                result = string.substring(windowStart, windowEnd+1);
+            }
+
+            if(windowEnd >= pattern.length()-1){
+                character = string.charAt(windowStart++);
+                if(characterFrequencyMap.containsKey(character)){
+
+                }
+            }
         }
         return result;
     }
