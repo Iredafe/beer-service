@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.List;
+
 public class ConcatenatedWords {
 
     public static void main(String[] args) {
