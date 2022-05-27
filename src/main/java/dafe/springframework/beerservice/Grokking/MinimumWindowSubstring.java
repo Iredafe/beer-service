@@ -19,7 +19,7 @@ public class MinimumWindowSubstring {
             char character = string.charAt(windowEnd);
             if(characterFrequencyMap.containsKey(character)){
                 characterFrequencyMap.put(character, characterFrequencyMap.get(character)-1);
-                if(characterFrequencyMap.get(character) == 0){
+                if(characterFrequencyMap.get(character) >= 0){
                     matched++;
                 }
             }
@@ -34,7 +34,7 @@ public class MinimumWindowSubstring {
 
                 character = string.charAt(windowStart++);
                 if(characterFrequencyMap.containsKey(character)) {
-                    if (characterFrequencyMap.get(character) >= 0) {
+                    if (characterFrequencyMap.get(character) == 0) {
                         matched--;
                     }
                     characterFrequencyMap.put(character, characterFrequencyMap.get(character) + 1);
