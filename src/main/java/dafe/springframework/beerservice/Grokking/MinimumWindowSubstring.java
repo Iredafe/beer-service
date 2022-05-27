@@ -29,7 +29,7 @@ public class MinimumWindowSubstring {
                     minLength=windowEnd-windowStart+1;
                     substringStart = windowStart;
 
-            }
+                }
 
 
                 character = string.charAt(windowStart++);
