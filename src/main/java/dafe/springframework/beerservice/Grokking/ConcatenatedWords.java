@@ -1,12 +1,16 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class ConcatenatedWords {
 
     private static List<Integer> findWordConcatenation(String string, String [] words){
         List<Integer> resultIndices = new ArrayList<>();
+        int wordCount = words.length;
+        int wordLength = words[0].length();
+        HashMap<String, Integer> wordFrequencyMap = new HashMap<>();
 
 
 
