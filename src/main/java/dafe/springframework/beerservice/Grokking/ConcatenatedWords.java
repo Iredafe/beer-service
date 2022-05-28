@@ -19,9 +19,9 @@ public class ConcatenatedWords {
         for(int i=0; i<string.length() - wordCount*wordLength; i++){
             HashMap<String, Integer> wordsSeen = new HashMap<>();
             for(int j=0; j<wordCount; j++){
-                int nextWordIndex = i+j * wordCount;
+                int nextWordIndex = i+j * wordLength;
 
-                String word = string.substring(nextWordIndex, nextWordIndex+wordCount);
+                String word = string.substring(nextWordIndex, nextWordIndex+wordLength);
 
                 if(!wordFrequencyMap.containsKey(word)){
                     break;
@@ -32,11 +32,9 @@ public class ConcatenatedWords {
                 if(wordsSeen.get(word) > wordFrequencyMap.getOrDefault(word,0)){
                     break;
                 }
+                if(j+1 == wordCount) resultIndices.add(i);
             }
         }
-
-
-
         return resultIndices;
     }
     public static void main(String[] args) {
