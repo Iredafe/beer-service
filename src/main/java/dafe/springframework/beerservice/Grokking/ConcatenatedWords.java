@@ -26,6 +26,12 @@ public class ConcatenatedWords {
                 if(!wordFrequencyMap.containsKey(word)){
                     break;
                 }
+
+                wordsSeen.put(word, wordsSeen.getOrDefault(word, 0)+1);
+
+                if(wordsSeen.get(word) > wordFrequencyMap.getOrDefault(word,0)){
+                    break;
+                }
             }
         }
 
