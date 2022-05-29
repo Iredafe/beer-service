@@ -44,5 +44,6 @@ public class ConcatenatedWords {
         result = findWordConcatenation(
                 "catcatfoxfox", new String[] { "cat", "fox" });
         System.out.println(result);
+        System.out.println(result);
     }
 }
