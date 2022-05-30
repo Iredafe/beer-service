@@ -9,6 +9,7 @@ public class TripletSumToZero {
     private static List<List<Integer>> searchTriplets(int [] array){
 
         List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(array);
 
         for(int i=0; i<array.length && array[i]<=0; i++){
             if(i==0 || array[i-1] != array[i]){
