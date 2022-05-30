@@ -29,6 +29,14 @@ public class TripletSumToZero {
                 result.add(Arrays.asList(array[index], array[left], array[right]));
                 left++;
                 right--;
+            }else if(sum<0){
+                left++;
+            }else{
+                right--;
+            }
+
+            while(left<right && array[left] == array[left-1]){
+                left++;
             }
         }
 
