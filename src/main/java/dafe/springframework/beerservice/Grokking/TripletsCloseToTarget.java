@@ -1,4 +1,5 @@
 package dafe.springframework.beerservice.Grokking;
 
-public class TripletsCloseToSum {
+public class TripletsCloseToTarget {
+
 }
