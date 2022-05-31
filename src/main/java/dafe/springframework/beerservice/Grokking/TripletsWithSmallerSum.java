@@ -4,6 +4,13 @@ public class TripletsWithSmallerSum {
 
     private static int searchTriplets(int [] array, int target){
 
+        for(int index=0; index<array.length; index++){
+            int left=index+1; int right=array.length-1;
+
+            while (left<right){
+
+            }
+        }
         return 0;
     }
 
