@@ -6,13 +6,13 @@ public class TripletsCloseToTarget {
 
     private static int searchTriplet(int [] array, int target){
         Arrays.sort(array);
-        int sum=Integer.MAX_VALUE;
+        int tripletsSumCloseToTarget=Integer.MAX_VALUE;
         for (int i=0; i<array.length && array[i]<=0; i++){
             if(i==0 || array[i-1] != array[i]){
-                getTripletsCloseToSum(array, i, sum);
+                getTripletsCloseToSum(array, i, tripletsSumCloseToTarget);
             }
         }
-        return 0;
+        return tripletsSumCloseToTarget;
     }
     public static void main(String[] args) {
         System.out.println(searchTriplet(new int[] { -2, 0, 1, 2 }, 2));
