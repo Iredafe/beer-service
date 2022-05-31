@@ -3,34 +3,27 @@ package dafe.springframework.beerservice.Grokking;
 import java.util.Arrays;
 
 public class TripletsCloseToTarget {
-
+    static int tripletsSumCloseToTarget;
     private static int searchTriplet(int [] array, int target){
+        tripletsSumCloseToTarget=Integer.MAX_VALUE;
         Arrays.sort(array);
-        int tripletsSumCloseToTarget=Integer.MAX_VALUE;
         for (int i=0; i<array.length && array[i]<=0; i++){
+            int left= i+1; int right = array.length-1;
             if(i==0 || array[i-1] != array[i]){
-                getTripletsCloseToTarget(array, i, tripletsSumCloseToTarget, target);
+                while(left < right){
+                    int currentSum = array[i] + array[left] + array[right];
+                    int difference = Math.abs(currentSum-target);
+                    if(difference<tripletsSumCloseToTarget){
+                        tripletsSumCloseToTarget=difference;
+                        left++;
+                        right--;
+                    }
+                }
             }
         }
         return tripletsSumCloseToTarget;
     }
 
-    private static int getTripletsCloseToTarget(int[] array, int index, int runningClosestSum, int target){
-        int left= index+1; int right = array.length-1;
-
-        while(left < right){
-            int currentSum = array[index] + array[left] + array[right];
-            int difference = Math.abs(currentSum-target);
-            if(difference<runningClosestSum){
-                runningClosestSum=difference;
-                left++;
-                right--;
-            }else{
-
-            }
-        }
-
-    }
 
 
     public static void main(String[] args) {
