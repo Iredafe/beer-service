@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SubarraysWithProductLessThanTarget {
@@ -12,9 +13,18 @@ public class SubarraysWithProductLessThanTarget {
             int left=index+1; int right=array.length-1;
             while (left<=right){
                 int product = left*right;
+                if(product < target){
+                    if(left==right) {
+                        subarrays.add(Arrays.asList(left));
+                    }else {
+                        subarrays.add(Arrays.asList(left,right));
+                    }
+                }else{
+                    right--;
+                }
             }
         }
-        return new ArrayList<>();
+        return subarrays;
     }
 
     public static void main(String[] args) {
