@@ -14,11 +14,10 @@ public class FindPermutation {
         permutations.add(new ArrayList<>());
         for(int currentNumber : array){
             int size = permutations.size();
-
             for(int i=0; i<size; i++){
                 List<Integer> oldPermutation = permutations.poll();
                 for(int j=0; j<=oldPermutation.size();j++){
-                    List<Integer> newPermutation = new ArrayList<>();
+                    List<Integer> newPermutation = new ArrayList<>(oldPermutation);
                     newPermutation.add(j, currentNumber);
                     if(newPermutation.size()==array.length){
                         result.add(newPermutation);
@@ -28,7 +27,7 @@ public class FindPermutation {
                 }
             }
         }
-        return new ArrayList<>();
+        return result;
     }
     public static void main(String[] args) {
         List<List<Integer>> result = findPermutations(new int[] { 1, 3, 5 });
