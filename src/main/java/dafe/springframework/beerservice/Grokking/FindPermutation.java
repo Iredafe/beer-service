@@ -11,7 +11,6 @@ public class FindPermutation {
 
         List<List<Integer>> result = new ArrayList<>();
         Queue<List<Integer>> permutations = new LinkedList<>();
-
         permutations.add(new ArrayList<>());
         for(int currentNumber : array){
             int size = permutations.size();
@@ -21,10 +20,13 @@ public class FindPermutation {
                 for(int j=0; j<=oldPermutation.size();j++){
                     List<Integer> newPermutation = new ArrayList<>();
                     newPermutation.add(j, currentNumber);
+                    if(newPermutation.size()==array.length){
+                        result.add(newPermutation);
+                    }else{
+                        permutations.add(newPermutation);
+                    }
                 }
             }
-
-
         }
         return new ArrayList<>();
     }
