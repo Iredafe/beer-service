@@ -16,6 +16,12 @@ public class FindPermutation {
         for(int currentNumber : array){
             int size = permutations.size();
 
+            for(int i=0; i<size; i++){
+                List<Integer> oldPermutation = permutations.poll();
+                for(int j=0; j<=oldPermutation.size();j++){
+
+                }
+            }
 
 
         }
