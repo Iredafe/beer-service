@@ -19,7 +19,8 @@ public class FindPermutation {
             for(int i=0; i<size; i++){
                 List<Integer> oldPermutation = permutations.poll();
                 for(int j=0; j<=oldPermutation.size();j++){
-
+                    List<Integer> newPermutation = new ArrayList<>();
+                    newPermutation.add(j, currentNumber);
                 }
             }
 
