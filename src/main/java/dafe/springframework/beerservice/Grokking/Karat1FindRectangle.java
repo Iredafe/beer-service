@@ -22,18 +22,23 @@ public class Karat1FindRectangle {
         HashMap<String, Integer> resultMap = new HashMap<>();
         StringBuilder processedUrl = new StringBuilder();
         int clickCount = 0;
-        String urlValue = "";
+        String urlKey = "";
 
         for(String url : array){
             for(char character : url.toCharArray()){
                 if(character!=','){
                     processedUrl.append(character);
                 }else {
-                    break;
+                    String [] value = url.split(",");
+                    urlKey = value[1];
                 }
             }
-            String string = processedUrl.toString();
-            clickCount =
+            String countString = processedUrl.toString();
+            clickCount = Integer.parseInt(countString);
+
+            if(resultMap.containsKey(urlKey)){
+                resultMap
+            }
         }
 
         return resultMap;
