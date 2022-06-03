@@ -21,7 +21,7 @@ public class Karat1FindRectangle {
 
         HashMap<String, Integer> resultMap = new HashMap<>();
         StringBuilder processedUrl = new StringBuilder();
-        int clickCount = 0;
+        Integer clickCount = 0;
         String urlKey = "";
 
         for(String url : array){
@@ -31,6 +31,7 @@ public class Karat1FindRectangle {
                 }else {
                     String [] value = url.split(",");
                     urlKey = value[1];
+                    break;
                 }
             }
             String countString = processedUrl.toString();
@@ -60,7 +61,8 @@ public class Karat1FindRectangle {
                                     {1,1,1,0,0,0,1},
                                     {1,1,1,1,1,1,1}};
 
-        System.out.println("Find rectangle index : " + Arrays.toString(findRectangle(image)));
+//        System.out.println("Find rectangle index : " + Arrays.toString(findRectangle(image)));
+        System.out.println("Find url - count mapping : " + urlMapper(urlCounts));
     }
 
 }
