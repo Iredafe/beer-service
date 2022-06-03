@@ -37,7 +37,9 @@ public class Karat1FindRectangle {
             clickCount = Integer.parseInt(countString);
 
             if(resultMap.containsKey(urlKey)){
-                resultMap
+                resultMap.put(urlKey, resultMap.get(urlKey)+clickCount);
+            }else{
+                resultMap.put(urlKey, clickCount);
             }
         }
 
