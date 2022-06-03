@@ -20,11 +20,11 @@ public class Karat1FindRectangle {
     private static HashMap<String, Integer> urlMapper(String [] array){
 
         HashMap<String, Integer> resultMap = new HashMap<>();
-        StringBuilder processedUrl = new StringBuilder();
         Integer clickCount = 0;
         String urlKey = "";
 
         for(String url : array){
+            StringBuilder processedUrl = new StringBuilder();
             for(char character : url.toCharArray()){
                 if(character!=','){
                     processedUrl.append(character);
