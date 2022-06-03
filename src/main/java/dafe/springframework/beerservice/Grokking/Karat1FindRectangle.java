@@ -24,7 +24,7 @@ public class Karat1FindRectangle {
         String urlKey = "";
 
         for(String url : array){
-            StringBuilder processedUrl = new StringBuilder();♦
+            StringBuilder processedUrl = new StringBuilder();
             for(char character : url.toCharArray()){
                 if(character!=','){
                     processedUrl.append(character);
