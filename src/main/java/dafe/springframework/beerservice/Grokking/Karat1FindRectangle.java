@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Karat1FindRectangle {
 
@@ -16,7 +17,36 @@ public class Karat1FindRectangle {
             return new int[]{};
     }
 
+    private static HashMap<String, Integer> urlMapper(String [] array){
+
+        HashMap<String, Integer> resultMap = new HashMap<>();
+        StringBuilder processedUrl = new StringBuilder();
+        int clickCount = 0;
+        String urlValue = "";
+
+        for(String url : array){
+            for(char character : url.toCharArray()){
+                if(character!=','){
+                    processedUrl.append(character);
+                }else {
+                    break;
+                }
+            }
+            String string = processedUrl.toString();
+            clickCount =
+        }
+
+        return resultMap;
+    }
+
     public static void main(String[] args) {
+
+        String [] urlCounts=new String[] {"91, google.com",
+                "9, stackoverflow.com",
+                "1, twitter.com",
+                "10, google.com",
+                "3, twitter.com"};
+
         int [][] image=new int[][] {{1,1,1,1,1,1,1},
                                     {1,1,1,1,1,1,1},
                                     {1,1,1,0,0,0,1},
