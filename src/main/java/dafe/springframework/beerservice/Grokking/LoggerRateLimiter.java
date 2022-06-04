@@ -3,6 +3,7 @@ package dafe.springframework.beerservice.Grokking;
 import org.springframework.data.util.Pair;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class LoggerRateLimiter {
     static Deque<Pair<Integer, String>> messageQueue = new LinkedList<>();
@@ -26,7 +27,7 @@ public class LoggerRateLimiter {
     }
 
     public static void main(String[] args) {
-        HashMap<Integer, String> streamMap= new HashMap<>();
+        Map<Integer, String> streamMap= new HashMap<>();
             streamMap.put(1,"foo");
             streamMap.put(2,"bar");
             streamMap.put(3,"foo");
