@@ -26,6 +26,11 @@ public class LoggerRateLimiter {
         }else return false;
     }
 
+    private static boolean shouldPrint(String message, Integer timestamp){
+
+        return false;
+    }
+
     public static void main(String[] args) {
         Map<Integer, String> streamMap= new HashMap<>();
             streamMap.put(1,"foo");
