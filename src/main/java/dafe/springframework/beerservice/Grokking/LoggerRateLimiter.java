@@ -2,6 +2,7 @@ package dafe.springframework.beerservice.Grokking;
 
 import org.springframework.data.util.Pair;
 
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -25,9 +26,18 @@ public class LoggerRateLimiter {
             return true;
         }else return false;
     }
-
+    static HashMap<String, Integer> messageDictionary = new HashMap<>();
     private static boolean shouldPrint(String message, Integer timestamp){
 
+        if(!messageDictionary.containsKey(message)){
+            messageDictionary.put(message, timestamp);
+            return true;
+        }
+        int oldTimeStamp = messageDictionary.get(message);
+        if(timestamp-oldTimeStamp>=10){
+            messageDictionary.put(message, timestamp);
+            return true;
+        }
         return false;
     }
 
@@ -41,9 +51,13 @@ public class LoggerRateLimiter {
             streamMap.put(11,"foo");
 
             for(Map.Entry<Integer, String> entry : streamMap.entrySet()){
-                System.out.println("We can print {timestamp-- " +
+//                System.out.println("1. We can print {timestamp-- " +
+//                        entry.getKey()+ ": message-- "+ entry.getValue()+ "} ->" +
+//                        shouldPrintMessage(entry.getKey(), entry.getValue()));
+
+                System.out.println("2. We can print {timestamp-- " +
                         entry.getKey()+ ": message-- "+ entry.getValue()+ "} ->" +
-                        shouldPrintMessage(entry.getKey(), entry.getValue()));
+                        shouldPrint(entry.getValue(), entry.getKey()));
             }
 
     }
