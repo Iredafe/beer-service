@@ -1,19 +1,28 @@
 package dafe.springframework.beerservice.Grokking;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class RankTeamByVotes {
 
     private static String rankTeam(String [] votes){
 
         int length = votes[0].length();
-        Map<String, Integer> votingEngine = new HashMap<>();
+        Map<String, int[]> votingEngine = new HashMap<>();
         for(String vote : votes){
             for(int index=0; index<length; index++){
-
+                votingEngine.putIfAbsent(vote, new int[length]);
+                votingEngine.get(vote)[index]++;
             }
         }
+
+        List<String> list = new ArrayList<>(votingEngine.keySet());
+
+        Collections.sort(list,(a,b)->{
+            for(int i=0; i<length; i++){
+
+            }
+        });
         return "";
     }
 
