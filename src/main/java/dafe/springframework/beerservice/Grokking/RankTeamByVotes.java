@@ -42,4 +42,12 @@ public class RankTeamByVotes {
 
         System.out.println("The result of the vote is : " + rankTeam(votes));
     }
+
+     /*
+vote index-> 0  1  2
+     team A :5  0  0
+     team B :0  2  3
+     team C :0  3  2
+
+     */
 }
