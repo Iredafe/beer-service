@@ -8,22 +8,32 @@ public class RankTeamByVotes {
     private static String rankTeam(String [] votes){
 
         int length = votes[0].length();
-        Map<String, int[]> votingEngine = new HashMap<>();
+        Map<Character, int[]> votingEngine = new HashMap<>();
         for(String vote : votes){
             for(int index=0; index<length; index++){
-                votingEngine.putIfAbsent(vote, new int[length]);
-                votingEngine.get(vote)[index]++;
+                char character = vote.charAt(index);
+                votingEngine.putIfAbsent(character, new int[length]);
+                votingEngine.get(character)[index]++;
             }
         }
 
-        List<String> list = new ArrayList<>(votingEngine.keySet());
+        List<Character> list = new ArrayList<>(votingEngine.keySet());
 
-        Collections.sort(list,(a,b)->{
-            for(int i=0; i<length; i++){
-
+        list.sort((a, b) -> {
+            for (int i = 0; i < length; i++) {
+                if (votingEngine.get(a)[i] != votingEngine.get(b)[i]) {
+                    return votingEngine.get(b)[i] - votingEngine.get(a)[i];
+                }
             }
+            return a - b;
         });
-        return "";
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for(char character : list){
+            stringBuilder.append(character);
+        }
+
+        return stringBuilder.toString();
     }
 
     public static void main(String[] args) {
