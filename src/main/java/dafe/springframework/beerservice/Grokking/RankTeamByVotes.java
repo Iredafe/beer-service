@@ -36,10 +36,17 @@ public class RankTeamByVotes {
         return stringBuilder.toString();
     }
 
+    public static String rankTeamByVotes(List<List<String>> votes){
+
+        return "";
+    }
+
     public static void main(String[] args) {
 
         String [] votes = {"ABC","ACB","ABC","ACB","ACB"};
+        List<List<String>> theVotes = Arrays.asList(Arrays.asList("ABC","ACB","ABC","ACB","ACB"));
 
+        System.out.println("The result of the vote is : " + rankTeam(votes));
         System.out.println("The result of the vote is : " + rankTeam(votes));
     }
 
