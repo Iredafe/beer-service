@@ -1,6 +1,5 @@
 package dafe.springframework.beerservice.Grokking;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class RankTeamByVotes {
@@ -37,6 +36,16 @@ public class RankTeamByVotes {
     }
 
     public static String rankTeamByVotes(List<List<String>> votes){
+        HashMap<Character, int[]> ballot = new HashMap<>();
+
+        for(List<String> vote : votes){
+            for(int index=0; index<vote.size(); index++){
+                String character = vote.get(index);
+                char convertedCharacter = character.charAt(0);
+                ballot.putIfAbsent(convertedCharacter, new int[vote.size()]);
+                ballot.get(convertedCharacter)[index]++;
+            }
+        }
 
         return "";
     }
