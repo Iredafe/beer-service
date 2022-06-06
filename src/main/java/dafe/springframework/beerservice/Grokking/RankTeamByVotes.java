@@ -49,5 +49,10 @@ vote index-> 0  1  2
      team B :0  2  3
      team C :0  3  2
 
+ map :       A :[5,  0,  0]
+             B :[0,  2,  3]
+             C :[0,  3,  2]
+sort according to frequency of votes
+first-> A, second-> B, third -> C
      */
 }
