@@ -95,3 +95,111 @@ sort according to frequency of votes
 first-> A, second-> B, third -> C
      */
 }
+/*
+Now, let’s plan a big reunion dinner. Count the number of individuals who are parents, and the number who are not parents.
+
+Write a function that returns both of those counts using whatever data structure you’d like.
+
+Sample input and output:
+
+    1   2    4
+     \ /   / | \
+      3   5  8  9
+       \ / \     \
+        6   7    11
+
+parent_child_pairs = [
+    00
+    (1, 3),
+    10
+    (2, 3),
+    20
+    (3, 6),
+    (5, 6),
+    (5, 7),
+    (4, 5),
+    (4, 8),
+    (4, 9),
+    (9, 11)
+]
+
+//test cases - 3
+-a parent that has a child but has no parent (root parent)
+-a parent that has a parent, and has a child (e.g 5)
+- a child that is a parent(similar to previous)
+- a child that has no children (leaf)
+
+
+
+//solution plan
+-use a hashmap
+- map the values with their index
+-loop through the input
+- if a value exists in the first index, increment parent variable
+- if a value does not exist in the first index but exists in the second index increment the child variable
+-if a value exists in both - increment the parent
+
+
+# Returns
+6, 4
+
+# because
+# 6 parents: 1,2,3,4,5,9
+# 4 non-parents: 6,7,8,11
+
+Complexity Analysis variables:
+
+n: the number of pairs in the input
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+  private static int[] findParentChildPairs(int [][] parentChildTree){
+    HashMap<Integer, Integer> parentIndexMap = new HashMap<>();
+    int rowLength = parentChildTree.length;
+    int colLength = parentChildTree[0].length;
+    int parent=0;
+    int child=0;
+
+    for(int row=0; row<rowLength; row++){
+      parentId = parentChildTree[row][0];
+      childIld = parentChildTree[row][1];
+
+      if (parentIndexMap.containsKey(parentId)) {
+        ...
+      }
+
+      for(int col=0; col<colLength; col++){
+        int node = parentChildTree[row][col];
+        System.out.println("nodes " + node);
+
+        //  System.out.println("parents indexes : " + parentChildTree[row][0]);
+        if(!parentIndexMap.containsKey(node) && col==0){
+          System.out.println("parent " + node);
+          parentIndexMap.put(node, 0);
+          parent++;
+        }else if(!parentIndexMap.containsKey(node) && row==0){
+          parentIndexMap.put(node, 1);
+          //System.out.println("child " + node);
+          child++;
+        }
+      }
+    }
+    System.out.println("map " + parentIndexMap.toString());
+    return new int[]{parent, child};
+  }
+
+  public static void main(String[] argv) {
+    int[][] parentChildPairs = new int[][] {
+      {1, 3}, {2, 3}, {3, 6}, {5, 6}, {5, 7},
+      {4, 5}, {4, 8}, {4, 9}, {9, 11}
+    };
+
+    System.out.println("Parent - child : " + Arrays.toString(findParentChildPairs(parentChildPairs)));
+
+  }
+}
+
+*/
