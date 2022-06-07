@@ -20,10 +20,18 @@ public class SnakeGame {
         this.food=food;
         snakeMap = new HashMap<>();
         snake = new LinkedList<>();
+        snake.offerLast(Pair.of(0,0));
     }
 
     public int move(String direction){
+        Pair<Integer, Integer> snakeCell = snake.peekFirst();
+    int newHeadRow = snakeCell.getFirst();
+    int newHeadCol = snakeCell.getSecond();
 
+        switch (direction){
+            case "U": newHeadRow--;
+            break;
+        }
         return -1;
     }
 
