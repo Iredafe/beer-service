@@ -48,7 +48,11 @@ public class SnakeGame {
         boolean crossBoundary1 = newHeadRow < 0 || newHeadRow >= width;
         boolean crossBoundary2 = newHeadCol < 0 || newHeadCol >= height;
 
-        boolean bitesItself =
+        boolean bitesItself = snakeMap.containsKey(newHead) &&
+                !(newHead.getFirst()== currentTail.getFirst()
+                && newHead.getSecond()==currentTail.getSecond());
+
+        if(crossBoundary1 || crossBoundary2 || bitesItself) return -1;
         return -1;
     }
 
