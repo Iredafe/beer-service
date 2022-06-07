@@ -10,6 +10,11 @@ public class SnakeGame {
     Deque<Pair<Integer,Integer>> snake;
 
 
+    public int move(String direction){
+
+        return -1;
+    }
+
     public static void main(String[] args) {
 
     }
