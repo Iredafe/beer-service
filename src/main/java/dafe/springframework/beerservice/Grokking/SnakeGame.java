@@ -44,6 +44,11 @@ public class SnakeGame {
 
         Pair<Integer, Integer> newHead = Pair.of(newHeadRow, newHeadCol);
         Pair<Integer, Integer> currentTail = snake.peekLast();
+
+        boolean crossBoundary1 = newHeadRow < 0 || newHeadRow >= width;
+        boolean crossBoundary2 = newHeadCol < 0 || newHeadCol >= height;
+
+        boolean bitesItself =
         return -1;
     }
 
