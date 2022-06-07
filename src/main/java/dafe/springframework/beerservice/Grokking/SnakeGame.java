@@ -31,6 +31,15 @@ public class SnakeGame {
         switch (direction){
             case "U": newHeadRow--;
             break;
+
+            case "D": newHeadRow++;
+            break;
+
+            case "R": newHeadCol++;
+            break;
+
+            case "L": newHeadCol--;
+            break;
         }
         return -1;
     }
