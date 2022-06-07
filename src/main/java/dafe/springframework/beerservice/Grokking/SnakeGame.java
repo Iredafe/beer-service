@@ -41,6 +41,9 @@ public class SnakeGame {
             case "L": newHeadCol--;
             break;
         }
+
+        Pair<Integer, Integer> newHead = Pair.of(newHeadRow, newHeadCol);
+        Pair<Integer, Integer> currentTail = snake.peekLast();
         return -1;
     }
 
