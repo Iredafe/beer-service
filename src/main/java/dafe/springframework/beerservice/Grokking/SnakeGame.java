@@ -11,7 +11,7 @@ public class SnakeGame {
     int width;
     int height;
     int foodIndex;
-    HashMap<Pair<Integer, Integer>, Integer> snakeMap;
+    HashMap<Pair<Integer, Integer>, Boolean> snakeMap;
     Deque<Pair<Integer,Integer>> snake;
 
     public SnakeGame(int width, int height, int[][] food){
@@ -53,9 +53,21 @@ public class SnakeGame {
                 && newHead.getSecond()==currentTail.getSecond());
 
         if(crossBoundary1 || crossBoundary2 || bitesItself) return -1;
-        return -1;
+
+        if(foodIndex < food.length &&
+                food[foodIndex][0] == newHeadRow
+                && food[foodIndex][1] == newHeadCol){
+            foodIndex++;
+        }else{
+            snake.pollLast();
+            snakeMap.remove(currentTail);
+        }
+        snake.addFirst(newHead);
+        snakeMap.put(newHead, true);
+        return snake.size()-1;
     }
 
+    //if there is available food and if it is on the cell occupied by
     public static void main(String[] args) {
 
     }
