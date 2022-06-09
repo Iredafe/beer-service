@@ -72,21 +72,16 @@ space: O(1)
             for(int rightPointer=0; rightPointer<board.length; rightPointer++){
                 if(board[rightPointer] == 'M' || board[rightPointer]=='P'){
                     leftPointer = rightPointer;
-
-
                     break;
                 }
-
             }
 
             for(int rightPointer=leftPointer+1; rightPointer<board.length; rightPointer++){
                 if(board[rightPointer] == 'M' || board[rightPointer]=='P'){
                     result = rightPointer-leftPointer - 1;
-
                     break;
                 }
             }
-
             return result;
         }
 
