@@ -77,13 +77,16 @@ public class SnakeGame {
     public static void main(String[] args) {
         SnakeGame snakeGame = new SnakeGame(3, 2, new int[][]{{1, 2}, {0, 1}});
         snakeGame.move("R"); // return 0
+        System.out.println("This is the score from snake game : " + snakeGame.score);
         snakeGame.move("D"); // return 0
+        System.out.println("This is the score from snake game : " + snakeGame.score);
         snakeGame.move("R"); // return 1, snake eats the first piece of food. The second piece of food appears at (0, 1).
+        System.out.println("This is the score from snake game : " + snakeGame.score);
         snakeGame.move("U"); // return 1
+        System.out.println("This is the score from snake game : " + snakeGame.score);
         snakeGame.move("L"); // return 2, snake eats the second food. No more food appears.
+        System.out.println("This is the score from snake game : " + snakeGame.score);
         snakeGame.move("U");
-
-
         System.out.println("This is the score from snake game : " + snakeGame.score);
     }
 }
