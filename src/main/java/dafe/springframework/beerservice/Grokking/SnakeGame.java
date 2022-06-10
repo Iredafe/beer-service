@@ -54,7 +54,10 @@ public class SnakeGame {
                 !(newHead.getFirst()== currentTail.getFirst()
                 && newHead.getSecond()==currentTail.getSecond());
 
-        if(crossBoundary1 || crossBoundary2 || bitesItself) return -1;
+        if(crossBoundary1 || crossBoundary2 || bitesItself) {
+            score= -1;
+            return score;
+        }
 
         if(foodIndex < food.length &&
                 food[foodIndex][0] == newHeadRow
