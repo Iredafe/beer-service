@@ -76,5 +76,8 @@ public class SnakeGame {
         snakeGame.move("U"); // return 1
         snakeGame.move("L"); // return 2, snake eats the second food. No more food appears.
         snakeGame.move("U");
+
+
+        System.out.println("This is the score from snake game : " + snakeGame);
     }
 }
