@@ -70,6 +70,11 @@ public class SnakeGame {
     //if there is available food and if it is on the cell occupied by
     public static void main(String[] args) {
         SnakeGame snakeGame = new SnakeGame(3, 2, new int[][]{{1, 2}, {0, 1}});
-
+        snakeGame.move("R"); // return 0
+        snakeGame.move("D"); // return 0
+        snakeGame.move("R"); // return 1, snake eats the first piece of food. The second piece of food appears at (0, 1).
+        snakeGame.move("U"); // return 1
+        snakeGame.move("L"); // return 2, snake eats the second food. No more food appears.
+        snakeGame.move("U");
     }
 }
