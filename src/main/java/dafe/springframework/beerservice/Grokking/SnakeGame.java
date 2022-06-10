@@ -25,8 +25,8 @@ public class SnakeGame {
 
     public int move(String direction){
         Pair<Integer, Integer> snakeCell = snake.peekFirst();
-    int newHeadRow = snakeCell.getFirst();
-    int newHeadCol = snakeCell.getSecond();
+        int newHeadRow = snakeCell.getFirst();
+        int newHeadCol = snakeCell.getSecond();
 
         switch (direction){
             case "U": newHeadRow--;
@@ -69,6 +69,7 @@ public class SnakeGame {
 
     //if there is available food and if it is on the cell occupied by
     public static void main(String[] args) {
+        SnakeGame snakeGame = new SnakeGame(3, 2, new int[][]{{1, 2}, {0, 1}});
 
     }
 }
