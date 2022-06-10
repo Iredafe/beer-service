@@ -45,8 +45,8 @@ public class SnakeGame {
         Pair<Integer, Integer> newHead = Pair.of(newHeadRow, newHeadCol);
         Pair<Integer, Integer> currentTail = snake.peekLast();
 
-        boolean crossBoundary1 = newHeadRow < 0 || newHeadRow >= width;
-        boolean crossBoundary2 = newHeadCol < 0 || newHeadCol >= height;
+        boolean crossBoundary1 = newHeadRow < 0 || newHeadRow >= height;
+        boolean crossBoundary2 = newHeadCol < 0 || newHeadCol >= width;
 
         boolean bitesItself = snakeMap.containsKey(newHead) &&
                 !(newHead.getFirst()== currentTail.getFirst()
