@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class SnakeGame {
+    int score=0;
     int[][]food;
     int width;
     int height;
@@ -65,7 +66,8 @@ public class SnakeGame {
         }
         snake.addFirst(newHead);
         snakeMap.put(newHead, true);
-        return snake.size()-1;
+        score=snake.size()-1;
+        return score;
     }
 
     //if there is available food and if it is on the cell occupied by
@@ -79,6 +81,6 @@ public class SnakeGame {
         snakeGame.move("U");
 
 
-        System.out.println("This is the score from snake game : " + snakeGame);
+        System.out.println("This is the score from snake game : " + snakeGame.score);
     }
 }
