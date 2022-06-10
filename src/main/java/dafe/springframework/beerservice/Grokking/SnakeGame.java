@@ -20,6 +20,7 @@ public class SnakeGame {
         this.food=food;
         snakeMap = new HashMap<>();
         snake = new LinkedList<>();
+        snakeMap.put(Pair.of(0,0), true);
         snake.offerLast(Pair.of(0,0));
     }
 
