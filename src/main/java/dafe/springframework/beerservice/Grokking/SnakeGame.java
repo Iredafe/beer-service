@@ -86,7 +86,7 @@ public class SnakeGame {
         System.out.println("This is the score from snake game : " + snakeGame.score);
         snakeGame.move("L"); // return 2, snake eats the second food. No more food appears.
         System.out.println("This is the score from snake game : " + snakeGame.score);
-        snakeGame.move("U");
+        snakeGame.move("U"); // return -1
         System.out.println("This is the score from snake game : " + snakeGame.score);
     }
 }
