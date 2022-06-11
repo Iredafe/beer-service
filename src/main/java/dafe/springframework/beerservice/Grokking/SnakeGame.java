@@ -11,7 +11,7 @@ public class SnakeGame {
     int[][]food;
     int width;
     int height;
-    int foodIndex;
+    int foodIndex=0;
     HashMap<Pair<Integer, Integer>, Boolean> snakeMap;
     Deque<Pair<Integer,Integer>> snake;
 
