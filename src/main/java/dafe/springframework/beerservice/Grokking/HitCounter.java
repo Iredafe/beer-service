@@ -18,7 +18,15 @@ public class HitCounter {
 
     public static int getHits(int timestamp){
 
+        while (!hits.isEmpty()){
+            int diff = timestamp-hits.peek();
+            if(diff>300){
+                hits.remove(timestamp);
+            }else{
+                hits.add(timestamp);
+            }
+        }
 
-        return 1;
+        return hits.size()-1;
     }
 }
