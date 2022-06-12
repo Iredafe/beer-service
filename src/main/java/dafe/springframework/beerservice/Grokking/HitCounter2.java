@@ -8,10 +8,11 @@ import java.util.LinkedList;
 public class HitCounter2 {
 
     static Deque<Pair<Integer, Integer>> timeFrequencyQueue;
-
+    static int total;
 
     public HitCounter2(){
         timeFrequencyQueue = new LinkedList<>();
+        total=0;
     }
 
     public static void hit(int timestamp){
@@ -22,5 +23,16 @@ public class HitCounter2 {
             timeFrequencyQueue.removeLast();
             timeFrequencyQueue.add(Pair.of(timestamp, previousCount+1));
         }
+    }
+
+    public static int getHits(int timestamp){
+        while(!timeFrequencyQueue.isEmpty()){
+            int diff = timestamp - timeFrequencyQueue.getFirst().getFirst() ;
+            if(diff >=300){
+                total -= timeFrequencyQueue.peekLast().getSecond();
+                timeFrequencyQueue.removeLast();
+            } else break;
+        }
+        return total;
     }
 }
