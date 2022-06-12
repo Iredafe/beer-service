@@ -21,9 +21,9 @@ public class HitCounter {
         while (!hits.isEmpty()){
             int diff = timestamp-hits.peek();
             if(diff>300){
-                hits.remove(timestamp);
+                hits.remove();
             }else{
-                hits.add(timestamp);
+                break;
             }
         }
 
