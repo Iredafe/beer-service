@@ -7,8 +7,13 @@ import java.util.Queue;
 
 public class HitCounter {
 
-    Queue<Integer> hits;
+    static Queue<Integer> hits;
     public HitCounter(){
         hits = new LinkedList<>();
     }
+
+    public static void hit(int timestamp){
+        hits.add(timestamp);
+    }
+
 }
