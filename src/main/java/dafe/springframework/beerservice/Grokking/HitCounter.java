@@ -16,4 +16,9 @@ public class HitCounter {
         hits.add(timestamp);
     }
 
+    public static int getHits(int timestamp){
+
+
+        return 1;
+    }
 }
