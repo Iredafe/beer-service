@@ -23,6 +23,7 @@ public class HitCounter2 {
             timeFrequencyQueue.removeLast();
             timeFrequencyQueue.add(Pair.of(timestamp, previousCount+1));
         }
+        total++;
     }
 
     public static int getHits(int timestamp){
@@ -30,7 +31,7 @@ public class HitCounter2 {
             int diff = timestamp - timeFrequencyQueue.getFirst().getFirst() ;
             if(diff >=300){
                 total -= timeFrequencyQueue.peekLast().getSecond();
-                timeFrequencyQueue.removeLast();
+                timeFrequencyQueue.removeFirst();
             } else break;
         }
         return total;
