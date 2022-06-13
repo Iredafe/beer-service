@@ -38,5 +38,8 @@ public class HitCounter2 {
 
     public static void main(String[] args) {
 
+        HitCounter2 hitCounter = new HitCounter2();
+        hitCounter.hit(1);
+        System.out.println("total hit at timestamp 1 : " + hitCounter.total);
     }
 }
