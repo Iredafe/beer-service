@@ -30,7 +30,7 @@ public class HitCounter2 {
         while(!timeFrequencyQueue.isEmpty()){
             int diff = timestamp - timeFrequencyQueue.getFirst().getFirst() ;
             if(diff >=300){
-                total -= timeFrequencyQueue.peekLast().getSecond();
+                total -= timeFrequencyQueue.peekFirst().getSecond();
                 timeFrequencyQueue.removeFirst();
             } else break;
         }
