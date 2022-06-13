@@ -35,4 +35,8 @@ public class HitCounter2 {
         }
         return total;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
