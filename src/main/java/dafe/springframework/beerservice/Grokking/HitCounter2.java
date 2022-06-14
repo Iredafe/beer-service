@@ -46,13 +46,13 @@ public class HitCounter2 {
         System.out.println("total hit at timestamp 2 : " + hitCounter.total);
         hitCounter.hit(3);
         System.out.println("total hit at timestamp 3 : " + hitCounter.total);
-        hitCounter.hit(4);
+        hitCounter.getHits(4);
         System.out.println("total hit at timestamp 4 : " + hitCounter.total);
         hitCounter.hit(300);
         System.out.println("total hit at timestamp 300 : " + hitCounter.total);
-        hitCounter.hit(300);
+        hitCounter.getHits(300);
         System.out.println("total hit at timestamp 300 : " + hitCounter.total);
-        hitCounter.hit(301);
+        hitCounter.getHits(301);
         System.out.println("total hit at timestamp 301 : " + hitCounter.total);
     }
 }
