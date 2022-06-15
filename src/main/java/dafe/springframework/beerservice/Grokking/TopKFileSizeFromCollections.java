@@ -7,6 +7,8 @@ import java.util.List;
 
 public class TopKFileSizeFromCollections {
 
+    static int totalSizeOfFiles;
+
     class Directory{
         String directoryName;
         List<File> files;
@@ -36,8 +38,14 @@ public class TopKFileSizeFromCollections {
         }
     }
 
-    private static List<Directory> addFileToDirectory(){
 
+    private static int getTotalSize(){
+        return totalSizeOfFiles;
+    }
+
+    private static List<Directory> addFileToDirectory(String fileName, int size, String directoryName){
+
+        return new ArrayList<>();
     }
 
     public static void main(String[] args) {
