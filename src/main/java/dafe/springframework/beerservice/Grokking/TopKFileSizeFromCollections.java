@@ -1,13 +1,14 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.nio.file.attribute.FileAttribute;
 import java.util.*;
 
 public class TopKFileSizeFromCollections {
 
     static int totalSizeOfFiles;
     static PriorityQueue<Directory> directoryHeap;
-    Map<String, File> directoryDetailsMap;
-    Set<Directory> isDirectoryPresentInHeap;
+    static Map<String, FileAttribute> directoryDetailsMap;
+    static Set<Directory> isDirectoryPresentInHeap;
 
     public TopKFileSizeFromCollections(){
         directoryHeap = new PriorityQueue<Directory>((a, b)-> b.size - a.size);
@@ -38,23 +39,29 @@ public class TopKFileSizeFromCollections {
     }
 
     private static List<Directory> addFileToDirectory(String fileName, int size, String directoryName){
-
+        File file;
+        if(directoryName.equals("")){
+            file = new File(fileName, size);
+        }else{
+            Directory directory = (Directory) directoryDetailsMap
+                    .getOrDefault(directoryName, new Directory(directoryName, size));
+        }
         return new ArrayList<>();
     }
 
 
     public static void main(String[] args) {
-        TopKFileSizeFromCollections topKFileSizeFromCollections = new TopKFileSizeFromCollections();
 
+        TopKFileSizeFromCollections fileSystem = new TopKFileSizeFromCollections();
 
-        addFileToDirectory("file1.txt", 100, "");
-        addFileToDirectory("file2.txt", 100, "collection1");
-        addFileToDirectory("file3.txt", 200, "collection1");
-        addFileToDirectory("file4.txt", 300, "collection3");
-        addFileToDirectory("file5.txt", 400, "collection4");
+        fileSystem.addFileToDirectory("file1.txt", 100, "");
+        fileSystem.addFileToDirectory("file2.txt", 100, "collection1");
+        fileSystem.addFileToDirectory("file3.txt", 200, "collection1");
+        fileSystem.addFileToDirectory("file4.txt", 300, "collection2");
+        fileSystem.addFileToDirectory("file5.txt", 400, "");
     }
 
-    static class File{
+    static class File implements FileAttribute{
         String fileName;
         int size;
         Directory directory;
@@ -70,7 +77,7 @@ public class TopKFileSizeFromCollections {
             this.directory = directory;
         }
     }
-    static class Directory{
+    static class Directory implements FileAttribute {
         String directoryName;
         List<File> files;
         int size;
@@ -81,6 +88,8 @@ public class TopKFileSizeFromCollections {
             files = new ArrayList<>();
         }
     }
+
+    interface FileAttribute{}
 }
 
 
