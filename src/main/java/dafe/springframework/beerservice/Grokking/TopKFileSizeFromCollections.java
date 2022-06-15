@@ -23,6 +23,17 @@ public class TopKFileSizeFromCollections {
         String fileName;
         int size;
         Directory directory;
+
+        public File(String fileName, int size){
+            this.fileName=fileName;
+            this.size=size;
+        }
+
+        public File(String fileName, int size, Directory directory){
+            this.fileName = fileName;
+            this.size = size;
+            this.directory = directory;
+        }
     }
 
     private static List<Directory> addFileToDirectory(){
