@@ -1,19 +1,16 @@
 package dafe.springframework.beerservice.Grokking;
 
-import io.micrometer.core.instrument.util.AbstractPartition;
-import org.apache.tomcat.jni.Directory;
-
 import java.util.*;
 
 public class TopKFileSizeFromCollections {
 
     static int totalSizeOfFiles;
-    PriorityQueue<Directory> directoryPriorityQueue;
+    static PriorityQueue<Directory> directoryHeap;
     Map<String, File> directoryDetailsMap;
     Set<Directory> isDirectoryPresentInHeap;
 
     public TopKFileSizeFromCollections(){
-        directoryPriorityQueue = new PriorityQueue<Directory>((a, b)-> b.size - a.size);
+        directoryHeap = new PriorityQueue<Directory>((a, b)-> b.size - a.size);
         directoryDetailsMap = new HashMap<>();
         isDirectoryPresentInHeap = new HashSet<>();
     }
@@ -24,6 +21,10 @@ public class TopKFileSizeFromCollections {
 
     private static List<Directory> getTopNCollections(int n){
 
+        PriorityQueue<Directory> tempDirectoryHeap = new PriorityQueue<>((a,b)-> b.size-a.size);
+        for(int i=0 ; i< n ; i++){
+            Directory directory = directoryHeap.poll();
+        }
         return new ArrayList<>();
     }
 
