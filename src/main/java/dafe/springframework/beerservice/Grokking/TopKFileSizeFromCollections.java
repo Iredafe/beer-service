@@ -43,6 +43,11 @@ public class TopKFileSizeFromCollections {
         return totalSizeOfFiles;
     }
 
+    private static List<Directory> getTopNCollections(int n){
+
+        return new ArrayList<>();
+    }
+
     private static List<Directory> addFileToDirectory(String fileName, int size, String directoryName){
 
         return new ArrayList<>();
