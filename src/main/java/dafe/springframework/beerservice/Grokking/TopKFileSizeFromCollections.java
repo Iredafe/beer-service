@@ -47,14 +47,14 @@ public class TopKFileSizeFromCollections {
     static class File{
         String fileName;
         int size;
-        org.apache.tomcat.jni.Directory directory;
+        Directory directory;
 
         public File(String fileName, int size){
             this.fileName=fileName;
             this.size=size;
         }
 
-        public File(String fileName, int size, org.apache.tomcat.jni.Directory directory){
+        public File(String fileName, int size, Directory directory){
             this.fileName = fileName;
             this.size = size;
             this.directory = directory;
