@@ -42,6 +42,7 @@ public class TopKFileSizeFromCollections {
         File file;
         if(directoryName.equals("")){
             file = new File(fileName, size);
+            directoryDetailsMap.put(fileName, file);
         }else{
             Directory directory = (Directory) directoryDetailsMap
                     .getOrDefault(directoryName, new Directory(directoryName, size));
@@ -66,9 +67,9 @@ public class TopKFileSizeFromCollections {
         TopKFileSizeFromCollections fileSystem = new TopKFileSizeFromCollections();
 
         fileSystem.addFileToDirectory("file1.txt", 100, "");
-        fileSystem.addFileToDirectory("file2.txt", 100, "collection1");
-        fileSystem.addFileToDirectory("file3.txt", 200, "collection1");
-        fileSystem.addFileToDirectory("file4.txt", 300, "collection2");
+        fileSystem.addFileToDirectory("file2.txt", 100, "collection 1");
+        fileSystem.addFileToDirectory("file3.txt", 200, "collection 1");
+        fileSystem.addFileToDirectory("file4.txt", 300, "collection 2");
         fileSystem.addFileToDirectory("file5.txt", 400, "");
 
         int n = 2;
@@ -76,7 +77,7 @@ public class TopKFileSizeFromCollections {
         List<Directory> topNCollections = fileSystem.getTopNCollections(n);
 
         for (Directory collection: topNCollections)
-            System.out.println("The top " +n+ " collections and size is " +collection.directoryName+" " + collection.size+" ");
+            System.out.println("The top " +n+ " collections and size is "  +collection.directoryName+" " + collection.size+" ");
     }
 
     static class File implements FileAttribute{
