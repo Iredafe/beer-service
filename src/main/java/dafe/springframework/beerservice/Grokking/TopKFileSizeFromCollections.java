@@ -2,6 +2,11 @@ package dafe.springframework.beerservice.Grokking;
 
 public class TopKFileSizeFromCollections {
 
+    class Directory{
+        String directoryName;
+        List<File> files;
+        int size;
+    }
 
     private static Lis<Directory> addFileToDirectory(){
 
