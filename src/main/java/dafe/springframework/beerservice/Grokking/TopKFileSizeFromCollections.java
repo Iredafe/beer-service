@@ -1,14 +1,24 @@
 package dafe.springframework.beerservice.Grokking;
 
+import io.micrometer.core.instrument.util.AbstractPartition;
+
+import java.util.ArrayList;
+
 public class TopKFileSizeFromCollections {
 
     class Directory{
         String directoryName;
         List<File> files;
         int size;
+
+        public Directory(String name, int size){
+            this.directoryName = name;
+            this.size = size;
+            files = new ArrayList<>();
+        }
     }
 
-    private static Lis<Directory> addFileToDirectory(){
+    private static List<Directory> addFileToDirectory(){
 
     }
 
