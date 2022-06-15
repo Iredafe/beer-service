@@ -20,10 +20,17 @@ public class TopKFileSizeFromCollections {
     }
 
     private static List<Directory> getTopNCollections(int n){
-
+        List<Directory> output = new ArrayList<>();
         PriorityQueue<Directory> tempDirectoryHeap = new PriorityQueue<>((a,b)-> b.size-a.size);
+
+        if(directoryHeap.size() < n) return new ArrayList<>();
         for(int i=0 ; i< n ; i++){
             Directory directory = directoryHeap.poll();
+            output.add(directory);
+        }
+
+        for(int i=0; i<n; i++){
+            tempDirectoryHeap.add()
         }
         return new ArrayList<>();
     }
