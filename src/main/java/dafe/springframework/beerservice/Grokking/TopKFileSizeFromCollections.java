@@ -13,6 +13,7 @@ public class TopKFileSizeFromCollections {
         directoryHeap = new PriorityQueue<Directory>((a, b)-> b.size - a.size);
         directoryDetailsMap = new HashMap<>();
         isDirectoryPresentInHeap = new HashSet<>();
+        this.totalSizeOfFiles = 0;
     }
 
     private static int getTotalSize(){
@@ -27,12 +28,13 @@ public class TopKFileSizeFromCollections {
         for(int i=0 ; i< n ; i++){
             Directory directory = directoryHeap.poll();
             output.add(directory);
+            tempDirectoryHeap.add(directory);
         }
 
         for(int i=0; i<n; i++){
-            tempDirectoryHeap.add()
+            directoryHeap.add(tempDirectoryHeap.poll());
         }
-        return new ArrayList<>();
+        return output;
     }
 
     private static List<Directory> addFileToDirectory(String fileName, int size, String directoryName){
