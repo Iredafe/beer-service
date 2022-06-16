@@ -26,7 +26,13 @@ public class KthSmallestNumber {
             maxHeap.add(array[i]);
         }
 
+        for(int i=k; i<array.length; i++){
+            if(array[i] < maxHeap.peek()){
+                maxHeap.poll();
+                maxHeap.add(array[i]);
+            }
+        }
 
-
+        return maxHeap.peek();
     }
 }
