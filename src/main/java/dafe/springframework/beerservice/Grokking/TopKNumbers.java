@@ -12,10 +12,16 @@ public class TopKNumbers {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>((a,b)->a-b);
 
         for (int index=0; index < n; index++){
-
+            minHeap.add(numbers[index]);
         }
 
-        return new ArrayList<>();
+        for (int arrayIndex=0; arrayIndex<numbers.length; arrayIndex++){
+            if(numbers[arrayIndex] > minHeap.peek()){
+                minHeap.poll();
+                minHeap.add(numbers[arrayIndex]);
+            }
+        }
+        return new ArrayList<>(minHeap);
     }
 
     public static void main(String[] args) {
