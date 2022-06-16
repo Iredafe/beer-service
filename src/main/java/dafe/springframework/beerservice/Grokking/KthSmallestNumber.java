@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.PriorityQueue;
+
 public class KthSmallestNumber {
 
     public static void main(String[] args) {
@@ -18,8 +20,13 @@ public class KthSmallestNumber {
         System.out.println("Kth smallest number is: " + result);  }
 
     private static int findKthSmallestNumber(int[] array, int k) {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)-> b-a);
 
-        return 1;
+        for(int i=0; i<k; i++){
+            maxHeap.add(array[i]);
+        }
+
+
+
     }
-}
 }
