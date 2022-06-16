@@ -17,6 +17,9 @@ public class KthSmallestNumber {
                 findKthSmallestNumber(new int[] { 5, 12, 11, -1, 12 }, 3);
         System.out.println("Kth smallest number is: " + result);  }
 
+    private static int findKthSmallestNumber(int[] array, int k) {
 
+        return 1;
+    }
 }
 }
