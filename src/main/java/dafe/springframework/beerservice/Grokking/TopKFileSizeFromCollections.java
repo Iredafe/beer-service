@@ -45,7 +45,7 @@ public class TopKFileSizeFromCollections {
             directoryDetailsMap.put(fileName, file);
         }else{
             Directory directory = (Directory) directoryDetailsMap
-                    .getOrDefault(directoryName, new Directory(directoryName, size));
+                    .getOrDefault(directoryName, new Directory(directoryName));
             file = new File(fileName, size, directory);
 
             directory.size +=size;
@@ -101,9 +101,9 @@ public class TopKFileSizeFromCollections {
         List<File> files;
         int size;
 
-        public Directory(String name, int size){
+        public Directory(String name){
             this.directoryName = name;
-            this.size = size;
+            this.size = 0;
             files = new ArrayList<>();
         }
     }
