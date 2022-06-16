@@ -2,11 +2,18 @@ package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class TopKNumbers {
 
 
-    private static List<Integer> findKLargestNumbers(int[] ints, int n) {
+    private static List<Integer> findKLargestNumbers(int[] numbers, int n) {
+
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>((a,b)->a-b);
+
+        for (int index=0; index < n; index++){
+
+        }
 
         return new ArrayList<>();
     }
