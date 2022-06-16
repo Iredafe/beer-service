@@ -11,7 +11,7 @@ public class TopKFileSizeFromCollections {
     static Set<Directory> isDirectoryPresentInHeap;
 
     public TopKFileSizeFromCollections(){
-        directoryHeap = new PriorityQueue<Directory>((a, b)-> b.size - a.size);
+        directoryHeap = new PriorityQueue<>((a, b)-> b.size - a.size);
         directoryDetailsMap = new HashMap<>();
         isDirectoryPresentInHeap = new HashSet<>();
         totalSizeOfFiles = 0;
