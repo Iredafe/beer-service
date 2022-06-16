@@ -76,15 +76,15 @@ file3.txt(size: 200) in collection "collection1"
 file4.txt(size: 300) in collection "collection2"
 file5.txt(size: 100)
          */
-//
-//        fileSystem.addFileToDirectory("file1.txt", 100, "");
-//        fileSystem.addFileToDirectory("file2.txt", 200, "collection 1");
-//        fileSystem.addFileToDirectory("file3.txt", 200, "collection 1");
-//        fileSystem.addFileToDirectory("file4.txt", 300, "collection 2");
-//        fileSystem.addFileToDirectory("file5.txt", 100, "");
-        fileSystem.addFileToDirectory("file5.txt", 400, "collection4");
-        fileSystem.addFileToDirectory("file2.txt", 100, "collection1");
-        fileSystem.addFileToDirectory("file3.txt", 400, "collection1");
+
+        fileSystem.addFileToDirectory("file1.txt", 100, "");
+        fileSystem.addFileToDirectory("file2.txt", 200, "collection 1");
+        fileSystem.addFileToDirectory("file3.txt", 200, "collection 2");
+        fileSystem.addFileToDirectory("file4.txt", 300, "collection 2");
+        fileSystem.addFileToDirectory("file5.txt", 100, "");
+        fileSystem.addFileToDirectory("file5.txt", 400, "collection 4");
+        fileSystem.addFileToDirectory("file2.txt", 100, "collection 1");
+        fileSystem.addFileToDirectory("file3.txt", 400, "collection 1");
 
         int n = 2;
         System.out.println("total size is : " + fileSystem.getTotalSize());
