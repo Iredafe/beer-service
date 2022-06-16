@@ -15,7 +15,7 @@ public class TopKNumbers {
             minHeap.add(numbers[index]);
         }
 
-        for (int arrayIndex=0; arrayIndex<numbers.length; arrayIndex++){
+        for (int arrayIndex=n; arrayIndex<numbers.length; arrayIndex++){
             if(numbers[arrayIndex] > minHeap.peek()){
                 minHeap.poll();
                 minHeap.add(numbers[arrayIndex]);
