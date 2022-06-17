@@ -1,6 +1,4 @@
 package dafe.springframework.beerservice.Grokking;
-
-import java.nio.file.attribute.FileAttribute;
 import java.util.*;
 
 public class TopKFileSizeFromCollections {
