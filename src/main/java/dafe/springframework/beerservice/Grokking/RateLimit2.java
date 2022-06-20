@@ -13,6 +13,10 @@ public class RateLimit2 {
             RequestCounter requestCounter = new RequestCounter();
             requestCounter.makeRequest(currentTime);
             clientHitMap.put(clientID, requestCounter);
+            return true;
+        }else{
+            RequestCounter requestCounter = clientHitMap.get(clientID);
+            return requestCounter.makeRequest(currentTime);
         }
     }
 }
