@@ -27,4 +27,9 @@ public class RateLimit2 {
             return false;
         }
     }
+
+
+    public static boolean isRequestAllowed(String clientID, int currentTime){
+
+    }
 }
