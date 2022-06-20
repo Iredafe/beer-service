@@ -5,12 +5,14 @@ import java.util.Queue;
 
 public class RateLimit2 {
 
-    static HashMap<String, HitCounter> clientHitMap = new HashMap<>();
+    static HashMap<String, RequestCounter> clientHitMap = new HashMap<>();
 
 
     public static boolean isRequestAllowed(String clientID, int currentTime){
         if(!clientHitMap.containsKey(clientID)){
             RequestCounter requestCounter = new RequestCounter();
+            requestCounter.makeRequest(currentTime);
+            clientHitMap.put(clientID, requestCounter);
         }
     }
 }
