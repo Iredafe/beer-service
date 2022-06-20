@@ -14,10 +14,17 @@ public class RateLimit2 {
 
         public boolean makeRequest(int timestamp){
             //clean up
-            while (!requestQueue.isEmpty() && timestamp - requestQueue.peek() >=TIME_LIMIT){
-
+            while (!requestQueue.isEmpty()){
+                if(timestamp - requestQueue.peek() >= TIME_LIMIT){
+                    requestQueue.remove();
+                }else break;
             }
 
+            if(requestQueue.size() < REQUEST_LIMIT){
+                requestQueue.add(timestamp);
+                return true;
+            }
+            return false;
         }
     }
 }
