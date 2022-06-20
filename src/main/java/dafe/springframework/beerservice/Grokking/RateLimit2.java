@@ -11,5 +11,13 @@ public class RateLimit2 {
 
     class HitCounter{
         Queue<Integer> requestQueue;
+
+        public boolean makeRequest(int timestamp){
+            //clean up
+            while (!requestQueue.isEmpty() && timestamp - requestQueue.peek() >=TIME_LIMIT){
+
+            }
+
+        }
     }
 }
