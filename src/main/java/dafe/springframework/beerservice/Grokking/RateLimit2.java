@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Queue;
 
 public class RateLimit2 {
@@ -22,16 +23,26 @@ public class RateLimit2 {
 
 
     public static void main(String[] args) {
-        int [] time = new int[] {200, 300, 305, 307, 314, 400};
+        int [] timeArray = new int[] {200, 300, 305, 307, 314, 400};
+
+        for (int currentTime : timeArray){
+            String client = "dee1234";
+            System.out.println("Is request allowed for client "+client+ ": "
+                    + isRequestAllowed(client,currentTime));
+        }
     }
 }
 
 
 class RequestCounter{
 
-    public static int REQUEST_LIMIT = 100;
+    public static int REQUEST_LIMIT = 3;
     public static int TIME_LIMIT = 300;
     static Queue<Integer> requestQueue;
+
+    public RequestCounter(){
+        requestQueue = new LinkedList<>();
+    }
 
     public static boolean makeRequest(int timestamp){
         //clean up
