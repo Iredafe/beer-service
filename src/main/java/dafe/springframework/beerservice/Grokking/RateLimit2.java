@@ -19,6 +19,11 @@ public class RateLimit2 {
             return requestCounter.makeRequest(currentTime);
         }
     }
+
+
+    public static void main(String[] args) {
+        int [] time = new int[] {200, 300, 305, 307, 314, 400};
+    }
 }
 
 
