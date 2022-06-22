@@ -31,6 +31,7 @@ public class TopKNumbers {
 
         result = findKLargestNumbers(new int[] { 5, 12, 11, -1, 12 }, 3);
         System.out.println("Here are the top K numbers: " + result);
+        System.out.println("Here are the top K numbers: " + result);
     }
 
 }
