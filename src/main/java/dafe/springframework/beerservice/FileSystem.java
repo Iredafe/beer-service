@@ -1,6 +1,6 @@
 package dafe.springframework.beerservice;
 
-import dafe.springframework.beerservice.Gym.TopKFileSizeFromCollections;
+import java.util.List;
 
 public class FileSystem  {
 
@@ -20,8 +20,12 @@ public class FileSystem  {
             this.size=size;
             this.collection=collection;
         }
+    }
 
-
+    class FileCollection{
+     String collectionName;
+     int size;
+     List<File> files;
     }
 
     public static void main(String[] args) {
