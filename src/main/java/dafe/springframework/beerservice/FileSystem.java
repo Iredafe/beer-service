@@ -5,11 +5,14 @@ import io.micrometer.core.instrument.util.AbstractPartition;
 import java.util.*;
 
 public class FileSystem  {
+    static int totalSize;
+    static HashMap<String, FileBehaviour> fileCollectionMap=new HashMap<>();
+    static PriorityQueue<FileCollection> maxHeap= new PriorityQueue<>((a,b)->b.size-a.size);
+    static Set<FileCollection> isCollectionInHeap=new HashSet<>();
 
-    static HashMap<String, FileBehaviour> fileCollectionMap = new HashMap<>();
-    static PriorityQueue<FileCollection> maxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
-    static Set<FileCollection> isCollectionInHeap = new HashSet<>();
-
+    public FileSystem(){
+        this.totalSize=0;
+    }
     //marker interface
     interface FileBehaviour{}
 
@@ -20,6 +23,8 @@ public class FileSystem  {
 
         public FileCollection(String collectionName){
             this.collectionName = collectionName;
+            this.files = new ArrayList<>();
+            this.size=0;
         }
     }
 
@@ -40,20 +45,28 @@ public class FileSystem  {
         }
     }
 
-    private static List<FileCollection> addFile(String fileName, int size, String collectionName){
+    private static void addFile(String fileName, int size, String collectionName){
         File file;
         if(collectionName.equals("")){
             file = new File(fileName, size);
             fileCollectionMap.put(fileName, file);
         }else{
             FileCollection collection = (FileCollection) fileCollectionMap.getOrDefault(collectionName, new FileCollection(collectionName));
+            file = new File(collectionName, size, collection);
+            collection.size += size;
+            collection.files.add(file);
+
+            if(!isCollectionInHeap.contains(collection)){
+                isCollectionInHeap.add(collection);
+                maxHeap.add(collection);
+            }
+            fileCollectionMap.put(collectionName, collection);
         }
-        return new ArrayList<>();
+        totalSize += size;
     }
 
     private static int totalSizeOfFiles(){
-
-        return 0;
+        return totalSize;
     }
 
     private static List<FileCollection> getTopNFiles(int numberLimit){
@@ -62,16 +75,24 @@ public class FileSystem  {
     }
 
     public static void main(String[] args) {
-        System.out.println("Hello World");
         String fileName1 = "file1.txt";
         String fileName2 = "file2.txt";
         String fileName3 = "file3.txt";
         String fileCollection1 = "collection1";
         String fileCollection2 = "collection2";
         int topNumberOfFiles = 2;
-        System.out.println("Test that files can exist without a collection : " + addFile(fileName3, 120, ""));
-        System.out.println("test Number of files added successfully to collection : " + addFile(fileName1, 200, fileCollection1));
-        System.out.println("test Number of files added successfully to collection : " + addFile(fileName2, 200, fileCollection2));
+
+        FileSystem fileSystem = new FileSystem();
+        fileSystem.addFile(fileName1, 200, fileCollection1);
+        fileSystem.addFile(fileName2, 150, fileCollection2);
+        fileSystem.addFile(fileName3, 120, "");
+
+    for(Map.Entry<String, FileBehaviour> entry : fileCollectionMap.entrySet()){
+            
+        }
+        System.out.println("Test that files can exist without a collection : " );
+        System.out.println("test Number of files added successfully to collection : "  );
+        System.out.println("test Number of files added successfully to collection : " );
         System.out.println("test total number of files are correctly computed : " + totalSizeOfFiles());
         System.out.println("Test top n files in collection : " + getTopNFiles(topNumberOfFiles));
         /*
