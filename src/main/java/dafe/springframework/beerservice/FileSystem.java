@@ -6,14 +6,14 @@ import java.util.*;
 
 public class FileSystem  {
 
-    HashMap<String, FileBehaviour> fileCollectionMap = new HashMap<>();
-    PriorityQueue<FileCollection> maxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
-    Set<FileCollection> isCollectionInHeap = new HashSet<>();
+    static HashMap<String, FileBehaviour> fileCollectionMap = new HashMap<>();
+    static PriorityQueue<FileCollection> maxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
+    static Set<FileCollection> isCollectionInHeap = new HashSet<>();
 
     //marker interface
     interface FileBehaviour{}
 
-    class FileCollection implements FileBehaviour{
+   static class FileCollection implements FileBehaviour{
         String collectionName;
         int size;
         List<File> files;
@@ -23,14 +23,31 @@ public class FileSystem  {
         }
     }
 
-    class File implements FileBehaviour{
+    static class File implements FileBehaviour{
         String fileName;
         int size;
         FileCollection fileCollection;
+
+        public File(String fileName, int size){
+            this.fileName=fileName;
+            this.size=size;
+        }
+
+        public File(String fileName, int size, FileCollection collection){
+            this.fileName=fileName;
+            this.size=size;
+            this.fileCollection=collection;
+        }
     }
 
-    private static List<FileCollection> addFile(String fileName, int size, String fileCollection){
-
+    private static List<FileCollection> addFile(String fileName, int size, String collectionName){
+        File file;
+        if(collectionName.equals("")){
+            file = new File(fileName, size);
+            fileCollectionMap.put(fileName, file);
+        }else{
+            FileCollection collection = (FileCollection) fileCollectionMap.getOrDefault(collectionName, new FileCollection(collectionName));
+        }
         return new ArrayList<>();
     }
 
