@@ -26,6 +26,10 @@ public class FileSystem  {
      String collectionName;
      int size;
      List<File> files;
+
+     public FileCollection(String collectionName){
+         this.collectionName=collectionName;
+     }
     }
 
     public static void main(String[] args) {
