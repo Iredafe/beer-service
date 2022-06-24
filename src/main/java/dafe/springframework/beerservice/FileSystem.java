@@ -11,9 +11,17 @@ public class FileSystem  {
         String collectionName;
         int size;
         List<File> files;
+
+        public FileCollection(String collectionName){
+            this.collectionName = collectionName;
+        }
+
     }
 
-    private static List<FileCollection> addFile(String fileName, int size, FileCollection fileCollection){
+    class File{
+        String fileName;
+    }
+    private static List<FileCollection> addFile(String fileName, int size, String fileCollection){
 
         return new ArrayList<>();
     }
