@@ -4,38 +4,52 @@ import org.springframework.data.util.Pair;
 
 import java.util.Deque;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class SnakeGame {
-static int [][] food;
-static int foodIndex;
-static Deque<Pair<Integer, Integer>> snake;
-static HashMap<Pair<Integer, Integer>, Boolean> snakeMap;
+        static int [][] food;
+        static int foodIndex;
+        static Deque<Pair<Integer, Integer>> snake;
+        static HashMap<Pair<Integer, Integer>, Boolean> snakeMap;
+        int snakeSize;
+        int width;
+        int height;
+
+        public SnakeGame(int width, int height, int[][]food){
+        this.width = width;
+        this.height=height;
+        this.food = food;
+        this.foodIndex=0;
+        this.snakeSize=0;
+        this.snakeMap = new HashMap<>();
+        this.snake = new LinkedList<>();
+        snakeMap.put(Pair.of(0,0), true);
+        snake.offer(Pair.of(0,0));
+        }
 
 
     public static void main(String[] args) {
+        int [][] food1 = {{0, 1},{1,3}};
+        int width1=3, height1=2;
+        String [] direction1 = {"R","D","R","R","U"};
 
-      SnakeGame snakeGame1 = new SnakeGame();
-      SnakeGame snakeGame2 = new SnakeGame();
-      SnakeGame snakeGame3 = new SnakeGame();
-
-      int [][] food1 = {{0, 1},{1,3}};
-      int width1=3, height1=2;
-      String [] direction1 = {"R","D","R","R","U"};
-
-      int [][] food2 = {};
-      int width2=3, height2=2;
-      String [] direction2 = {"R","D","L","U"};
-
+        int [][] food2 = {};
+        int width2=3, height2=2;
+        String [] direction2 = {"R","D","L","U"};
 
         int [][] food3 = {};
         int width3=3, height3=2;
         String [] direction3 = {"R","D","D"};
 
-        System.out.println("Snake moves in correct direction and eats food : " + snakeGame1.move(direction1, food1, width1, height1));
-        System.out.println("Snake moves in correct direction and grow to size 2 : " + snakeGame1.move(direction1, food1, width1, height1));
-        System.out.println("Snake moves in all 4 directions without hitting a wall " +snakeGame2.move(direction2, food2, width2, height2));
-        System.out.println("Snake moves in all 4 directions without growing " +snakeGame2.move(direction2, food2, width2, height2));
-        System.out.println("Snake moves in correct directions and hits a wall " +snakeGame3.move(direction3, food3, width3, height3));
+          SnakeGame snakeGame1 = new SnakeGame(width1,height1,food1);
+          SnakeGame snakeGame2 = new SnakeGame(width2, height2, food2);
+          SnakeGame snakeGame3 = new SnakeGame(width3, height3, food3);
+
+        System.out.println("Snake moves in correct direction and eats food : " + snakeGame1.move(direction1));
+        System.out.println("Snake moves in correct direction and grow to size 2 : " + snakeGame1.move(direction1));
+        System.out.println("Snake moves in all 4 directions without hitting a wall " +snakeGame2.move(direction2));
+        System.out.println("Snake moves in all 4 directions without growing " +snakeGame2.move(direction2));
+        System.out.println("Snake moves in correct directions and hits a wall " +snakeGame3.move(direction3));
 
         /*
 
