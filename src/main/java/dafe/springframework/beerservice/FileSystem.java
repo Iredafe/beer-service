@@ -70,8 +70,18 @@ public class FileSystem  {
     }
 
     private static List<FileCollection> getTopNFiles(int numberLimit){
+        PriorityQueue<FileCollection> temporaryMaxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
+        List<FileCollection> topNFiles = new ArrayList<>();
+        for (int indexOfCollectionInMaxHeap =0; indexOfCollectionInMaxHeap<numberLimit; indexOfCollectionInMaxHeap++){
+            FileCollection fileCollection = maxHeap.poll();
+            topNFiles.add(fileCollection);
+            temporaryMaxHeap.add(fileCollection);
+        }
 
-        return new ArrayList<>();
+        for(int indexOfCollectionInTempMaxHeap = 0; indexOfCollectionInTempMaxHeap< numberLimit; indexOfCollectionInTempMaxHeap++){
+            maxHeap.add(temporaryMaxHeap.poll());
+        }
+        return topNFiles;
     }
 
     public static void main(String[] args) {
@@ -87,14 +97,16 @@ public class FileSystem  {
         fileSystem.addFile(fileName2, 150, fileCollection2);
         fileSystem.addFile(fileName3, 120, "");
 
-    for(Map.Entry<String, FileBehaviour> entry : fileCollectionMap.entrySet()){
-            
+        for(Map.Entry<String, FileBehaviour> entry : fileCollectionMap.entrySet()){
+            System.out.println("test addFiles method to see files & collections that have been added to file system successfully -> " + entry.getKey());
         }
-        System.out.println("Test that files can exist without a collection : " );
-        System.out.println("test Number of files added successfully to collection : "  );
-        System.out.println("test Number of files added successfully to collection : " );
+
+        List<FileCollection> topNFiles = getTopNFiles(topNumberOfFiles);
+        for(FileCollection collection : topNFiles){
+            System.out.println("Test top n files in collection : " + collection.collectionName + " size : " + collection.size);
+        }
         System.out.println("test total number of files are correctly computed : " + totalSizeOfFiles());
-        System.out.println("Test top n files in collection : " + getTopNFiles(topNumberOfFiles));
+
         /*
         file2.txt(size: 200) in collection "collection1"
         file3.txt(size: 200) in collection "collection1"
