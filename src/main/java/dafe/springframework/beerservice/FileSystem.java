@@ -22,7 +22,6 @@ public class FileSystem  {
         }
 
 
-        TopKFileSizeFromCollections
     }
 
     public static void main(String[] args) {
