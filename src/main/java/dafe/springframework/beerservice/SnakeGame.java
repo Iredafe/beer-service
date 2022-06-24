@@ -11,9 +11,9 @@ public class SnakeGame {
         static int foodIndex;
         static Deque<Pair<Integer, Integer>> snake;
         static HashMap<Pair<Integer, Integer>, Boolean> snakeMap;
-        int snakeSize;
-        int width;
-        int height;
+        static int snakeSize;
+        static int width;
+        static int height;
 
         public SnakeGame(int width, int height, int[][]food){
         this.width = width;
@@ -25,6 +25,47 @@ public class SnakeGame {
         this.snake = new LinkedList<>();
         snakeMap.put(Pair.of(0,0), true);
         snake.offer(Pair.of(0,0));
+        }
+
+        public static int move(String direction){
+            Pair<Integer, Integer> head = snake.peekFirst();
+            int newHeadRow = head.getFirst();
+            int newHeadColumn = head.getSecond();
+
+            switch (direction){
+                case "U" : newHeadRow--;
+                break;
+                case "D" : newHeadRow++;
+                break;
+                case "R" : newHeadColumn++;
+                break;
+                case "L" : newHeadColumn--;
+                break;
+            }
+
+            Pair<Integer, Integer> newHead = Pair.of(newHeadRow, newHeadColumn);
+            Pair<Integer, Integer> currentTail = snake.peekLast();
+
+            boolean hitWall1 = newHeadRow < 0 || newHeadRow >= height;
+            boolean hitWall2 = newHeadColumn < 0 || newHeadColumn >= width;
+            boolean bitesItself = snakeMap.containsKey(newHead.getFirst()) && !(newHead.getFirst() ==
+                    currentTail.getFirst() && newHead.getSecond() == currentTail.getSecond());
+
+            if(hitWall1 || hitWall2 || bitesItself){
+                return -1;
+            }
+
+            if(foodIndex < food.length && food[foodIndex][0] == newHeadRow && food[foodIndex][1]==newHeadColumn){
+                foodIndex++;
+            }else{
+                snake.removeLast();
+                snakeMap.remove(currentTail);
+            }
+
+            snake.addFirst(newHead);
+            snakeMap.put(newHead, true);
+            snakeSize = snake.size()-1;
+            return snakeSize;
         }
 
 
