@@ -38,6 +38,8 @@ public class FileSystem  {
         String fileName2 = "file2.txt";
         System.out.println("Number of files in collection : " + addFile(fileName1, 200, collection1));
         System.out.println("Number of files in collection : " + addFile(fileName2, 200, collection1));
+
+        System.out.println("Test top n files in collection : " + getTopNFiles(n));
         /*
 file2.txt(size: 200) in collection "collection1"
 file3.txt(size: 200) in collection "collection1"
