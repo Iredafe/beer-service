@@ -2,13 +2,13 @@ package dafe.springframework.beerservice;
 
 import io.micrometer.core.instrument.util.AbstractPartition;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class FileSystem  {
 
     HashMap<String, File> fileCollectionMap = new HashMap<>();
+    PriorityQueue<FileCollection> maxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
+    Set<FileCollection> isCollectionInHeap = new HashSet<>();
     class FileCollection{
         String collectionName;
         int size;
