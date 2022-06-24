@@ -7,13 +7,13 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class SnakeGame {
-        static int [][] food;
-        static int foodIndex;
-        static Deque<Pair<Integer, Integer>> snake;
-        static HashMap<Pair<Integer, Integer>, Boolean> snakeMap;
-        static int snakeSize;
-        static int width;
-        static int height;
+        int [][] food;
+        int foodIndex;
+         Deque<Pair<Integer, Integer>> snake;
+         HashMap<Pair<Integer, Integer>, Boolean> snakeMap;
+         int snakeSize;
+         int width;
+         int height;
 
         public SnakeGame(int width, int height, int[][]food){
         this.width = width;
@@ -24,10 +24,10 @@ public class SnakeGame {
         this.snakeMap = new HashMap<>();
         this.snake = new LinkedList<>();
         snakeMap.put(Pair.of(0,0), true);
-        snake.offer(Pair.of(0,0));
+        snake.offerLast(Pair.of(0,0));
         }
 
-        public static int move(String direction){
+        public int move(String direction){
             Pair<Integer, Integer> head = snake.peekFirst();
             int newHeadRow = head.getFirst();
             int newHeadColumn = head.getSecond();
@@ -48,14 +48,15 @@ public class SnakeGame {
 
             boolean hitWall1 = newHeadRow < 0 || newHeadRow >= height;
             boolean hitWall2 = newHeadColumn < 0 || newHeadColumn >= width;
-            boolean bitesItself = snakeMap.containsKey(newHead.getFirst()) && !(newHead.getFirst() ==
+            boolean bitesItself = snakeMap.containsKey(newHead) && !(newHead.getFirst() ==
                     currentTail.getFirst() && newHead.getSecond() == currentTail.getSecond());
 
             if(hitWall1 || hitWall2 || bitesItself){
                 return -1;
             }
 
-            if(foodIndex < food.length && food[foodIndex][0] == newHeadRow && food[foodIndex][1]==newHeadColumn){
+            if((foodIndex < food.length) && (food[foodIndex][0] ==
+                    newHeadRow) && (food[foodIndex][1]==newHeadColumn)){
                 foodIndex++;
             }else{
                 snake.removeLast();
@@ -70,8 +71,12 @@ public class SnakeGame {
 
 
     public static void main(String[] args) {
+        int [][] food = new int[][]{{1, 2}, {0, 1}};
+        int width=3, height=2;
+        String [] direction0 = {"R","D","R","U","L","U"};
+
         int [][] food1 = {{0, 1},{1,3}};
-        int width1=3, height1=2;
+        int width1=4, height1=2;
         String [] direction1 = {"R","D","R","R","U"};
 
         int [][] food2 = {};
@@ -82,15 +87,26 @@ public class SnakeGame {
         int width3=3, height3=2;
         String [] direction3 = {"R","D","D"};
 
+          SnakeGame snakeGame0 = new SnakeGame(width,height,food);
           SnakeGame snakeGame1 = new SnakeGame(width1,height1,food1);
           SnakeGame snakeGame2 = new SnakeGame(width2, height2, food2);
           SnakeGame snakeGame3 = new SnakeGame(width3, height3, food3);
+        for (String direction : direction0){
+            System.out.println("Snake0 moves in correct direction and eats food : " + snakeGame0.move(direction));
+        }
+        for (String direction : direction1){
+            System.out.println("Snake1 moves in correct direction and eats food : " + snakeGame1.move(direction));
+        }
+        for (String direction : direction2){
+            System.out.println("Snake moves in correct direction and eats food : " + snakeGame2.move(direction));
+        }
+        for (String direction : direction2){
+            System.out.println("Snake moves in correct direction and eats food : " + snakeGame2.move(direction));
+        }
+        for (String direction : direction3){
+            System.out.println("Snake moves in correct direction and eats food : " + snakeGame3.move(direction));
+        }
 
-        System.out.println("Snake moves in correct direction and eats food : " + snakeGame1.move(direction1));
-        System.out.println("Snake moves in correct direction and grow to size 2 : " + snakeGame1.move(direction1));
-        System.out.println("Snake moves in all 4 directions without hitting a wall " +snakeGame2.move(direction2));
-        System.out.println("Snake moves in all 4 directions without growing " +snakeGame2.move(direction2));
-        System.out.println("Snake moves in correct directions and hits a wall " +snakeGame3.move(direction3));
 
         /*
 
