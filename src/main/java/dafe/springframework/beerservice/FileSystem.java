@@ -6,10 +6,14 @@ import java.util.*;
 
 public class FileSystem  {
 
-    HashMap<String, File> fileCollectionMap = new HashMap<>();
+    HashMap<String, FileBehaviour> fileCollectionMap = new HashMap<>();
     PriorityQueue<FileCollection> maxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
     Set<FileCollection> isCollectionInHeap = new HashSet<>();
-    class FileCollection{
+
+    //marker interface
+    interface FileBehaviour{}
+
+    class FileCollection implements FileBehaviour{
         String collectionName;
         int size;
         List<File> files;
@@ -17,10 +21,9 @@ public class FileSystem  {
         public FileCollection(String collectionName){
             this.collectionName = collectionName;
         }
-
     }
 
-    class File{
+    class File implements FileBehaviour{
         String fileName;
         int size;
         FileCollection fileCollection;
@@ -48,12 +51,12 @@ public class FileSystem  {
         String fileName3 = "file3.txt";
         String fileCollection1 = "collection1";
         String fileCollection2 = "collection2";
-
+        int topNumberOfFiles = 2;
         System.out.println("Test that files can exist without a collection : " + addFile(fileName3, 120, ""));
         System.out.println("test Number of files added successfully to collection : " + addFile(fileName1, 200, fileCollection1));
         System.out.println("test Number of files added successfully to collection : " + addFile(fileName2, 200, fileCollection2));
         System.out.println("test total number of files are correctly computed : " + totalSizeOfFiles());
-        System.out.println("Test top n files in collection : " + getTopNFiles(n));
+        System.out.println("Test top n files in collection : " + getTopNFiles(topNumberOfFiles));
         /*
         file2.txt(size: 200) in collection "collection1"
         file3.txt(size: 200) in collection "collection1"
