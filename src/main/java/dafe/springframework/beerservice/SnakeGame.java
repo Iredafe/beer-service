@@ -1,0 +1,91 @@
+package dafe.springframework.beerservice;
+
+import org.springframework.data.util.Pair;
+
+import java.util.Deque;
+import java.util.HashMap;
+
+public class SnakeGame {
+static int [][] food;
+static int foodIndex;
+static Deque<Pair<Integer, Integer>> snake;
+static HashMap<Pair<Integer, Integer>, Boolean> snakeMap;
+
+
+    public static void main(String[] args) {
+
+      SnakeGame snakeGame1 = new SnakeGame();
+      SnakeGame snakeGame2 = new SnakeGame();
+      SnakeGame snakeGame3 = new SnakeGame();
+
+      int [][] food1 = {{0, 1},{1,3}};
+      int width1=3, height1=2;
+      String [] direction1 = {"R","D","R","R","U"};
+
+      int [][] food2 = {};
+      int width2=3, height2=2;
+      String [] direction2 = {"R","D","L","U"};
+
+
+        int [][] food3 = {};
+        int width3=3, height3=2;
+        String [] direction3 = {"R","D","D"};
+
+        System.out.println("Snake moves in correct direction and eats food : " + snakeGame1.move(direction1, food1, width1, height1));
+        System.out.println("Snake moves in correct direction and grow to size 2 : " + snakeGame1.move(direction1, food1, width1, height1));
+        System.out.println("Snake moves in all 4 directions without hitting a wall " +snakeGame2.move(direction2, food2, width2, height2));
+        System.out.println("Snake moves in all 4 directions without growing " +snakeGame2.move(direction2, food2, width2, height2));
+        System.out.println("Snake moves in correct directions and hits a wall " +snakeGame3.move(direction3, food3, width3, height3));
+
+        /*
+
+                0,*,0,0
+                0,0,0,*
+                food[][] = {{0,1},{1,3}}
+                width=3
+                height=2
+                R- food move
+                D- no change in size, game is not over
+                R- change in position
+                R - food move
+                U - change position
+                length - 2
+
+        0,0,0
+        0,0,0 food[][]={}
+                width=3
+                height=2
+
+        R-moves right
+        D- moves down
+        L- moves left
+        U- moves up back to its starting position
+
+
+        Acceptance criteria
+        -snake moves in 4 directions - up, down, right, left
+        -game is over if snake hits wall in any of 4 direction
+        -game is over if snake bites itself
+        -when snake head is in position of food, the snake should grow by 1 index
+        -when snake moves but does not enter food position and does not hit wall,
+        the snake should not grow but should change position
+
+        Test cases
+       - test that the snake moves correctly in the 4 directions up, down, left, right
+       - test that when the snake hits a wall, the game is over (return -1)
+       - test that when the snake moves head into food, it grows by 1 index
+       -test that when snake bites itself, game is over
+       - test that when a snake moves but does not eat food or move into wall,
+        it does not grow in length but changes position
+
+       Solution plan
+       -create a dynamically resizable structure to hold the snake position
+       -the structure should support operations on both ends - deque
+       -create a structure to check the current position of the snake - this will help identify when snake bites itself
+       -if snake moves into self or hits any wall, return -1
+       -if snake eats food, let it grow from head
+       -if snake changes position but does not eat food or hit wall, let the entire snake change location and remain same size
+       -return the length of the snake
+    */
+    }
+}
