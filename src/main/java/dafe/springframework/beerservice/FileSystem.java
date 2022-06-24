@@ -34,9 +34,14 @@ public class FileSystem  {
 
     public static void main(String[] args) {
         System.out.println("Hello World");
-
-
+        String fileName1 = "file1.txt";
+        String fileName2 = "file2.txt";
+        System.out.println("Number of files in collection : " + addFile(fileName1, 200, collection1));
+        System.out.println("Number of files in collection : " + addFile(fileName2, 200, collection1));
         /*
+file2.txt(size: 200) in collection "collection1"
+file3.txt(size: 200) in collection "collection1"
+file4.txt(size: 300) in collection "collection2"
 
         *test cases
         test that files can be added to the collection successfully
