@@ -37,8 +37,8 @@ call the is allowed method pass customer id and time
 */
     static class RequestBody{
        Deque<Integer> requestQueue;
-        static int TIME_LIMIT=2;
-        static int REQUEST_LIMIT=3;
+        static int TIME_LIMIT=3;
+        static int REQUEST_LIMIT=2;
 
         public RequestBody(){
             requestQueue = new LinkedList<>();
