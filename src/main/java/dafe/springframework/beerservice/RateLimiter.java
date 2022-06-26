@@ -38,7 +38,7 @@ call the is allowed method pass customer id and time
     static class RequestBody{
        Deque<Integer> requestQueue;
         static int TIME_LIMIT=3;
-        static int REQUEST_LIMIT=2;
+        static int REQUEST_LIMIT=0;
 
         public RequestBody(){
             requestQueue = new LinkedList<>();
@@ -58,15 +58,15 @@ call the is allowed method pass customer id and time
 }
     static HashMap<Integer, RequestBody> customerRequestBodyMap = new HashMap<>();
     private static boolean isAllowed(int customerId, int currentTime){
-
+        boolean requestAllowed = false;
         if(!customerRequestBodyMap.containsKey(customerId)){
             RequestBody requestBody = new RequestBody();
-            requestBody.makeRequest(currentTime);
+            requestAllowed = requestBody.makeRequest(currentTime);
             customerRequestBodyMap.put(customerId, requestBody);
-            return true;
+            return requestAllowed;
         }else{
             RequestBody requestBody = customerRequestBodyMap.get(customerId);
-            boolean requestAllowed = requestBody.makeRequest(currentTime);
+            requestAllowed = requestBody.makeRequest(currentTime);
             return requestAllowed;
         }
     }
