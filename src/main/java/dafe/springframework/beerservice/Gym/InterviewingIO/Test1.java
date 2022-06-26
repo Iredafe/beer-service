@@ -1,4 +1,10 @@
 package dafe.springframework.beerservice.Gym.InterviewingIO;
+
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 /*
  Spend a gift card on food items for a meal at a restaurant
 
@@ -32,4 +38,18 @@ purchase_food(5.00)
 
  */
 public class Test1 {
+    public static void main(String[] args) {
+        Map<String, Double> menu = new LinkedHashMap<>();
+        menu.put("sandwich", 6.85);
+        menu.put("toast", 2.20);
+        menu.put("curry", 7.85);
+        menu.put("egg", 3.20);
+        menu.put("cheese", 1.25);
+        menu.put("coffee", 1.40);
+        menu.put("soup", 3.45);
+        menu.put("soda", 2.05);
+
+        List<Double> testCases = Arrays.asList(5.00, 14.00, 19.00, 25.00, 33.00, 45.00, 49.00, 99.00, 114.00, 199.00);
+
+    }
 }
