@@ -9,6 +9,14 @@ public class RankTeam {
 
     private static String rankTeam(List<List<String>> votes){
         HashMap<Character, Integer> voteCountMap = new HashMap<>();
+        int numberOfCandidates = votes.get(0).get(0).length();
+        for(List<String> vote : votes){
+            String voteString = String.join("", vote);
+            for(int indexOfVoteCandidate=0; indexOfVoteCandidate<numberOfCandidates; indexOfVoteCandidate++){
+
+                Character voteCharacter = voteString.charAt(indexOfVoteCandidate);
+            }
+        }
         return "";
     }
     /*
