@@ -75,16 +75,16 @@ public class RankTeam {
 //
  //       System.out.println("0 :-> This is the winner of vote in order of 1st, 2nd and 3rd : " + rankTeam(votes));
         //XYZ, ZYX, YXZ, XZY, XYZ
-        List<String> voteList = new ArrayList<>();
-        voteList.add("XYZ");
-        voteList.add("ZYX");
-        voteList.add("YXZ");
-        voteList.add("XZY");
-        voteList.add("XYZ");
-        List<List<String>> votes1 = Arrays.asList(Arrays.asList("XYZ"),Arrays.asList("ZYX"),
-                Arrays.asList("YXZ"),Arrays.asList("XZY"),Arrays.asList("XYZ"));
+//        List<String> voteList = new ArrayList<>();
+//        voteList.add("XYZ");
+//        voteList.add("ZYX");
+//        voteList.add("YXZ");
+//        voteList.add("XZY");
+//        voteList.add("XYZ");
+//        List<List<String>> votes1 = Arrays.asList(Arrays.asList("XYZ"),Arrays.asList("ZYX"),
+//                Arrays.asList("YXZ"),Arrays.asList("XZY"),Arrays.asList("XYZ"));
 
-        System.out.println("1 :-> This is the winner of vote1 in order of 1st, 2nd and 3rd : " + rankTeam(votes1));
+  //      System.out.println("1 :-> This is the winner of vote1 in order of 1st, 2nd and 3rd : " + rankTeam(votes1));
 
 List<List<String>> voters = Arrays.asList(Arrays.asList("WXYZ"), Arrays.asList("XYZW"));
         System.out.println(rankTeam(voters));
