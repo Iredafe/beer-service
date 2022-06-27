@@ -7,16 +7,16 @@ public class RankTeam {
     private static String rankTeam(List<List<String>> votes){
         HashMap<Character, int[]> voteCountMap = new HashMap<>();
         int numberOfCandidates = votes.get(0).get(0).length();
-        for(List<String> vote : votes){
+        for(int voteIndex=0; voteIndex<votes.size() ; voteIndex++){
+            List<String> vote = votes.get(voteIndex);
             String voteString = String.join("", vote);
             for(int indexOfVoteCandidate=0; indexOfVoteCandidate<numberOfCandidates; indexOfVoteCandidate++){
 
                 Character voteCharacter = voteString.charAt(indexOfVoteCandidate);
                 if(!voteCountMap.containsKey(voteCharacter)){
                     voteCountMap.put(voteCharacter, new int[numberOfCandidates]);
-                }else{
-                    voteCountMap.get(voteCharacter)[indexOfVoteCandidate]++;
                 }
+                    voteCountMap.get(voteCharacter)[indexOfVoteCandidate]++;
             }
         }
 
@@ -31,8 +31,10 @@ public class RankTeam {
         });
 
         StringBuilder voteResult = new StringBuilder();
-
-        return "";
+        for(char voteCandidate : voteList){
+            voteResult.append(voteCandidate);
+        }
+        return voteResult.toString();
     }
     /*
     votes -> [XYZ, XZY, XZY, XYZ, XZY, XYZ]
@@ -62,37 +64,40 @@ public class RankTeam {
     public static void main(String [] args){
 
         //XYZ, XZY, XZY, XYZ, XZY, XYZ
-        List<String> voteList = new ArrayList<>();
-        voteList.add("XYZ");
-        voteList.add("XZY");
-        voteList.add("XZY");
-        voteList.add("XYZ");
-        voteList.add("XZY");
-        voteList.add("XYZ");
-        List<List<String>> votes = Arrays.asList(voteList);
-
-        System.out.println("0 :-> This is the winner of vote in order of 1st, 2nd and 3rd : " + rankTeam(votes));
+//        List<String> voteList1 = new ArrayList<>();
+//        voteList1.add("XYZ");
+//        voteList1.add("XZY");
+//        voteList1.add("XZY");
+//        voteList1.add("XYZ");
+//        voteList1.add("XZY");
+//        voteList1.add("XYZ");
+//        List<List<String>> votes = Arrays.asList(voteList1);
+//
+ //       System.out.println("0 :-> This is the winner of vote in order of 1st, 2nd and 3rd : " + rankTeam(votes));
         //XYZ, ZYX, YXZ, XZY, XYZ
-        List<String> voteList1 = new ArrayList<>();
+        List<String> voteList = new ArrayList<>();
         voteList.add("XYZ");
         voteList.add("ZYX");
         voteList.add("YXZ");
         voteList.add("XZY");
         voteList.add("XYZ");
-        List<List<String>> votes1 = Arrays.asList(voteList1);
+        List<List<String>> votes1 = Arrays.asList(Arrays.asList("XYZ"),Arrays.asList("ZYX"),
+                Arrays.asList("YXZ"),Arrays.asList("XZY"),Arrays.asList("XYZ"));
 
         System.out.println("1 :-> This is the winner of vote1 in order of 1st, 2nd and 3rd : " + rankTeam(votes1));
+
+List<List<String>> voters = Arrays.asList(Arrays.asList("WXYZ"), Arrays.asList("XYZW"));
+        System.out.println(rankTeam(voters));
+
+
         //XYZ, YXZ, YXZ, YZX, XYZ
-        List<String> voteList2 = new ArrayList<>();
-        voteList.add("XYZ");
-        voteList.add("YXZ");
-        voteList.add("YXZ");
-        voteList.add("YZX");
-        voteList.add("XYZ");
-        List<List<String>> votes2 = Arrays.asList(voteList2);
-
-        System.out.println("2 :-> This is the winner of vote2 in order of 1st, 2nd and 3rd : " + rankTeam(votes2));
-
+//
+//        List<List<String>> votes2 = Arrays.asList(Arrays.asList("XYZ"),Arrays.asList("YXZ"),
+//                Arrays.asList("YXZ"),Arrays.asList("YZX"),Arrays.asList("XYZ"));
+//
+//
+//        System.out.println("2 :-> This is the winner of vote2 in order of 1st, 2nd and 3rd : " + rankTeam(votes2));
+//
 
     }
 
