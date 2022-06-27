@@ -1,22 +1,37 @@
 package dafe.springframework.beerservice;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class RankTeam {
 
     private static String rankTeam(List<List<String>> votes){
-        HashMap<Character, Integer> voteCountMap = new HashMap<>();
+        HashMap<Character, int[]> voteCountMap = new HashMap<>();
         int numberOfCandidates = votes.get(0).get(0).length();
         for(List<String> vote : votes){
             String voteString = String.join("", vote);
             for(int indexOfVoteCandidate=0; indexOfVoteCandidate<numberOfCandidates; indexOfVoteCandidate++){
 
                 Character voteCharacter = voteString.charAt(indexOfVoteCandidate);
+                if(!voteCountMap.containsKey(voteCharacter)){
+                    voteCountMap.put(voteCharacter, new int[numberOfCandidates]);
+                }else{
+                    voteCountMap.get(voteCharacter)[indexOfVoteCandidate]++;
+                }
             }
         }
+
+        List<Character> voteList = new ArrayList<>(voteCountMap.keySet());
+        Collections.sort(voteList, (a,b)->{
+            for(int listIndex=0; listIndex<voteList.size(); listIndex++){
+                if(voteCountMap.get(a)[listIndex] != voteCountMap.get(b)[listIndex]){
+                    return voteCountMap.get(b)[listIndex] - voteCountMap.get(a)[listIndex];
+                }
+            }
+            return a-b;
+        });
+
+        StringBuilder voteResult = new StringBuilder();
+
         return "";
     }
     /*
