@@ -41,6 +41,8 @@ public class FileSystem {
 
         public FileDirectory(String directoryName){
             this.directoryName = directoryName;
+            this.files=new ArrayList<>();
+            this.size=0;
         }
     }
     private static void addFileToSystem(String fileName, int fileSize, String collectionName){
@@ -75,6 +77,7 @@ public class FileSystem {
         fileSystem1.addFileToSystem("file4.txt", 170, "collection3");
         fileSystem1.addFileToSystem("file5.txt", 250, "");
 
+        System.out.println("Size of all files is : " + fileSystem1.totalSize);
         //total files = 1250
         //top 2 collection = collection2=300 & collection1 = 200
 
