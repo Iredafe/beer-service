@@ -67,6 +67,21 @@ public class FileSystem {
         totalSize += fileSize;
     }
 
+    private static List<FileDirectory> getTopNCollections(int N){
+        PriorityQueue<FileDirectory> temporaryMaxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
+        List<FileDirectory> output = new ArrayList<>();
+        for(int number =0; number< N; number++){
+            FileDirectory directory = temporaryMaxHeap.poll();
+            temporaryMaxHeap.add(directory);
+            output.add(directory);
+        }
+
+        for(int number = 0; number<N; number++){
+            maxHeap.add(temporaryMaxHeap.poll());
+        }
+
+    return output;
+    }
 
     public static void main(String[] args) {
         FileSystem fileSystem1 = new FileSystem();
@@ -79,7 +94,10 @@ public class FileSystem {
         fileSystem1.addFileToSystem("file5.txt", 250, "");
 
         System.out.println("Size of all files is : " + fileSystem1.totalSize);
-        System.out.println("Top N elements " + getTopNCollections(n));
+        List<FileDirectory> topCollections = getTopNCollections(n);
+        for(FileDirectory collection : topCollections){
+            System.out.println("Top N elements " + getTopNCollections(n));
+        }
         //total files = 1250
         //top 2 collection = collection2=300 & collection1 = 200
 
