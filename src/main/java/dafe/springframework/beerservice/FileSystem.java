@@ -45,6 +45,19 @@ public class FileSystem {
             this.size=0;
         }
     }
+    /*time complexity - add files to map - O(N) where n = number of files
+                        add directory to set - O(W) W - number of directory
+                         add directory to max heap - O(W-K(log)k)
+     therefore time complexity = O(N+W log k) -> O(N(log)k)
+
+    space complexity - heap - O(k) k - top file collection
+                        temp max heap O(k)
+                        hashmap- O(N)
+                        hashset - O(N)
+                        O(2K + 2N) - > O(K+N) -> O(N)
+
+
+     */
     private static void addFileToSystem(String fileName, int fileSize, String collectionName){
         File file;
         if(collectionName.equals("")){
