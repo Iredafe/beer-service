@@ -70,6 +70,7 @@ public class FileSystem {
 
     public static void main(String[] args) {
         FileSystem fileSystem1 = new FileSystem();
+        int n=2;
        // file2.txt(size: 200) in collection "collection1"
         fileSystem1.addFileToSystem("file1.txt", 200, "collection1");
         fileSystem1.addFileToSystem("file2.txt", 130, "");
@@ -78,6 +79,7 @@ public class FileSystem {
         fileSystem1.addFileToSystem("file5.txt", 250, "");
 
         System.out.println("Size of all files is : " + fileSystem1.totalSize);
+        System.out.println("Top N elements " + getTopNCollections(n));
         //total files = 1250
         //top 2 collection = collection2=300 & collection1 = 200
 
