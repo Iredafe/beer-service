@@ -2,12 +2,14 @@ package dafe.springframework.beerservice;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class FileSystem {
     static HashMap<String, FileBehaviour> fileDirectoryMap;
-
+    static PriorityQueue<FileDirectory> maxHeap;
     public FileSystem(){
         this.fileDirectoryMap = new HashMap<>();
+        this.maxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
     }
 
     interface FileBehaviour{}
