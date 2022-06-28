@@ -61,6 +61,9 @@ public class FileSystem {
             if(!isDirectoryInHeap.contains(directory)){
                 isDirectoryInHeap.add(directory);
                 maxHeap.add(directory);
+            }else{
+                maxHeap.remove(directory);
+                maxHeap.add(directory);
             }
             fileDirectoryMap.put(collectionName, directory);
         }
@@ -109,5 +112,11 @@ public class FileSystem {
         fileSystem2.addFileToSystem("file5.txt", 250, "");
         //total files = 1250
         //top 2 collection = collection2=370 & collection2 = 300
+
+        System.out.println("1-Size of all files is : " + fileSystem1.totalSize);
+        List<FileDirectory> topCollections1 = getTopNCollections(n);
+        for(FileDirectory collection : topCollections1){
+            System.out.println("1-Top N elements " + collection.directoryName + " size :" + collection.size);
+        }
     }
 }
