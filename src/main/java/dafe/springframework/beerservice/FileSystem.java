@@ -58,7 +58,7 @@ public class FileSystem {
             directory.size += fileSize;
             directory.files.add(file);
 
-            if(isDirectoryInHeap.contains(directory)){
+            if(!isDirectoryInHeap.contains(directory)){
                 isDirectoryInHeap.add(directory);
                 maxHeap.add(directory);
             }
@@ -71,7 +71,7 @@ public class FileSystem {
         PriorityQueue<FileDirectory> temporaryMaxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
         List<FileDirectory> output = new ArrayList<>();
         for(int number =0; number< N; number++){
-            FileDirectory directory = temporaryMaxHeap.poll();
+            FileDirectory directory = maxHeap.poll();
             temporaryMaxHeap.add(directory);
             output.add(directory);
         }
@@ -96,7 +96,7 @@ public class FileSystem {
         System.out.println("Size of all files is : " + fileSystem1.totalSize);
         List<FileDirectory> topCollections = getTopNCollections(n);
         for(FileDirectory collection : topCollections){
-            System.out.println("Top N elements " + getTopNCollections(n));
+            System.out.println("Top N elements " + collection.directoryName + " size :" + collection.size);
         }
         //total files = 1250
         //top 2 collection = collection2=300 & collection1 = 200
@@ -107,9 +107,7 @@ public class FileSystem {
         fileSystem2.addFileToSystem("file3.txt", 300, "collection2");
         fileSystem2.addFileToSystem("file4.txt", 170, "collection1");
         fileSystem2.addFileToSystem("file5.txt", 250, "");
-
         //total files = 1250
         //top 2 collection = collection2=370 & collection2 = 300
-
     }
 }
