@@ -3,133 +3,157 @@ package dafe.springframework.beerservice;
 import java.util.*;
 
 public class FileSystem {
-    static HashMap<String, FileBehaviour> fileDirectoryMap;
-    static PriorityQueue<FileDirectory> maxHeap;
-    static Set<FileDirectory> isDirectoryInHeap;
-   static int totalSize;
 
-    public FileSystem(){
-        this.fileDirectoryMap = new HashMap<>();
-        this.maxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
-        this.isDirectoryInHeap = new HashSet<>();
-        this.totalSize=0;
-    }
+/*
+sys stores files in different collections, we want to understand where the resources are being taken up
+
+file1.txt (size: 100)
+file2.txt (size: 200) in collection "collection1"
+file3.txt (size: 200) in collection "collection1"
+file4.txt (size: 300) in collection "collection2"
+file5.txt (size: 10)
+
+
+files - 100 + 200+ 200+ 300 + 10
+collection - if n = 1 . top n collection = 200 + 200 = 400 -> collection
+
+output the total size of all the file - (return int totalSizeOfFiles)
+output the top N number of collections - (return String collectionName)
+where N - any number that a user can define.
+
+file1.txt (size: 500)
+file2.txt (size: 200) in collection "collection1"
+file3.txt (size: 200) in collection "collection1"
+file4.txt (size: 300) in collection "collection2"
+file5.txt (size: 1000)
+
+//solution plan
+check the input if it has a collection name
+-if it does, create a FileCollection, build the files & sizes into the collection
+- if it does not have a collection name, create a file object without a collection name
+- keep track of the files without a collection -> fileName - File
+- keep track of the files with a collection -> collectionName - FileCollection
+-use a map for this
+- use a maxheap to keep track of the largest n numbers as you iterate through
+-get total size by always adding the file size of any file you encounter
+-keep track of the size in each collection
+
+
+Acceptance criteria
+
+-if the files without a collection are larger than the files in a collection, the top n collection would still be the highest among the collections
+-if the collection has multiple files, consider the collection of all the sizes in the different files contained in the collection
+-we want to find the total number of files regardless of what collection they belong to
+
+ */
+    static HashMap<String, FileBehaviour> fileBehaviourMap = new HashMap<>();
+    static PriorityQueue<FileCollections> maxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
+    static Set<FileCollections> set = new HashSet<>();
+    static int totalSize = 0;
+
 
     interface FileBehaviour{}
 
-    static class File implements FileBehaviour{
+    static class FileCollections implements FileBehaviour{
+        String collectionName;
+        int size;
+        List<File> fileList;
+
+        public FileCollections(String collectionName){
+            this.collectionName = collectionName;
+            this.size=0;
+            this.fileList = new ArrayList<>();
+        }
+
+    }
+
+   static class File implements FileBehaviour{
         String fileName;
         int fileSize;
-        FileDirectory fileDirectory;
+        FileCollections fileCollections;
 
-        public File(String fileName, int fileSize){
+        public File(String fileName, int size){
             this.fileName = fileName;
-            this.fileSize = fileSize;
+            this.fileSize = size;
         }
 
-        public File(String fileName, int fileSize, FileDirectory fileDirectory){
-            this.fileName = fileName;
-            this.fileSize = fileSize;
-            this.fileDirectory = fileDirectory;
+        public File(String fileName, int size, FileCollections collections){
+            this.fileName=fileName;
+            this.fileSize = size;
+            this.fileCollections = collections;
         }
     }
+    private static int getTotalSizeOfFiles(){
 
-    static class FileDirectory implements FileBehaviour{
-        String directoryName;
-        int size;
-        List<File> files;
-
-        public FileDirectory(String directoryName){
-            this.directoryName = directoryName;
-            this.files=new ArrayList<>();
-            this.size=0;
-        }
+        return totalSize;
     }
-    /*time complexity - add files to map - O(N) where n = number of files
-                        add directory to set - O(W) W - number of directory
-                         add directory to max heap - O(W-K(log)k)
-     therefore time complexity = O(N+W log k) -> O(N(log)k)
 
-    space complexity - heap - O(k) k - top file collection
-                        temp max heap O(k)
-                        hashmap- O(N)
-                        hashset - O(N)
-                        O(2K + 2N) - > O(K+N) -> O(N)
+    private static List<FileCollections> getTopNCollections(int number){
 
+        PriorityQueue<FileCollections> tempMaxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
 
-     */
-    private static void addFileToSystem(String fileName, int fileSize, String collectionName){
+        List<FileCollections> topFileCollections = new ArrayList<>();
+        for (int index = 0; index < number; index++){
+           FileCollections fileCollections = maxHeap.poll();
+           topFileCollections.add(fileCollections);
+           tempMaxHeap.add(fileCollections);
+        }
+
+        for (int index=0; index<number;index++){
+            maxHeap.add(tempMaxHeap.poll());
+        }
+
+        return topFileCollections;
+    }
+
+    private static void addFileToSystem(String fileName, int size, String collectionName){
         File file;
         if(collectionName.equals("")){
-            file = new File(fileName, fileSize);
-            fileDirectoryMap.put(fileName, file);
+            file = new File(fileName, size);
+            fileBehaviourMap.put(fileName, file);
         }else{
-            FileDirectory directory = (FileDirectory)
-                    fileDirectoryMap.getOrDefault(collectionName, new FileDirectory(collectionName));
-            file = new File(fileName, fileSize, directory);
+            FileCollections collection = (FileCollections) fileBehaviourMap.getOrDefault(collectionName, new FileCollections(collectionName));
+            file = new File(fileName, size, collection);
+            collection.size += size;
+            collection.fileList.add(file);
 
-            directory.size += fileSize;
-            directory.files.add(file);
-
-            if(!isDirectoryInHeap.contains(directory)){
-                isDirectoryInHeap.add(directory);
-                maxHeap.add(directory);
-            }else{
-                maxHeap.remove(directory);
-                maxHeap.add(directory);
+            if(!set.contains(collection)){
+                set.add(collection);
+                maxHeap.add(collection);
             }
-            fileDirectoryMap.put(collectionName, directory);
+            fileBehaviourMap.put(collectionName, collection);
         }
-        totalSize += fileSize;
-    }
-
-    private static List<FileDirectory> getTopNCollections(int N){
-        PriorityQueue<FileDirectory> temporaryMaxHeap = new PriorityQueue<>((a,b)->b.size-a.size);
-        List<FileDirectory> output = new ArrayList<>();
-        for(int number =0; number< N; number++){
-            FileDirectory directory = maxHeap.poll();
-            temporaryMaxHeap.add(directory);
-            output.add(directory);
-        }
-
-        for(int number = 0; number<N; number++){
-            maxHeap.add(temporaryMaxHeap.poll());
-        }
-
-    return output;
+        totalSize += size;
     }
 
     public static void main(String[] args) {
-        FileSystem fileSystem1 = new FileSystem();
-        int n=2;
-       // file2.txt(size: 200) in collection "collection1"
-        fileSystem1.addFileToSystem("file1.txt", 200, "collection1");
-        fileSystem1.addFileToSystem("file2.txt", 130, "");
-        fileSystem1.addFileToSystem("file3.txt", 300, "collection2");
-        fileSystem1.addFileToSystem("file4.txt", 170, "collection3");
-        fileSystem1.addFileToSystem("file5.txt", 250, "");
 
-        System.out.println("Size of all files is : " + fileSystem1.totalSize);
-        List<FileDirectory> topCollections = getTopNCollections(n);
-        for(FileDirectory collection : topCollections){
-            System.out.println("Top N elements " + collection.directoryName + " size :" + collection.size);
+        FileSystem fileSystem = new FileSystem();
+    /*
+    file1.txt (size: 500)
+file2.txt (size: 200) in collection "collection1"
+file3.txt (size: 200) in collection "collection1"
+file4.txt (size: 300) in collection "collection2"
+file5.txt (size: 1000)
+     */
+
+        int N = 1;
+        fileSystem.addFileToSystem("file1.txt", 500, "");
+        fileSystem.addFileToSystem("file2.txt", 200, "collection1");
+        fileSystem.addFileToSystem("file3.txt", 200, "collection1");
+        fileSystem.addFileToSystem("file4.txt", 300, "collection2");
+        fileSystem.addFileToSystem("file5.txt", 1000, "");
+
+        //total file size -> 2200
+        //top 1 collection - > collection1
+        List<FileCollections> topNCollection = getTopNCollections(N);
+
+        for (FileCollections collections : topNCollection){
+            System.out.println("top " + N + " collection(s) : " + collections.collectionName);
         }
-        //total files = 1250
-        //top 2 collection = collection2=300 & collection1 = 200
 
-        FileSystem fileSystem2 = new FileSystem();
-        fileSystem2.addFileToSystem("file1.txt", 200, "collection1");
-        fileSystem2.addFileToSystem("file2.txt", 130, "");
-        fileSystem2.addFileToSystem("file3.txt", 300, "collection2");
-        fileSystem2.addFileToSystem("file4.txt", 170, "collection1");
-        fileSystem2.addFileToSystem("file5.txt", 250, "");
-        //total files = 1250
-        //top 2 collection = collection2=370 & collection2 = 300
+        System.out.println("total number of files : " + getTotalSizeOfFiles());
 
-        System.out.println("1-Size of all files is : " + fileSystem1.totalSize);
-        List<FileDirectory> topCollections1 = getTopNCollections(n);
-        for(FileDirectory collection : topCollections1){
-            System.out.println("1-Top N elements " + collection.directoryName + " size :" + collection.size);
-        }
+
     }
 }
