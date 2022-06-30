@@ -150,6 +150,7 @@ file5.txt (size: 1000)
 
         for (FileCollections collections : topNCollection){
             System.out.println("top " + N + " collection(s) : " + collections.collectionName);
+            System.out.println("top " + N + " collection(s) : " + collections.collectionName);
         }
 
         System.out.println("total number of files : " + getTotalSizeOfFiles());
