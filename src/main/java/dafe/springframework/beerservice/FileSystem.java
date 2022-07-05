@@ -154,6 +154,7 @@ file5.txt (size: 1000)
         }
 
         System.out.println("total number of files : " + getTotalSizeOfFiles());
+ System.out.println("total number of files : " + getTotalSizeOfFiles());
         System.out.println("total number of files : " + getTotalSizeOfFiles());
 
 
