@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SubarrayLessThanTarget {
 
-    private static List<List<Integer>> findSubarrays(){
+    private static List<List<Integer>> findSubarrays(int [] array, int target){
 
         return new ArrayList<>();
     }
