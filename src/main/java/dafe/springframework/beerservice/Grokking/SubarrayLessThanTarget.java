@@ -1,18 +1,26 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class SubarrayLessThanTarget {
 
     private static List<List<Integer>> findSubarrays(int [] array, int target){
         List<List<Integer>> output = new ArrayList<>();
-
+        double product = 1;
         int left = 0;
 
         for(int right=0; right<array.length; right++){
+            product *= array[right];
 
+            while (product >= target){
+                product/=array[left];
+                left++;
+            }
         }
+
+        List<List<Integer>> list = new LinkedList<>();
         return new ArrayList<>();
     }
     public static void main(String[] args) {
