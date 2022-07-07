@@ -14,13 +14,14 @@ public class SubarrayLessThanTarget {
         for(int right=0; right<array.length; right++){
             product *= array[right];
 
-            while (product >= target){
+            while (product >= target && left<array.length){
                 product/=array[left];
                 left++;
             }
         }
 
         List<List<Integer>> list = new LinkedList<>();
+        list.add(array[])
         return new ArrayList<>();
     }
     public static void main(String[] args) {
