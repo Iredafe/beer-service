@@ -10,20 +10,21 @@ public class SubarrayLessThanTarget {
         List<List<Integer>> output = new ArrayList<>();
         double product = 1;
         int left = 0;
-
         for(int right=0; right<array.length; right++){
             product *= array[right];
 
             while (product >= target && left<array.length){
-                product/=array[left];
-                left++;
+                product/=array[left++];
+            }
+            List<Integer> list = new LinkedList<>();
+            for (int index=right; index>=left; index--){
+                list.add(0,array[index]);
+                output.add(new ArrayList<>(list));
             }
         }
-
-        List<List<Integer>> list = new LinkedList<>();
-        list.add(array[])
-        return new ArrayList<>();
+        return output;
     }
+
     public static void main(String[] args) {
         System.out.println(
               findSubarrays(new int[] { 2, 5, 3, 10 }, 30));
