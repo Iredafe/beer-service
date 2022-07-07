@@ -6,7 +6,13 @@ import java.util.List;
 public class SubarrayLessThanTarget {
 
     private static List<List<Integer>> findSubarrays(int [] array, int target){
+        List<List<Integer>> output = new ArrayList<>();
 
+        int left = 0;
+
+        for(int right=0; right<array.length; right++){
+
+        }
         return new ArrayList<>();
     }
     public static void main(String[] args) {
