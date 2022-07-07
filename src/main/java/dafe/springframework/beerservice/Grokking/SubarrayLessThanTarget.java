@@ -5,11 +5,12 @@ import java.util.List;
 
 public class SubarrayLessThanTarget {
 
-    private List<List<Integer>> findSubarray(){
+    private static List<List<Integer>> findSubarrays(){
 
         return new ArrayList<>();
     }
     public static void main(String[] args) {
-
+        System.out.println(
+              findSubarrays(new int[] { 2, 5, 3, 10 }, 30));
     }
 }
