@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-class Result {
+public class LogThreshold {
 
     /*
      * Complete the 'processLogs' function below.
