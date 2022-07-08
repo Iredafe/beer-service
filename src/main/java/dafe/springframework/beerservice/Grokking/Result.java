@@ -34,9 +34,9 @@ class Result {
                 String key  = digits[index];
                 idFrequencyMap.put(key,idFrequencyMap.getOrDefault(key, 0)+1);
                 System.out.println("keys : " + idFrequencyMap.keySet() + ", values " + idFrequencyMap.values());
-                if(idFrequencyMap.get(key) >= threshold){
+                if(idFrequencyMap.get(key) >= threshold && !output.contains(key)){
                     output.add(key);
-                }else break;
+                }
             }
         }
         System.out.println(output.toString());
@@ -44,6 +44,8 @@ class Result {
     }
 
     public static void main(String[] args) {
-        List<String> logs = Arrays.asList();
+        List<String> logs = Arrays.asList("1 2 50", "1 7 70", "1 3 20", "2 2 17");
+        int threshold = 2;
+        System.out.println("solution : " + processLogs(logs, threshold));
     }
 }
