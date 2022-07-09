@@ -1,11 +1,13 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class ThrillingTeleporters {
 
     private static List<Integer> destinations(String [] teleporters, int die, int startPosition, int endPosition){
-        HashMap<String, String> teleporterMap = new HashMap<>();
+        HashMap<Integer, Integer> teleporterMap = new HashMap<>();
         for(String teleporter : teleporters){
             String [] teleporterSplit = teleporter.split(",");
             int key = Integer.parseInt(teleporterSplit[0]);
@@ -23,7 +25,6 @@ public class ThrillingTeleporters {
                 output.add(startPosition);
             }
         }
-    }
 
     return output;
 }
