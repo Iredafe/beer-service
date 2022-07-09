@@ -15,14 +15,14 @@ public class ThrillingTeleporters {
             teleporterMap.put(key,value);
         }
         List<Integer> output = new ArrayList<>();
-        for(int dieNumber = 1; dieNumber<die; dieNumber++){
+        for(int dieNumber = 1; dieNumber<=die; dieNumber++){
             int newNumber = startPosition + dieNumber;
 
             if(teleporterMap.containsKey(newNumber)){
                 output.add(teleporterMap.get(newNumber));
             }else{
-                startPosition +=1;
-                output.add(startPosition);
+                int newPosition = dieNumber + startPosition;
+                output.add(newPosition);
             }
         }
 
