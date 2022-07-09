@@ -40,6 +40,8 @@ public class ThrillingTeleporters {
 
         System.out.println("teleport 1 : " + destinations(teleporters1, 6, 0, 20));
         System.out.println("teleport 2 : " + destinations(teleporters2, 6, 46, 100));
+        System.out.println("teleport 2 : " + destinations(teleporters2, 10, 0, 50));
+        System.out.println("teleport 3 : " + destinations(teleporters3, 10, 95, 100));
     }
 }
 
