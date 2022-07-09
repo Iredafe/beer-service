@@ -1,8 +1,32 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.ArrayList;
+
 public class ThrillingTeleporters {
 
+    private static List<Integer> destinations(String [] teleporters, int die, int startPosition, int endPosition){
+        HashMap<String, String> teleporterMap = new HashMap<>();
+        for(String teleporter : teleporters){
+            String [] teleporterSplit = teleporter.split(",");
+            int key = Integer.parseInt(teleporterSplit[0]);
+            int value = Integer.parseInt(teleporterSplit[1]);
+            teleporterMap.put(key,value);
+        }
+        List<Integer> output = new ArrayList<>();
+        for(int dieNumber = 1; dieNumber<die; dieNumber++){
+            int newNumber = startPosition + dieNumber;
 
+            if(teleporterMap.containsKey(newNumber)){
+                output.add(teleporterMap.get(newNumber));
+            }else{
+                startPosition +=1;
+                output.add(startPosition);
+            }
+        }
+    }
+
+    return output;
+}
 
     public static void main(String[] argv) {
         String[] teleporters1 = {"3,1", "4,2", "5,10"};
