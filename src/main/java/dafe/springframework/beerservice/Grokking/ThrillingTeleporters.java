@@ -1,6 +1,20 @@
 package dafe.springframework.beerservice.Grokking;
 
 public class ThrillingTeleporters {
+
+
+
+    public static void main(String[] argv) {
+        String[] teleporters1 = {"3,1", "4,2", "5,10"};
+        String[] teleporters2 = {"5,10", "6,22", "39,40", "40,49", "47,29"};
+        String[] teleporters3 = {"6,18", "36,26", "41,21", "49,55", "54,52",
+                "71,58", "74,77", "78,76", "80,73", "92,85"};
+        String[] teleporters4 = {"97,93", "99,81", "36,33", "92,59", "17,3",
+                "82,75", "4,1", "84,79", "54,4", "88,53",
+                "91,37", "60,57", "61,7", "62,51", "31,19"};
+
+        System.out.println("teleport 1 : " + destinations(teleporters1, 6, 0, 20));
+    }
 }
 
 
