@@ -5,6 +5,13 @@ public class DutchFlag {
     private static int[] sort(int [] array){
     int low = 0; int high = array.length-1;
 
+    for(int index=0; index<=high;){
+        if(array[index] == 0){
+            swap(array, index, low);
+            index++;
+            low++;
+        }
+    }
         return new int[]{};
     }
 
