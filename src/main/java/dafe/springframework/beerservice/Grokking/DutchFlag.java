@@ -10,6 +10,8 @@ public class DutchFlag {
             swap(array, index, low);
             index++;
             low++;
+        }else if(array[index] == 1){
+            index++;
         }
     }
         return new int[]{};
