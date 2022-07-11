@@ -19,6 +19,9 @@ public class DutchFlag {
         }
     }
 
+    private static void swap(int [] arr, int i, int j){
+        int temp = arr[i];
+    }
     public static void main(String[] args) {
         int[] arr = new int[] { 1, 0, 2, 1, 0 };
         sort(arr);
