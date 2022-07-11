@@ -2,7 +2,7 @@ package dafe.springframework.beerservice.Grokking;
 
 public class DutchFlag {
 
-    private static int[] sort(int [] array){
+    private static void sort(int [] array){
     int low = 0; int high = array.length-1;
 
     for(int index=0; index<=high;){
@@ -16,8 +16,7 @@ public class DutchFlag {
             swap(array, index, high);
             high--;
         }
-    }
-        return new int[]{};
+        }
     }
 
     public static void main(String[] args) {
