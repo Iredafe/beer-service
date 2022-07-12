@@ -9,6 +9,10 @@ public class FourSum {
         for(int firstIndex=0; firstIndex<array.length-3; firstIndex++){
             if(firstIndex>0 && array[firstIndex]== array[firstIndex-1])
                 continue;
+            for(int secondIndex= firstIndex+1; secondIndex<array.length-2; secondIndex++){
+                if(secondIndex > firstIndex+1 && array[secondIndex]==array[secondIndex-1])
+                    continue;
+            }
         }
         return new ArrayList<>();
     }
