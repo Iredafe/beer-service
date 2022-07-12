@@ -12,6 +12,10 @@ public class BackspaceStringCompare {
         return false;
     }
 
+    private static int getValidCharIndex(int index, String string){
+
+        return index;
+    }
     public static void main(String[] args) {
         System.out.println(compare("xy#z", "xzz#"));
         System.out.println(compare("xy#z", "xyz#"));
