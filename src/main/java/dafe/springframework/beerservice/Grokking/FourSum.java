@@ -31,6 +31,9 @@ public class FourSum {
                 left++;
                 right--;
                 while(array[left] == array[left-1]) continue;
+                while(array[right] == array[right+1]) continue;
+            }else if(sum < target){
+                left++;
             }
         }
     }
