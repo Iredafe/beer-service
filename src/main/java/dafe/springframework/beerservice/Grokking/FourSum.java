@@ -6,6 +6,7 @@ import java.util.List;
 public class FourSum {
 
     private static List<List<Integer>> searchQuadruplets(int [] array, int target){
+        List<List<Integer>> quadruplets = new ArrayList<>();
         for(int firstIndex=0; firstIndex<array.length-3; firstIndex++){
             if(firstIndex>0 && array[firstIndex]== array[firstIndex-1])
                 continue;
@@ -15,7 +16,7 @@ public class FourSum {
                 getPairs(array, firstIndex, secondIndex, target, quadruplets);
             }
         }
-        return new ArrayList<>();
+        return quadruplets;
     }
 
     public static void main(String[] args) {
