@@ -8,6 +8,9 @@ public class BackspaceStringCompare {
         while(index1 >=0 || index2 >= 0){
             int validCharIndex1 = getValidCharIndex(index1, firstString);
             int validCharIndex2 = getValidCharIndex(index2, secondString);
+
+            if(validCharIndex1 < 0 && validCharIndex2 <0) return true;
+            if(validCharIndex1 < 0 || validCharIndex2 <0) return false;
         }
         return false;
     }
