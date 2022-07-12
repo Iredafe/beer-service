@@ -28,6 +28,9 @@ public class FourSum {
 
             if(sum == target){
                 quadruplets.add(Arrays.asList(array[first], array[second], array[left], array[right]));
+                left++;
+                right--;
+                while(array[left] == array[left-1]) continue;
             }
         }
     }
