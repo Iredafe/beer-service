@@ -1,14 +1,16 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FourSum {
 
-    private List<List<Integer>> searchQuadruplets(int [] array, int target){
+    private static List<List<Integer>> searchQuadruplets(int [] array, int target){
         for(int firstIndex=0; firstIndex<array.length-3; firstIndex++){
-
+            if(firstIndex>0 && array[firstIndex]== array[firstIndex-1])
+                continue;
         }
-
+        return new ArrayList<>();
     }
 
     public static void main(String[] args) {
