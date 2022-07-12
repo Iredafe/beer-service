@@ -12,6 +12,7 @@ public class FourSum {
             for(int secondIndex= firstIndex+1; secondIndex<array.length-2; secondIndex++){
                 if(secondIndex > firstIndex+1 && array[secondIndex]==array[secondIndex-1])
                     continue;
+                getPairs(array, firstIndex, secondIndex, target, quadruplets);
             }
         }
         return new ArrayList<>();
