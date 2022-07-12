@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FourSum {
@@ -21,6 +22,14 @@ public class FourSum {
 
     private static void getPairs(int [] array, int first, int second, int target, List<List<Integer>> quadruplets){
 
+        int left=second+1, right=array.length-1;
+        while(left<right){
+            int sum = array[first] + array[second] + array[left] + array[right];
+
+            if(sum == target){
+                quadruplets.add(Arrays.asList(array[first], array[second], array[left], array[right]));
+            }
+        }
     }
     public static void main(String[] args) {
         System.out.println(searchQuadruplets(new int[] { 4, 1, 2, -1, 1, -3 }, 1));
