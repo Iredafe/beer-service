@@ -11,8 +11,12 @@ public class BackspaceStringCompare {
 
             if(validCharIndex1 < 0 && validCharIndex2 <0) return true;
             if(validCharIndex1 < 0 || validCharIndex2 <0) return false;
+            if(firstString.charAt(validCharIndex1) != secondString.charAt(validCharIndex2)) return false;
+
+            index1--;
+            index2--;
         }
-        return false;
+        return true;
     }
 
     private static int getValidCharIndex(int index, String string){
