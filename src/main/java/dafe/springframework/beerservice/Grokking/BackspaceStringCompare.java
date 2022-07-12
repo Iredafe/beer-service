@@ -13,14 +13,23 @@ public class BackspaceStringCompare {
             if(validCharIndex1 < 0 || validCharIndex2 <0) return false;
             if(firstString.charAt(validCharIndex1) != secondString.charAt(validCharIndex2)) return false;
 
-            index1--;
-            index2--;
+            index1=validCharIndex1-1;
+            index2=validCharIndex2-1;
         }
         return true;
     }
 
     private static int getValidCharIndex(int index, String string){
+        int backspaceCount = 0;
+        while(index >=0){
+            if(string.charAt(index)=='#'){
+                backspaceCount++;
+            }else if(backspaceCount>0){
+                backspaceCount--;
+            }else break;
 
+            index--;
+        }
         return index;
     }
     public static void main(String[] args) {
