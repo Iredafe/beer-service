@@ -30,8 +30,8 @@ public class FourSum {
                 quadruplets.add(Arrays.asList(array[first], array[second], array[left], array[right]));
                 left++;
                 right--;
-                while(array[left] == array[left-1]) continue;
-                while(array[right] == array[right+1]) continue;
+                while(array[left] == array[left-1]) left++;
+                while(array[right] == array[right+1]) right--;
             }else if(sum < target){
                 left++;
             }else{
