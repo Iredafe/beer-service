@@ -12,6 +12,7 @@ public class MinimumWindowSort {
         while(right>0 && array[right] >= array[right-1])
             right--;
 
+        int subarrayMin = Integer.MAX_VALUE, subarrayMax = Integer.MIN_VALUE;
 
 
         return 0;
