@@ -31,6 +31,7 @@ public class MinimumWindowSort {
         System.out.println(sort(new int[] { 1, 3, 2, 0, -1, 7, 10 }));
         System.out.println(sort(new int[] { 1, 2, 3 }));
         System.out.println(sort(new int[] { 3, 2, 1 }));
+        System.out.println(sort(new int[] {2,3,3,2,4 }));
 
     }
 }
