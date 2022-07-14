@@ -6,8 +6,13 @@ public class MinimumWindowSort {
 
         int left=0, right=array.length-1;
 
-        while(left > 0 && array[left] > array[left-1])
+        while(left < array.length-1 && array[left] <= array[left+1])
             left++;
+
+        while(right>0 && array[right] >= array[right-1])
+            right--;
+
+
 
         return 0;
     }
