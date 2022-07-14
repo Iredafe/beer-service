@@ -9,7 +9,7 @@ public class MinimumWindowSort {
         while(left < array.length-1 && array[left] <= array[left+1])
             left++;
 
-        if(left == array.length) return 0;
+        if(left == array.length-1) return 0;
 
         while(right>0 && array[right] >= array[right-1])
             right--;
