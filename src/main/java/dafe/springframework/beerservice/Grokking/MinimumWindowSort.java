@@ -9,11 +9,14 @@ public class MinimumWindowSort {
         while(left < array.length-1 && array[left] <= array[left+1])
             left++;
 
+        if(left == array.length) return 0;
+
         while(right>0 && array[right] >= array[right-1])
             right--;
 
         int subarrayMin = Integer.MAX_VALUE, subarrayMax = Integer.MIN_VALUE;
 
+        while
 
         return 0;
     }
