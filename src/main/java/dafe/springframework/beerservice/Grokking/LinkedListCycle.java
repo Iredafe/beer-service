@@ -13,7 +13,7 @@ public class LinkedListCycle {
         }
     }
 
-    private boolean isCycle(ListNode head){
+    private boolean hasCycle(ListNode head){
 
         return false;
     }
@@ -25,5 +25,10 @@ public class LinkedListCycle {
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
         head.next.next.next.next.next = new ListNode(6);
+        head.next.next.next.next.next.next = head.next.next;
+        System.out.println("LinkedList has cycle: " + LinkedListCycle.hasCycle(head));
+
+        head.next.next.next.next.next.next = head.next.next.next;
+        System.out.println("LinkedList has cycle: " + LinkedListCycle.hasCycle(head));
     }
 }
