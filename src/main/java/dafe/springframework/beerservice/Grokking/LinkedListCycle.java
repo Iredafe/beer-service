@@ -13,7 +13,7 @@ public class LinkedListCycle {
         }
     }
 
-    private boolean hasCycle(ListNode head){
+    private static boolean hasCycle(ListNode head){
 
         return false;
     }
