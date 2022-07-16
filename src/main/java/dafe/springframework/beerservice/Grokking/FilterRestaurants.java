@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FilterRestaurants {
 
-    private static List<Integer> filterRestaurants(int[][] restaurants, int veganFriendly){
+    private static List<Integer> filterRestaurants(int[][] restaurants, int veganFriendly, int maxPrice, int maxDistance){
 
         return new ArrayList<>();
     }
