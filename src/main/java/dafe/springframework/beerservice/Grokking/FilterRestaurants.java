@@ -17,5 +17,7 @@ public class FilterRestaurants {
                                         {5,1,1,15,1}};
 
     int veganFriendly = 1, maxPrice = 50, maxDistance = 10;
+
+    filterRestaurants(restaurants, veganFriendly, maxPrice, maxDistance);
     }
 }
