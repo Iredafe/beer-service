@@ -18,11 +18,12 @@ public class LinkedListCycle {
     ListNode fastPointer = head;
 
 
-        while(fastPointer!= null && slowPointer!= fastPointer){
+        while(fastPointer!= null && fastPointer.next!=null){
             slowPointer = slowPointer.next;
             fastPointer = fastPointer.next.next;
+            if(fastPointer==slowPointer) return true;
         }
-        return fastPointer==slowPointer;
+        return false;
     }
 
     public static void main(String[] args) {
