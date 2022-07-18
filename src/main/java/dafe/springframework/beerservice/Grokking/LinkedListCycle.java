@@ -14,6 +14,8 @@ public class LinkedListCycle {
     }
 
     private static boolean hasCycle(ListNode head){
+    ListNode slowPointer = head.next;
+    ListNode fastPointer = head.next.next;
 
         return false;
     }
