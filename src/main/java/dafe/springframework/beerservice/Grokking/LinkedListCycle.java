@@ -29,6 +29,6 @@ public class LinkedListCycle {
         System.out.println("LinkedList has cycle: " + hasCycle(head));
 
         head.next.next.next.next.next.next = head.next.next.next;
-        System.out.println("LinkedList has cycle: " + LinkedListCycle.hasCycle(head));
+        System.out.println("LinkedList has cycle: " + hasCycle(head));
     }
 }
