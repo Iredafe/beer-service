@@ -18,11 +18,11 @@ public class LinkedListCycle {
     ListNode fastPointer = head;
 
 
-        while(fastPointer!= null){
+        while(fastPointer!= null && slowPointer!= fastPointer){
             slowPointer = slowPointer.next;
             fastPointer = fastPointer.next.next;
         }
-        return false;
+        return fastPointer==slowPointer;
     }
 
     public static void main(String[] args) {
@@ -32,10 +32,12 @@ public class LinkedListCycle {
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
         head.next.next.next.next.next = new ListNode(6);
+        System.out.println("LinkedList has cycle: " + LinkedListCycle.hasCycle(head));
+
         head.next.next.next.next.next.next = head.next.next;
-        System.out.println("LinkedList has cycle: " + hasCycle(head));
+        System.out.println("LinkedList has cycle: " + LinkedListCycle.hasCycle(head));
 
         head.next.next.next.next.next.next = head.next.next.next;
-        System.out.println("LinkedList has cycle: " + hasCycle(head));
+        System.out.println("LinkedList has cycle: " + LinkedListCycle.hasCycle(head));
     }
 }
