@@ -1,12 +1,16 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class DestinationCity {
 
     private static String findDestination(List<List<String>> paths){
-
+        HashSet<String> cities =new HashSet<>();
+        for(List<String> path : paths){
+            cities.add(path.get(0));
+        }
         return "";
     }
 
