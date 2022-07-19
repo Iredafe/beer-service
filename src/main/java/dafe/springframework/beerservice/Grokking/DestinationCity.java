@@ -16,5 +16,6 @@ public class DestinationCity {
         List<List<String>> paths1 = Arrays.asList(Arrays.asList("B", "C"), Arrays.asList("D", "B"), Arrays.asList("C","A"));
 
         System.out.println("The final destination is : " + findDestination(paths));
+        System.out.println("The final destination 1 is : " + findDestination(paths1));
     }
 }
