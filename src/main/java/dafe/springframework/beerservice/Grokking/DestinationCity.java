@@ -9,6 +9,6 @@ public class DestinationCity {
         List<List<String>> paths = Arrays.asList(Arrays.asList("London","New York"),Arrays.asList("New York","Lima"),
                 Arrays.asList("Lima","Sao Paulo"));
 
-        System.out.println(findDestination(paths));
+        System.out.println("The final destination is : " + findDestination(paths));
     }
 }
