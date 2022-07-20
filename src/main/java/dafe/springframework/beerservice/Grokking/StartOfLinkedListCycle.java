@@ -3,7 +3,7 @@ package dafe.springframework.beerservice.Grokking;
 import java.util.List;
 
 public class StartOfLinkedListCycle {
-    class ListNode{
+    static class ListNode{
         int value=0;
         ListNode next;
 
@@ -42,7 +42,19 @@ public class StartOfLinkedListCycle {
 
 
     private static ListNode findStart(int cycleLength, ListNode head){
+        ListNode firstPointer=head;
+        ListNode secondPointer=head;
 
+        while(cycleLength>0){
+            secondPointer=secondPointer.next;
+            cycleLength--;
+        }
+
+        while(firstPointer!=secondPointer){
+            firstPointer=firstPointer.next;
+            secondPointer=secondPointer.next;
+        }
+        return firstPointer;
     }
 
     public static void main(String[] args) {
