@@ -18,5 +18,9 @@ public class StartOfLinkedListCycle {
         head.next.next.next.next = new ListNode(5);
         head.next.next.next.next.next = new ListNode(6);
 
+        head.next.next.next.next.next.next = head.next.next;
+        System.out.println("LinkedList cycle start: " +
+                findCycleStart(head).value);
+
     }
 }
