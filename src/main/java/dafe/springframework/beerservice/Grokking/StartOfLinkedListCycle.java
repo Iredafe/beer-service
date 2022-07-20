@@ -6,8 +6,8 @@ public class StartOfLinkedListCycle {
         int value=0;
         ListNode next;
 
-        public ListNode(ListNode next){
-            this.next = next;
+        public ListNode(int value){
+            this.value = value;
         }
     }
     public static void main(String[] args) {
