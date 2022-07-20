@@ -28,12 +28,18 @@ public class StartOfLinkedListCycle {
         }
         return findStart(cycleLength);
     }
-        private static int getCycleLength(ListNode slow){
-            ListNode current = slow;
 
-            return 0;
-        }
+    private static int getCycleLength(ListNode slow){
+    int cycleLength=0;
+    ListNode current = slow;
+
+        do {
+        current = current.next;
+        cycleLength++;
+        } while(current!= slow);
+        return cycleLength;
     }
+
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
