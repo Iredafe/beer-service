@@ -8,10 +8,17 @@ public class StartOfLinkedListCycle {
 
         ListNode slow=head;
         ListNode fast=head;
+        int cycleLength=0;
 
         while (fast!=null && fast.next!=null){
             fast=fast.next.next;
             slow=slow.next;
+
+            if(fast==slow){
+           cycleLength = getCycleLength(slow);
+            break;
+            }
+            return findStart(cycleLength);
         }
 
     }
