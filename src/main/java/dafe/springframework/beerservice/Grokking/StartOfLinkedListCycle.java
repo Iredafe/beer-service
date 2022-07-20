@@ -1,7 +1,13 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.List;
+
 public class StartOfLinkedListCycle {
 
+    private static ListNode findCycleStart(ListNode head){
+
+
+    }
     static class ListNode{
         int value=0;
         ListNode next;
