@@ -21,6 +21,9 @@ public class StartOfLinkedListCycle {
             return findStart(cycleLength);
         }
 
+        private static int getCycleLength(ListNode slow){
+
+        }
     }
     static class ListNode{
         int value=0;
