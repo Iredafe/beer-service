@@ -26,7 +26,7 @@ public class StartOfLinkedListCycle {
                 break;
             }
         }
-        return findStart(cycleLength);
+        return findStart(cycleLength, head);
     }
 
     private static int getCycleLength(ListNode slow){
@@ -40,6 +40,10 @@ public class StartOfLinkedListCycle {
         return cycleLength;
     }
 
+
+    private static ListNode findStart(int cycleLength, ListNode head){
+
+    }
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
