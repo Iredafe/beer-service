@@ -50,7 +50,7 @@ public class StartOfLinkedListCycle {
             cycleLength--;
         }
 
-        while(firstPointer!=secondPointer){
+         while(firstPointer!=secondPointer){
             firstPointer=firstPointer.next;
             secondPointer=secondPointer.next;
         }
