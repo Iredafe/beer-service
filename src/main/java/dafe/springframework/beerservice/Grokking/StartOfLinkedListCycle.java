@@ -3,29 +3,7 @@ package dafe.springframework.beerservice.Grokking;
 import java.util.List;
 
 public class StartOfLinkedListCycle {
-
-    private static ListNode findCycleStart(ListNode head){
-
-        ListNode slow=head;
-        ListNode fast=head;
-        int cycleLength=0;
-
-        while (fast!=null && fast.next!=null){
-            fast=fast.next.next;
-            slow=slow.next;
-
-            if(fast==slow){
-           cycleLength = getCycleLength(slow);
-            break;
-            }
-            return findStart(cycleLength);
-        }
-
-        private static int getCycleLength(ListNode slow){
-
-        }
-    }
-    static class ListNode{
+    class ListNode{
         int value=0;
         ListNode next;
 
@@ -33,6 +11,30 @@ public class StartOfLinkedListCycle {
             this.value = value;
         }
     }
+    private static ListNode findCycleStart(ListNode head) {
+
+        ListNode slow = head;
+        ListNode fast = head;
+        int cycleLength = 0;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (fast == slow) {
+                cycleLength = getCycleLength(slow);
+                break;
+            }
+        }
+        return findStart(cycleLength);
+    }
+        private static int getCycleLength(ListNode slow){
+            ListNode current = slow;
+
+            return 0;
+        }
+    }
+
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
