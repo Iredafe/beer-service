@@ -34,7 +34,7 @@ public class ImplementPrefixTree {
 
 
     static class Trie {
-        public TrieNode root;
+        public static TrieNode root;
 
         public Trie() {
             root = new TrieNode();
@@ -43,6 +43,9 @@ public class ImplementPrefixTree {
         public static void insert(String word) {
             for(int charIndex=0; charIndex<word.length(); charIndex++){
                 char currentChar = word.charAt(charIndex);
+                if(!root.containsKey(currentChar)){
+                    root.put(currentChar, new TrieNode());
+                }
             }
         }
 
