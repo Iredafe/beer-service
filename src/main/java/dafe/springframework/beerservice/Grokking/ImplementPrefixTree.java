@@ -41,12 +41,16 @@ public class ImplementPrefixTree {
         }
 
         public static void insert(String word) {
+            TrieNode trieNode = root;
             for(int charIndex=0; charIndex<word.length(); charIndex++){
                 char currentChar = word.charAt(charIndex);
-                if(!root.containsKey(currentChar)){
-                    root.put(currentChar, new TrieNode());
+                if(!trieNode.containsKey(currentChar)){
+                    trieNode.put(currentChar, new TrieNode());
+                    trieNode.setEnd();
                 }
+                trieNode=trieNode.get(currentChar);
             }
+            trieNode.setEnd();
         }
 
         public static boolean search(String word) {
