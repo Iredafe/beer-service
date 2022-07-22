@@ -10,4 +10,7 @@ public class ImplementPrefixTree {
         public void insert(String word) {
 
         }
+        public boolean search(String word) {
+
+        }
 }
