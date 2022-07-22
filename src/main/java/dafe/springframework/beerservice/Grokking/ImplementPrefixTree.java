@@ -15,6 +15,10 @@ public class ImplementPrefixTree {
             links[ch-'a']=node;
         }
 
+        public void setEnd(){
+            isEnd=true;
+        }
+
         public TrieNode get(char ch){
             return links[ch-'a'];
         }
