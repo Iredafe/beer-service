@@ -13,4 +13,8 @@ public class ImplementPrefixTree {
         public boolean search(String word) {
 
         }
+
+        public boolean startsWith(String prefix) {
+
+        }
 }
