@@ -41,7 +41,9 @@ public class ImplementPrefixTree {
         }
 
         public static void insert(String word) {
-            if ()
+            for(int charIndex=0; charIndex<word.length(); charIndex++){
+                char currentChar = word.charAt(charIndex);
+            }
         }
 
         public static boolean search(String word) {
