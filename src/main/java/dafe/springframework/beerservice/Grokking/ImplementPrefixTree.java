@@ -12,15 +12,15 @@ public class ImplementPrefixTree {
          }
 
         public void put(char ch, TrieNode node){
-
+            links[ch-'a']=node;
         }
 
         public TrieNode get(char ch){
             return links[ch-'a'];
         }
 
-        public TrieNode containsKey(char ch){
-
+        public boolean containsKey(char ch){
+            return links[ch-'a'] != null;
         }
 
         public boolean isEnd(){
