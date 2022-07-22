@@ -59,13 +59,16 @@ public class ImplementPrefixTree {
                 char currentChar = word.charAt(i);
                 if(node.containsKey(currentChar)){
                     node = node.get(currentChar);
+                }else{
+                    return null
                 }
            }
             return node;
         }
 
         public static boolean search(String word) {
-
+            TrieNode node = searchPrefix(word);
+            return node!=null && node.isEnd();
         }
 
         public static boolean startsWith(String prefix) {
