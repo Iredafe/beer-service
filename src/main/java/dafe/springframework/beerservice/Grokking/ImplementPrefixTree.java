@@ -1,13 +1,13 @@
 package dafe.springframework.beerservice.Grokking;
 
 public class ImplementPrefixTree {
-    class Trie {
-
+    static class Trie {
+    public static final R=26;
         public Trie() {
 
         }
 
-        public void insert(String word) {
+        public static void insert(String word) {
 
         }
         public boolean search(String word) {
