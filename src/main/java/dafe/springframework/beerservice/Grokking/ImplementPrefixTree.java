@@ -22,6 +22,10 @@ public class ImplementPrefixTree {
         public TrieNode containsKey(char ch){
 
         }
+
+        public boolean isEnd(){
+             return isEnd;
+        }
      }
     }
 
