@@ -10,11 +10,11 @@ public class ImplementPrefixTree {
         public static void insert(String word) {
 
         }
-        public boolean search(String word) {
+        public static boolean search(String word) {
 
         }
 
-        public boolean startsWith(String prefix) {
+        public static boolean startsWith(String prefix) {
 
         }
 }
