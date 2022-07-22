@@ -56,7 +56,10 @@ public class ImplementPrefixTree {
         private static TrieNode searchPrefix(String word){
            TrieNode node = root;
            for(int i=0; i<word.length(); i++){
-
+                char currentChar = word.charAt(i);
+                if(node.containsKey(currentChar)){
+                    node = node.get(currentChar);
+                }
            }
             return node;
         }
