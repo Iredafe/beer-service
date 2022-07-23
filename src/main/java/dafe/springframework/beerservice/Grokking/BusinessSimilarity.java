@@ -44,7 +44,7 @@ public class BusinessSimilarity {
             JSONObject json = (JSONObject) parser.parse();
             JSONArray lis1 = (JSONArray)json.get("positive_reviews"); //
             List<PositiveReview> lis = new ArrayList<>(); // making list from input json fields
-            for (int i = 0; i < lis1.size(); i++) {
+            for (int i = 0; i < lis1.length(); i++) {
                 JSONObject js = (JSONObject) lis1.get(i);
                 PositiveReview ps = new PositiveReview(Integer.parseInt(js.get("user_id").toString()),Integer.parseInt(js.get("business_id").toString()));
                 lis.add(ps);
