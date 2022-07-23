@@ -1,4 +1,33 @@
 package dafe.springframework.beerservice.Grokking;
 
 public class BusinessSimilarity {
+
+    public static void main(String[] args) {
+
+        String str ="";
+        Scanner sc=new Scanner(System.in);
+
+        while(sc.hasNextLine()){ // reading file till EOF
+            str+=sc.nextLine();
+        }
+        try{
+            JSONParser parser = new JSONParser(); // parsing input as json object
+            JSONObject json = (JSONObject) parser.parse(str);
+            JSONArray lis1 = (JSONArray)json.get("positive_reviews"); //
+            List<PositiveReview> lis = new ArrayList<>(); // making list from input json fields
+            for (int i = 0; i < lis1.size(); i++) {
+                JSONObject js = (JSONObject) lis1.get(i);
+                PositiveReview ps = new PositiveReview(Integer.parseInt(js.get("user_id").toString()),Integer.parseInt(js.get("business_id").toString()));
+                lis.add(ps);
+            }
+            System.out.println(findMostSimilarBusiness(Integer.parseInt(json.get("business_of_interest_id").toString()),lis));
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+
+
+    }
 }
