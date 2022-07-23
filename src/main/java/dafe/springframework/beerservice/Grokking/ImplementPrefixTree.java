@@ -32,7 +32,6 @@ public class ImplementPrefixTree {
         }
     }
 
-
     static class Trie {
         public static TrieNode root;
 
@@ -60,7 +59,7 @@ public class ImplementPrefixTree {
                 if(node.containsKey(currentChar)){
                     node = node.get(currentChar);
                 }else{
-                    return null
+                    return null;
                 }
            }
             return node;
@@ -72,7 +71,8 @@ public class ImplementPrefixTree {
         }
 
         public static boolean startsWith(String prefix) {
-
+            TrieNode node = searchPrefix(prefix);
+            return node!=null;
         }
 
     }
