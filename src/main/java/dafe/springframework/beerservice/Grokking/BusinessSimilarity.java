@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class BusinessSimilarity {
-    class PositiveReview {
+    static class PositiveReview {
         Integer userId;
         Integer businessId;
 
@@ -40,8 +40,8 @@ public class BusinessSimilarity {
             str+=sc.nextLine();
         }
         try{
-            JSONParser parser = new JSONParser(); // parsing input as json object
-            JSONObject json = (JSONObject) parser.parse(str);
+            JSONParser parser = new JSONParser(str); // parsing input as json object
+            JSONObject json = (JSONObject) parser.parse();
             JSONArray lis1 = (JSONArray)json.get("positive_reviews"); //
             List<PositiveReview> lis = new ArrayList<>(); // making list from input json fields
             for (int i = 0; i < lis1.size(); i++) {
