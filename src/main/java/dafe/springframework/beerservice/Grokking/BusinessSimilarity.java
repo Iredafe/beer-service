@@ -21,7 +21,8 @@ public class BusinessSimilarity {
         }
     }
 
-    private static int findMostSimilarBusiness(int business_of_interest_id, List<PositiveReview> lis) {
+    private static int findMostSimilarBusiness(int business_of_interest_id, List<PositiveReview> list) {
+        double max = 0;
         return 0;
     }
 
