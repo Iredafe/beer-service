@@ -8,7 +8,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BusinessSimilarity {
+    class PositiveReview {
+        Integer userId;
+        Integer businessId;
 
+        public PositiveReview(Integer userId, Integer businessId) {
+            this.userId = userId;
+            this.businessId = businessId;
+        }
+
+        public Integer getUserId() {
+            return this.userId;
+        }
+        public Integer getBusinessId() {
+            return this.businessId;
+        }
+    }
     public static void main(String[] args) {
 
         String str ="";
