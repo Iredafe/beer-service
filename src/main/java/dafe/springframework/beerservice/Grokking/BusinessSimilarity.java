@@ -29,7 +29,7 @@ public class BusinessSimilarity {
 
         for(PositiveReview review : reviewList){
             businessToUserMap.putIfAbsent(review.getBusinessId(), new HashSet<>());
-            businessToUserMap.get(review.getBusinessId(), )
+            businessToUserMap.get(review.getBusinessId()).add(review.getUserId());
         }
         double max = 0;
         return 0;
