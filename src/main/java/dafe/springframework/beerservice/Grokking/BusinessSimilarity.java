@@ -52,7 +52,7 @@ public class BusinessSimilarity {
             }
         }
 
-        return 0;
+        return similarBusiness;
     }
 
 
