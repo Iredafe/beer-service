@@ -1,7 +1,9 @@
 package dafe.springframework.beerservice.Grokking;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 public class BusinessSimilarity {
     static class PositiveReview {
@@ -22,6 +24,7 @@ public class BusinessSimilarity {
     }
 
     private static int findMostSimilarBusiness(int business_of_interest_id, List<PositiveReview> list) {
+        HashMap<Integer, Set<Integer>> businessToUserMap = new HashMap<>();
         double max = 0;
         return 0;
     }
