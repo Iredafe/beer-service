@@ -32,6 +32,14 @@ public class BusinessSimilarity {
             businessToUserMap.get(review.getBusinessId()).add(review.getUserId());
         }
         double max = 0;
+        int similarBusiness = -1;
+
+        for(Integer businessPk : businessToUserMap.keySet()){
+            if(businessPk != business_of_interest_id){
+                Set<Integer> interestedBusinessUser = new HashSet<>();
+            }
+        }
+
         return 0;
     }
 
