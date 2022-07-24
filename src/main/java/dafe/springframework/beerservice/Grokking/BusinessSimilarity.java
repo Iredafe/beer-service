@@ -2,6 +2,7 @@ package dafe.springframework.beerservice.Grokking;
 
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -27,7 +28,8 @@ public class BusinessSimilarity {
         HashMap<Integer, Set<Integer>> businessToUserMap = new HashMap<>();
 
         for(PositiveReview review : reviewList){
-
+            businessToUserMap.putIfAbsent(review.getBusinessId(), new HashSet<>());
+            businessToUserMap.get(review.getBusinessId(), )
         }
         double max = 0;
         return 0;
