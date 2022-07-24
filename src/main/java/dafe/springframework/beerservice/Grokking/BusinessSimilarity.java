@@ -23,8 +23,12 @@ public class BusinessSimilarity {
         }
     }
 
-    private static int findMostSimilarBusiness(int business_of_interest_id, List<PositiveReview> list) {
+    private static int findMostSimilarBusiness(int business_of_interest_id, List<PositiveReview> reviewList) {
         HashMap<Integer, Set<Integer>> businessToUserMap = new HashMap<>();
+
+        for(PositiveReview review : reviewList){
+
+        }
         double max = 0;
         return 0;
     }
