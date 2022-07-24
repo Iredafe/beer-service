@@ -37,6 +37,15 @@ public class BusinessSimilarity {
         for(Integer businessPk : businessToUserMap.keySet()){
             if(businessPk != business_of_interest_id){
                 Set<Integer> interestedBusinessUser = new HashSet<>();
+                interestedBusinessUser.addAll(businessToUserMap.get(business_of_interest_id));
+
+                interestedBusinessUser.retainAll(businessToUserMap.get(business_of_interest_id));
+                double common = interestedBusinessUser.size();
+
+                double total = businessToUserMap.get(business_of_interest_id).size()+
+                                businessToUserMap.get(business_of_interest_id).size()-common;
+
+
             }
         }
 
