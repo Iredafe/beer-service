@@ -44,8 +44,11 @@ public class BusinessSimilarity {
 
                 double total = businessToUserMap.get(business_of_interest_id).size()+
                                 businessToUserMap.get(business_of_interest_id).size()-common;
-
-
+                double rate=common/total;
+            if(rate > max){
+                max=rate;
+                similarBusiness=business_of_interest_id;
+            }
             }
         }
 
