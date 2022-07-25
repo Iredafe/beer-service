@@ -8,7 +8,7 @@ public class PrefixBasedSearch {
         String searchTerm1 = "bur";
         String searchTerm2 = "duper bur";
         String searchTerm3 = "bur duper";
-        PrefixSearch ps = new PrefixSearch();
+        PrefixBasedSearch ps = new PrefixBasedSearch();
         System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm1));
         System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm2));
         System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm3));
