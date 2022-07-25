@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class PrefixBasedSearch {
 
@@ -14,5 +15,9 @@ public class PrefixBasedSearch {
         System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm1));
         System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm2));
         System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm3));
+    }
+
+    private List<String> getRelatedString(List<String> asList, String searchTerm1) {
+
     }
 }
