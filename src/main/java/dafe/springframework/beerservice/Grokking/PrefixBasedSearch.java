@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,5 +20,6 @@ public class PrefixBasedSearch {
 
     private List<String> getRelatedString(List<String> asList, String searchTerm1) {
 
+        return new ArrayList<>();
     }
 }
