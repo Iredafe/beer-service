@@ -16,11 +16,13 @@ public class PrefixBasedSearch {
         boolean isEnd = false;
     }
 
-    private static void addWord(List<String> words){
+    private static void addWord(String word){
         TrieNode node = trie;
-        for(String word :words){
-            if
+        for(char ch : word.toCharArray()){
+            node.children.putIfAbsent(ch, new TrieNode());
+            node = node.children.get(ch);
         }
+        node.isEnd=true;
     }
 
     public static void main(String[] args) {
