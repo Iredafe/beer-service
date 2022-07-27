@@ -6,9 +6,23 @@ import java.util.HashMap;
 import java.util.List;
 
 public class PrefixBasedSearch {
+    TrieNode trie;
+
+    public PrefixBasedSearch(){
+        trie = new TrieNode();
+    }
     static class TrieNode{
         HashMap<Character, TrieNode> children = new HashMap<>();
+        boolean isEnd = false;
     }
+
+    private static void addWord(List<String> words){
+        TrieNode node = root;
+        for(String word :words){
+            if
+        }
+    }
+
     public static void main(String[] args) {
         String[] input = {"burger king", "McDonald's", "super duper burger's", "subway", "pizza hut"};
         String searchTerm1 = "bur";
