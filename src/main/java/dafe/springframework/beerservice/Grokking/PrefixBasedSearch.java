@@ -25,6 +25,11 @@ public class PrefixBasedSearch {
         node.isEnd=true;
     }
 
+    private static boolean searchTrieNode(String prefix, TrieNode node){
+
+        return true;
+    }
+
     public static void main(String[] args) {
         String[] input = {"burger king", "McDonald's", "super duper burger's", "subway", "pizza hut"};
         String searchTerm1 = "bur";
