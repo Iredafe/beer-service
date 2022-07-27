@@ -35,6 +35,11 @@ public class PrefixBasedSearch {
         return node.isEnd;
     }
 
+    private List<String> getRelatedString(List<String> words, String searchTerm1) {
+        List<String> result = new ArrayList<>();
+        return result;
+    }
+
     public static void main(String[] args) {
         String[] input = {"burger king", "McDonald's", "super duper burger's", "subway", "pizza hut"};
         String searchTerm1 = "bur";
@@ -46,8 +51,4 @@ public class PrefixBasedSearch {
         System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm3));
     }
 
-    private List<String> getRelatedString(List<String> words, String searchTerm1) {
-        List<String> result = new ArrayList<>();
-        return result;
-    }
 }
