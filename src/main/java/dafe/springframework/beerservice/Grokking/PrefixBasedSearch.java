@@ -37,6 +37,10 @@ public class PrefixBasedSearch {
 
     private List<String> getRelatedString(List<String> words, String searchTerm1) {
         List<String> result = new ArrayList<>();
+
+        for(String word : words){
+            addWord(word);
+        }
         return result;
     }
 
