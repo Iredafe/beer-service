@@ -26,7 +26,9 @@ public class PrefixBasedSearch {
     }
 
     private static boolean searchTrieNode(String prefix, TrieNode node){
-
+        for(int i=0; i<prefix.length(); i++){
+            char ch = prefix.charAt(i);
+        }
         return true;
     }
 
