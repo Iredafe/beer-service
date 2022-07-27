@@ -28,8 +28,11 @@ public class PrefixBasedSearch {
     private static boolean searchTrieNode(String prefix, TrieNode node){
         for(int i=0; i<prefix.length(); i++){
             char ch = prefix.charAt(i);
+            if(node.children.containsKey(ch)){
+                node=node.children.get(ch);
+            }
         }
-        return true;
+        return node.isEnd;
     }
 
     public static void main(String[] args) {
