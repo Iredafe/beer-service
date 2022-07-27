@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PrefixBasedSearch {
-
-
     public static void main(String[] args) {
         String[] input = {"burger king", "McDonald's", "super duper burger's", "subway", "pizza hut"};
         String searchTerm1 = "bur";
@@ -18,8 +16,14 @@ public class PrefixBasedSearch {
         System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm3));
     }
 
-    private List<String> getRelatedString(List<String> asList, String searchTerm1) {
+    private List<String> getRelatedString(List<String> words, String searchTerm1) {
 
-        return new ArrayList<>();
+        List<String> result = new ArrayList<>();
+        for(String word : words){
+           if(word.indexOf(searchTerm1) == 0){
+               result.add(word);
+           }
+        }
+        return result;
     }
 }
