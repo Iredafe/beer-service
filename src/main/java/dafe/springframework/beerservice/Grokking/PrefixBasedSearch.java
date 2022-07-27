@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class PrefixBasedSearch {
-    TrieNode trie;
+    static TrieNode trie;
 
     public PrefixBasedSearch(){
         trie = new TrieNode();
@@ -17,7 +17,7 @@ public class PrefixBasedSearch {
     }
 
     private static void addWord(List<String> words){
-        TrieNode node = root;
+        TrieNode node = trie;
         for(String word :words){
             if
         }
