@@ -2,9 +2,13 @@ package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class PrefixBasedSearch {
+    static class TrieNode{
+        HashMap<Character, TrieNode> children = new HashMap<>();
+    }
     public static void main(String[] args) {
         String[] input = {"burger king", "McDonald's", "super duper burger's", "subway", "pizza hut"};
         String searchTerm1 = "bur";
@@ -17,13 +21,7 @@ public class PrefixBasedSearch {
     }
 
     private List<String> getRelatedString(List<String> words, String searchTerm1) {
-
         List<String> result = new ArrayList<>();
-        for(String word : words){
-           if(word.indexOf(searchTerm1) == 0){
-               result.add(word);
-           }
-        }
         return result;
     }
 }
