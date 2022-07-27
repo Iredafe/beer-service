@@ -41,6 +41,13 @@ public class PrefixBasedSearch {
         for(String word : words){
             addWord(word);
         }
+
+        for (String word : words){
+            boolean isFound = searchTrieNode(searchTerm1, trie);
+            if(isFound){
+                result.add(word);
+            }
+        }
         return result;
     }
 
