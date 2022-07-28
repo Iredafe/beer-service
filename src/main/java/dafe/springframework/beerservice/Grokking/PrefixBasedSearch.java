@@ -63,6 +63,12 @@ public class PrefixBasedSearch {
                 }else{
                     dictionary.get(indexKey).add(word);
                 }
+            }
+        }
+
+        Set<String> result = new HashSet<>();
+        for(String key : dictionary.keySet()){
+            if(key.startsWith(prefix)){
 
             }
         }
