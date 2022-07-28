@@ -51,6 +51,12 @@ public class PrefixBasedSearch {
         return result;
     }
 
+
+    private static List<String> prefixSearch(String[] words, String prefix){
+
+        return new ArrayList<>();
+    }
+
     public static void main(String[] args) {
         String[] input = {"burger king", "McDonald's", "super duper burger's", "subway", "pizza hut"};
         String searchTerm1 = "bur";
