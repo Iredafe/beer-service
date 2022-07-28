@@ -56,12 +56,13 @@ public class PrefixBasedSearch {
             for(int i=splitString.length-1; i>=0;i--){
                 StringBuilder sb = new StringBuilder();
                 String indexKey = sb.insert(0, ""+splitString[i]).toString().trim();
-                if(!dictionary.containsKey(indexKey)){
+                if(dictionary.containsKey(indexKey)){
+                    dictionary.get(indexKey).add(word);
+                }else{
                     Set<String> set = new HashSet<>();
                     set.add(word);
                     dictionary.put(indexKey, set);
-                }else{
-                    dictionary.get(indexKey).add(word);
+
                 }
             }
         }
@@ -72,7 +73,7 @@ public class PrefixBasedSearch {
                 result.addAll(dictionary.get(key));
             }
         }
-        return new ArrayList<>(result);
+        return result.toArray(new String[0]);
     }
 
     public static void main(String[] args) {
@@ -84,6 +85,10 @@ public class PrefixBasedSearch {
         System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm1));
         System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm2));
         System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm3));
+
+       System.out.println(prefixSearch(input, searchTerm1));
+        System.out.println(prefixSearch(input, searchTerm2));
+        System.out.println(prefixSearch(input, searchTerm3));
     }
 
 }
