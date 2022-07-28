@@ -73,7 +73,7 @@ public class PrefixBasedSearch {
                 result.addAll(dictionary.get(key));
             }
         }
-        return result.toArray(new String[0]);
+        return new ArrayList<>(result);
     }
 
     public static void main(String[] args) {
@@ -81,10 +81,10 @@ public class PrefixBasedSearch {
         String searchTerm1 = "bur";
         String searchTerm2 = "duper bur";
         String searchTerm3 = "bur duper";
-        PrefixBasedSearch ps = new PrefixBasedSearch();
-        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm1));
-        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm2));
-        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm3));
+//        PrefixBasedSearch ps = new PrefixBasedSearch();
+//        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm1));
+//        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm2));
+//        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm3));
 
        System.out.println(prefixSearch(input, searchTerm1));
         System.out.println(prefixSearch(input, searchTerm2));
