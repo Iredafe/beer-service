@@ -1,9 +1,6 @@
 package dafe.springframework.beerservice.Grokking;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class PrefixBasedSearch {
     static TrieNode trie;
@@ -53,7 +50,7 @@ public class PrefixBasedSearch {
 
 
     private static List<String> prefixSearch(String[] words, String prefix){
-
+        HashMap<String, Set<String>> dictionary = new HashMap<>();
         return new ArrayList<>();
     }
 
