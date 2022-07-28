@@ -56,9 +56,12 @@ public class PrefixBasedSearch {
             for(int i=splitString.length-1; i>=0;i--){
                 StringBuilder sb = new StringBuilder();
                 String indexKey = sb.insert(0, ""+splitString[i]).toString().trim();
-                Set<String> set = new HashSet<>();
-                set.add(word);
-                dictionary.putIfAbsent(indexKey, set);
+                if(dictionary.containsKey(indexKey)){
+                    Set<String> set = new HashSet<>();
+                    set.add(word);
+                    dictionary.put(indexKey, set);
+                }
+
             }
         }
         return new ArrayList<>();
