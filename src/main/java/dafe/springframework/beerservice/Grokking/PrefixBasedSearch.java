@@ -54,7 +54,8 @@ public class PrefixBasedSearch {
         for(String word : words){
             String [] splitString = word.split("\\s+");
             for(int i=splitString.length-1; i>=0;i--){
-
+                StringBuilder sb = new StringBuilder();
+                String indexKey = sb.insert(0, ""+splitString[i]).toString().trim();
             }
         }
         return new ArrayList<>();
