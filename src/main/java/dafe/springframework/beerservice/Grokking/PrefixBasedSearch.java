@@ -69,10 +69,10 @@ public class PrefixBasedSearch {
         Set<String> result = new HashSet<>();
         for(String key : dictionary.keySet()){
             if(key.startsWith(prefix)){
-
+                result.addAll(dictionary.get(key));
             }
         }
-        return new ArrayList<>();
+        return new ArrayList<>(result);
     }
 
     public static void main(String[] args) {
