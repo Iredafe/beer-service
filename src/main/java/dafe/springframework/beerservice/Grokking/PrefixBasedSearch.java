@@ -51,6 +51,12 @@ public class PrefixBasedSearch {
 
     private static List<String> prefixSearch(String[] words, String prefix){
         HashMap<String, Set<String>> dictionary = new HashMap<>();
+        for(String word : words){
+            String [] splitString = word.split("\\s+");
+            for(int i=splitString.length-1; i>=0;i--){
+
+            }
+        }
         return new ArrayList<>();
     }
 
