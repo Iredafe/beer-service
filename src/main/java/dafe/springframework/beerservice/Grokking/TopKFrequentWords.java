@@ -25,9 +25,9 @@ public class TopKFrequentWords {
             if(heap.size() > k){
                 heap.poll();
             }
-            while (!heap.isEmpty()){
-                result.add(0,heap.poll().getKey());
-            }
+        }
+        while (!heap.isEmpty()){
+            result.add(0,heap.poll().getKey());
         }
 
         return result;
