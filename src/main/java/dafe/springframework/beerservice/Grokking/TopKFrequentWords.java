@@ -21,11 +21,10 @@ public class TopKFrequentWords {
                         a.getValue() - b.getValue());
 
         for(Map.Entry<String, Integer> entry : map.entrySet()){
+            heap.offer(entry);
             if(heap.size() > k){
-                heap.offer(entry);
+                heap.poll();
             }
-
-
             while (!heap.isEmpty()){
                 result.add(0,heap.poll().getKey());
             }
