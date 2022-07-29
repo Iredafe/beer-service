@@ -18,6 +18,10 @@ public class TopKFrequentWords {
                 (a,b)->a.getValue() ==
                 b.getValue() ? b.getKey().compareTo(a.getKey()) :
                         a.getValue() - b.getValue());
+
+        for(Map.Entry<String, Integer> entry : map.entrySet()){
+
+        }
         List<String> result = new ArrayList<>();
 
         return result;
