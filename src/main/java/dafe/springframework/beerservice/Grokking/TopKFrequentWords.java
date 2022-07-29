@@ -1,21 +1,20 @@
 package dafe.springframework.beerservice.Grokking;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class TopKFrequentWords {
 
-    private static String getTopKFrequentWords(String[] words, int k) {
-
+    private static List<String> getTopKFrequentWords(String[] words, int k) {
         HashMap<String, Integer> map = new HashMap<>();
-
         for(String word: words){
             if(!map.containsKey(word)){
-
+                map.put(word, 1);
+            }else {
+                map.put(word, map.get(word)+1);
             }
         }
 
+        PriorityQueue<Map.Entry<String, Integer>> heap = new PriorityQueue<>();
         List<String> result = new ArrayList<>();
 
         return result;
