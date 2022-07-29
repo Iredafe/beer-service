@@ -5,6 +5,7 @@ import java.util.*;
 public class TopKFrequentWords {
 
     private static List<String> getTopKFrequentWords(String[] words, int k) {
+        List<String> result = new ArrayList<>();
         HashMap<String, Integer> map = new HashMap<>();
         for(String word: words){
             if(!map.containsKey(word)){
@@ -20,9 +21,15 @@ public class TopKFrequentWords {
                         a.getValue() - b.getValue());
 
         for(Map.Entry<String, Integer> entry : map.entrySet()){
+            if(heap.size() > k){
+                heap.offer(entry);
+            }
 
+
+            while (!heap.isEmpty()){
+                result.add(0,heap.poll().getKey());
+            }
         }
-        List<String> result = new ArrayList<>();
 
         return result;
     }
