@@ -12,6 +12,8 @@ public class TopKFrequentWords1 {
         for(String word : wordArray){
             if(!wordFrequencyMap.containsKey(word)){
                 wordFrequencyMap.put(word, 1);
+            }else{
+                wordFrequencyMap.put(word,wordFrequencyMap.get(word)+1)
             }
         }
 
