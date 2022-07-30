@@ -24,7 +24,7 @@ public class TopKFrequentWords1 {
                 heap.poll();
             }
             while(!heap.isEmpty()){
-                result.add(heap.poll().getKey());
+                result.add(0,heap.poll().getKey());
             }
         }
         return result;
