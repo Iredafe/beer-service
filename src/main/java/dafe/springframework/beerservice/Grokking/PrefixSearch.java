@@ -67,11 +67,14 @@ public class PrefixSearch {
             String [] wordsInBusinessName = stringOfBusinessName.split(" ");
            for(String wordInStringOfBusinessNames : wordsInBusinessName){
                trie.add(wordInStringOfBusinessNames, stringOfBusinessName);
-
            }
-
         }
 
+        String [] searchTermArray = searchTerm.split(" ");
+       HashSet <String> set = new HashSet<>();
+        for(String term :searchTermArray){
+
+        }
         return new ArrayList<>();
     }
 
