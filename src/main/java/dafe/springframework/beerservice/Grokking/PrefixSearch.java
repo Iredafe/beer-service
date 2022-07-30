@@ -9,7 +9,7 @@ public class PrefixSearch {
 
     static class TrieNode{
         boolean isEnd = false;
-        HashMap<Character, TrieNode> dictionary = new HashMap<>();
+        static HashMap<Character, TrieNode> dictionary = new HashMap<>();
         List<String> businessNames = new ArrayList<>();
     }
 
@@ -21,6 +21,9 @@ public class PrefixSearch {
             char [] chars = wordFromString.toCharArray();
             for(int i=0; i<chars.length; i++){
                 char character = chars[i];
+                if(trieNode.dictionary.containsKey(character)){
+
+                }
             }
         }
     }
