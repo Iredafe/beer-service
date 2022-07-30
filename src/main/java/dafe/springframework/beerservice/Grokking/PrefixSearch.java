@@ -31,6 +31,10 @@ public class PrefixSearch {
             }
         }
 
+        public List<String> get(String prefix){
+
+            return new ArrayList<>();
+        }
 
     }
 
