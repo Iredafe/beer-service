@@ -33,5 +33,6 @@ public class TopKFrequentWords1 {
     public static void main(String[] args) {
         String [] words = {"the","day","is","sunny","the","the","the","sunny","is","is"};
         int k=3;
+        System.out.println("This is the top " + k + " frequent word -> " + topKFrequentWords(words,k));
     }
 }
