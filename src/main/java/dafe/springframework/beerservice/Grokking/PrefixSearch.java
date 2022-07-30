@@ -10,6 +10,11 @@ public class PrefixSearch {
     static class TrieNode{
         boolean isEnd = false;
         HashMap<Character, TrieNode> dictionary = new HashMap<>();
+        List<String> businessNames = new ArrayList<>();
+    }
+
+    class Trie{
+
     }
 
 
