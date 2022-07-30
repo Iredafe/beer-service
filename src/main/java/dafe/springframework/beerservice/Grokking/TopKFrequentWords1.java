@@ -15,7 +15,7 @@ public class TopKFrequentWords1 {
         }
 
         PriorityQueue<Map.Entry<String,Integer>> heap = new PriorityQueue<>((a,b) -> a.getValue()==b.getValue()
-                ? a.getKey().compareTo(b.getKey()) : a.getValue()-b.getValue());
+                ? b.getKey().compareTo(a.getKey()) : a.getValue()-b.getValue());
 
         for(Map.Entry entry : wordFrequencyMap.entrySet()){
             heap.offer(entry);
@@ -23,9 +23,9 @@ public class TopKFrequentWords1 {
             if(heap.size() > k){
                 heap.poll();
             }
-            while(!heap.isEmpty()){
-                result.add(0,heap.poll().getKey());
-            }
+        }
+        while(!heap.isEmpty()){
+            result.add(0,heap.poll().getKey());
         }
         return result;
     }
