@@ -59,7 +59,7 @@ public class PrefixSearch {
     }
 
 
-    private static List<String> getRelatedString(List<String> words, String prefix){
+    private static List<String> getRelatedString(List<String> businessNames, String searchTerm){
 
         return new ArrayList<>();
     }
