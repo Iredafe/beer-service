@@ -14,7 +14,11 @@ public class PrefixSearch {
     }
 
     class Trie{
+        TrieNode root = new TrieNode();
 
+        public void add(String wordFromString, String stringFromBusinessNames){
+
+        }
     }
 
 
