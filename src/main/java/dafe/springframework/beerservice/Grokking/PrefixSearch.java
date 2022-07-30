@@ -59,12 +59,16 @@ public class PrefixSearch {
     }
 
 
-    private static List<String> getRelatedString(List<String> businessNames, String searchTerm){
+    private List<String> getRelatedString(List<String> businessNames, String searchTerm){
         if(searchTerm==null || searchTerm.length()==0) return new ArrayList<>();
 
-
+        Trie trie = new Trie();
         for(String stringOfBusinessName : businessNames){
+            String [] wordsInBusinessName = stringOfBusinessName.split(" ");
+           for(String wordInStringOfBusinessNames : wordsInBusinessName){
+               trie.add(wordInStringOfBusinessNames, stringOfBusinessName);
 
+           }
 
         }
 
