@@ -73,7 +73,9 @@ public class PrefixSearch {
         String [] searchTermArray = searchTerm.split(" ");
        HashSet <String> set = new HashSet<>();
         for(String term :searchTermArray){
-
+            if(set.isEmpty()){
+                set.addAll(trie.get(term));
+            }
         }
         return new ArrayList<>();
     }
