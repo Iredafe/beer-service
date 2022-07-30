@@ -8,4 +8,9 @@ public class PrefixSearch {
         boolean isEnd = false;
         HashMap<Character, TrieNode> dictionary = new HashMap<>();
     }
+
+
+    public static void main(String[] args) {
+
+    }
 }
