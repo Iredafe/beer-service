@@ -47,7 +47,13 @@ public class PrefixSearch {
         }
 
         public void dfsBackTrack(HashSet<String> set, TrieNode trieNode){
+            if(trieNode.isEnd){
+                set.addAll(trieNode.businessNames);
+            }
 
+            for(char character : trieNode.dictionary.keySet()){
+                dfsBackTrack(set,trieNode.dictionary.get(character));
+            }
         }
 
     }
