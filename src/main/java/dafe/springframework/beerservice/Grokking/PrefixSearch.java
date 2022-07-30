@@ -22,10 +22,11 @@ public class PrefixSearch {
                 char character = chars[i];
                 if(!trieNode.dictionary.containsKey(character)){
                     trieNode.dictionary.put(character, new TrieNode());
-                    if(i==chars.length-1){
-                        trieNode.isEnd = true;
-                        trieNode.businessNames.add(stringFromBusinessNames);
-                    }
+                }
+                trieNode=trieNode.dictionary.get(character);
+                if(i==chars.length-1){
+                    trieNode.isEnd = true;
+                    trieNode.businessNames.add(stringFromBusinessNames);
                 }
             }
         }
