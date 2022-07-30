@@ -1,9 +1,6 @@
 package dafe.springframework.beerservice.Grokking;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class PrefixSearch {
 
@@ -36,14 +33,15 @@ public class PrefixSearch {
             List<String> result = new ArrayList<>();
             TrieNode trieNode = root;
             char [] character = prefix.toCharArray();
-            for(char c : character){
-                if(trieNode.dictionary.containsKey(c)){
-                    trieNode = trieNode.dictionary.get(c);
-                }
-                if(trieNode == null){
-                    return
+            for(char c : character) {
+                trieNode = trieNode.dictionary.get(c);
+                if (trieNode == null) {
+                    return result;
                 }
             }
+            HashSet<String> set = new HashSet<>();
+
+
             return new ArrayList<>();
         }
 
