@@ -1,7 +1,5 @@
 package dafe.springframework.beerservice.Grokking;
 
-import ch.qos.logback.core.util.COWArrayList;
-
 import java.util.*;
 
 public class PrefixSearch {
