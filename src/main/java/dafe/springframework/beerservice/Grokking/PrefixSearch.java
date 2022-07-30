@@ -46,6 +46,10 @@ public class PrefixSearch {
             return result;
         }
 
+        public void dfsBackTrack(HashSet<String> set, TrieNode trieNode){
+
+        }
+
     }
 
 
