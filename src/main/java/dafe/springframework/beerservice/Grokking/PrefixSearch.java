@@ -32,11 +32,16 @@ public class PrefixSearch {
         }
 
         public List<String> get(String prefix){
+            if(prefix==null || prefix.length()==0) return null;
+            List<String> result = new ArrayList<>();
             TrieNode trieNode = root;
             char [] character = prefix.toCharArray();
             for(char c : character){
                 if(trieNode.dictionary.containsKey(c)){
-
+                    trieNode = trieNode.dictionary.get(c);
+                }
+                if(trieNode == null){
+                    return
                 }
             }
             return new ArrayList<>();
