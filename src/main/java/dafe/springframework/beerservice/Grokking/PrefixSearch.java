@@ -60,6 +60,13 @@ public class PrefixSearch {
 
 
     private static List<String> getRelatedString(List<String> businessNames, String searchTerm){
+        if(searchTerm==null || searchTerm.length()==0) return new ArrayList<>();
+
+
+        for(String stringOfBusinessName : businessNames){
+
+
+        }
 
         return new ArrayList<>();
     }
