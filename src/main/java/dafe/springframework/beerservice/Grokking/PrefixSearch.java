@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
+import ch.qos.logback.core.util.COWArrayList;
+
 import java.util.*;
 
 public class PrefixSearch {
@@ -61,7 +63,7 @@ public class PrefixSearch {
 
     private List<String> getRelatedString(List<String> businessNames, String searchTerm){
         if(searchTerm==null || searchTerm.length()==0) return new ArrayList<>();
-
+        List<String> result=new ArrayList<>();
         Trie trie = new Trie();
         for(String stringOfBusinessName : businessNames){
             String [] wordsInBusinessName = stringOfBusinessName.split(" ");
@@ -75,9 +77,12 @@ public class PrefixSearch {
         for(String term :searchTermArray){
             if(set.isEmpty()){
                 set.addAll(trie.get(term));
+            }else {
+                set.retainAll(trie.get(term));
             }
         }
-        return new ArrayList<>();
+        result.addAll(set);
+        return result;
     }
 
     public static void main(String[] args) {
