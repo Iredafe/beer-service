@@ -1,6 +1,8 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class PrefixSearch {
 
@@ -10,7 +12,20 @@ public class PrefixSearch {
     }
 
 
+    private static List<String> getRelatedString(List<String> words, String prefix){
+
+        return new ArrayList<>();
+    }
+
     public static void main(String[] args) {
 
+        String[] input = {"burger king", "McDonald's", "super duper burger's", "subway", "pizza hut"};
+        String searchTerm1 = "bur";
+        String searchTerm2 = "duper bur";
+        String searchTerm3 = "bur duper";
+        PrefixSearch ps = new PrefixSearch();
+        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm1));
+        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm2));
+        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm3));
     }
 }
