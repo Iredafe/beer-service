@@ -9,7 +9,11 @@ public class TopKFrequentWords1 {
 
         HashMap<String , Integer> wordFrequencyMap = new HashMap<>();
         List<String> result = new ArrayList<>();
-
+        for(String word : wordArray){
+            if(!wordFrequencyMap.containsKey(word)){
+                wordFrequencyMap.put(word, 1);
+            }
+        }
 
         return result;
     }
