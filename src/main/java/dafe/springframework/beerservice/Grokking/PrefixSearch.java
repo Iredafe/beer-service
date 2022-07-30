@@ -17,7 +17,11 @@ public class PrefixSearch {
         TrieNode root = new TrieNode();
 
         public void add(String wordFromString, String stringFromBusinessNames){
-
+            TrieNode trieNode = root;
+            char [] chars = wordFromString.toCharArray();
+            for(int i=0; i<chars.length; i++){
+                char character = chars[i];
+            }
         }
     }
 
