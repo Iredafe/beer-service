@@ -32,7 +32,13 @@ public class PrefixSearch {
         }
 
         public List<String> get(String prefix){
+            TrieNode trieNode = root;
+            char [] character = prefix.toCharArray();
+            for(char c : character){
+                if(trieNode.dictionary.containsKey(c)){
 
+                }
+            }
             return new ArrayList<>();
         }
 
