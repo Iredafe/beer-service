@@ -40,9 +40,10 @@ public class PrefixSearch {
                 }
             }
             HashSet<String> set = new HashSet<>();
+            dfsBackTrack(set, trieNode);
+            result.addAll(set);
 
-
-            return new ArrayList<>();
+            return result;
         }
 
     }
