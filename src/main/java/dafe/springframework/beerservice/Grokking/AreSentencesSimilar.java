@@ -2,6 +2,10 @@ package dafe.springframework.beerservice.Grokking;
 
 public class AreSentencesSimilar {
 
+    private static boolean areSentencesSimilar(){
+
+        return false;
+    }
 
     public static void main(String[] args) {
        String [] sentence1 = {"great","acting","skills"};
