@@ -11,6 +11,7 @@ public class AreSentencesSimilar {
                 map.put(similarPair[0], similarPair[1]);
         }
 
+
         return false;
     }
 
