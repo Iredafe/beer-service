@@ -7,7 +7,10 @@ public class AreSentencesSimilar {
     private static boolean areSentencesSimilar(String sentence1, String sentence2, String [][] similarPairs){
         HashMap<String, String> map = new HashMap<>();
 
-        for (int i=0; i<)
+        for (String [] similarPair:  similarPairs){
+                map.put(similarPair[0], similarPair[1]);
+            }
+
         return false;
     }
 
