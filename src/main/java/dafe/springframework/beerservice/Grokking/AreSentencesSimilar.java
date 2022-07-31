@@ -4,9 +4,9 @@ import java.util.HashMap;
 
 public class AreSentencesSimilar {
 
-    private static boolean areSentencesSimilar(String sentence1, String sentence2, String [][] similarPairs){
+    private static boolean areSentencesSimilar(String [] sentence1, String [] sentence2, String [][] similarPairs){
         HashMap<String, String> map = new HashMap<>();
-
+        if(sentence1.length!=sentence2.length) return false;
         for (String [] similarPair:  similarPairs){
                 map.put(similarPair[0], similarPair[1]);
         }
