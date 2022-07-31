@@ -9,7 +9,7 @@ public class AreSentencesSimilar {
 
         for (String [] similarPair:  similarPairs){
                 map.put(similarPair[0], similarPair[1]);
-            }
+        }
 
         return false;
     }
