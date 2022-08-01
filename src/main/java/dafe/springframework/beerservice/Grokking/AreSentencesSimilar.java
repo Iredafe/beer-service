@@ -1,29 +1,19 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class AreSentencesSimilar {
 
     private static boolean areSentencesSimilar(String [] sentence1, String [] sentence2, String [][] similarPairs){
-        HashMap<String, String> map = new HashMap<>();
+        HashMap<String, HashSet<String>> map = new HashMap<>();
         if(sentence1.length!=sentence2.length) return false;
-        for (String [] similarPair:  similarPairs){
-                map.put(similarPair[0], similarPair[1]);
+
+        for(String [] similarPair : similarPairs){
+
         }
 
-        for(int i=0; i<sentence1.length; i++){
-            String string1Key = sentence1[i];
-            if(map.containsKey(string1Key)){
-               String string1Value = map.get(string1Key);
-               if(string1Value == sentence2[i]){
-                   continue;
-               }else{
-                   return false;
-               }
-            } else if)(){
 
-            }
-        }
 
 
         return false;
