@@ -16,6 +16,10 @@ public class AreSentencesSimilar {
             map.get(similarPair[1]).add(similarPair[0]);
         }
 
+        for(int i=0; i< sentence1.length; i++){
+            if(sentence1[i].equals(sentence2[i])) continue;
+            if(!map.get(sentence1[i]).contains(sentence2[i])) return false;
+        }
 
 
 
