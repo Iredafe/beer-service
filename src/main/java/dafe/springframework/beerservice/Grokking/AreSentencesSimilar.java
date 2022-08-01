@@ -12,8 +12,8 @@ public class AreSentencesSimilar {
         for(String [] similarPair : similarPairs){
             map.putIfAbsent(similarPair[0], new HashSet<>());
             map.putIfAbsent(similarPair[1], new HashSet<>());
-            map.get(similarPair[0]).add(sentence1[1]);
-            map.get(similarPair[1]).add(sentence1[0]);
+            map.get(similarPair[0]).add(similarPair[1]);
+            map.get(similarPair[1]).add(similarPair[0]);
         }
 
 
