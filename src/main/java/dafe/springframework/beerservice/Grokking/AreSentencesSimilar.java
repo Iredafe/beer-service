@@ -13,9 +13,15 @@ public class AreSentencesSimilar {
 
         for(int i=0; i<sentence1.length; i++){
             String string1Key = sentence1[i];
-
             if(map.containsKey(string1Key)){
                String string1Value = map.get(string1Key);
+               if(string1Value == sentence2[i]){
+                   continue;
+               }else{
+                   return false;
+               }
+            } else if)(){
+
             }
         }
 
