@@ -10,7 +10,8 @@ public class AreSentencesSimilar {
         if(sentence1.length!=sentence2.length) return false;
 
         for(String [] similarPair : similarPairs){
-
+            map.putIfAbsent(sentence1[0], new HashSet<>());
+            map.putIfAbsent(sentence1[1], new HashSet<>());
         }
 
 
