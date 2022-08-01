@@ -11,6 +11,14 @@ public class AreSentencesSimilar {
                 map.put(similarPair[0], similarPair[1]);
         }
 
+        for(int i=0; i<sentence1.length; i++){
+            String string1Key = sentence1[i];
+
+            if(map.containsKey(string1Key)){
+               String string1Value = map.get(string1Key);
+            }
+        }
+
 
         return false;
     }
