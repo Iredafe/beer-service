@@ -27,6 +27,9 @@ public class AreSentencesSimilar {
     public static void main(String[] args) {
        String [] sentence1 = {"great","acting","skills"};
         String [] sentence2 = {"fine","drama","talent"};
-        String [][] similarPairs = {{"great","good"},{"fine","good"},{"drama","acting"},{"skills","talent"}};
+        String [][] similarPairs = {{"great","fine"},{"drama","acting"},{"skills","talent"}};
+
+
+        System.out.println("These sentences are similar " + areSentencesSimilar(sentence1, sentence2, similarPairs));
     }
 }
