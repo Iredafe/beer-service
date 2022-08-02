@@ -30,10 +30,10 @@ public class NumberOfIslands {
         }
 
 
-        private int getNumberOfIslands(int [][] matrix){
+        private static int getNumberOfIslands(int [][] matrix){
         int numberOfIslands=0;
         for(int i=0; i<matrix.length;i++){
-            for(int j=0; j<matrix[0].length){
+            for(int j=0; j<matrix[0].length;j++){
                 if(matrix[i][j]==1){
                     visitIslandsBFS(matrix, i, j);
                     numberOfIslands++;
@@ -44,24 +44,41 @@ public class NumberOfIslands {
         }
 
         private static void visitIslandsBFS(int [][] matrix, int row, int col){
-        if(matrix[row][col] == 0) return;
-        if(row<0 || row>= matrix.length || col <0 || col>=matrix[0].length) return;
 
             Queue<int []> queue = new LinkedList<>();
             queue.add((new int[]{row,col}));
+
             while (!queue.isEmpty()){
                 int [] neighbor = queue.poll();
                 int newRow = neighbor[0];
                 int newCol = neighbor[1];
-
-                visitIslandsBFS(matrix, newRow+1, col);
-                visitIslandsBFS(matrix, newRow-1, col);
-                visitIslandsBFS(matrix, newRow, col-1);
-                visitIslandsBFS(matrix, newRow, col+1);
+                if(newRow<0 || newRow>= matrix.length || newCol <0 || newCol>=matrix[0].length) continue;
+                if(matrix[newRow][newCol] == 0) continue;
+                matrix[newRow][newCol]=0;
+                queue.add(new int[]{newRow+1, newCol});
+                queue.add(new int[]{newRow-1, newCol});
+                queue.add(new int[]{newRow, newCol-1});
+                queue.add(new int[]{newRow, newCol+1});
             }
         }
     public static void main(String[] args) {
-        System.out.println(" The total number Islands in the grid is " +countIslands(
+//        System.out.println(" The total number Islands in the dfs grid is " +countIslands(
+//                new int[][] {
+//                        { 0, 1, 1, 1, 0 },
+//                        { 0, 0, 0, 1, 1 },
+//                        { 0, 1, 1, 1, 0 },
+//                        { 0, 1, 1, 0, 0 },
+//                        { 0, 0, 0, 0, 0 }
+//                }));
+//        System.out.println( "The total number Islands in the dfs grid is " +countIslands(
+//                new int[][] {
+//                        { 1, 1, 1, 0, 0 },
+//                        { 0, 1, 0, 0, 1 },
+//                        { 0, 0, 1, 1, 0 },
+//                        { 0, 0, 1, 0, 0 },
+//                        { 0, 0, 1, 0, 0 }
+//                }));
+    System.out.println(" The total number Islands in the bfs grid is " +getNumberOfIslands(
                 new int[][] {
                         { 0, 1, 1, 1, 0 },
                         { 0, 0, 0, 1, 1 },
@@ -69,7 +86,7 @@ public class NumberOfIslands {
                         { 0, 1, 1, 0, 0 },
                         { 0, 0, 0, 0, 0 }
                 }));
-        System.out.println( "The total number Islands in the grid is " +countIslands(
+        System.out.println( "The total number Islands in the bfs grid is " +getNumberOfIslands(
                 new int[][] {
                         { 1, 1, 1, 0, 0 },
                         { 0, 1, 0, 0, 1 },
