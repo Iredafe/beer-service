@@ -8,7 +8,9 @@ public class NumberOfIslands {
 
         for(int row=0; row<rowLength; row++) {
             for (int col = 0; col < colLength; col++) {
-
+                if(grid[row][col]==1){
+                    visitIslands(grid,row,col);
+                    totalIslands++;
             }
         }
         return 0;
