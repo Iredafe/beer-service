@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class NumberOfIslands {
 
     private static int countIslands(int [][] grid) {
@@ -43,6 +46,9 @@ public class NumberOfIslands {
         private static void visitIslandsBFS(int [][] matrix, int row, int col){
         if(matrix[row][col] == 0) return;
         if(row<0 || row>= matrix.length || col <0 || col>=matrix[0].length) return;
+
+            Queue<int []> queue = new LinkedList<>();
+            queue.add((new int[]{row,col}));
         }
     public static void main(String[] args) {
         System.out.println(" The total number Islands in the grid is " +countIslands(
