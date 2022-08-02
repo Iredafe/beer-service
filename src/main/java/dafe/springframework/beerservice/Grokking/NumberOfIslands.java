@@ -18,7 +18,12 @@ public class NumberOfIslands {
     }
         private static void visitIslands(int [][] matrix, int row, int col){
             if(row<0||row>= matrix.length||col<0||col>= matrix[0].length) return;
-            if(matrix[row][col] == 0) continue;
+            if(matrix[row][col] == 0) return;
+            matrix[row][col]=0;
+            visitIslands(matrix, row+1, col);
+            visitIslands(matrix, row-1,col);
+            visitIslands(matrix, row, col-1);
+            visitIslands(matrix, row, col+1);
         }
 
     public static void main(String[] args) {
@@ -40,4 +45,4 @@ public class NumberOfIslands {
                 }));
     }
     }
-}
+
