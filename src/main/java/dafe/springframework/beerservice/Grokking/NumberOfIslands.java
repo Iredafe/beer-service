@@ -33,11 +33,15 @@ public class NumberOfIslands {
             for(int j=0; j<matrix[0].length){
                 if(matrix[i][j]==1){
                     visitIslandsBFS(matrix, i, j);
+                    numberOfIslands++;
                 }
             }
         }
-
         return numberOfIslands;
+        }
+
+        private static void visitIslandsBFS(int [][] matrix, int row, int col){
+        if(matrix[row][col] == 0) return;
         }
     public static void main(String[] args) {
         System.out.println(" The total number Islands in the grid is " +countIslands(
