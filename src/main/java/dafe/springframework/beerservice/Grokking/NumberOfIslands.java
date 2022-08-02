@@ -11,6 +11,14 @@ public class NumberOfIslands {
                         { 0, 1, 1, 0, 0 },
                         { 0, 0, 0, 0, 0 }
                 }));
-
+        System.out.println( "The total number Islands in the grid is " +countIslands(
+                new int[][] {
+                        { 1, 1, 1, 0, 0 },
+                        { 0, 1, 0, 0, 1 },
+                        { 0, 0, 1, 1, 0 },
+                        { 0, 0, 1, 0, 0 },
+                        { 0, 0, 1, 0, 0 }
+                }));
+    }
     }
 }
