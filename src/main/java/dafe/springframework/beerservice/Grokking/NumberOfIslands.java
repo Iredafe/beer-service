@@ -27,7 +27,15 @@ public class NumberOfIslands {
         }
 
 
-        private int getNumberOfIslands(int matrix){
+        private int getNumberOfIslands(int [][] matrix){
+        int numberOfIslands=0;
+        for(int i=0; i<matrix.length;i++){
+            for(int j=0; j<matrix[0].length){
+                if(matrix[i][j]==1){
+                    visitIslandsBFS(matrix, i, j);
+                }
+            }
+        }
 
         return numberOfIslands;
         }
