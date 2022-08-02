@@ -49,6 +49,16 @@ public class NumberOfIslands {
 
             Queue<int []> queue = new LinkedList<>();
             queue.add((new int[]{row,col}));
+            while (!queue.isEmpty()){
+                int [] neighbor = queue.poll();
+                int newRow = neighbor[0];
+                int newCol = neighbor[1];
+
+                visitIslandsBFS(matrix, newRow+1, col);
+                visitIslandsBFS(matrix, newRow-1, col);
+                visitIslandsBFS(matrix, newRow, col-1);
+                visitIslandsBFS(matrix, newRow, col+1);
+            }
         }
     public static void main(String[] args) {
         System.out.println(" The total number Islands in the grid is " +countIslands(
