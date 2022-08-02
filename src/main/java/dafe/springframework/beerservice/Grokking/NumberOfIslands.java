@@ -3,7 +3,14 @@ package dafe.springframework.beerservice.Grokking;
 public class NumberOfIslands {
 
     private static int countIslands(int [][] grid) {
+        int rowLength = grid.length;
+        int colLength = grid[0].length;
 
+        for(int row=0; row<rowLength; row++) {
+            for (int col = 0; col < colLength; col++) {
+
+            }
+        }
         return 0;
     }
 
