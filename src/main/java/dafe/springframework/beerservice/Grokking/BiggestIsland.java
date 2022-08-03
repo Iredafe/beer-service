@@ -27,4 +27,16 @@ public class BiggestIsland {
         }
         return biggestIsland;
     }
+
+
+    private static int visitIslandDFS(int [][] matrix, int row, int col){
+        int area=1;
+
+        if(row<0|| row>=matrix.length || col <0 || col >=matrix[0].length){
+            return 0;
+        }
+        if(matrix[row][col] == 0) return 0;
+
+        matrix[row][col] =0;
+    }
 }
