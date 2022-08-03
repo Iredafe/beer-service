@@ -1,6 +1,14 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.Arrays;
+
+
 public class FloodFill {
+
+    private static int[][] floodFill(int [][] matrix, int i, int j, int[] startPosition){
+
+        return matrix;
+    }
 
     public static void main(String[] args) {
         System.out.println(Arrays.deepToString(floodFill(
