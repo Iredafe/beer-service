@@ -13,4 +13,8 @@ public class BiggestIsland {
                         { 0, 0, 1, 0, 0 }
                 }));
     }
+
+    private static int maxAreaOfIsland(int[][] matrix) {
+        return 0;
+    }
 }
