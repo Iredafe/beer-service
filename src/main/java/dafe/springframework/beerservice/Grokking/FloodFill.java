@@ -5,8 +5,10 @@ import java.util.Arrays;
 
 public class FloodFill {
 
-    private static int[][] floodFill(int [][] matrix, int i, int j, int[] startPosition){
-
+    private static int[][] floodFill(int [][] matrix, int i, int j, int[] startPosition, int oldColor, int newColor){
+        if(matrix[i][j]==oldColor){
+            fillDFS();
+        }
         return matrix;
     }
 
