@@ -5,11 +5,19 @@ import java.util.Arrays;
 
 public class FloodFill {
 
-    private static int[][] floodFill(int [][] matrix, int i, int j, int[] startPosition, int oldColor, int newColor){
-        if(matrix[i][j]==oldColor){
-            fillDFS();
+    private static int[][] floodFill(int [][] matrix, int i, int j, int newColor){
+        if(matrix[i][j]!= newColor){
+            fillDFS(matrix, i, j, matrix[i][j], newColor);
         }
         return matrix;
+    }
+
+    private static void fillDFS(int [][] matrix, int i, int j, int oldColor, int newColor){
+
+        if(i<0 || i>=matrix.length || j<0 || j>=matrix[0].length){
+
+        }
+
     }
 
     public static void main(String[] args) {
