@@ -15,6 +15,16 @@ public class BiggestIsland {
     }
 
     private static int maxAreaOfIsland(int[][] matrix) {
-        return 0;
+
+        int biggestIsland=0;
+
+        for(int i=0; i<matrix.length; i++){
+            for (int j=0; j<matrix[0].length; j++){
+                if(matrix[i][j]==1){
+                    biggestIsland=Math.max(biggestIsland, visitIslandDFS(matrix, i,j));
+                }
+            }
+        }
+        return biggestIsland;
     }
 }
