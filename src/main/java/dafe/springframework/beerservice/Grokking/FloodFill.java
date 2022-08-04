@@ -37,7 +37,7 @@ public class FloodFill {
                         { 0, 0, 0, 0, 0 }
                 }, 1, 3, 2)));
 
-        System.out.println(Arrays.deepToString(floodFill(
+        System.out.println("This is the new array " +Arrays.deepToString(floodFill(
                 new int[][] {
                         { 0, 0, 0, 0, 0 },
                         { 0, 0, 0, 0, 0 },
