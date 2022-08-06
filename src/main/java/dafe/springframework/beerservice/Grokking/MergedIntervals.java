@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MergedIntervals {
 
-    class Interval{
+   static class Interval{
         int start;
         int end;
 
