@@ -37,7 +37,15 @@ public class MergedIntervals {
         return mergedIntervals;
     }
 
+    private static int[][] mergeIntervals(int[][] intervals){
+
+       return new int[][]{};
+    }
+
     public static void main(String[] args) {
+
+
+        System.out.println("merge interval arrays : " + mergeIntervals());
         List<Interval> input = new ArrayList<Interval>();
         input.add(new Interval(1, 4));
         input.add(new Interval(2, 5));
