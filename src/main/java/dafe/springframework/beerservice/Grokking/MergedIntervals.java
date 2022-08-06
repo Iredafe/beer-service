@@ -38,7 +38,11 @@ public class MergedIntervals {
     }
 
     private static int[][] mergeIntervals(int[][] intervals){
+        List<int[]> listOfIntervals = new LinkedList<>();
 
+        for(int[] interval : intervals){
+
+        }
        return new int[][]{};
     }
 
