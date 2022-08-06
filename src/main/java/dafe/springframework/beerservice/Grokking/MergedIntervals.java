@@ -25,4 +25,8 @@ public class MergedIntervals {
             System.out.print("[" + interval.start + "," + interval.end + "] ");
         System.out.println();
     }
+
+    private static List<Interval> merge(List<Interval> input) {
+       return new ArrayList<>();
+    }
 }
