@@ -43,9 +43,9 @@ public class MergedIntervals {
     }
 
     public static void main(String[] args) {
-        int [][] input = {{1,3},{2,6},{8,10},{15,18}};
+        int [][] intervalInput = {{1,3},{2,6},{8,10},{15,18}};
 
-        System.out.println("merge interval arrays : " + mergeIntervals(input));
+        System.out.println("merge interval arrays : " + mergeIntervals(intervalInput));
         List<Interval> input = new ArrayList<Interval>();
         input.add(new Interval(1, 4));
         input.add(new Interval(2, 5));
