@@ -1,8 +1,6 @@
 package dafe.springframework.beerservice.Grokking;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class MergedIntervals {
 
@@ -17,8 +15,14 @@ public class MergedIntervals {
     }
 
     private static List<Interval> merge(List<Interval> input) {
-
+        if(input.size() <2) return input;
        List<Interval> mergedIntervals = new LinkedList<>();
+        Collections.sort(input,(a,b)-> Integer.compare(a.start,b.start));
+        Iterator<Interval> intervalIterator = input.iterator();
+        Interval interval = intervalIterator.next();
+        int start = interval.start;
+        int end = interval.end;
+
         return new ArrayList<>();
     }
 
