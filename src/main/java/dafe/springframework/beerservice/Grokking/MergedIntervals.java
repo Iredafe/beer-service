@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MergedIntervals {
@@ -13,6 +14,12 @@ public class MergedIntervals {
             this.start=start;
             this.end = end;
         }
+    }
+
+    private static List<Interval> merge(List<Interval> input) {
+
+       List<Interval> mergedIntervals = new LinkedList<>();
+        return new ArrayList<>();
     }
 
     public static void main(String[] args) {
@@ -42,9 +49,5 @@ public class MergedIntervals {
         for (Interval interval : merge(input))
             System.out.print("[" + interval.start + "," + interval.end + "] ");
         System.out.println();
-    }
-
-    private static List<Interval> merge(List<Interval> input) {
-       return new ArrayList<>();
     }
 }
