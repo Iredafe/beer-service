@@ -42,16 +42,18 @@ public class MergedIntervals {
         Arrays.sort(intervals,(a,b)->Integer.compare(a[0], b[0]));
         for(int[] interval : intervals){
             if(listOfIntervals.isEmpty() || listOfIntervals.getLast()[1] < interval[0]){
-                listOfIntervals.getLast()[1] = interval[1];
+                listOfIntervals.add(interval);
+            }else{
+                listOfIntervals.getLast()[1] = Math.max(listOfIntervals.getLast()[1], interval[1]);
             }
         }
-       return new int[][]{};
+       return listOfIntervals.toArray(new int[listOfIntervals.size()][]);
     }
 
     public static void main(String[] args) {
         int [][] intervalInput = {{1,3},{2,6},{8,10},{15,18}};
 
-        System.out.println("merge interval arrays : " + mergeIntervals(intervalInput));
+        System.out.println("merge interval arrays : " + Arrays.deepToString(mergeIntervals(intervalInput)));
         List<Interval> input = new ArrayList<Interval>();
         input.add(new Interval(1, 4));
         input.add(new Interval(2, 5));
