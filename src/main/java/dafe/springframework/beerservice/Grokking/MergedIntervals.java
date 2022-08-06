@@ -38,10 +38,12 @@ public class MergedIntervals {
     }
 
     private static int[][] mergeIntervals(int[][] intervals){
-        List<int[]> listOfIntervals = new LinkedList<>();
-
+        LinkedList<int[]> listOfIntervals = new LinkedList<>();
+        Arrays.sort(intervals,(a,b)->Integer.compare(a[0], b[0]));
         for(int[] interval : intervals){
-
+            if(listOfIntervals.isEmpty() || listOfIntervals.getLast()[1] < interval[0]){
+                listOfIntervals.getLast()[1] = interval[1];
+            }
         }
        return new int[][]{};
     }
