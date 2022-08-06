@@ -23,7 +23,18 @@ public class MergedIntervals {
         int start = interval.start;
         int end = interval.end;
 
-        return new ArrayList<>();
+        while (intervalIterator.hasNext()){
+            interval = intervalIterator.next();
+            if(interval.start<=end){
+                end = Math.max(interval.end, end);
+            }else {
+                mergedIntervals.add(new Interval(start,end));
+                start=interval.start;
+                end=interval.end;
+            }
+        }
+        mergedIntervals.add(new Interval(start,end));
+        return mergedIntervals;
     }
 
     public static void main(String[] args) {
