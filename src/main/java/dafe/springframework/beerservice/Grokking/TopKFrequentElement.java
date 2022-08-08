@@ -10,10 +10,10 @@ public class TopKFrequentElement {
         for(int number : array){
         numberFrequencyMap.put(number, numberFrequencyMap.getOrDefault(number,0)+1);
         }
-        PriorityQueue<HashMap> heap= new PriorityQueue<>((num1, num2)->numberFrequencyMap.get(num1)- numberFrequencyMap.get(num2));
+        PriorityQueue<Integer> heap= new PriorityQueue<>((num1, num2)->numberFrequencyMap.get(num1)- numberFrequencyMap.get(num2));
 
         for(int element : numberFrequencyMap.keySet()){
-
+            heap.add(element);
         }
         return new int[]{};
     }
