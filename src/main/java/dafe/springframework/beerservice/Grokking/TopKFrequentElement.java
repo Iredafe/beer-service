@@ -6,12 +6,15 @@ import java.util.PriorityQueue;
 public class TopKFrequentElement {
 
     private static int[] topKFrequentElement(int [] array, int k){
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> numberFrequencyMap = new HashMap<>();
         for(int number : array){
-        map.put(number, map.getOrDefault(number,0)+1);
+        numberFrequencyMap.put(number, numberFrequencyMap.getOrDefault(number,0)+1);
         }
+        PriorityQueue<HashMap> heap= new PriorityQueue<>((num1, num2)->numberFrequencyMap.get(num1)- numberFrequencyMap.get(num2));
 
-        PriorityQueue<HashMap> heap = new PriorityQueue<>();
+        for(int element : numberFrequencyMap.keySet()){
+
+        }
         return new int[]{};
     }
 
