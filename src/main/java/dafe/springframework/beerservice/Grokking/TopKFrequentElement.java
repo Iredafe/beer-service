@@ -6,6 +6,9 @@ public class TopKFrequentElement {
 
     private static int[] topKFrequentElement(int [] array, int k){
         HashMap<Integer, Integer> map = new HashMap<>();
+        for(int number : array){
+        map.put(number, map.getOrDefault(number,0)+1);
+        }
         return new int[]{};
     }
 
