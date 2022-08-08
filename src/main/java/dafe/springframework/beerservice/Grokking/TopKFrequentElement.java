@@ -14,7 +14,11 @@ public class TopKFrequentElement {
 
         for(int element : numberFrequencyMap.keySet()){
             heap.add(element);
+            if(heap.size() > k){
+                heap.poll();
+            }
         }
+        int [] result = new int [k];
         return new int[]{};
     }
 
