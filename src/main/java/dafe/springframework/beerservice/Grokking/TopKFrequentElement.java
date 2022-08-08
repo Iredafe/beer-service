@@ -1,9 +1,11 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.HashMap;
+
 public class TopKFrequentElement {
 
     private static int[] topKFrequentElement(int [] array, int k){
-
+        HashMap<Integer, Integer> map = new HashMap<>();
         return new int[]{};
     }
 
