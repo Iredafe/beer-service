@@ -19,7 +19,10 @@ public class TopKFrequentElement {
             }
         }
         int [] result = new int [k];
-        return new int[]{};
+        for(int i=k; i>0; i--){
+            result[i]=heap.poll();
+        }
+        return result;
     }
 
     public static void main(String[] args) {
