@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.HashMap;
+import java.util.PriorityQueue;
 
 public class TopKFrequentElement {
 
@@ -9,6 +10,8 @@ public class TopKFrequentElement {
         for(int number : array){
         map.put(number, map.getOrDefault(number,0)+1);
         }
+
+        PriorityQueue<HashMap> heap = new PriorityQueue<>();
         return new int[]{};
     }
 
