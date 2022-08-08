@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
@@ -19,7 +20,7 @@ public class TopKFrequentElement {
             }
         }
         int [] result = new int [k];
-        for(int i=k; i>0; i--){
+        for(int i=k-1; i>=0; i--){
             result[i]=heap.poll();
         }
         return result;
@@ -28,5 +29,7 @@ public class TopKFrequentElement {
     public static void main(String[] args) {
         int [] array = {1,1,1,2,2,3};
         int k = 3;
+
+        System.out.println("The top k element is : " + Arrays.toString(topKFrequentElement(array,k)));
     }
 }
