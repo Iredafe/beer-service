@@ -78,11 +78,13 @@ public class PrefixBasedSearch {
 
     private List<String> search(String [] businessNames, String searchTerm){
 
+        List<String> result = new ArrayList<>();
         for(String businessName : businessNames){
             if(businessName.contains(searchTerm)){
-
+            result.add(businessName);
             }
         }
+        return result;
     }
 
     public static void main(String[] args) {
@@ -98,6 +100,10 @@ public class PrefixBasedSearch {
        System.out.println(prefixSearch(input, searchTerm1));
         System.out.println(prefixSearch(input, searchTerm2));
         System.out.println(prefixSearch(input, searchTerm3));
+
+        System.out.println(search(input, searchTerm1));
+        System.out.println(search(input, searchTerm2));
+        System.out.println(search(input, searchTerm3));
     }
 
 }
