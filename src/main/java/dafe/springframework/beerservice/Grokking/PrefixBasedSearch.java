@@ -76,7 +76,7 @@ public class PrefixBasedSearch {
         return new ArrayList<>(result);
     }
 
-    private List<String> search(String [] businessNames, String searchTerm){
+    private static List<String> search(String [] businessNames, String searchTerm){
 
         List<String> result = new ArrayList<>();
         for(String businessName : businessNames){
@@ -92,14 +92,14 @@ public class PrefixBasedSearch {
         String searchTerm1 = "bur";
         String searchTerm2 = "duper bur";
         String searchTerm3 = "bur duper";
-//        PrefixBasedSearch ps = new PrefixBasedSearch();
-//        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm1));
-//        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm2));
-//        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm3));
+        PrefixBasedSearch ps = new PrefixBasedSearch();
+        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm1));
+        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm2));
+        System.out.println(ps.getRelatedString(Arrays.asList(input), searchTerm3));
 
-       System.out.println(prefixSearch(input, searchTerm1));
-        System.out.println(prefixSearch(input, searchTerm2));
-        System.out.println(prefixSearch(input, searchTerm3));
+//       System.out.println(prefixSearch(input, searchTerm1));
+//        System.out.println(prefixSearch(input, searchTerm2));
+//        System.out.println(prefixSearch(input, searchTerm3));
 
         System.out.println(search(input, searchTerm1));
         System.out.println(search(input, searchTerm2));
