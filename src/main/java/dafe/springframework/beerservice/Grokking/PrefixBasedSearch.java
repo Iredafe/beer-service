@@ -76,6 +76,15 @@ public class PrefixBasedSearch {
         return new ArrayList<>(result);
     }
 
+    private List<String> search(String [] businessNames, String searchTerm){
+
+        for(String businessName : businessNames){
+            if(businessName.contains(searchTerm)){
+
+            }
+        }
+    }
+
     public static void main(String[] args) {
         String[] input = {"burger king", "McDonald's", "super duper burger's", "subway", "pizza hut"};
         String searchTerm1 = "bur";
