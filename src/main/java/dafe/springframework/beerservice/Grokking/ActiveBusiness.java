@@ -5,6 +5,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ActiveBusiness {
+ class Businesses{
+
+ }
+ enum EventTypes{
+     ADS,
+     PAGE_VIEWS,
+     PHOTO_VIEWS,
+     REVIEWS
+ }
 
     public static void main(String[] args) {
         List<Businesses> list = Arrays.asList(
