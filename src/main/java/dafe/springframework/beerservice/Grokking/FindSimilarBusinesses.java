@@ -23,6 +23,11 @@ public class FindSimilarBusinesses {
         HashMap<Integer, Set<Integer>> businessToUserMap = new HashMap<>();
         for(Reviews review : reviewsList){
             businessToUserMap.putIfAbsent(review.businessId, new HashSet<>());
+            businessToUserMap.get(review.businessId).add(review.userId);
+        }
+
+        for(Integer businessId : businessToUserMap.keySet()){
+            Set<Integer> usersOfSimilarBusiness = new HashSet<>();
         }
 
         return similarBusinessId;
