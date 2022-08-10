@@ -14,6 +14,10 @@ public class FindSimilarBusinesses {
     }
 
     private static int findSimilarBusinesses(int businessOfInterestId, List<Reviews> reviewsList){
+        int max=0;
+        int similarBusinessId=-1;
 
+
+        return similarBusinessId;
     }
 }
