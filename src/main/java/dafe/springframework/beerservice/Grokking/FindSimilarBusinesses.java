@@ -17,7 +17,7 @@ public class FindSimilarBusinesses {
     }
 
     private static int findSimilarBusinesses(int businessOfInterestId, List<Reviews> reviewsList){
-        int max=0;
+        double max=0;
         int similarBusinessId=-1;
 
         HashMap<Integer, Set<Integer>> businessToUserMap = new HashMap<>();
@@ -29,7 +29,14 @@ public class FindSimilarBusinesses {
         for(Integer businessId : businessToUserMap.keySet()){
             if(businessId!=businessOfInterestId){
                 Set<Integer> usersOfSimilarBusiness = businessToUserMap.get(businessId);
-                usersOfSimilarBusiness.retainAll()
+                usersOfSimilarBusiness.retainAll(businessToUserMap.get(businessOfInterestId));
+
+                int intersection = usersOfSimilarBusiness.size();
+                int total = businessToUserMap.get(businessId).size() +
+                        businessToUserMap.get(businessOfInterestId).size()
+                        -intersection;
+                double rate = intersection/total;
+
 
             }
 
