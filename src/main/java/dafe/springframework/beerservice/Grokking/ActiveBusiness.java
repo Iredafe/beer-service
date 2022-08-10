@@ -6,7 +6,15 @@ import java.util.List;
 
 public class ActiveBusiness {
  class Businesses{
+    String eventType;
+    int occurrence;
+    int businessId;
 
+    public Businesses(String eventType, int occurrence, int businessId){
+        this.eventType = eventType;
+        this.occurrence = occurrence;
+        this.businessId=businessId;
+    }
  }
  enum EventTypes{
      ADS,
