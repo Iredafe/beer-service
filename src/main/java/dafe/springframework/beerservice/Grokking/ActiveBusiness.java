@@ -1,8 +1,6 @@
 package dafe.springframework.beerservice.Grokking;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ActiveBusiness {
  static class Businesses{
@@ -38,7 +36,19 @@ public class ActiveBusiness {
     }
 
     private static List<Integer> findActiveBusinesses(List<Businesses> list) {
+        HashMap<EventTypes,int[]> eventCountBusinessCount = new HashMap<>();
+        HashMap<EventTypes, Integer> eventAverage = new HashMap<>();
+        Set<Integer> businessOverEvent = new HashSet<>();
 
+        for(Businesses business : list){
+            eventCountBusinessCount.putIfAbsent(business.eventType, new int[]{0,0});
+            eventCountBusinessCount.get(business.eventType)[0] += business.occurrence;
+            eventCountBusinessCount.get(business.eventType)[1]++;
+        }
+
+        for(Map.Entry<EventTypes, int[]> entry: eventCountBusinessCount.entrySet()){
+
+        }
         return new ArrayList<>();
     }
 }
