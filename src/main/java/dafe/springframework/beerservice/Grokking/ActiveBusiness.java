@@ -48,16 +48,18 @@ public class ActiveBusiness {
         }
 
         for(Map.Entry<EventTypes, int[]> entry: eventCountBusinessCount.entrySet()){
-            eventAverage.put(entry.getKey(), (float)entry.getValue()[0]/entry.getValue()[1]));
+            eventAverage.put(entry.getKey(), (float)entry.getValue()[0]/entry.getValue()[1]);
         }
 
         for(Businesses businessEvent : list){
-            if(businessEvent.occurrence < eventAverage.get(businessEvent)) continue;
+            if(businessEvent.occurrence < eventAverage.get(businessEvent.eventType)) continue;
             if(businessOverAverage.contains(businessEvent.businessId)){
                 result.add(businessEvent.businessId);
+            }else {
+                businessOverAverage.add(businessEvent.businessId);
             }
         }
 
-        return new ArrayList<>();
+        return new ArrayList<>(result);
     }
 }
