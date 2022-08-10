@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ActiveBusiness {
- class Businesses{
+ static class Businesses{
     EventTypes eventType;
     int occurrence;
     int businessId;
