@@ -37,7 +37,7 @@ public class ActiveBusiness {
 
     private static List<Integer> findActiveBusinesses(List<Businesses> list) {
         HashMap<EventTypes,int[]> eventCountBusinessCount = new HashMap<>();
-        HashMap<EventTypes, Integer> eventAverage = new HashMap<>();
+        HashMap<EventTypes, Float> eventAverage = new HashMap<>();
         Set<Integer> businessOverEvent = new HashSet<>();
 
         for(Businesses business : list){
@@ -47,8 +47,13 @@ public class ActiveBusiness {
         }
 
         for(Map.Entry<EventTypes, int[]> entry: eventCountBusinessCount.entrySet()){
-
+            eventAverage.put(entry.getKey(), (float)entry.getValue()[0]/entry.getValue()[1]));
         }
+
+        for(Businesses businessEvent : list){
+            if(businessEvent.occurrence < eventAverage.get(businessEvent)) continue;
+        }
+
         return new ArrayList<>();
     }
 }
