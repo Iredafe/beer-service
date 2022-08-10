@@ -25,18 +25,17 @@ public class RecommendBusiness {
 
     static class RecommendedBusinesses{
         static Map<Business, Boolean> visited = new HashMap<>();
-
+        static List<String> result = new ArrayList<>();
 
 
         private static List<String> getReachableBusinesses(Business startingBusiness, int distance){
-            List<String> result = new ArrayList<>();
-
-            Map<Business, Integer> businessDistanceMap = startingBusiness.getNearbyBusinesses();
-
+            visited.put(startingBusiness, true);
+            dfs(startingBusiness, distance, 0);
             return result;
         }
 
         private static void dfs(Business startingBusiness, int distance, int current){
+            Map<Business, Integer> businessDistanceMap = startingBusiness.getNearbyBusinesses();
 
         }
 
