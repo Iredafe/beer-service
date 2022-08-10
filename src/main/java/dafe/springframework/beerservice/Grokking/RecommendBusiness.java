@@ -49,4 +49,8 @@ public class RecommendBusiness {
         }
 
     }
+
+    public static void main(String[] args) {
+
+    }
 }
