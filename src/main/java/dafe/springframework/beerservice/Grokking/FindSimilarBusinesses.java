@@ -28,8 +28,8 @@ public class FindSimilarBusinesses {
 
         for(Integer businessId : businessToUserMap.keySet()){
             if(businessId!=businessOfInterestId){
-                Set<Integer> usersOfSimilarBusiness = businessToUserMap.get(businessId);
-                usersOfSimilarBusiness.retainAll(businessToUserMap.get(businessOfInterestId));
+                Set<Integer> usersOfSimilarBusiness = businessToUserMap.get(businessOfInterestId);
+                usersOfSimilarBusiness.retainAll(businessToUserMap.get(businessId));
 
                 int intersection = usersOfSimilarBusiness.size();
                 int total = businessToUserMap.get(businessId).size() +
@@ -39,7 +39,7 @@ public class FindSimilarBusinesses {
 
                 if(rate > max){
                     max=rate;
-                    similarBusinessId=businessId
+                    similarBusinessId=businessId;
                 }
             }
         }
