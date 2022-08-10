@@ -16,6 +16,9 @@ public class RecommendBusiness {
             return this.name;
         }
 
+        public Map<Business, Integer> getNearbyBusinesses(){
+            return this.nearbyBusinesses;
+        }
 
     }
 }
