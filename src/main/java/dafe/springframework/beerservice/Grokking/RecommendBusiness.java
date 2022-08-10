@@ -37,6 +37,13 @@ public class RecommendBusiness {
         private static void dfs(Business startingBusiness, int distance, int current){
             Map<Business, Integer> businessDistanceMap = startingBusiness.getNearbyBusinesses();
 
+            for(Business business : businessDistanceMap.keySet()){
+               if(visited.getOrDefault(business, false)==false
+                       && businessDistanceMap.get(business) + current <= distance){
+                   result.add(business.getName());
+               }
+            }
+
         }
 
     }
