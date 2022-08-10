@@ -37,9 +37,11 @@ public class FindSimilarBusinesses {
                         -intersection;
                 double rate = intersection/total;
 
-
+                if(rate > max){
+                    max=rate;
+                    similarBusinessId=businessId
+                }
             }
-
         }
 
         return similarBusinessId;
