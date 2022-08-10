@@ -41,6 +41,8 @@ public class RecommendBusiness {
                if(visited.getOrDefault(business, false)==false
                        && businessDistanceMap.get(business) + current <= distance){
                    result.add(business.getName());
+                   visited.put(business, true);
+                   dfs(business, distance, current+businessDistanceMap.get(business));
                }
             }
 
