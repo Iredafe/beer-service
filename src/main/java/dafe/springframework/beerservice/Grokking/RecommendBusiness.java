@@ -21,6 +21,8 @@ public class RecommendBusiness {
         }
     }
 
+    static Map<Business, Integer> businessesDistanceMap = new HashMap<>();
+
     class RecommendedBusinesses{
 
     }
