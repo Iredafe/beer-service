@@ -1,6 +1,8 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ActiveBusiness {
 
@@ -16,5 +18,10 @@ public class ActiveBusiness {
         );
 
         System.out.println(findActiveBusinesses(list));
+    }
+
+    private static List<Integer> findActiveBusinesses(List<Businesses> list) {
+
+        return new ArrayList<>();
     }
 }
