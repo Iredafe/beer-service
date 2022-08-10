@@ -27,7 +27,12 @@ public class FindSimilarBusinesses {
         }
 
         for(Integer businessId : businessToUserMap.keySet()){
-            Set<Integer> usersOfSimilarBusiness = new HashSet<>();
+            if(businessId!=businessOfInterestId){
+                Set<Integer> usersOfSimilarBusiness = businessToUserMap.get(businessId);
+                usersOfSimilarBusiness.retainAll()
+
+            }
+
         }
 
         return similarBusinessId;
