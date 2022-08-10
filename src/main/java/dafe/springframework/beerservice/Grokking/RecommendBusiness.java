@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +27,11 @@ public class RecommendBusiness {
         static Map<Business, Boolean> visited = new HashMap<>();
 
         private static List<String> getReachableBusinesses(Business startingBusiness, int distance){
+            List<String> result = new ArrayList<>();
 
+            Map<Business, Integer> businessDistanceMap = startingBusiness.getNearbyBusinesses();
+
+            return result;
         }
 
     }
