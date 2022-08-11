@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.HashMap;
+import java.util.List;
+
 public class LeaderBoard {
 
     class Entry{
@@ -15,7 +18,11 @@ public class LeaderBoard {
     }
 
     private static List<String> leaderboard(List<Entry> entryList){
+        HashMap<String, Integer> receiverFrequencyCount = new HashMap<>();
 
+        for (Entry entry: entryList){
+
+        }
     }
 
 
