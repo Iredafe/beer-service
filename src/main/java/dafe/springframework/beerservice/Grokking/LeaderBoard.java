@@ -31,7 +31,7 @@ public class LeaderBoard {
             heap.add(entry);
         }
 
-        for(int i=0; i<heap.size(); i++ ){
+        for(int i=0; i< receiverFrequencyCount.size(); i++ ){
             result.add(heap.poll().getKey());
         }
         return result;
