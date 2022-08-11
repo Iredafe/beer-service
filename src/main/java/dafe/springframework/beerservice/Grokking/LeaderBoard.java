@@ -47,5 +47,7 @@ public class LeaderBoard {
                 new Entry("dee","dafe", "come"),
                 new Entry("dafe", "pre", "love")
         );
+
+        System.out.println(leaderboard(list));
     }
 }
