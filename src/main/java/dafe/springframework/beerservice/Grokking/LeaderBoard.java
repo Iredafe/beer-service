@@ -21,8 +21,10 @@ public class LeaderBoard {
         HashMap<String, Integer> receiverFrequencyCount = new HashMap<>();
 
         for (Entry entry: entryList){
-
+            receiverFrequencyCount.put(entry.to, receiverFrequencyCount.getOrDefault(entry.to, 0)+1);
         }
+
+        return result;
     }
 
 
