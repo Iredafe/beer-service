@@ -4,7 +4,7 @@ import java.util.*;
 
 public class LeaderBoard {
 
-    class Entry{
+    static class Entry{
         String from;
         String to;
         String message;
@@ -37,5 +37,15 @@ public class LeaderBoard {
         return result;
     }
 
-
+    public static void main(String[] args) {
+        List<Entry> list = Arrays.asList(
+                new Entry("go", "pre", "hate"),
+                new Entry("dee","Elo", "come"),
+                new Entry("dee","Elo", "come"),
+                new Entry("dee","Elo", "come"),
+                new Entry("dee","pre", "come"),
+                new Entry("dee","dafe", "come"),
+                new Entry("dafe", "pre", "love")
+        );
+    }
 }
