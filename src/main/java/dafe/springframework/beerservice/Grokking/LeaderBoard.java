@@ -25,7 +25,7 @@ public class LeaderBoard {
         }
 
         PriorityQueue<Map.Entry<String, Integer>> heap = new PriorityQueue<>((a, b)->b.getValue()- a.getValue());
-        PriorityQueue<Map.Entry<String, Integer>> heap1 = new PriorityQueue<>((a, b)-> Integer.compare(b.getValue(), a.getValue()));
+       // PriorityQueue<Map.Entry<String, Integer>> heap1 = new PriorityQueue<>((a, b)-> Integer.compare(b.getValue(), a.getValue()));
 
         for(Map.Entry<String,Integer> entry : receiverFrequencyCount.entrySet()){
             heap.add(entry);
@@ -41,8 +41,8 @@ public class LeaderBoard {
         List<Entry> list = Arrays.asList(
                 new Entry("go", "pre", "hate"),
                 new Entry("dee","Elo", "come"),
-                new Entry("dee","Elo", "come"),
-                new Entry("dee","Elo", "come"),
+                new Entry("dee","Mike", "come"),
+                new Entry("dee","dafe", "come"),
                 new Entry("dee","pre", "come"),
                 new Entry("dee","dafe", "come"),
                 new Entry("dafe", "pre", "love")
