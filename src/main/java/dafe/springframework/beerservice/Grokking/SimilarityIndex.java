@@ -11,8 +11,8 @@ public class SimilarityIndex {
         Set<String> set1 = new HashSet<>();
         Set<String> set2 = new HashSet<>();
 
-        String [] bizNameArray1 = bizName1.split("\\s?");
-        String [] bizNameArray2 = bizName2.split("\\s?");
+        String [] bizNameArray1 = bizName1.replace("?","").split(" ");
+        String [] bizNameArray2 = bizName2.replace("?","").split(" ");
 
         for(String word : bizNameArray1){
             set1.add(word);
