@@ -14,6 +14,13 @@ public class SimilarityIndex {
         String [] bizNameArray1 = bizName1.split(" ");
         String [] bizNameArray2 = bizName2.split(" ");
 
+        for(String word : bizNameArray1){
+            set1.add(word);
+        }
+
+        for (String word : bizNameArray2){
+            set2.add(word);
+        }
         return jacardSimilarityIndex;
     }
     public static void main(String[] args) {
