@@ -9,6 +9,7 @@ public class SimilarityIndex {
         return jacardSimilarityIndex;
     }
     public static void main(String[] args) {
-
+        String string1="Joe's Pizza";
+        String string2 = "Sweet Joe's Pizza";
     }
 }
