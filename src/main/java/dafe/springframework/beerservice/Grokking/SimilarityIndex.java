@@ -23,8 +23,8 @@ public class SimilarityIndex {
         }
 
         set1.retainAll(set2);
-        int intersectionSize = set1.size();
-        int union = bizNameArray1.length+bizNameArray2.length-intersectionSize;
+        double intersectionSize = set1.size();
+        double union = bizNameArray1.length+bizNameArray2.length-intersectionSize;
 
         jacardSimilarityIndex= intersectionSize/union;
         return jacardSimilarityIndex;
