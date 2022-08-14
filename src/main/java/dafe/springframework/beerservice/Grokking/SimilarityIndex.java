@@ -11,5 +11,7 @@ public class SimilarityIndex {
     public static void main(String[] args) {
         String string1="Joe's Pizza";
         String string2 = "Sweet Joe's Pizza";
+
+        System.out.println("Similarity index is : " + similarityIndex(string1, string2));
     }
 }
