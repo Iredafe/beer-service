@@ -22,8 +22,11 @@ public class SimilarityIndex {
             set2.add(word);
         }
 
-        Set<String> intersection = set1.retainAll(set2);
-        Set<String> union = set1.addAll(set2);
+        set1.retainAll(set2);
+        int intersectionSize = set1.size();
+        int union = bizNameArray1.length+bizNameArray2.length-intersectionSize;
+
+        jacardSimilarityIndex= intersectionSize/union;
         return jacardSimilarityIndex;
     }
     public static void main(String[] args) {
