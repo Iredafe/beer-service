@@ -11,8 +11,8 @@ public class SimilarityIndex {
         Set<String> set1 = new HashSet<>();
         Set<String> set2 = new HashSet<>();
 
-        String [] bizNameArray1 = bizName1.split(" ");
-        String [] bizNameArray2 = bizName2.split(" ");
+        String [] bizNameArray1 = bizName1.split("\\s?");
+        String [] bizNameArray2 = bizName2.split("\\s?");
 
         for(String word : bizNameArray1){
             set1.add(word);
@@ -30,7 +30,7 @@ public class SimilarityIndex {
         return jacardSimilarityIndex;
     }
     public static void main(String[] args) {
-        String string1="Joe's Pizza";
+        String string1="Joe's? Pizza";
         String string2 = "Sweet Joe's Pizza";
 
         System.out.println("Similarity index is : " + similarityIndex(string1, string2));
