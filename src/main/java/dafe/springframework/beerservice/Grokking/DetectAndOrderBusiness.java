@@ -37,9 +37,15 @@ public class DetectAndOrderBusiness {
 
         for(Business business : businesses){
             if(business.location.equals(location) && !seen.contains(business.name)){
-
+                seen.add(business.name+business.id);
+                if(stringChainHashMap.containsKey(business.name)){
+                    stringChainHashMap.get(business.name).frequency++;
+                }else {
+                    stringChainHashMap.put(business.name, new Chain(business.name,1));
+                }
             }
         }
+
 
         return new ArrayList<>();
     }
