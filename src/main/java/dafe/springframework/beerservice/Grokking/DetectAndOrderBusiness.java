@@ -33,7 +33,7 @@ public class DetectAndOrderBusiness {
         HashSet<String> seen = new HashSet<>();
 
         for(Business business : businesses){
-            if(business.location.equals(location) && !seen.contains(business.name)){
+            if(business.location.equalsIgnoreCase(location) && !seen.contains(business.name+business.id)){
                 seen.add(business.name+business.id);
                 if(stringChainHashMap.containsKey(business.name)){
                     stringChainHashMap.get(business.name).frequency++;
@@ -46,7 +46,7 @@ public class DetectAndOrderBusiness {
         PriorityQueue<Map.Entry<String, Chain>> heap = new PriorityQueue<>((a,b)->
                         a.getValue().frequency==b.getValue().frequency ?
                         a.getKey().compareTo(b.getKey()) :
-                        b.getValue().frequency-a.getValue().frequency);
+                        a.getValue().frequency-b.getValue().frequency);
 
         List<Chain> result = new ArrayList<>();
 
@@ -69,6 +69,13 @@ public class DetectAndOrderBusiness {
        businessList.add(new Business("Church's Chicken","Surrey", "107"));
        businessList.add(new Business("HM","Surrey", "108"));
        businessList.add(new Business("HM","Surrey", "109"));
+       businessList.add(new Business("HM","Surrey", "109"));
+       businessList.add(new Business("HM","Surrey", "109"));
 
+       List<Chain> results = detectAndOrderBusiness(businessList, "surrey");
+       for (Chain result : results){
+           System.out.println("These are the chain of business " + result.name+ " : " + result.frequency
+           );
+       }
     }
 }
