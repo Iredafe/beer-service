@@ -1,5 +1,8 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DetectAndOrderBusiness {
 
     static class Business{
@@ -14,6 +17,6 @@ public class DetectAndOrderBusiness {
         }
     }
     public static void main(String[] args) {
-        Business business= new Business();
+       List<Business> businessList = new ArrayList<>();
     }
 }
