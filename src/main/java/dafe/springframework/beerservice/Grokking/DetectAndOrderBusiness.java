@@ -1,9 +1,6 @@
 package dafe.springframework.beerservice.Grokking;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class DetectAndOrderBusiness {
 
@@ -46,8 +43,20 @@ public class DetectAndOrderBusiness {
             }
         }
 
+        PriorityQueue<Map.Entry<String, Chain>> heap = new PriorityQueue<>((a,b)->
+                        a.getValue().frequency==b.getValue().frequency ?
+                        a.getKey().compareTo(b.getKey()) :
+                        b.getValue().frequency-a.getValue().frequency);
 
-        return new ArrayList<>();
+        List<Chain> result = new ArrayList<>();
+
+        for(Map.Entry<String, Chain> entry : stringChainHashMap.entrySet()){
+            heap.add(entry);
+        }
+        while(!heap.isEmpty()){
+            result.add(heap.poll().getValue());
+        }
+        return result;
     }
     public static void main(String[] args) {
        List<Business> businessList = new ArrayList<>();
