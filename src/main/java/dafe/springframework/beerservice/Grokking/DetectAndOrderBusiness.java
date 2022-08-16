@@ -1,6 +1,8 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class DetectAndOrderBusiness {
@@ -17,19 +19,23 @@ public class DetectAndOrderBusiness {
         }
     }
 
-    static class Chains{
+    static class Chain {
         String name;
         Integer frequency;
 
-        public Chains(String name, Integer frequency){
+        public Chain(String name, Integer frequency){
             this.name=name;
             this.frequency=frequency;
         }
     }
 
 
-    private static List<Chains> detectAndOrderBusiness(List<Business> businesses, String location){
+    private static List<Chain> detectAndOrderBusiness(List<Business> businesses, String location){
 
+        HashMap<String, Chain> stringChainHashMap = new HashMap<>();
+        HashSet<String> seen = new HashSet<>();
+
+        return new ArrayList<>();
     }
     public static void main(String[] args) {
        List<Business> businessList = new ArrayList<>();
