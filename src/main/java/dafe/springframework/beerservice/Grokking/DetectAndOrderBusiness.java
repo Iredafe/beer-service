@@ -35,6 +35,12 @@ public class DetectAndOrderBusiness {
         HashMap<String, Chain> stringChainHashMap = new HashMap<>();
         HashSet<String> seen = new HashSet<>();
 
+        for(Business business : businesses){
+            if(business.location.equals(location) && !seen.contains(business.name)){
+
+            }
+        }
+
         return new ArrayList<>();
     }
     public static void main(String[] args) {
