@@ -18,5 +18,15 @@ public class DetectAndOrderBusiness {
     }
     public static void main(String[] args) {
        List<Business> businessList = new ArrayList<>();
+       businessList.add(new Business("HM","Vancouver", "101"));
+       businessList.add(new Business("NIKE","Burnaby", "103"));
+       businessList.add(new Business("HM","Vancouver", "102"));
+       businessList.add(new Business("NIKE","Vancouver", "104"));
+       businessList.add(new Business("MK","Surrey", "105"));
+       businessList.add(new Business("DQ","Surrey", "106"));
+       businessList.add(new Business("Church's Chicken","Surrey", "107"));
+       businessList.add(new Business("HM","Surrey", "108"));
+       businessList.add(new Business("HM","Surrey", "109"));
+
     }
 }
