@@ -16,6 +16,16 @@ public class DetectAndOrderBusiness {
             this.id=id;
         }
     }
+
+    static class Chains{
+        String name;
+        Integer frequency;
+
+        public Chains(String name, Integer frequency){
+            this.name=name;
+            this.frequency=frequency;
+        }
+    }
     public static void main(String[] args) {
        List<Business> businessList = new ArrayList<>();
        businessList.add(new Business("HM","Vancouver", "101"));
