@@ -15,11 +15,12 @@ public class MatchTeam {
         PriorityQueue<Map.Entry<String, Queue<String>>> heap= new PriorityQueue<>((a,b)
         ->b.getValue().size()-a.getValue().size());
         heap.addAll(map.entrySet());
-
-        for(Map.Entry<String, Queue<String>> entry : map.entrySet()){
+        List<String[]> result = new ArrayList<>();
+        while (heap.size() > 1){
             Map.Entry<String,Queue<String>> entry1 = heap.poll();
             Map.Entry<String,Queue<String>> entry2 = heap.poll();
 
+            result.add(entry1.poll())
         }
 
 
