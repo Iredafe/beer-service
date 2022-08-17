@@ -1,13 +1,11 @@
 package dafe.springframework.beerservice.Grokking;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class MatchTeam {
 
     private static List<String[]> getMatchResult(String [][] users){
-
+        HashMap<String, Queue<String>> map = new HashMap<>();
         return new ArrayList<>();
     }
 
