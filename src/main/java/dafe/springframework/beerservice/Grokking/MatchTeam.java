@@ -20,11 +20,16 @@ public class MatchTeam {
             Map.Entry<String,Queue<String>> entry1 = heap.poll();
             Map.Entry<String,Queue<String>> entry2 = heap.poll();
 
-            result.add(entry1.poll())
+            result.add(new String[]{entry1.getValue().poll(), entry2.getValue().poll()});
+            if(entry1.getValue().size() > 0){
+                heap.add(entry1);
+            }
+            if(entry2.getValue().size() > 0){
+                heap.add(entry2);
+            }
         }
 
-
-        return new ArrayList<>();
+         return result;
     }
 
     public static void main(String[] args) {
