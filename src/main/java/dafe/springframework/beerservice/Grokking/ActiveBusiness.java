@@ -39,8 +39,8 @@ public class ActiveBusiness {
         HashMap<EventTypes,int[]> eventCountBusinessCount = new HashMap<>();
         HashMap<EventTypes, Float> eventAverage = new HashMap<>();
         Set<Integer> businessOverAverage = new HashSet<>();
-        Set<Integer> result = new HashSet<>();
-
+        Set<Integer> resultSet = new HashSet<>();
+        List<Integer> result =new ArrayList<>();
         for(Businesses business : list){
             eventCountBusinessCount.putIfAbsent(business.eventType, new int[]{0,0});
             eventCountBusinessCount.get(business.eventType)[0] += business.occurrence;
@@ -54,12 +54,14 @@ public class ActiveBusiness {
         for(Businesses businessEvent : list){
             if(businessEvent.occurrence < eventAverage.get(businessEvent.eventType)) continue;
             if(businessOverAverage.contains(businessEvent.businessId)){
-                result.add(businessEvent.businessId);
+                resultSet.add(businessEvent.businessId);
             }else {
                 businessOverAverage.add(businessEvent.businessId);
             }
         }
 
-        return new ArrayList<>(result);
-    }
+        result= new ArrayList<>(resultSet);
+        Collections.sort(result, Collections.reverseOrder());
+        return result;
+ }
 }
