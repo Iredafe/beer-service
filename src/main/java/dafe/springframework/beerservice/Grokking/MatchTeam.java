@@ -6,6 +6,11 @@ public class MatchTeam {
 
     private static List<String[]> getMatchResult(String [][] users){
         HashMap<String, Queue<String>> map = new HashMap<>();
+
+        for(String [] user : users){
+            map.putIfAbsent(user[1], new LinkedList<>());
+            map.get(user[1]).offer(user[0]);
+        }
         return new ArrayList<>();
     }
 
