@@ -13,5 +13,6 @@ public class HappyNumber {
 
         System.out.println(find(23));
         System.out.println(find(12));
+        System.out.println(find(12));
     }
 }

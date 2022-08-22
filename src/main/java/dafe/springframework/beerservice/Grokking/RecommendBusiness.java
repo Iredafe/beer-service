@@ -38,14 +38,13 @@ public class RecommendBusiness {
             Map<Business, Integer> businessDistanceMap = startingBusiness.getNearbyBusinesses();
 
             for(Business business : businessDistanceMap.keySet()){
-               if(visited.getOrDefault(business, false)==false
+               if(!visited.getOrDefault(business, false)
                        && businessDistanceMap.get(business) + current <= distance){
                    result.add(business.getName());
                    visited.put(business, true);
                    dfs(business, distance, current+businessDistanceMap.get(business));
                }
             }
-
         }
 
     }
