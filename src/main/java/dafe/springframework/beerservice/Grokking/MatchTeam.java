@@ -32,9 +32,14 @@ public class MatchTeam {
          return result;
     }
 
-    private static List<String[]> match (String[][] list){
-
-        return new ArrayList<>();
+    private static List<String[]> match (String[][] teamList){
+        List<String[]> result = new ArrayList<>();
+        for(int i=0; i<teamList.length; i++){
+            for(int j=0; j<teamList[i].length; j++){
+                result.add(new String[]{teamList[i][0],teamList[i][j]});
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) {
@@ -43,7 +48,10 @@ public class MatchTeam {
         String[][] users1 =  {{"Alex","Infra"},{"Kevin","Search"},{"Jill","HR"},{"Jane","Infra"},{"Justin","Search"},{"Michael","HR"}};
         String[][] _users1 =  {{"Alex","Infra"},{"Kevin","Search"},{"Jill","HR"},{"Jane","Infra"},{"Justin","Search"},{"Michael","HR"}};
         List<String[]> lst = getMatchResult(users);
-        for(String[] res : lst)
-            System.out.println(Arrays.toString(res));
+
+        for(String[] res : lst) {
+            //      System.out.println(Arrays.toString(res));
+            System.out.println(Arrays.deepToString(users));
+        }
     }
 }
