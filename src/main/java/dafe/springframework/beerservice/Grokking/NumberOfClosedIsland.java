@@ -11,7 +11,9 @@ public class NumberOfClosedIsland {
 
         for(int row = 0; row< rowLength; row++){
             for (int col = 0; col< colLength; col++){
-
+                if(matrix[row][col] == 1){
+                    dfs(matrix, row, col);
+                }
             }
         }
 
