@@ -23,7 +23,13 @@ public class NumberOfDistinctIsland {
 
     private static int findDistinctIslandsDFS(int[][] grid) {
 
+        for(int row=0; row< grid.length; row++){
+            for(int col=0; col<grid[0].length; col++){
+                if(grid[row][col] == 1 && !visited[row][col]){
 
+                }
+            }
+        }
         return 0;
     }
 }
