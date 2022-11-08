@@ -2,6 +2,16 @@ package dafe.springframework.beerservice.Grokking;
 
 public class MiddleOfLinkedList {
 
+    static class ListNode{
+        int head;
+        ListNode next;
+
+        public ListNode(int head){
+            this.head = head;
+            this.next = null;
+        }
+    }
+
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
