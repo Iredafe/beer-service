@@ -12,16 +12,23 @@ package dafe.springframework.beerservice.Grokking;
 
     private static boolean isPalindrome(LinkedListNode head){
 
-        LinkedListNode prev = null;
+        if(head==null || head.next == null) return true;
         LinkedListNode fast = head;
         LinkedListNode slow = head;
 
         while(fast!=null && fast.next!=null){
-            fast = fast.next.next;
             slow = slow.next;
+            fast = fast.next.next;
         }
 
-        LinkedListNode secondHalfNode = reverseLinkedList(slow);
+        LinkedListNode secondHalfNodeHead = reverseLinkedList(slow);
+        LinkedListNode copySecondHalfNodeHead = secondHalfNodeHead;
+
+        while(head!=null && secondHalfNodeHead!=null){
+            if(head.next!=secondHalfNodeHead.next){
+                break;
+            }
+        }
         return false;
     }
 
