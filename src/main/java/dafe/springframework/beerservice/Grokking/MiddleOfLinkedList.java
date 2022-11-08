@@ -1,17 +1,21 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.List;
+
+ class ListNode{
+    ListNode next;
+    int value;
+
+    public ListNode(int value){
+        this.value = value;
+    }
+}
 public class MiddleOfLinkedList {
 
-    static class ListNode{
-        int head;
-        ListNode next;
+    private static ListNode findMiddle(ListNode node){
 
-        public ListNode(int head){
-            this.head = head;
-            this.next = null;
-        }
+        return null;
     }
-
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
