@@ -28,11 +28,17 @@ package dafe.springframework.beerservice.Grokking;
             if(head.next!=secondHalfNodeHead.next){
                 break;
             }
+            head = head.next;
+            secondHalfNodeHead = secondHalfNodeHead.next;
         }
         return false;
     }
 
-    public static void main(String[] args) {
+     private static LinkedListNode reverseLinkedList(LinkedListNode slow) {
+        return null;
+     }
+
+     public static void main(String[] args) {
         LinkedListNode head = new LinkedListNode(2);
         head.next = new LinkedListNode(4);
         head.next.next = new LinkedListNode(6);
