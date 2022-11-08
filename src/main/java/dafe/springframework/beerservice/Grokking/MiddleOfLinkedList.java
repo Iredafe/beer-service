@@ -13,8 +13,15 @@ import java.util.List;
 public class MiddleOfLinkedList {
 
     private static ListNode findMiddle(ListNode node){
+        ListNode fastPointer = node;
+        ListNode slowPointer = node;
 
-        return null;
+        while (fastPointer!= null && fastPointer.next!=null){
+            fastPointer = fastPointer.next.next;
+            slowPointer= slowPointer.next;
+        }
+
+        return slowPointer;
     }
 
     public static void main(String[] args) {
