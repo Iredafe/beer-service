@@ -38,7 +38,16 @@ package dafe.springframework.beerservice.Grokking;
     }
 
      private static LinkedListNode reverseLinkedList(LinkedListNode slow) {
-        return null;
+        LinkedListNode current = slow;
+        LinkedListNode previous = null;
+
+        while (current != null){
+            LinkedListNode next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        return previous;
      }
 
      public static void main(String[] args) {
