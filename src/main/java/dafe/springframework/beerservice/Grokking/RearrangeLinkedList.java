@@ -1,6 +1,21 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.List;
+
 public class RearrangeLinkedList {
+
+    static class ListNode{
+        int value;
+        ListNode next;
+        public ListNode(int value){
+            this.value = value;
+        }
+    }
+
+    private static ListNode reorder(ListNode head){
+        if(head==null || head.next == null) return head;
+        return null;
+    }
 
     public static void main(String[] args) {
         ListNode head = new ListNode(2);
