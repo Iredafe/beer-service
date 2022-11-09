@@ -26,12 +26,18 @@ public class RearrangeLinkedList {
         ListNode firstHalfHead = head;
 
         while (firstHalfHead!=null && secondHalfHead!=null){
+            ListNode temp = firstHalfHead.next;
+            firstHalfHead.next = secondHalfHead;
+            secondHalfHead=temp;
 
+            temp = secondHalfHead.next;
+            secondHalfHead.next = firstHalfHead;
+            firstHalfHead = temp;
         }
 
-        for (int i=0; i<)
-
-        return null;
+        if(firstHalfHead!=null){
+            firstHalfHead.next = null;
+        }
     }
 
     public static void main(String[] args) {
