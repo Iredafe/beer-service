@@ -25,7 +25,7 @@ package dafe.springframework.beerservice.Grokking;
         LinkedListNode copySecondHalfNodeHead = secondHalfNodeHead;
 
         while(head!=null && secondHalfNodeHead!=null){
-            if(head.next!=secondHalfNodeHead.next){
+            if(head.value!=secondHalfNodeHead.value){
                 break;
             }
             head = head.next;
@@ -37,8 +37,8 @@ package dafe.springframework.beerservice.Grokking;
         return false;
     }
 
-     private static LinkedListNode reverseLinkedList(LinkedListNode slow) {
-        LinkedListNode current = slow;
+     private static LinkedListNode reverseLinkedList(LinkedListNode head) {
+        LinkedListNode current = head;
         LinkedListNode previous = null;
 
         while (current != null){
