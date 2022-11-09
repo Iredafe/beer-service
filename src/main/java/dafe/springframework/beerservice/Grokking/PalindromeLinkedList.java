@@ -31,6 +31,9 @@ package dafe.springframework.beerservice.Grokking;
             head = head.next;
             secondHalfNodeHead = secondHalfNodeHead.next;
         }
+
+        reverseLinkedList(copySecondHalfNodeHead);
+        if(head == null || secondHalfNodeHead==null) return true;
         return false;
     }
 
