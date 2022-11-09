@@ -12,8 +12,25 @@ public class RearrangeLinkedList {
         }
     }
 
-    private static ListNode reorder(ListNode head){
-        if(head==null || head.next == null) return head;
+    private static void reorder(ListNode head){
+
+        ListNode fast=head;
+        ListNode slow=head;
+
+        while (fast!=null && slow!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+
+        ListNode secondHalfHead = reverse(slow);
+        ListNode firstHalfHead = head;
+
+        while (firstHalfHead!=null && secondHalfHead!=null){
+
+        }
+
+        for (int i=0; i<)
+
         return null;
     }
 
