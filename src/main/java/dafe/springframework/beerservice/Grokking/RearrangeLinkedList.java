@@ -1,7 +1,5 @@
 package dafe.springframework.beerservice.Grokking;
 
-import java.util.List;
-
 public class RearrangeLinkedList {
 
     static class ListNode{
@@ -13,11 +11,12 @@ public class RearrangeLinkedList {
     }
 
     private static void reorder(ListNode head){
+    if(head==null || head.next == null) return;
 
         ListNode fast=head;
         ListNode slow=head;
 
-        while (fast!=null && slow!=null){
+        while (fast!=null && fast.next!=null){
             slow=slow.next;
             fast=fast.next.next;
         }
@@ -28,11 +27,11 @@ public class RearrangeLinkedList {
         while (firstHalfHead!=null && secondHalfHead!=null){
             ListNode temp = firstHalfHead.next;
             firstHalfHead.next = secondHalfHead;
-            secondHalfHead=temp;
+            firstHalfHead=temp;
 
             temp = secondHalfHead.next;
             secondHalfHead.next = firstHalfHead;
-            firstHalfHead = temp;
+            secondHalfHead = temp;
         }
 
         if(firstHalfHead!=null){
@@ -52,5 +51,19 @@ public class RearrangeLinkedList {
             System.out.print(head.value + " ");
             head = head.next;
         }
+    }
+
+    private static ListNode reverse(ListNode head){
+        ListNode current = head;
+        ListNode tempNext;
+        ListNode previous = null;
+
+        while(current!=null){
+            tempNext = current.next;
+            current.next  = previous;
+            previous = current;
+            current = tempNext;
+        }
+        return previous;
     }
 }
