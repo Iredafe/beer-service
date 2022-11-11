@@ -7,10 +7,4 @@ public class CycleInCirclarArray {
         System.out.println(loopExists(new int[] { 2, 2, -1, 2 }));
         System.out.println(loopExists(new int[] { 2, 1, -1, -2 }));
     }
-
-    private static boolean loopExists(int[] circularArray) {
-
-
-    return true;
-    }
 }
