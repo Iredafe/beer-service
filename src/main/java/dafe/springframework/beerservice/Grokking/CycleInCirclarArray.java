@@ -15,9 +15,11 @@ public class CycleInCirclarArray {
                 if(fast!=-1){
                     fast = findNextIndex(array, isForward, fast);
                 }
-            }while ()
+            }while (slow!=-1 && fast!=-1 && slow!=fast);
+
+            if(slow!=-1 && slow==fast) return true;
         }
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {
