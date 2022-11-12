@@ -22,6 +22,19 @@ public class CycleInCirclarArray {
         return false;
     }
 
+    private static int findNextIndex(int [] circularArray, boolean isForward, int currentIndex){
+        boolean direction = circularArray[currentIndex] >=0;
+
+        if(isForward!=direction) return -1;
+
+        int nextIndex = (currentIndex + circularArray[currentIndex]) % circularArray.length;
+        if(nextIndex<0) nextIndex+=circularArray.length;
+        if(nextIndex==currentIndex)
+        return -1;
+
+        return nextIndex;
+    }
+
     public static void main(String[] args) {
         System.out.println(loopExists(new int[] { 1, 2, -1, 2, 2 }));
         System.out.println(loopExists(new int[] { 2, 2, -1, 2 }));
