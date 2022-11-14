@@ -2,6 +2,16 @@ package dafe.springframework.beerservice.Grokking;
 
 public class ReverseSublist {
 
+    static class ListNode{
+        int value;
+        public ListNode(int value){
+            this.value = value;
+        }
+    }
+
+    public static ListNode reverse(){
+
+    }
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
