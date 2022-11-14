@@ -10,8 +10,12 @@ public class ReverseSublist {
         }
     }
 
-    public static ListNode reverse(ListNode head, ListNode first, ListNode last){
-
+    public static ListNode reverse(ListNode head, int first, int last){
+    ListNode current = head, previous = null;
+        for(int i=0; current!=null && i<first-1; i++){
+            previous=current;
+            current = current.next;
+        }
         return head;
     }
 
