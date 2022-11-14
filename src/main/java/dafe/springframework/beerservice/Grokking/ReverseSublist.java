@@ -4,13 +4,15 @@ public class ReverseSublist {
 
     static class ListNode{
         int value;
+        ListNode next;
         public ListNode(int value){
             this.value = value;
         }
     }
 
-    public static ListNode reverse(){
+    public static ListNode reverse(ListNode head, ListNode first, ListNode last){
 
+        return head;
     }
 
     public static void main(String[] args) {
