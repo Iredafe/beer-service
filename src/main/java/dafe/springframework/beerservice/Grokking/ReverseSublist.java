@@ -16,6 +16,15 @@ public class ReverseSublist {
             previous=current;
             current = current.next;
         }
+
+        ListNode lastNodeOfFirstPart = previous;
+
+        ListNode lastNodeOfSublist = current;
+
+        ListNode next = null;
+
+        if(lastNodeOfSublist!=null)
+
         return head;
     }
 
