@@ -23,7 +23,18 @@ public class ReverseSublist {
 
         ListNode next = null;
 
-        if(lastNodeOfSublist!=null)
+        for(int i=0; current!=null && i< first-last+1; i++ ){
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        if(lastNodeOfSublist!=null){
+            lastNodeOfFirstPart.next = previous;
+        }else{
+            head = previous;
+        }
 
         return head;
     }
