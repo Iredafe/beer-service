@@ -11,6 +11,7 @@ public class ReverseSublist {
     }
 
     public static ListNode reverse(ListNode head, int first, int last){
+        if(first==last) return head;
     ListNode current = head, previous = null;
         for(int i=0; current!=null && i<first-1; i++){
             previous=current;
