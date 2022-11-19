@@ -19,19 +19,15 @@ public class MergeIntervals {
         if(input.size() < 2) return input;
         List<Interval> result = new ArrayList<>();
         Collections.sort(input, (a,b) ->Integer.compare(a.start,b.start));
-        int start = 0;
-        int end=0;
-        for(int i=1; i< input.size(); i++){
-            start = input.get(i - 1).start;
-            end = input.get(i-1).end;
-            int intervalStart = input.get(i).start;
-            int intervalEnd = input.get(i).end;
-            if(intervalStart <= end ){
-                end = Math.max(intervalEnd, end);
+        int start = input.get(0).start;
+        int end=input.get(0).end;
+        for(Interval interval : input){
+            if(interval.start <= end ){
+                end = Math.max(interval.end, end);
             }else{
                result.add(new Interval(start, end));
-                start = intervalStart;
-                end = intervalEnd;
+                start = interval.start;
+                end = interval.end;
             }
         }
         result.add(new Interval(start,end));
