@@ -15,7 +15,15 @@ public class MergeIntervals {
     }
 
     private static List<Interval> merge(List<Interval> input){
+        if(input.size() < 2) return input;
+        int intervalStart = 0;
+        int intervalEnd = 0;
 
+        for(int i=1; i< input.size(); i++){
+            if(input.get(i-1).start <= input.get(i).start ){
+
+            }
+        }
         return new ArrayList<>();
     }
 
