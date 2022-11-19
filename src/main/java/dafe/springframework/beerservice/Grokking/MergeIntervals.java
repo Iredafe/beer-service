@@ -14,6 +14,11 @@ public class MergeIntervals {
     }
     }
 
+    private List<Interval> merge(List<Interval> input){
+
+        return new ArrayList<>();
+    }
+
     public static void main(String[] args) {
         List<Interval> input = new ArrayList<Interval>();
         input.add(new Interval(1, 4));
