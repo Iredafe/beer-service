@@ -14,7 +14,7 @@ public class MergeIntervals {
     }
     }
 
-    private List<Interval> merge(List<Interval> input){
+    private static List<Interval> merge(List<Interval> input){
 
         return new ArrayList<>();
     }
