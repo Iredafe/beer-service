@@ -1,6 +1,15 @@
 package dafe.springframework.beerservice.Grokking;
 
 public class MergeIntervals {
+
+    static class Interval{
+    int start;
+    int end;
+    public Interval(int start, int end){
+
+    }
+    }
+
     public static void main(String[] args) {
         List<Interval> input = new ArrayList<Interval>();
         input.add(new Interval(1, 4));
