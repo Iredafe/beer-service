@@ -16,13 +16,16 @@ public class MergeIntervals {
 
     private static List<Interval> merge(List<Interval> input){
         if(input.size() < 2) return input;
-        int intervalStart = 0;
-        int intervalEnd = 0;
 
         for(int i=1; i< input.size(); i++){
             int start = input.get(i - 1).start;
+            int end = input.get(i-1).end;
+            int intervalStart = input.get(i).start;
+            int intervalEnd = input.get(i).end;
             if(start <= input.get(i).start ){
                // intervalStart =
+            }else{
+                intervalEnd = Math.max(start, end);
             }
         }
         return new ArrayList<>();
