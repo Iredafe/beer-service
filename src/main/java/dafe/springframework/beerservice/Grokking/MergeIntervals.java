@@ -20,8 +20,9 @@ public class MergeIntervals {
         int intervalEnd = 0;
 
         for(int i=1; i< input.size(); i++){
-            if(input.get(i-1).start <= input.get(i).start ){
-
+            int start = input.get(i - 1).start;
+            if(start <= input.get(i).start ){
+               // intervalStart =
             }
         }
         return new ArrayList<>();
