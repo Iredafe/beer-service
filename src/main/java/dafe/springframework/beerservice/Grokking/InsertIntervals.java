@@ -14,6 +14,12 @@ public class InsertIntervals {
         }
     }
 
+    private static List<Interval> insert(List<Interval> inputList, Interval newInterval){
+
+
+        return null;
+    }
+
     public static void main(String[] args) {
         List<Interval> input = new ArrayList<Interval>();
         input.add(new Interval(1, 3));
