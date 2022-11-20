@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class InsertIntervals {
@@ -15,9 +16,23 @@ public class InsertIntervals {
     }
 
     private static List<Interval> insert(List<Interval> inputList, Interval newInterval){
-
-
-        return null;
+        int start = newInterval.start;
+        int end = newInterval.end;
+        List<Interval> result = new ArrayList<>();
+        for(Interval interval : inputList){
+            if(interval.end < start){
+                result.add(interval);
+            } else if(interval.start <= end){
+                start = Math.min(start, interval.start);
+                end = Math.max(end, interval.end);
+            }else{
+                result.add(new Interval(start, end));
+                start = interval.start;
+                end = interval.end;
+            }
+        }
+        result.add(new Interval(start, end));
+        return result;
     }
 
     public static void main(String[] args) {
