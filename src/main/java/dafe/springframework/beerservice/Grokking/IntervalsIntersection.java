@@ -1,7 +1,21 @@
 package dafe.springframework.beerservice.Grokking;
 
-public class IntervalsIntersection{
+import java.util.List;
 
+public class IntervalsIntersection{
+    static class Interval{
+        int start;
+        int end;
+
+        public IntervalsIntersection(int start, int end){
+            this.start=start;
+            this.end=end;
+        }
+    }
+
+    private static List<Interval> merge(List<Interval> firstList, List<Interval> secondList){
+
+    }
 
 
     public static void main(String[] args) {
