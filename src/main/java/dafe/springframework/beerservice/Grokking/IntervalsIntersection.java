@@ -15,7 +15,15 @@ public class IntervalsIntersection{
     }
 
     private static Interval[] merge(Interval [] firstList, Interval [] secondList){
-
+        int i=0, j=0;
+        int start=0;
+        int end=0;
+        while (i<firstList.length && j< secondList.length){
+            if (firstList[i].end >= secondList[j].start){
+                start=Math.max(firstList[i].start, secondList[j].start);
+                end=Math.min(firstList[i].end, secondList[j].end);
+            }
+        }
         return null;
     }
 
