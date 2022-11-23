@@ -1,5 +1,6 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class IntervalsIntersection{
@@ -7,14 +8,15 @@ public class IntervalsIntersection{
         int start;
         int end;
 
-        public IntervalsIntersection(int start, int end){
+        public Interval(int start, int end){
             this.start=start;
             this.end=end;
         }
     }
 
-    private static List<Interval> merge(List<Interval> firstList, List<Interval> secondList){
+    private static List<Interval> merge(Interval [] firstList, Interval [] secondList){
 
+        return new ArrayList<>();
     }
 
 
