@@ -14,9 +14,9 @@ public class IntervalsIntersection{
         }
     }
 
-    private static List<Interval> merge(Interval [] firstList, Interval [] secondList){
+    private static Interval[] merge(Interval [] firstList, Interval [] secondList){
 
-        return new ArrayList<>();
+        return null;
     }
 
 
