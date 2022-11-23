@@ -20,15 +20,17 @@ public class IntervalsIntersection{
         int start=0;
         int end=0;
         while (i<firstList.length && j< secondList.length){
-            if (firstList[i].end >= secondList[j].start){
+            if (firstList[i].start >= secondList[j].start
+                    && firstList[i].start <= secondList[j].end
+            || secondList[j].start >= firstList[i].start && secondList[j].start <=firstList[i].end){
                 start=Math.max(firstList[i].start, secondList[j].start);
                 end=Math.min(firstList[i].end, secondList[j].end);
-                i++;
-                j++;
-            }else {
-                resultList.add(new Interval(firstList[i].start, firstList[i].end));
-
             }
+            resultList.add(new Interval(firstList[i].start, firstList[i].end));
+
+            if(firstList[i].end < secondList[j].end) i++;
+            else j++;
+
         }
         resultList.add(new Interval(start,end));
         return resultList.toArray(new Interval[0]);
