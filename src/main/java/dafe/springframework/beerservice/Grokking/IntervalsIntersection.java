@@ -15,6 +15,7 @@ public class IntervalsIntersection{
     }
 
     private static Interval[] merge(Interval [] firstList, Interval [] secondList){
+        List<Interval> resultList = new ArrayList<>();
         int i=0, j=0;
         int start=0;
         int end=0;
@@ -22,9 +23,15 @@ public class IntervalsIntersection{
             if (firstList[i].end >= secondList[j].start){
                 start=Math.max(firstList[i].start, secondList[j].start);
                 end=Math.min(firstList[i].end, secondList[j].end);
+                i++;
+                j++;
+            }else {
+                resultList.add(new Interval(firstList[i].start, firstList[i].end));
+
             }
         }
-        return null;
+        resultList.add(new Interval(start,end));
+        return resultList.toArray(new Interval[0]);
     }
 
 
