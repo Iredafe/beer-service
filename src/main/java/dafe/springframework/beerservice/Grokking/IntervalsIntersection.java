@@ -25,14 +25,13 @@ public class IntervalsIntersection{
             || secondList[j].start >= firstList[i].start && secondList[j].start <=firstList[i].end){
                 start=Math.max(firstList[i].start, secondList[j].start);
                 end=Math.min(firstList[i].end, secondList[j].end);
+
+                resultList.add(new Interval(start, end));
             }
-            resultList.add(new Interval(firstList[i].start, firstList[i].end));
 
             if(firstList[i].end < secondList[j].end) i++;
             else j++;
-
         }
-        resultList.add(new Interval(start,end));
         return resultList.toArray(new Interval[0]);
     }
 
