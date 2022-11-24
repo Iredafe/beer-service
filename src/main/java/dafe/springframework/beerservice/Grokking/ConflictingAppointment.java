@@ -11,6 +11,12 @@ public class ConflictingAppointment {
         }
     }
 
+    private static boolean canAttendAllAppointments(Interval [] appointments){
+
+
+        return false;
+    }
+
     public static void main(String[] args) {
         Interval[] intervals = { new Interval(1, 4), new Interval(2, 5),
                 new Interval(7, 9) };
