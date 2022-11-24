@@ -14,12 +14,12 @@ public class ConflictingAppointment {
     }
 
     private static boolean canAttendAllAppointments(Interval [] appointments){
-        Arrays.sort(appointments, (a, b)->a.start - b.start);
+        Arrays.sort(appointments, (a, b)->Integer.compare(a.start , b.start));
         if(appointments.length==1) return true;
         int start = appointments[0].start;
         int end = appointments[0].end;
         for(Interval appointment : appointments){
-            if(appointment.start <= end){
+            if(appointment.start != start && appointment.start <= end){
                 return false;
             }
             start=appointment.start;
