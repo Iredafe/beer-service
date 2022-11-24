@@ -2,6 +2,15 @@ package dafe.springframework.beerservice.Grokking;
 
 public class ConflictingAppointment {
 
+    static class Interval{
+        int start;
+        int end;
+        public Interval(int start, int end){
+            this.start = start;
+            this.end = end;
+        }
+    }
+
     public static void main(String[] args) {
         Interval[] intervals = { new Interval(1, 4), new Interval(2, 5),
                 new Interval(7, 9) };
