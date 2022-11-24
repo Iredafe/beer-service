@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.Arrays;
+
 public class ConflictingAppointment {
 
     static class Interval{
@@ -12,9 +14,18 @@ public class ConflictingAppointment {
     }
 
     private static boolean canAttendAllAppointments(Interval [] appointments){
-
-
-        return false;
+        Arrays.sort(appointments, (a, b)->a.start - b.start);
+        if(appointments.length==1) return true;
+        int start = appointments[0].start;
+        int end = appointments[0].end;
+        for(Interval appointment : appointments){
+            if(appointment.start <= end){
+                return false;
+            }
+            start=appointment.start;
+            end=appointment.end;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
