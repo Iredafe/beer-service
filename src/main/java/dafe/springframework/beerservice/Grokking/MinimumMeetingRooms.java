@@ -12,7 +12,7 @@ public class MinimumMeetingRooms {
                 add(new Meeting(7, 9));
             }
         };
-        int result = MinimumMeetingRooms.findMinimumMeetingRooms(input);
+        int result = findMinimumMeetingRooms(input);
         System.out.println("Minimum meeting rooms required: " + result);
 
         input = new ArrayList<Meeting>() {
@@ -22,7 +22,7 @@ public class MinimumMeetingRooms {
                 add(new Meeting(8, 12));
             }
         };
-        result = MinimumMeetingRooms.findMinimumMeetingRooms(input);
+        result = findMinimumMeetingRooms(input);
         System.out.println("Minimum meeting rooms required: " + result);
 
         input = new ArrayList<Meeting>() {
@@ -32,7 +32,7 @@ public class MinimumMeetingRooms {
                 add(new Meeting(3, 6));
             }
         };
-        result = MinimumMeetingRooms.findMinimumMeetingRooms(input);
+        result = findMinimumMeetingRooms(input);
         System.out.println("Minimum meeting rooms required: " + result);
 
         input = new ArrayList<Meeting>() {
@@ -43,7 +43,7 @@ public class MinimumMeetingRooms {
                 add(new Meeting(3, 5));
             }
         };
-        result = MinimumMeetingRooms.findMinimumMeetingRooms(input);
+        result = findMinimumMeetingRooms(input);
         System.out.println("Minimum meeting rooms required: " + result);
     }
 }
