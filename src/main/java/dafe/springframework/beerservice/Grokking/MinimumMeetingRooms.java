@@ -2,7 +2,10 @@ package dafe.springframework.beerservice.Grokking;
 
 public class MinimumMeetingRooms {
 
+private static int findMinimumMeetingRooms(List<Meeting> meetings){
 
+    return 0;
+}
 
     public static void main(String[] args) {
         List<Meeting> input = new ArrayList<Meeting>() {
