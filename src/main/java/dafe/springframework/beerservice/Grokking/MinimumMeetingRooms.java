@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MinimumMeetingRooms {
@@ -14,8 +15,15 @@ public class MinimumMeetingRooms {
             this.end=end;
         }
     }
-private static int findMinimumMeetingRooms(List<Meeting> meetings){
 
+    private static int findMinimumMeetingRooms(List<Meeting> meetings){
+
+        Collections.sort(meetings, (a,b) -> a.start-b.end);
+        int start = meetings.get(0).start;
+        int end = meetings.get(0).end;
+        for(Meeting meeting : meetings){
+            if(meeting)
+        }
     return 0;
 }
 
