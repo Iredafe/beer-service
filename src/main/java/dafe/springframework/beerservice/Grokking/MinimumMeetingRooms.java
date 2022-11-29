@@ -3,6 +3,7 @@ package dafe.springframework.beerservice.Grokking;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class MinimumMeetingRooms {
 
@@ -17,12 +18,18 @@ public class MinimumMeetingRooms {
     }
 
     private static int findMinimumMeetingRooms(List<Meeting> meetings){
-
+        int minimumMeetingRoom = 1;
         Collections.sort(meetings, (a,b) -> a.start-b.end);
-        int start = meetings.get(0).start;
-        int end = meetings.get(0).end;
+        PriorityQueue<Meeting> minHeap = new PriorityQueue<Meeting>(meetings.size(), (a,b)->a.end-b.end);
+        minHeap.offer(meetings.get(0));
         for(Meeting meeting : meetings){
-            if(meeting)
+            Meeting currentMeeting = minHeap.peek();
+            if(meeting.start <= end){
+                minimumMeetingRoom++;
+            }else {
+                start=meeting.start;
+                end=meeting.end;
+            }
         }
     return 0;
 }
