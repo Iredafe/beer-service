@@ -18,6 +18,7 @@ public class MinimumMeetingRooms {
     }
 
     private static int findMinimumMeetingRooms(List<Meeting> meetings){
+        if(meetings.isEmpty() || meetings == null) return 0;
         int minimumMeetingRoom = 0;
         Collections.sort(meetings, (a,b) -> a.start-b.end);
         PriorityQueue<Meeting> minHeap = new PriorityQueue<Meeting>(meetings.size(), (a,b)->a.end-b.end);
@@ -36,9 +37,9 @@ public class MinimumMeetingRooms {
     public static void main(String[] args) {
         List<Meeting> input = new ArrayList<Meeting>() {
             {
+                add(new Meeting(7, 9));
                 add(new Meeting(1, 4));
                 add(new Meeting(2, 5));
-                add(new Meeting(7, 9));
             }
         };
         int result = findMinimumMeetingRooms(input);
@@ -56,9 +57,9 @@ public class MinimumMeetingRooms {
 
         input = new ArrayList<Meeting>() {
             {
+                add(new Meeting(3, 6));
                 add(new Meeting(1, 4));
                 add(new Meeting(2, 3));
-                add(new Meeting(3, 6));
             }
         };
         result = findMinimumMeetingRooms(input);
