@@ -18,20 +18,19 @@ public class MinimumMeetingRooms {
     }
 
     private static int findMinimumMeetingRooms(List<Meeting> meetings){
-        int minimumMeetingRoom = 1;
+        int minimumMeetingRoom = 0;
         Collections.sort(meetings, (a,b) -> a.start-b.end);
         PriorityQueue<Meeting> minHeap = new PriorityQueue<Meeting>(meetings.size(), (a,b)->a.end-b.end);
-        minHeap.offer(meetings.get(0));
+
         for(Meeting meeting : meetings){
             Meeting currentMeeting = minHeap.peek();
-            if(meeting.start <= end){
-                minimumMeetingRoom++;
-            }else {
-                start=meeting.start;
-                end=meeting.end;
+            while (!minHeap.isEmpty() && meeting.start >= currentMeeting.end){
+                minHeap.poll();
+                minHeap.offer(meeting);
+                minimumMeetingRoom = Math.max(minimumMeetingRoom, minHeap.size());
             }
         }
-    return 0;
+    return minimumMeetingRoom;
 }
 
     public static void main(String[] args) {
