@@ -1,6 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MaximumCpuLoad {
@@ -17,6 +18,10 @@ public class MaximumCpuLoad {
         }
     }
 
+    private static int findMaxCPULoad(List<Job> listOfJobs){
+
+        return 0;
+    }
     public static void main(String[] args) {
         List<Job> input = new ArrayList<Job>(Arrays.asList(new Job(1, 4, 3),
                 new Job(2, 5, 4), new Job(7, 9, 6)));
