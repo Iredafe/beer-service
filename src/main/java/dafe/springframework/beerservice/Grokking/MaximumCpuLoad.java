@@ -2,6 +2,17 @@ package dafe.springframework.beerservice.Grokking;
 
 public class MaximumCpuLoad {
 
+    static class Job{
+        int start;
+        int end;
+        int load;
+
+        public Job(int start, int end, int load){
+            this.start=start;
+            this.end=end;
+            this.load=load;
+        }
+    }
 
     public static void main(String[] args) {
         List<Job> input = new ArrayList<Job>(Arrays.asList(new Job(1, 4, 3),
