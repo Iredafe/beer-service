@@ -1,5 +1,7 @@
 package dafe.springframework.beerservice.Grokking;
 
+import java.util.ArrayList;
+
 public class MaximumCpuLoad {
 
     static class Job{
