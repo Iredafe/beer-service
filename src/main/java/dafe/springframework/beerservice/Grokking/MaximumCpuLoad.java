@@ -2,6 +2,7 @@ package dafe.springframework.beerservice.Grokking;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MaximumCpuLoad {
@@ -20,6 +21,8 @@ public class MaximumCpuLoad {
 
     private static int findMaxCPULoad(List<Job> listOfJobs){
 
+        int maximumLoad=0;
+        Collections.sort(listOfJobs, (a,b)-> Integer.compare(a.start, b.start));
         return 0;
     }
     public static void main(String[] args) {
