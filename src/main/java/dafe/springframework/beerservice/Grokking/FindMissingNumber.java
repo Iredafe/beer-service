@@ -4,6 +4,11 @@ public class FindMissingNumber {
 
     private static int[] findMissingNumber(int [] array){
 
+        int i=0;
+
+        while (array[i]<array.length && array[i]!=array[array[i]]){
+            swap(i, array[i], array);
+        }
         return null;
     }
 
