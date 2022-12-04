@@ -9,11 +9,16 @@ public class FindMissingNumber {
         while (array[i]<array.length && array[i]!=array[array[i]]){
             swap(i, array[i], array);
         }
-        return null;
+
+        for (int j=0; i<array.length; j++){
+
+        }
     }
 
     private static void swap(int i, int j, int [] array){
-
+         int temp = array[i];
+         array[i] = array[j];
+         array[j] = temp;
     }
 
     public static void main(String[] args) {
