@@ -12,6 +12,10 @@ public class FindMissingNumber {
         return null;
     }
 
+    private static void swap(int i, int j, int [] array){
+
+    }
+
     public static void main(String[] args) {
         System.out.println(findMissingNumber(new int[] { 4, 0, 3, 1 }));
         System.out.println(findMissingNumber(
