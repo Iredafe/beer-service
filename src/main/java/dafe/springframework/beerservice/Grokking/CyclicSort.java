@@ -2,6 +2,18 @@ package dafe.springframework.beerservice.Grokking;
 
 public class CyclicSort {
 
+    private static int[] sort(int [] array){
+
+        int i=0;
+        while (i<array.length){
+            int j= array[i] -1;
+            if(array[i]!=array[j]){
+                swap(i,j,array);
+            }else i++;
+        }
+        return array;
+    }
+
     private static void swap(int i, int j, int [] array){
         int temp = array[i];
         array[i] = array[j];
