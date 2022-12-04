@@ -2,7 +2,7 @@ package dafe.springframework.beerservice.Grokking;
 
 public class FindMissingNumber {
 
-    private static int[] findMissingNumber(int [] array){
+    private static int findMissingNumber(int [] array){
 
         int i=0;
 
@@ -10,9 +10,10 @@ public class FindMissingNumber {
             swap(i, array[i], array);
         }
 
-        for (int j=0; i<array.length; j++){
-
+        for (i=0; i<array.length; i++){
+            if(array[i]!=i) return i;
         }
+        return array.length;
     }
 
     private static void swap(int i, int j, int [] array){
