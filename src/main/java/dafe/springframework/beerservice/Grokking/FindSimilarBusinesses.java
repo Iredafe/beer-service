@@ -1,9 +1,6 @@
 package dafe.springframework.beerservice.Grokking;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class FindSimilarBusinesses {
 
@@ -45,5 +42,14 @@ public class FindSimilarBusinesses {
         }
 
         return similarBusinessId;
+    }
+
+
+    public static void main(String[] args) {
+       List<Reviews> listOfReviews= List.of(new Reviews(1,10),
+               new Reviews(2,10), new Reviews(1,11), new Reviews(2, 11),
+               new Reviews(1,12), new Reviews(2, 12), new Reviews(3,12));
+        System.out.println("similar business is : "
+                + findSimilarBusinesses(10, listOfReviews));
     }
 }
