@@ -44,12 +44,80 @@ public class FindSimilarBusinesses {
         return similarBusinessId;
     }
 
+    private static int mostSimilarBusiness(int businessInterestId, List<Reviews> listOfReviews){
+       int mostSimilarBizId = businessInterestId;
+double maxSimilarity = 0.0;
+       HashMap<Integer, Set<Integer>> businessMap = new HashMap();
+       for (Reviews review : listOfReviews){
+            businessMap.putIfAbsent(review.businessId, new HashSet<>());
+            businessMap.get(review.businessId).add(review.userId);
+       }
+
+       for(Integer bizId: businessMap.keySet()){
+           if(businessInterestId!= bizId){
+               Set<Integer> usersOfSimilarBiz = businessMap.get(businessInterestId);
+               usersOfSimilarBiz.retainAll(businessMap.get(bizId));
+
+               double intersection = usersOfSimilarBiz.size();
+
+               Set<Integer> union = businessMap.get(businessInterestId);
+                     union.addAll(businessMap.get(bizId));
+               double similarity = intersection / union.size();
+             if(similarity > maxSimilarity){
+                 maxSimilarity = similarity;
+                 mostSimilarBizId = bizId;
+             }
+           }
+       }
+       return mostSimilarBizId;
+    }
+
+    private static int mostSimilarBusinessClean(int businessInterestId, List<Reviews> listOfReviews){
+        int mostSimilarBizId = businessInterestId;
+        double maxSimilarity = 0.0;
+        HashMap<Integer, Set<Integer>> businessMap = new HashMap();
+        for (Reviews review : listOfReviews){
+            businessMap.putIfAbsent(review.businessId, new HashSet<>());
+            businessMap.get(review.businessId).add(review.userId);
+        }
+
+        for(Integer bizId: businessMap.keySet()){
+            if(businessInterestId!= bizId){
+                Set<Integer> usersOfSimilarBiz = new HashSet<>(businessMap.get(businessInterestId));
+                usersOfSimilarBiz.retainAll(businessMap.get(bizId));
+
+                double intersection = usersOfSimilarBiz.size();
+
+                Set<Integer> union = new HashSet<>(businessMap.get(businessInterestId));
+                union.addAll(businessMap.get(bizId));
+                double similarity = intersection / union.size();
+                if(similarity > maxSimilarity){
+                    maxSimilarity = similarity;
+                    mostSimilarBizId = bizId;
+                }
+            }
+        }
+        return mostSimilarBizId;
+    }
 
     public static void main(String[] args) {
        List<Reviews> listOfReviews= List.of(new Reviews(1,10),
                new Reviews(2,10), new Reviews(1,11), new Reviews(2, 11),
                new Reviews(1,12), new Reviews(2, 12), new Reviews(3,12));
+      List<Reviews> reviewsList = List.of(new Reviews(3,44), new Reviews(172, 44), new Reviews(172, 114),
+              new Reviews(4, 1), new Reviews(4, 44), new Reviews(7, 44), new Reviews(7, 13), new Reviews(8, 44),
+              new Reviews(8, 13), new Reviews(123, 1), new Reviews(2, 1), new Reviews(3,1), new Reviews(8, 4),
+              new Reviews(9, 44), new Reviews(9, 4), new Reviews(9, 114));
+
         System.out.println("similar business is : "
                 + findSimilarBusinesses(10, listOfReviews));
+        System.out.println("most similar business is : "
+                + mostSimilarBusiness(10, listOfReviews));
+
+        System.out.println("most similar business is : "
+                + mostSimilarBusiness(1, reviewsList));
+
+        System.out.println("most similar business is : "
+                + mostSimilarBusinessClean(1, reviewsList));
     }
 }
